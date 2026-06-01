@@ -30,7 +30,8 @@ Clock state: running
 | 2026-06-01 | 21:06 CEST | 21:07 CEST | 0:01 | Reworked hero around new look, better reach and added logo to header brand. |
 | 2026-06-01 | 21:10 CEST | 21:11 CEST | 0:01 | Requested header version bubble and hero wording around hunting wasteful costs. |
 | 2026-06-01 | 21:16 CEST | 21:19 CEST | 0:01 | Approved launch metadata work and keeping print assets local-only. |
+| 2026-06-01 | 21:30 CEST | 21:42 CEST | 0:04 | Confirmed Cloudflare launch path and completed custom-domain DNS records with dashboard review. |
 
 ## Totals
 
-Active collaboration time used: 0:28
+Active collaboration time used: 0:32
