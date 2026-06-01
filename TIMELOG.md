@@ -23,7 +23,8 @@ Clock state: running
 | 2026-06-01 | 20:44 CEST | 20:46 CEST | 0:02 | Requested a How We Work section with existing-site reuse and intake interview language. |
 | 2026-06-01 | 20:47 CEST | 20:48 CEST | 0:01 | Flagged obsolete summary section after adding How We Work. |
 | 2026-06-01 | 20:49 CEST | 20:51 CEST | 0:02 | Requested budget and retainer language with hourly accounting and 50% warning. |
+| 2026-06-01 | 20:53 CEST | 20:55 CEST | 0:02 | Requested owner section mentioning decades of software engineering and current technique excitement. |
 
 ## Totals
 
-Active collaboration time used: 0:20
+Active collaboration time used: 0:22

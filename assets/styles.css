@@ -555,6 +555,7 @@ h3 {
 }
 
 .savings-layout,
+.about-layout,
 .budget-layout {
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1fr);
@@ -563,12 +564,14 @@ h3 {
 }
 
 .savings-list,
+.about-copy,
 .budget-list {
   display: grid;
   gap: 14px;
 }
 
 .savings-list p,
+.about-copy p,
 .budget-list p {
   margin: 0;
   color: var(--muted);
@@ -755,6 +758,7 @@ html[data-theme="night"] .dark-demo-topbar {
   .work-steps,
   .demo-split,
   .savings-layout,
+  .about-layout,
   .budget-layout {
     grid-template-columns: 1fr;
   }
