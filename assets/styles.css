@@ -66,6 +66,16 @@ a {
   gap: 0;
 }
 
+.theme-row {
+  display: flex;
+  justify-content: center;
+  padding: 0 0 14px;
+}
+
+.theme-row-public {
+  justify-content: flex-start;
+}
+
 .topbar-inner,
 .footer-inner {
   display: flex;
@@ -472,6 +482,21 @@ h3 {
 
 .demo-panel {
   padding: 28px;
+}
+
+.demo-photo {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
+.demo-photo img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
 }
 
 .demo-panel strong {
