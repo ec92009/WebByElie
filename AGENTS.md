@@ -24,6 +24,12 @@ Repo-level working preferences for `/Users/ecohen/Dev/WebByElie`.
 - Use the shared calendar visible version format from the SOP.
 - When public HTML or CSS changes, keep the visible footer version and `assets/styles.css?v=X.Y` cache-bust strings in sync.
 
+## Timelog
+
+- Track active collaboration time in `TIMELOG.md`.
+- Follow `~/Dev/.SOPs/TIMELOG_SOP.md`.
+- Count only active user collaboration time, not Codex background work or deployment waits.
+
 ## Preview
 
 - Local preview can run with `python3 -m http.server 8094`.
