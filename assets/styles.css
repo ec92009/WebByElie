@@ -508,7 +508,7 @@ h3 {
 .demo-cards,
 .studio-services {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -528,6 +528,27 @@ h3 {
   grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1fr);
   gap: 28px;
   align-items: center;
+}
+
+.savings-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.savings-list {
+  display: grid;
+  gap: 14px;
+}
+
+.savings-list p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.savings-list strong {
+  color: var(--ink);
 }
 
 .friendly-demo {
@@ -703,7 +724,8 @@ html[data-theme="night"] .dark-demo-topbar {
   .site-demo .demo-hero,
   .demo-cards,
   .studio-services,
-  .demo-split {
+  .demo-split,
+  .savings-layout {
     grid-template-columns: 1fr;
   }
 
