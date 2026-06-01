@@ -232,6 +232,83 @@ h3 {
   padding: 18px;
 }
 
+.look-preview {
+  display: grid;
+  gap: 8px;
+  min-height: 130px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 14px;
+  background: #f8faf9;
+}
+
+.look-preview span {
+  display: block;
+  border-radius: 6px;
+}
+
+.look-warm .look-preview {
+  grid-template-columns: 1fr 0.72fr;
+  background: #fff4e8;
+}
+
+.look-warm .look-preview span:nth-child(1) {
+  grid-column: 1 / -1;
+  height: 34px;
+  background: #df6f45;
+}
+
+.look-warm .look-preview span:nth-child(2) {
+  height: 58px;
+  background: #f2d1ad;
+}
+
+.look-warm .look-preview span:nth-child(3) {
+  height: 58px;
+  background: #f8e5d1;
+}
+
+.look-studio .look-preview {
+  grid-template-columns: 0.78fr 1fr;
+  background: #eef6f2;
+}
+
+.look-studio .look-preview span:nth-child(1) {
+  height: 102px;
+  background: #1d2930;
+}
+
+.look-studio .look-preview span:nth-child(2) {
+  height: 46px;
+  background: #658f80;
+}
+
+.look-studio .look-preview span:nth-child(3) {
+  height: 46px;
+  background: #d7e8e1;
+}
+
+.look-advisor .look-preview {
+  grid-template-columns: repeat(3, 1fr);
+  align-items: end;
+  background: #f3f5fa;
+}
+
+.look-advisor .look-preview span:nth-child(1) {
+  height: 96px;
+  background: #526f9d;
+}
+
+.look-advisor .look-preview span:nth-child(2) {
+  height: 72px;
+  background: #a9bbd5;
+}
+
+.look-advisor .look-preview span:nth-child(3) {
+  height: 48px;
+  background: #d7deea;
+}
+
 .option-body p,
 .option-body li,
 .policy-card p,
@@ -259,6 +336,20 @@ h3 {
   color: var(--ink);
   font-size: 0.8rem;
   font-weight: 800;
+}
+
+.offer-list {
+  display: grid;
+  gap: 12px;
+}
+
+.offer-list p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.offer-list strong {
+  color: var(--ink);
 }
 
 .signoff-box {

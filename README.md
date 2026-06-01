@@ -12,7 +12,8 @@ Then open `http://localhost:8094/`.
 
 ## Files
 
-- `index.html`: three-option service chooser and sign-off section.
+- `VERSION`: source of truth for the visible site version.
+- `index.html`: three-option visual direction chooser and sign-off section.
 - `assets/styles.css`: site styling.
 - `assets/browser-mosaic.svg`: local visual asset for the hero.
 - `privacy.html`, `terms.html`, `data-deletion.html`: baseline public policy pages.
