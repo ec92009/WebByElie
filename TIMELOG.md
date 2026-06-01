@@ -24,7 +24,9 @@ Clock state: running
 | 2026-06-01 | 20:47 CEST | 20:48 CEST | 0:01 | Flagged obsolete summary section after adding How We Work. |
 | 2026-06-01 | 20:49 CEST | 20:51 CEST | 0:02 | Requested budget and retainer language with hourly accounting and 50% warning. |
 | 2026-06-01 | 20:53 CEST | 20:55 CEST | 0:02 | Requested owner section mentioning decades of software engineering and current technique excitement. |
+| 2026-06-01 | 20:56 CEST | 20:57 CEST | 0:01 | Refined owner section to trim over-explanation and tie new techniques to independent businesses. |
+| 2026-06-01 | 20:58 CEST | 20:59 CEST | 0:01 | Updated budget copy from dollar range to 10-hour initial bundle language. |
 
 ## Totals
 
-Active collaboration time used: 0:22
+Active collaboration time used: 0:24
