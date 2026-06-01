@@ -2,9 +2,9 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v93.18`
+Current visible version: `v93.19`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=93.18`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=93.19`
 
 Intended domain: `web-by-elie.com`
 

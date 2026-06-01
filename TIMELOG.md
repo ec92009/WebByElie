@@ -31,7 +31,8 @@ Clock state: running
 | 2026-06-01 | 21:10 CEST | 21:11 CEST | 0:01 | Requested header version bubble and hero wording around hunting wasteful costs. |
 | 2026-06-01 | 21:16 CEST | 21:19 CEST | 0:01 | Approved launch metadata work and keeping print assets local-only. |
 | 2026-06-01 | 21:30 CEST | 21:42 CEST | 0:04 | Confirmed Cloudflare launch path and completed custom-domain DNS records with dashboard review. |
+| 2026-06-01 | 21:55 CEST | 21:57 CEST | 0:01 | Flagged final CTA layout issue after launch review, especially on phone. |
 
 ## Totals
 
-Active collaboration time used: 0:32
+Active collaboration time used: 0:33

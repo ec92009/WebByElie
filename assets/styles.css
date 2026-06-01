@@ -448,10 +448,26 @@ h3 {
 
 .signoff-box {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 24px;
+  grid-template-columns: minmax(260px, 0.78fr) minmax(260px, 1fr);
+  gap: clamp(22px, 5vw, 56px);
   align-items: center;
-  padding: 26px;
+  padding: clamp(24px, 5vw, 50px);
+}
+
+.signoff-box h2 {
+  max-width: 10ch;
+  margin-bottom: 0;
+}
+
+.signoff-box .button {
+  justify-self: end;
+  width: min(100%, 420px);
+  min-width: 0;
+  min-height: 58px;
+  padding: 0 26px;
+  text-align: center;
+  overflow-wrap: anywhere;
+  line-height: 1.1;
 }
 
 .footer {
@@ -789,7 +805,38 @@ html[data-theme="night"] .dark-demo-topbar {
     max-width: 9ch;
   }
 
+  .signoff-box {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .signoff-box h2 {
+    max-width: 12ch;
+  }
+
+  .signoff-box .button {
+    justify-self: stretch;
+    width: 100%;
+  }
+
   .advisor-table div {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .signoff-box {
+    padding: 24px 18px;
+  }
+
+  .signoff-box h2 {
+    max-width: 11ch;
+    font-size: clamp(2.1rem, 12vw, 3rem);
+  }
+
+  .signoff-box .button {
+    min-height: 54px;
+    padding: 0 14px;
+    font-size: 0.95rem;
   }
 }
