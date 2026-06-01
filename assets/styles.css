@@ -517,6 +517,30 @@ h3 {
   padding: 22px;
 }
 
+.work-steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.work-steps article {
+  border-top: 2px solid var(--line);
+  padding-top: 18px;
+}
+
+.work-steps span {
+  color: var(--accent-dark);
+  font-weight: 900;
+}
+
+.work-steps h3 {
+  margin: 8px 0 10px;
+}
+
+.work-steps p {
+  color: var(--muted);
+}
+
 .demo-cards h2,
 .studio-services h2 {
   margin-bottom: 10px;
@@ -724,6 +748,7 @@ html[data-theme="night"] .dark-demo-topbar {
   .site-demo .demo-hero,
   .demo-cards,
   .studio-services,
+  .work-steps,
   .demo-split,
   .savings-layout {
     grid-template-columns: 1fr;
