@@ -1,16 +1,16 @@
 # Web By Elie Summary
 
-Last updated: 2026-06-01 20:06 CEST
+Last updated: 2026-06-01 21:17 CEST
 
 ## Current State
 
 - Repo: `/Users/ecohen/Dev/WebByElie`
 - Branch: `main`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=93.5`
-- Local preview: `http://localhost:8094/?v=93.5`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=93.18`
+- Local preview: `http://localhost:8094/`
 - Intended domain: `web-by-elie.com`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v93.5`
+- Current visible version: `v93.18`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -28,15 +28,17 @@ Last updated: 2026-06-01 20:06 CEST
 - Added a shared generated hero image showing a geeky desk setup with two monitors, compact desktop computer, keyboard, mouse, notebook, and coffee.
 - Added a day/night mode toggle through `assets/theme.js`.
 - Added public policy pages: Privacy, Terms, and Data Deletion.
+- Added launch crawl basics: `robots.txt`, `sitemap.xml`, canonical metadata, and indexable public pages.
+- Added generated logo, QR assets, and a local-only print/coaster asset folder.
 - Added the site to the Webapps hub at `/Users/ecohen/Dev/Webapps`.
 
 ## Current Offer Copy
 
 The site now presents four service lanes:
 
-1. Website refresh: clearer pages, mobile flow, first impression, and contact paths.
-2. SEO: titles, descriptions, local/service wording, headings, links, and structure.
-3. AI-ready search: plain-language facts, service explanations, and FAQ-style content.
+1. Refresh: preserve useful existing work, explore possible looks, and build toward a final sign-off site.
+2. Search Engine Optimization: visible and behind-the-scenes checklist work for titles, descriptions, headings, links, service wording, locations, and structure.
+3. AI-ready search: clear facts, services, locations, and answers for chat and AI-search systems.
 4. Cost cleanup: unused subscriptions, overlapping tools, paid tiers, renewals, and unclear ownership.
 
 The money-saving angle was added after discussing work with Magali: in addition to improving web presence, Web By Elie can help small businesses reduce avoidable web/tooling spend.
@@ -52,10 +54,11 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `93.5`, displayed as `v93.5`.
+- Current version is `93.18`, displayed as `v93.18`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
-- GitHub Pages preview has been verified for `v93.5`.
+- Public pages are indexable; archived redirect pages remain `noindex, nofollow`.
+- Print/coaster files are kept locally in `private-print-assets/` and ignored by Git.
 
 ## Timelog
 
@@ -65,26 +68,23 @@ The money-saving angle was added after discussing work with Magali: in addition 
 
 ## Fresh Numbered Backlog
 
-1. Finalize production-readiness basics.
-   Add `robots.txt`, `sitemap.xml`, canonical metadata, and decide when to remove `noindex, nofollow`.
-
-2. Tighten homepage copy.
-   Refine the cost-cleanup language, make the four lanes feel balanced, and decide whether the hero should mention savings more directly.
-
-3. Prepare custom-domain launch.
+1. Prepare custom-domain launch.
    Configure `web-by-elie.com` using the GitHub/Cloudflare SOP, verify DNS/HTTPS, and preserve email-related records.
 
-4. Add lightweight proof/process detail.
-   Add a small section explaining how the work starts: current-site review, priorities, edits, handoff, and optional cost cleanup notes.
+2. Final browser/device polish.
+   Check the homepage, policy pages, sticky header, theme toggle, hero image, CTA layout, and service cards at desktop and phone widths.
 
-5. Improve mobile polish.
-   Check the four service cards, sticky header, theme toggle, hero image, and CTA layout at phone widths.
-
-6. Decide whether to keep GitHub Pages as preview only.
+3. Decide whether to keep GitHub Pages as preview only.
    If production should live on Cloudflare Pages, prepare that deployment path and keep GitHub Pages as a public preview/fallback.
 
-7. Build a reusable chooser scaffold.
+4. Do a final policy wording review.
+   Confirm Privacy, Terms, and Data Deletion are acceptable for launch and update if forms, analytics, payments, or accounts are added.
+
+5. Keep local print assets private.
+   Keep coaster/3D-print files in `private-print-assets/`; do not re-add them to published assets unless explicitly requested.
+
+6. Build a reusable chooser scaffold.
    If more chooser projects repeat this pattern, turn `CHOOSER_WORKFLOW_SOP.md` into a Codex skill or starter template.
 
-8. Keep the timelog current.
+7. Keep the timelog current.
    Update `TIMELOG.md` at the end of active collaboration bursts and whenever the clock is paused/resumed.

@@ -2,9 +2,9 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v93.5`
+Current visible version: `v93.18`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=93.5`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=93.18`
 
 Intended domain: `web-by-elie.com`
 
@@ -14,9 +14,9 @@ Contact email: `hello@web-by-elie.com`
 
 The current offer has four lanes:
 
-1. Website refresh: clearer pages, better mobile flow, stronger first impression, and simpler contact paths.
-2. SEO: page titles, descriptions, local/service wording, headings, links, and search-friendly structure.
-3. AI-ready search: plain-language facts, service explanations, and FAQ-style content that reduce guessing.
+1. Refresh: preserve useful existing work, explore possible looks, and build toward a final sign-off site.
+2. Search Engine Optimization: visible and behind-the-scenes checklist work for titles, descriptions, headings, links, service wording, locations, and structure.
+3. AI-ready search: clear facts, services, locations, and answers for chat and AI-search systems.
 4. Cost cleanup: unused subscriptions, overlapping tools, paid tiers, renewals, and unclear account ownership.
 
 ## Current Direction
@@ -31,7 +31,7 @@ Earlier chooser/proposal artifacts are archived under `Archive/`. The old propos
 python3 -m http.server 8094
 ```
 
-Then open `http://localhost:8094/?v=93.5`.
+Then open `http://localhost:8094/`.
 
 ## Files
 
@@ -40,6 +40,7 @@ Then open `http://localhost:8094/?v=93.5`.
 - `assets/styles.css`: site styling.
 - `assets/theme.js`: day/night mode toggle.
 - `assets/web-refresh-workspace.png`: generated shared hero image.
+- `robots.txt`, `sitemap.xml`: production crawl and sitemap basics.
 - `privacy.html`, `terms.html`, `data-deletion.html`: baseline public policy pages.
 - `SUMMARY.md`: current project handoff and backlog.
 - `TIMELOG.md`: active collaboration timelog.
@@ -54,7 +55,8 @@ Then open `http://localhost:8094/?v=93.5`.
 
 ## Launch Notes
 
-- The site still has `noindex, nofollow` while the offer and domain setup are being shaped.
-- Before production launch on `web-by-elie.com`, remove draft-only indexing restrictions if the site should be discoverable.
-- Add production basics before launch: `robots.txt`, `sitemap.xml`, custom-domain configuration, and final metadata.
+- Public pages are indexable and include canonical metadata for `https://web-by-elie.com/`.
+- Archived proposal redirect pages remain `noindex, nofollow`.
+- Production basics now include `robots.txt` and `sitemap.xml`.
+- 3D print/coaster files are kept locally under `private-print-assets/` and ignored by Git.
 - If the domain is hosted through Cloudflare, keep DNS and production edge settings in Cloudflare, with GitHub as source control.

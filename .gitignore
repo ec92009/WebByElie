@@ -3,3 +3,4 @@
 .playwright-mcp/
 node_modules/
 dist/
+private-print-assets/
