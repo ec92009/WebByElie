@@ -184,6 +184,56 @@ h3 {
   margin-bottom: 24px;
 }
 
+.look-picker {
+  position: sticky;
+  top: 77px;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 12px 28px rgba(29, 41, 48, 0.08);
+  backdrop-filter: blur(12px);
+}
+
+.look-choice {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0 14px;
+  background: var(--soft);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 900;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.look-choice span {
+  display: inline-grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--accent-dark);
+  font-size: 0.8rem;
+}
+
+.look-choice.is-selected {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: #fff;
+}
+
 .chooser-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -204,6 +254,13 @@ h3 {
   align-content: start;
   min-height: 100%;
   overflow: hidden;
+  transition: box-shadow 150ms ease, transform 150ms ease, border-color 150ms ease;
+}
+
+.option-card.is-selected {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgba(29, 41, 48, 0.14), var(--shadow);
+  transform: translateY(-2px);
 }
 
 .option-label {
@@ -380,6 +437,168 @@ h3 {
   padding: 26px;
 }
 
+.site-demo .demo-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+  gap: 42px;
+  align-items: center;
+  padding: 70px 0;
+}
+
+.demo-panel,
+.demo-cards article,
+.studio-services article,
+.advisor-table div,
+.advisor-checklist {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: 0 10px 28px rgba(29, 41, 48, 0.08);
+}
+
+.demo-panel {
+  padding: 28px;
+}
+
+.demo-panel strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+
+.demo-cards,
+.studio-services {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.demo-cards article,
+.studio-services article {
+  padding: 22px;
+}
+
+.demo-cards h2,
+.studio-services h2 {
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+
+.demo-split {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: center;
+}
+
+.friendly-demo {
+  --paper: #fff8ee;
+  --soft: #f7eadb;
+}
+
+.warm-note {
+  background: #fff2df;
+}
+
+.studio-demo {
+  --paper: #f7f8f6;
+  --ink: #151f25;
+  --accent-dark: #4e7d6f;
+}
+
+.dark-demo-topbar {
+  background: rgba(21, 31, 37, 0.94);
+  color: #fff;
+}
+
+.dark-demo-topbar .nav,
+.dark-demo-topbar .brand {
+  color: #fff;
+}
+
+.studio-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 12px;
+  min-height: 340px;
+}
+
+.studio-grid span {
+  border-radius: 8px;
+  background: #151f25;
+}
+
+.studio-grid span:nth-child(2),
+.studio-grid span:nth-child(3) {
+  background: #88ad9e;
+}
+
+.studio-grid span:nth-child(1) {
+  grid-row: span 2;
+}
+
+.studio-band {
+  background: #151f25;
+  color: #fff;
+}
+
+.studio-services article {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.studio-services span {
+  color: #9fc7b7;
+  font-weight: 900;
+}
+
+.studio-services p {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.advisor-demo {
+  --paper: #f7f8fb;
+  --accent-dark: #486895;
+}
+
+.advisor-checklist {
+  display: grid;
+  gap: 12px;
+  padding: 24px;
+}
+
+.advisor-checklist span {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.advisor-checklist span::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--blue);
+}
+
+.advisor-table {
+  display: grid;
+  gap: 10px;
+}
+
+.advisor-table div {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 18px;
+  padding: 18px;
+}
+
+.advisor-table span {
+  color: var(--muted);
+}
+
 @media (max-width: 820px) {
   .review-banner,
   .topbar-inner,
@@ -390,8 +609,17 @@ h3 {
   }
 
   .hero,
-  .chooser-grid {
+  .look-picker,
+  .chooser-grid,
+  .site-demo .demo-hero,
+  .demo-cards,
+  .studio-services,
+  .demo-split {
     grid-template-columns: 1fr;
+  }
+
+  .look-picker {
+    position: static;
   }
 
   .hero {
@@ -400,5 +628,9 @@ h3 {
 
   h1 {
     max-width: 9ch;
+  }
+
+  .advisor-table div {
+    grid-template-columns: 1fr;
   }
 }
