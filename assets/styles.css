@@ -554,24 +554,28 @@ h3 {
   align-items: center;
 }
 
-.savings-layout {
+.savings-layout,
+.budget-layout {
   display: grid;
   grid-template-columns: minmax(220px, 0.7fr) minmax(0, 1fr);
   gap: 28px;
   align-items: start;
 }
 
-.savings-list {
+.savings-list,
+.budget-list {
   display: grid;
   gap: 14px;
 }
 
-.savings-list p {
+.savings-list p,
+.budget-list p {
   margin: 0;
   color: var(--muted);
 }
 
-.savings-list strong {
+.savings-list strong,
+.budget-list strong {
   color: var(--ink);
 }
 
@@ -750,7 +754,8 @@ html[data-theme="night"] .dark-demo-topbar {
   .studio-services,
   .work-steps,
   .demo-split,
-  .savings-layout {
+  .savings-layout,
+  .budget-layout {
     grid-template-columns: 1fr;
   }
 

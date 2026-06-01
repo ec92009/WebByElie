@@ -22,7 +22,8 @@ Clock state: running
 | 2026-06-01 | 20:41 CEST | 20:42 CEST | 0:01 | Requested longer cost cleanup copy to balance the service panels. |
 | 2026-06-01 | 20:44 CEST | 20:46 CEST | 0:02 | Requested a How We Work section with existing-site reuse and intake interview language. |
 | 2026-06-01 | 20:47 CEST | 20:48 CEST | 0:01 | Flagged obsolete summary section after adding How We Work. |
+| 2026-06-01 | 20:49 CEST | 20:51 CEST | 0:02 | Requested budget and retainer language with hourly accounting and 50% warning. |
 
 ## Totals
 
-Active collaboration time used: 0:18
+Active collaboration time used: 0:20
