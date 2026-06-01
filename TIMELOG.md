@@ -12,7 +12,9 @@ Clock state: running
 | --- | ---: | ---: | ---: | --- |
 | 2026-06-01 | 20:03 CEST | 20:04 CEST | 0:01 | Started the project timelog and clock. |
 | 2026-06-01 | 20:05 CEST | 20:07 CEST | 0:02 | Requested docs refresh, conversation summary, commit/push, and fresh backlog. |
+| 2026-06-01 | 20:08 CEST | 20:10 CEST | 0:02 | Directed logo concept board scope and numbering. |
+| 2026-06-01 | 20:10 CEST | 20:12 CEST | 0:02 | Chose final logo direction and generated the logo asset. |
 
 ## Totals
 
-Active collaboration time used: 0:03
+Active collaboration time used: 0:07
