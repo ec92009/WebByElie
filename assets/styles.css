@@ -115,6 +115,18 @@ a {
   cursor: pointer;
 }
 
+.version-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  padding: 0 10px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 0.88fr) minmax(320px, 1.12fr);
