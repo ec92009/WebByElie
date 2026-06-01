@@ -61,6 +61,11 @@ a {
   backdrop-filter: blur(12px);
 }
 
+.topbar-stack {
+  display: grid;
+  gap: 0;
+}
+
 .topbar-inner,
 .footer-inner {
   display: flex;
@@ -85,6 +90,18 @@ a {
 
 .nav a {
   text-decoration: none;
+}
+
+.theme-toggle {
+  min-height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0 14px;
+  background: var(--panel);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 900;
+  cursor: pointer;
 }
 
 .hero {
@@ -185,9 +202,6 @@ h3 {
 }
 
 .look-picker {
-  position: sticky;
-  top: 77px;
-  z-index: 2;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
@@ -494,6 +508,56 @@ h3 {
 .friendly-demo {
   --paper: #fff8ee;
   --soft: #f7eadb;
+}
+
+html[data-theme="night"] body {
+  background: #111a20;
+  color: #f7fbf8;
+}
+
+html[data-theme="night"] body,
+html[data-theme="night"] .friendly-demo,
+html[data-theme="night"] .studio-demo,
+html[data-theme="night"] .advisor-demo {
+  --ink: #f7fbf8;
+  --muted: #c0cbd0;
+  --paper: #111a20;
+  --panel: #18242c;
+  --soft: #20313a;
+  --line: #34454e;
+  --accent-dark: #f0a56f;
+  --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="night"] .topbar,
+html[data-theme="night"] .review-banner {
+  background: rgba(17, 26, 32, 0.96);
+  color: #f7fbf8;
+}
+
+html[data-theme="night"] .section.alt,
+html[data-theme="night"] .studio-band {
+  background: #162129;
+}
+
+html[data-theme="night"] .look-choice span {
+  background: #f7fbf8;
+  color: #18242c;
+}
+
+html[data-theme="night"] .look-choice.is-selected,
+html[data-theme="night"] .button {
+  background: #f7fbf8;
+  color: #111a20;
+}
+
+html[data-theme="night"] .button.secondary {
+  background: transparent;
+  color: #f7fbf8;
+}
+
+html[data-theme="night"] .dark-demo-topbar {
+  background: rgba(17, 26, 32, 0.96);
 }
 
 .warm-note {
