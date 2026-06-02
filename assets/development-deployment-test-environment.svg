@@ -1,0 +1,171 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Development, deployment, and test environment</title>
+  <desc id="desc">Infographic showing how local development flows through GitHub and Cloudflare to the live websites, with browser testing and Gmail-to-Telegram CTA monitoring.</desc>
+  <defs>
+    <style>
+      :root {
+        --ink: #102027;
+        --muted: #526870;
+        --paper: #f7faf8;
+        --line: #c9d8d2;
+        --navy: #1e3035;
+        --green: #4f8373;
+        --blue: #597d99;
+        --rust: #c87345;
+        --yellow: #e6bd69;
+        --white: #ffffff;
+      }
+      .bg { fill: var(--paper); }
+      .title { font: 800 58px/1.05 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--ink); letter-spacing: 0; }
+      .subtitle { font: 500 25px/1.35 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--muted); letter-spacing: 0; }
+      .eyebrow { font: 800 18px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--green); letter-spacing: 1.5px; text-transform: uppercase; }
+      .card { fill: var(--white); stroke: var(--line); stroke-width: 3; }
+      .card-dark { fill: var(--navy); stroke: #41545a; stroke-width: 3; }
+      .step-num { font: 800 24px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--green); }
+      .card-title { font: 800 31px/1.05 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--ink); letter-spacing: 0; }
+      .card-title-light { font: 800 31px/1.05 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--white); letter-spacing: 0; }
+      .body { font: 500 22px/1.32 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--muted); letter-spacing: 0; }
+      .body-light { font: 500 22px/1.32 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #d9e5e1; letter-spacing: 0; }
+      .label { font: 800 18px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--ink); letter-spacing: 0; }
+      .small { font: 600 16px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--muted); letter-spacing: 0; }
+      .pill { fill: #eef5f1; stroke: #c9d8d2; stroke-width: 2; }
+      .pill-text { font: 750 17px/1 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: var(--ink); letter-spacing: 0; }
+      .connector { fill: none; stroke: var(--green); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
+      .connector-muted { fill: none; stroke: #b8c9c4; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 10 12; }
+      .icon-line { fill: none; stroke: currentColor; stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+      .icon-fill { fill: currentColor; }
+      .navy-icon { color: var(--navy); }
+      .green-icon { color: var(--green); }
+      .blue-icon { color: var(--blue); }
+      .rust-icon { color: var(--rust); }
+      .yellow-icon { color: var(--yellow); }
+    </style>
+    <marker id="arrow" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="strokeWidth">
+      <path d="M2 2 L16 9 L2 16 Z" fill="#4f8373"/>
+    </marker>
+    <marker id="arrow-muted" markerWidth="18" markerHeight="18" refX="15" refY="9" orient="auto" markerUnits="strokeWidth">
+      <path d="M2 2 L16 9 L2 16 Z" fill="#b8c9c4"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1600" height="1000"/>
+
+  <g transform="translate(80 70)">
+    <text class="eyebrow" x="0" y="0">Web By Elie workflow</text>
+    <text class="title" x="0" y="70">Development, deployment, and test environment</text>
+    <text class="subtitle" x="0" y="118">Small local edits become versioned GitHub history, Cloudflare production deploys, browser checks, and Telegram-aware CTA monitoring.</text>
+  </g>
+
+  <path class="connector" d="M370 345 H505" marker-end="url(#arrow)"/>
+  <path class="connector" d="M735 345 H870" marker-end="url(#arrow)"/>
+  <path class="connector" d="M1100 345 H1235" marker-end="url(#arrow)"/>
+
+  <g transform="translate(80 230)">
+    <rect class="card" x="0" y="0" width="290" height="250" rx="8"/>
+    <text class="step-num" x="30" y="48">01</text>
+    <g class="navy-icon" transform="translate(205 30)">
+      <path class="icon-line" d="M12 54 L44 22 L76 54"/>
+      <path class="icon-line" d="M23 51 V83 H67 V51"/>
+      <path class="icon-line" d="M38 83 V63 H52 V83"/>
+    </g>
+    <text class="card-title" x="30" y="96">Local workspace</text>
+    <text class="body" x="30" y="138">Edit source files,</text>
+    <text class="body" x="30" y="169">preview on localhost,</text>
+    <text class="body" x="30" y="200">and keep private work</text>
+    <text class="body" x="30" y="231">out of public code.</text>
+  </g>
+
+  <g transform="translate(505 230)">
+    <rect class="card" x="0" y="0" width="230" height="250" rx="8"/>
+    <text class="step-num" x="28" y="48">02</text>
+    <g class="green-icon" transform="translate(154 31)">
+      <path class="icon-line" d="M16 24 H74"/>
+      <path class="icon-line" d="M16 45 H74"/>
+      <path class="icon-line" d="M16 66 H56"/>
+      <circle class="icon-fill" cx="18" cy="24" r="6"/>
+      <circle class="icon-fill" cx="18" cy="45" r="6"/>
+      <circle class="icon-fill" cx="18" cy="66" r="6"/>
+    </g>
+    <text class="card-title" x="28" y="96">GitHub</text>
+    <text class="body" x="28" y="138">Source of truth:</text>
+    <text class="body" x="28" y="169">commits, diffs,</text>
+    <text class="body" x="28" y="200">history, review,</text>
+    <text class="body" x="28" y="231">and fallback preview.</text>
+  </g>
+
+  <g transform="translate(870 230)">
+    <rect class="card-dark" x="0" y="0" width="230" height="250" rx="8"/>
+    <text class="step-num" x="28" y="48">03</text>
+    <g class="yellow-icon" transform="translate(154 30)">
+      <path class="icon-line" d="M45 15 L75 32 V66 L45 83 L15 66 V32 Z"/>
+      <path class="icon-line" d="M18 33 L45 49 L72 33"/>
+      <path class="icon-line" d="M45 49 V82"/>
+    </g>
+    <text class="card-title-light" x="28" y="96">Cloudflare</text>
+    <text class="body-light" x="28" y="138">Production surface:</text>
+    <text class="body-light" x="28" y="169">Pages, DNS, HTTPS,</text>
+    <text class="body-light" x="28" y="200">redirects, headers,</text>
+    <text class="body-light" x="28" y="231">and cache behavior.</text>
+  </g>
+
+  <g transform="translate(1235 230)">
+    <rect class="card" x="0" y="0" width="285" height="250" rx="8"/>
+    <text class="step-num" x="30" y="48">04</text>
+    <g class="blue-icon" transform="translate(200 28)">
+      <rect x="12" y="20" width="76" height="56" rx="8" class="icon-line"/>
+      <path class="icon-line" d="M28 88 H72"/>
+      <path class="icon-line" d="M50 76 V88"/>
+      <path class="icon-line" d="M25 37 H75"/>
+    </g>
+    <text class="card-title" x="30" y="96">Live sites</text>
+    <text class="body" x="30" y="138">Versioned URLs,</text>
+    <text class="body" x="30" y="169">public policy pages,</text>
+    <text class="body" x="30" y="200">visitor CTAs, and</text>
+    <text class="body" x="30" y="231">search-ready pages.</text>
+  </g>
+
+  <g transform="translate(80 570)">
+    <rect class="card" x="0" y="0" width="690" height="280" rx="8"/>
+    <text class="eyebrow" x="32" y="48">Testing loop</text>
+    <text class="card-title" x="32" y="92">Check before and after launch</text>
+    <text class="body" x="32" y="135">Local browser checks catch layout, copy, and interaction issues before deploy.</text>
+    <text class="body" x="32" y="168">Production checks confirm DNS, HTTPS, cache-busting, mobile layout, and CTA paths.</text>
+
+    <g transform="translate(32 205)">
+      <rect class="pill" x="0" y="0" width="148" height="48" rx="24"/>
+      <text class="pill-text" x="28" y="31">localhost</text>
+      <rect class="pill" x="166" y="0" width="126" height="48" rx="24"/>
+      <text class="pill-text" x="199" y="31">Safari</text>
+      <rect class="pill" x="310" y="0" width="132" height="48" rx="24"/>
+      <text class="pill-text" x="346" y="31">Chrome</text>
+      <rect class="pill" x="460" y="0" width="148" height="48" rx="24"/>
+      <text class="pill-text" x="498" y="31">Phone</text>
+    </g>
+  </g>
+
+  <g transform="translate(850 570)">
+    <rect class="card" x="0" y="0" width="670" height="280" rx="8"/>
+    <text class="eyebrow" x="32" y="48">CTA monitor</text>
+    <text class="card-title" x="32" y="92">Email criteria trigger Telegram</text>
+    <text class="body" x="32" y="135">One hourly automation checks both inbox rules from 10:00 to 22:00.</text>
+
+    <g transform="translate(32 164)">
+      <rect class="pill" x="0" y="0" width="278" height="48" rx="24"/>
+      <text class="pill-text" x="22" y="31">hello@web-by-elie.com</text>
+      <rect class="pill" x="0" y="64" width="318" height="48" rx="24"/>
+      <text class="pill-text" x="22" y="95">orders@photos-by-elie.com</text>
+    </g>
+
+    <path class="connector-muted" d="M365 198 H465" marker-end="url(#arrow-muted)"/>
+    <g class="rust-icon" transform="translate(482 172)">
+      <path class="icon-line" d="M12 18 H88 V74 H31 L12 90 V18 Z"/>
+      <path class="icon-line" d="M28 38 H72"/>
+      <path class="icon-line" d="M28 56 H58"/>
+    </g>
+    <text class="label" x="520" y="249">Telegram alert</text>
+  </g>
+
+  <g transform="translate(80 900)">
+    <text class="small" x="0" y="0">Operating rule: GitHub keeps the working history; Cloudflare serves production; tests run on both local and live URLs; CTA email is monitored without depending on subject lines.</text>
+  </g>
+</svg>
