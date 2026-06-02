@@ -6,11 +6,11 @@ Last updated: 2026-06-01 21:17 CEST
 
 - Repo: `/Users/ecohen/Dev/WebByElie`
 - Branch: `main`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=93.19`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=94.0`
 - Local preview: `http://localhost:8094/`
 - Intended domain: `web-by-elie.com`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v93.19`
+- Current visible version: `v94.0`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -54,7 +54,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `93.19`, displayed as `v93.19`.
+- Current version is `94.0`, displayed as `v94.0`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Public pages are indexable; archived redirect pages remain `noindex, nofollow`.

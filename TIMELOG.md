@@ -32,7 +32,8 @@ Clock state: running
 | 2026-06-01 | 21:16 CEST | 21:19 CEST | 0:01 | Approved launch metadata work and keeping print assets local-only. |
 | 2026-06-01 | 21:30 CEST | 21:42 CEST | 0:04 | Confirmed Cloudflare launch path and completed custom-domain DNS records with dashboard review. |
 | 2026-06-01 | 21:55 CEST | 21:57 CEST | 0:01 | Flagged final CTA layout issue after launch review, especially on phone. |
+| 2026-06-02 | 08:20 CEST | 08:22 CEST | 0:01 | Requested phone-only header control layout adjustment for version and theme switch. |
 
 ## Totals
 
-Active collaboration time used: 0:33
+Active collaboration time used: 0:34
