@@ -4,7 +4,8 @@
   "scripts": {
     "remotion:preview": "remotion studio remotion/index.ts",
     "remotion:still": "remotion still remotion/index.ts WebByElieExplainer --frame=300 --output=outputs/web-by-elie-explainer-frame.png",
-    "remotion:render": "remotion render remotion/index.ts WebByElieExplainer outputs/web-by-elie-explainer.mp4"
+    "remotion:render": "remotion render remotion/index.ts WebByElieExplainer outputs/web-by-elie-explainer.mp4",
+    "remotion:render:notebooklm": "remotion render remotion/index.ts NotebookLmExplainer outputs/web-by-elie-notebooklm-explainer.mp4"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.376",
