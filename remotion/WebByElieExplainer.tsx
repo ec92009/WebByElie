@@ -61,11 +61,13 @@ const Footer: React.FC = () => (
 );
 
 const CheckLine: React.FC<{text: string; crossed?: boolean; delay?: number; frame: number}> = ({text, crossed, delay = 0, frame}) => {
-  const p = pop(frame, delay);
-  const slash = easeIn(frame, delay + 12, delay + 30);
+  const p = pop(frame, 0);
+  const actionStart = 88 + delay * 0.35;
+  const slash = easeIn(frame, actionStart, actionStart + 22);
+  const circleFill = crossed ? (slash > 0.05 ? C.red : C.green) : C.green;
   return (
-    <div style={{position: 'relative', display: 'flex', alignItems: 'center', gap: 16, opacity: fade(frame, delay, delay + 16), transform: `translateY(${(1 - p) * 18}px)`}}>
-      <div style={{width: 34, height: 34, borderRadius: 17, background: crossed ? C.red : C.green, color: '#fff', display: 'grid', placeItems: 'center', fontSize: 24, fontWeight: 900}}>✓</div>
+    <div style={{position: 'relative', display: 'flex', alignItems: 'center', gap: 16, opacity: fade(frame, 0, 16), transform: `translateY(${(1 - p) * 18}px)`}}>
+      <div style={{width: 34, height: 34, borderRadius: 17, background: circleFill, color: '#fff', display: 'grid', placeItems: 'center', fontSize: 24, fontWeight: 900}}>✓</div>
       <div style={{fontSize: 32, fontWeight: 850, color: crossed ? C.muted : C.ink}}>{text}</div>
       {crossed ? <div style={{position: 'absolute', left: 56, right: 0, top: 22, height: 5, background: C.red, transformOrigin: 'left center', transform: `scaleX(${slash}) rotate(-1deg)`}} /> : null}
     </div>
@@ -238,35 +240,74 @@ const Scene7: React.FC<{f: number}> = ({f}) => (
   </SceneShell>
 );
 
+const lerp = (from: number, to: number, t: number) => from + (to - from) * t;
+
 const Dollar: React.FC<{f: number; i: number}> = ({f, i}) => {
-  const out = easeIn(f, 20 + i * 6, 80 + i * 6);
-  const back = easeIn(f, 96 + i * 4, 145 + i * 4);
-  const x = interpolate(out, [0, 1], [0, 620]) - interpolate(back, [0, 1], [0, 650]);
-  const y = Math.sin((i + out) * 1.6) * 42 - back * 80;
-  return <div style={{position: 'absolute', left: 480 + x, top: 230 + y + i * 12, fontSize: 50, fontWeight: 950, color: C.green, opacity: clamp(0.3 + out - back * 0.1)}}>$</div>;
+  const win = Math.floor(i / 3);
+  const lane = i % 3;
+  const leak = easeIn(f, 6 + i * 3, 52 + i * 3);
+  const returnStart = 96 + win * 10 + lane * 3;
+  const returned = easeIn(f, returnStart, returnStart + 28);
+  const startX = 760 + (i % 3) * 34;
+  const startY = 322 + lane * 32;
+  const offX = 860 + lane * 82 + win * 18;
+  const offY = -170 - lane * 36 - win * 22;
+  const endX = 775 + lane * 28;
+  const endY = 328 - win * 28 + lane * 4;
+  const leakX = lerp(startX, offX, leak);
+  const leakY = lerp(startY, offY, leak) + Math.sin((f + i * 11) / 12) * 10;
+  const arc = Math.sin(returned * Math.PI) * 95;
+  const x = lerp(leakX, endX, returned);
+  const y = lerp(leakY, endY, returned) - arc;
+  return (
+    <div style={{position: 'absolute', left: x, top: y, fontSize: 50, fontWeight: 950, color: C.green, opacity: fade(f, 0, 14), transform: `rotate(${lerp(12 - lane * 8, -6 + lane * 5, returned)}deg)`}}>
+      $
+    </div>
+  );
+};
+
+const CostItem: React.FC<{item: string; f: number; i: number}> = ({item, f, i}) => {
+  const strikeStart = 96 + i * 10;
+  const slash = easeIn(f, strikeStart, strikeStart + 22);
+  const muted = slash > 0.05;
+  return (
+    <div style={{position: 'absolute', left: 40 + i * 42, top: 55 + i * 48, width: 350, height: 58, borderRadius: 10, background: '#fff', border: `3px solid ${muted ? '#efb2aa' : C.line}`, display: 'flex', alignItems: 'center', paddingLeft: 24, fontSize: 24, fontWeight: 900, color: muted ? C.muted : C.ink, opacity: fade(f, i * 7, i * 7 + 18)}}>
+      {item}
+      <div style={{position: 'absolute', left: 18, right: 18, top: 27, height: 4, background: C.red, borderRadius: 4, transformOrigin: 'left center', transform: `scaleX(${slash}) rotate(-1deg)`}} />
+      <div style={{position: 'absolute', right: -18, top: -13, width: 34, height: 34, borderRadius: 17, background: slash > 0.05 ? C.red : C.green, color: '#fff', display: 'grid', placeItems: 'center', fontSize: 23, fontWeight: 950, opacity: fade(f, strikeStart - 4, strikeStart + 10)}}>✓</div>
+    </div>
+  );
+};
+
+const CashStack: React.FC<{f: number}> = ({f}) => {
+  const wins = [96, 106, 116, 126, 136, 146, 156];
+  return (
+    <div style={{position: 'absolute', right: 20, bottom: 58, width: 260, height: 250}}>
+      {wins.map((start, i) => {
+        const p = pop(f, start);
+        const visible = fade(f, start - 4, start + 10);
+        return (
+          <div key={start} style={{position: 'absolute', left: 0, bottom: i * 34, width: 250, height: 46, borderRadius: 9, background: i % 2 ? '#7fb391' : '#65a47a', border: '4px solid #3f7757', display: 'grid', placeItems: 'center', color: '#17351f', fontSize: 27, fontWeight: 950, opacity: visible, transform: `translateY(${(1 - p) * 24}px) scale(${0.95 + p * 0.05})`}}>$100</div>
+        );
+      })}
+    </div>
+  );
 };
 
 const Scene8: React.FC<{f: number}> = ({f}) => {
-  const stack = Math.floor(easeIn(f, 104, 162) * 7);
   return (
     <SceneShell>
       <Title eyebrow="Checklist: Cost cleanup sleuth">Bring quiet waste back under control.</Title>
-      <div style={{display: 'grid', gridTemplateColumns: '1fr 520px', gap: 70, marginTop: 70, alignItems: 'center'}}>
+      <div style={{display: 'grid', gridTemplateColumns: '720px 1fr', gap: 72, marginTop: 70, alignItems: 'center'}}>
         <div style={{position: 'relative', height: 520}}>
           {['Domains', 'Hosting', 'Plugins', 'Email tools', 'Booking', 'Analytics', 'AI/Image tools'].map((item, i) => (
-            <div key={item} style={{position: 'absolute', left: 40 + i * 42, top: 55 + i * 48, width: 350, height: 58, borderRadius: 10, background: '#fff', border: `3px solid ${C.line}`, display: 'flex', alignItems: 'center', paddingLeft: 24, fontSize: 24, fontWeight: 900, color: C.ink, opacity: fade(f, i * 7, i * 7 + 18)}}>{item}</div>
+            <CostItem key={item} item={item} f={f} i={i} />
           ))}
-          {Array.from({length: 12}).map((_, i) => <Dollar key={i} f={f} i={i} />)}
-          <div style={{position: 'absolute', right: 20, bottom: 58, width: 230, height: 210}}>
-            {Array.from({length: stack + 1}).map((_, i) => (
-              <div key={i} style={{position: 'absolute', left: 0, bottom: i * 15, width: 220, height: 42, borderRadius: 8, background: i % 2 ? '#7fb391' : '#65a47a', border: '4px solid #3f7757', display: 'grid', placeItems: 'center', color: '#17351f', fontSize: 26, fontWeight: 950}}>$100</div>
-            ))}
-          </div>
         </div>
-        <div style={{display: 'grid', gap: 22}}>
-          {['Unused subscriptions', 'Duplicate tools', 'Mystery renewals', 'Scattered logins'].map((text, i) => (
-            <CheckLine key={text} text={text} crossed frame={f} delay={82 + i * 17} />
-          ))}
+        <div style={{position: 'relative', height: 520}}>
+          <div style={{position: 'absolute', left: 40, top: 74, width: 440, fontSize: 36, lineHeight: 1.12, fontWeight: 950, color: C.ink, opacity: fade(f, 0, 18)}}>Each cleanup win turns waste into room to breathe.</div>
+          {Array.from({length: 21}).map((_, i) => <Dollar key={i} f={f} i={i} />)}
+          <CashStack f={f} />
         </div>
       </div>
     </SceneShell>
