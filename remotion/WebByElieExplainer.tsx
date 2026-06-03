@@ -2,13 +2,17 @@ import React from 'react';
 import {
   AbsoluteFill,
   Img,
+  Sequence,
   interpolate,
   spring,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from 'remotion';
+import {Audio} from '@remotion/media';
 import logo from '../assets/web-by-elie-logo.svg';
 import workspace from '../assets/web-refresh-workspace.png';
+import {CUES, LINES, SCENES} from './narration.generated';
 
 const C = {
   ink: '#102027',
@@ -25,8 +29,8 @@ const C = {
   red: '#d34a3a',
 };
 
-const sceneStarts = [0, 180, 360, 540, 720, 930, 1110, 1290, 1500, 1710, 1890];
-const sceneDuration = 180;
+const sceneStarts = SCENES.map((scene) => scene.startFrame);
+const sceneDurations = SCENES.map((scene) => scene.durationFrames);
 
 const clamp = (value: number, min = 0, max = 1) => Math.max(min, Math.min(max, value));
 
@@ -37,6 +41,9 @@ const fade = (frame: number, start = 0, end = 18) =>
 
 const easeIn = (frame: number, start: number, end: number) =>
   interpolate(frame, [start, end], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+
+const cue = (id: keyof typeof CUES, sceneIndex: number, fallback: number) =>
+  typeof CUES[id] === 'number' ? CUES[id] - sceneStarts[sceneIndex] : fallback;
 
 const pop = (frame: number, delay = 0) => {
   const {fps} = useVideoConfig();
@@ -98,6 +105,26 @@ const SceneShell: React.FC<{children: React.ReactNode; dark?: boolean}> = ({chil
   </AbsoluteFill>
 );
 
+const Caption: React.FC<{speaker: 'female' | 'male'; children: React.ReactNode}> = ({speaker, children}) => (
+  <div style={{position: 'absolute', left: 230, right: 230, bottom: 104, display: 'flex', justifyContent: speaker === 'female' ? 'flex-start' : 'flex-end', pointerEvents: 'none', fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif'}}>
+    <div style={{maxWidth: 980, padding: '15px 22px', borderRadius: 14, background: speaker === 'female' ? 'rgba(255,255,255,.94)' : 'rgba(16,32,39,.92)', color: speaker === 'female' ? C.ink : '#fff', border: `3px solid ${speaker === 'female' ? C.line : 'rgba(255,255,255,.18)'}`, boxShadow: '0 18px 50px rgba(16,32,39,.12)', fontSize: 23, lineHeight: 1.18, fontWeight: 780}}>
+      <span style={{color: speaker === 'female' ? C.green : '#b8d8ca', textTransform: 'uppercase', fontSize: 15, fontWeight: 950, marginRight: 10}}>{speaker === 'female' ? 'Voice 1' : 'Voice 2'}</span>
+      {children}
+    </div>
+  </div>
+);
+
+const NarrationLayer: React.FC = () => (
+  <>
+    {LINES.map((line) => (
+      <Sequence key={line.id} from={line.startFrame} durationInFrames={line.durationFrames + 4}>
+        <Audio src={staticFile(line.file)} />
+        <Caption speaker={line.speaker}>{line.text}</Caption>
+      </Sequence>
+    ))}
+  </>
+);
+
 const Scene1: React.FC<{f: number}> = ({f}) => (
   <SceneShell>
     <div style={{display: 'grid', gridTemplateColumns: '1fr 760px', gap: 80, alignItems: 'center', height: '100%'}}>
@@ -134,7 +161,7 @@ const Scene3: React.FC<{f: number}> = ({f}) => (
       <BrowserMock frame={f} />
       <div style={{display: 'grid', gap: 28}}>
         {['Dated look', 'Weak search signals', 'AI cannot extract clear facts', 'Quiet recurring costs'].map((text, i) => (
-          <CheckLine key={text} text={text} crossed frame={f} delay={88 + i * 28} />
+          <CheckLine key={text} text={text} crossed frame={f} delay={sequential([cue('problemDated', 2, 88), cue('problemSearch', 2, 116), cue('problemAi', 2, 144), cue('problemCosts', 2, 172)])[i]} />
         ))}
       </div>
     </div>
@@ -189,7 +216,7 @@ const Scene5: React.FC<{f: number}> = ({f}) => (
       <div style={{display: 'grid', gap: 26}}>
         <div style={{fontSize: 30, lineHeight: 1.22, color: C.ink, fontWeight: 850, opacity: fade(f, 104, 126)}}>Promote one direction, then mix in useful pieces from the existing site.</div>
         {['Guessing from abstract descriptions', 'Losing existing work', 'No clear sign-off direction'].map((text, i) => (
-          <CheckLine key={text} text={text} crossed frame={f} delay={96 + i * 28} />
+          <CheckLine key={text} text={text} crossed frame={f} delay={sequential([cue('refreshGuessing', 4, 96), cue('refreshPreserve', 4, 124), cue('refreshSignoff', 4, 152)])[i]} />
         ))}
       </div>
     </div>
@@ -219,7 +246,7 @@ const Scene6: React.FC<{f: number}> = ({f}) => (
       <Sleuth f={f} />
       <div style={{display: 'grid', gap: 22}}>
         {['Missing titles', 'Vague headings', 'Weak service/location signals', 'Images with no useful labels'].map((text, i) => (
-          <CheckLine key={text} text={text} crossed frame={f} delay={88 + i * 28} />
+          <CheckLine key={text} text={text} crossed frame={f} delay={sequential([cue('searchTitles', 5, 88), cue('searchHeadings', 5, 116), cue('searchServices', 5, 144), cue('searchImages', 5, 172)])[i]} />
         ))}
       </div>
     </div>
@@ -233,7 +260,7 @@ const Scene7: React.FC<{f: number}> = ({f}) => (
       <Sleuth f={f} ai />
       <div style={{display: 'grid', gap: 22}}>
         {['AI cannot tell what you do', 'Services are buried', 'Important facts are scattered', 'No clean answers'].map((text, i) => (
-          <CheckLine key={text} text={text} crossed frame={f} delay={88 + i * 28} />
+          <CheckLine key={text} text={text} crossed frame={f} delay={sequential([cue('aiWhoWhat', 6, 88), cue('aiServices', 6, 116), cue('aiFacts', 6, 144), cue('aiAnswers', 6, 172)])[i]} />
         ))}
       </div>
     </div>
@@ -242,11 +269,19 @@ const Scene7: React.FC<{f: number}> = ({f}) => (
 
 const lerp = (from: number, to: number, t: number) => from + (to - from) * t;
 
-const Dollar: React.FC<{f: number; i: number}> = ({f, i}) => {
+function sequential(starts: number[], gap = 28) {
+  return starts.reduce<number[]>((acc, start) => {
+    const previous = acc[acc.length - 1];
+    acc.push(previous === undefined ? start : Math.max(start, previous + gap));
+    return acc;
+  }, []);
+}
+
+const Dollar: React.FC<{f: number; i: number; returnStarts: number[]}> = ({f, i, returnStarts}) => {
   const win = Math.floor(i / 3);
   const lane = i % 3;
   const leak = easeIn(f, 6 + i * 3, 52 + i * 3);
-  const returnStart = 86 + win * 12 + lane * 2;
+  const returnStart = (returnStarts[win] ?? 86 + win * 12) + lane * 2;
   const returned = easeIn(f, returnStart, returnStart + 28);
   const startX = 760 + (i % 3) * 34;
   const startY = 322 + lane * 32;
@@ -266,8 +301,7 @@ const Dollar: React.FC<{f: number; i: number}> = ({f, i}) => {
   );
 };
 
-const CostItem: React.FC<{item: string; f: number; i: number}> = ({item, f, i}) => {
-  const strikeStart = 86 + i * 12;
+const CostItem: React.FC<{item: string; f: number; i: number; strikeStart: number}> = ({item, f, i, strikeStart}) => {
   const slash = easeIn(f, strikeStart, strikeStart + 10);
   const muted = slash > 0.05;
   return (
@@ -279,8 +313,7 @@ const CostItem: React.FC<{item: string; f: number; i: number}> = ({item, f, i}) 
   );
 };
 
-const CashStack: React.FC<{f: number}> = ({f}) => {
-  const wins = [86, 98, 110, 122, 134, 146, 158];
+const CashStack: React.FC<{f: number; wins: number[]}> = ({f, wins}) => {
   return (
     <div style={{position: 'absolute', right: 20, bottom: 58, width: 260, height: 250}}>
       {wins.map((start, i) => {
@@ -295,19 +328,28 @@ const CashStack: React.FC<{f: number}> = ({f}) => {
 };
 
 const Scene8: React.FC<{f: number}> = ({f}) => {
+  const costStarts = sequential([
+    cue('costDomains', 7, 86),
+    cue('costHosting', 7, 98),
+    cue('costPlugins', 7, 110),
+    cue('costEmail', 7, 122),
+    cue('costBooking', 7, 134),
+    cue('costAnalytics', 7, 146),
+    cue('costImages', 7, 158),
+  ], 12);
   return (
     <SceneShell>
       <Title eyebrow="Checklist: Cost cleanup sleuth">Bring quiet waste back under control.</Title>
       <div style={{display: 'grid', gridTemplateColumns: '720px 1fr', gap: 72, marginTop: 70, alignItems: 'center'}}>
         <div style={{position: 'relative', height: 520}}>
           {['Domains', 'Hosting', 'Plugins', 'Email tools', 'Booking', 'Analytics', 'AI/Image tools'].map((item, i) => (
-            <CostItem key={item} item={item} f={f} i={i} />
+            <CostItem key={item} item={item} f={f} i={i} strikeStart={costStarts[i]} />
           ))}
         </div>
         <div style={{position: 'relative', height: 520}}>
           <div style={{position: 'absolute', left: 40, top: 74, width: 440, fontSize: 36, lineHeight: 1.12, fontWeight: 950, color: C.ink, opacity: fade(f, 0, 18)}}>Each cleanup win turns waste into room to breathe.</div>
-          {Array.from({length: 21}).map((_, i) => <Dollar key={i} f={f} i={i} />)}
-          <CashStack f={f} />
+          {Array.from({length: 21}).map((_, i) => <Dollar key={i} f={f} i={i} returnStarts={costStarts} />)}
+          <CashStack f={f} wins={costStarts} />
         </div>
       </div>
     </SceneShell>
@@ -423,13 +465,15 @@ export const WebByElieExplainer: React.FC = () => {
   const index = sceneStarts.findLastIndex((start) => frame >= start);
   const Scene = scenes[index] || Scene1;
   const f = sceneFrame(frame, index);
-  const leaving = frame - sceneStarts[index] > sceneDuration - 24 && index < scenes.length - 1;
-  const o = leaving ? interpolate(frame - sceneStarts[index], [sceneDuration - 24, sceneDuration], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) : 1;
+  const duration = sceneDurations[index] || sceneDurations[0] || 180;
+  const leaving = f > duration - 24 && index < scenes.length - 1;
+  const o = leaving ? interpolate(f, [duration - 24, duration], [1, 0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) : 1;
   return (
     <AbsoluteFill style={{background: C.paper}}>
       <div style={{opacity: o}}>
         <Scene f={f} />
       </div>
+      <NarrationLayer />
     </AbsoluteFill>
   );
 };
