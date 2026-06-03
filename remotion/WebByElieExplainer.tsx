@@ -25,7 +25,7 @@ const C = {
   red: '#d34a3a',
 };
 
-const sceneStarts = [0, 180, 360, 540, 720, 930, 1110, 1290, 1500, 1710];
+const sceneStarts = [0, 180, 360, 540, 720, 930, 1110, 1290, 1500, 1710, 1890];
 const sceneDuration = 180;
 
 const clamp = (value: number, min = 0, max = 1) => Math.max(min, Math.min(max, value));
@@ -62,7 +62,7 @@ const Footer: React.FC = () => (
 
 const CheckLine: React.FC<{text: string; crossed?: boolean; delay?: number; frame: number}> = ({text, crossed, delay = 0, frame}) => {
   const p = pop(frame, 0);
-  const actionStart = 88 + delay * 0.35;
+  const actionStart = delay;
   const slash = easeIn(frame, actionStart, actionStart + 22);
   const circleFill = crossed ? (slash > 0.05 ? C.red : C.green) : C.green;
   return (
@@ -134,7 +134,7 @@ const Scene3: React.FC<{f: number}> = ({f}) => (
       <BrowserMock frame={f} />
       <div style={{display: 'grid', gap: 28}}>
         {['Dated look', 'Weak search signals', 'AI cannot extract clear facts', 'Quiet recurring costs'].map((text, i) => (
-          <CheckLine key={text} text={text} crossed frame={f} delay={28 + i * 18} />
+          <CheckLine key={text} text={text} crossed frame={f} delay={88 + i * 28} />
         ))}
       </div>
     </div>
@@ -189,7 +189,7 @@ const Scene5: React.FC<{f: number}> = ({f}) => (
       <div style={{display: 'grid', gap: 26}}>
         <div style={{fontSize: 30, lineHeight: 1.22, color: C.ink, fontWeight: 850, opacity: fade(f, 104, 126)}}>Promote one direction, then mix in useful pieces from the existing site.</div>
         {['Guessing from abstract descriptions', 'Losing existing work', 'No clear sign-off direction'].map((text, i) => (
-          <CheckLine key={text} text={text} crossed frame={f} delay={126 + i * 15} />
+          <CheckLine key={text} text={text} crossed frame={f} delay={96 + i * 28} />
         ))}
       </div>
     </div>
@@ -219,7 +219,7 @@ const Scene6: React.FC<{f: number}> = ({f}) => (
       <Sleuth f={f} />
       <div style={{display: 'grid', gap: 22}}>
         {['Missing titles', 'Vague headings', 'Weak service/location signals', 'Images with no useful labels'].map((text, i) => (
-          <CheckLine key={text} text={text} crossed frame={f} delay={70 + i * 18} />
+          <CheckLine key={text} text={text} crossed frame={f} delay={88 + i * 28} />
         ))}
       </div>
     </div>
@@ -233,7 +233,7 @@ const Scene7: React.FC<{f: number}> = ({f}) => (
       <Sleuth f={f} ai />
       <div style={{display: 'grid', gap: 22}}>
         {['AI cannot tell what you do', 'Services are buried', 'Important facts are scattered', 'No clean answers'].map((text, i) => (
-          <CheckLine key={text} text={text} crossed frame={f} delay={70 + i * 18} />
+          <CheckLine key={text} text={text} crossed frame={f} delay={88 + i * 28} />
         ))}
       </div>
     </div>
@@ -246,7 +246,7 @@ const Dollar: React.FC<{f: number; i: number}> = ({f, i}) => {
   const win = Math.floor(i / 3);
   const lane = i % 3;
   const leak = easeIn(f, 6 + i * 3, 52 + i * 3);
-  const returnStart = 96 + win * 10 + lane * 3;
+  const returnStart = 86 + win * 12 + lane * 2;
   const returned = easeIn(f, returnStart, returnStart + 28);
   const startX = 760 + (i % 3) * 34;
   const startY = 322 + lane * 32;
@@ -267,8 +267,8 @@ const Dollar: React.FC<{f: number; i: number}> = ({f, i}) => {
 };
 
 const CostItem: React.FC<{item: string; f: number; i: number}> = ({item, f, i}) => {
-  const strikeStart = 96 + i * 10;
-  const slash = easeIn(f, strikeStart, strikeStart + 22);
+  const strikeStart = 86 + i * 12;
+  const slash = easeIn(f, strikeStart, strikeStart + 10);
   const muted = slash > 0.05;
   return (
     <div style={{position: 'absolute', left: 40 + i * 42, top: 55 + i * 48, width: 350, height: 58, borderRadius: 10, background: '#fff', border: `3px solid ${muted ? '#efb2aa' : C.line}`, display: 'flex', alignItems: 'center', paddingLeft: 24, fontSize: 24, fontWeight: 900, color: muted ? C.muted : C.ink, opacity: fade(f, i * 7, i * 7 + 18)}}>
@@ -280,7 +280,7 @@ const CostItem: React.FC<{item: string; f: number; i: number}> = ({item, f, i}) 
 };
 
 const CashStack: React.FC<{f: number}> = ({f}) => {
-  const wins = [96, 106, 116, 126, 136, 146, 156];
+  const wins = [86, 98, 110, 122, 134, 146, 158];
   return (
     <div style={{position: 'absolute', right: 20, bottom: 58, width: 260, height: 250}}>
       {wins.map((start, i) => {
@@ -351,13 +351,11 @@ const MessageBubble: React.FC<{text: string; f: number; delay: number; y: number
 );
 
 const Engineer: React.FC<{f: number}> = ({f}) => {
-  const eat = Math.sin(easeIn(f, 40, 132) * Math.PI * 5);
   return (
     <div style={{position: 'absolute', left: 430, top: 276, width: 260, height: 190, opacity: fade(f, 12, 28)}}>
       <div style={{position: 'absolute', left: 44, top: 0, width: 76, height: 76, borderRadius: 38, background: '#f0c7a2', border: `5px solid ${C.ink}`}} />
       <div style={{position: 'absolute', left: 28, top: 72, width: 112, height: 96, borderRadius: '30px 30px 12px 12px', background: C.blue, border: `5px solid ${C.ink}`}} />
-      <div style={{position: 'absolute', left: 124, top: 98, width: 90, height: 16, borderRadius: 8, background: '#f0c7a2', border: `4px solid ${C.ink}`, transformOrigin: 'left center', transform: `rotate(${-20 - eat * 24}deg)`}} />
-      <div style={{position: 'absolute', left: 190, top: 66 - Math.max(0, eat) * 16, width: 42, height: 42, borderRadius: 21, background: '#c9874d', border: '4px solid #9b5b2d'}} />
+      <div style={{position: 'absolute', left: 124, top: 104, width: 90, height: 16, borderRadius: 8, background: '#f0c7a2', border: `4px solid ${C.ink}`, transformOrigin: 'left center', transform: 'rotate(-18deg)'}} />
       <div style={{position: 'absolute', left: 0, bottom: 0, width: 245, height: 28, borderRadius: 8, background: C.ink}} />
       <div style={{position: 'absolute', left: 36, bottom: 25, width: 130, height: 72, borderRadius: '10px 10px 0 0', background: '#fff', border: `5px solid ${C.ink}`}} />
     </div>
@@ -388,17 +386,40 @@ const Scene10: React.FC<{f: number}> = ({f}) => {
             'Found unused tool',
             'Prepared next pass',
           ].map((text, i) => <MessageBubble key={text} text={text} f={f} delay={48 + i * 20} y={30 + i * 82} />)}
-          <div style={{position: 'absolute', right: 70, bottom: 28, fontSize: 42, fontWeight: 950, color: C.ink, opacity: fade(f, 158, 176)}}>Send the link.<br />Get the first pass.</div>
-          <div style={{position: 'absolute', right: 70, bottom: 0, fontSize: 25, fontWeight: 850, color: C.green, opacity: fade(f, 166, 184)}}>hello@web-by-elie.com</div>
         </div>
       </div>
     </SceneShell>
   );
 };
 
+const Scene11: React.FC<{f: number}> = ({f}) => (
+  <SceneShell dark>
+    <div style={{height: '100%', display: 'grid', gridTemplateColumns: '1fr 560px', gap: 76, alignItems: 'center'}}>
+      <div style={{opacity: fade(f, 0, 22)}}>
+        <Title eyebrow="Next" light>Send the link.<br />Get the first pass.</Title>
+        <div style={{fontSize: 34, lineHeight: 1.24, color: '#d9e5e1', marginTop: 32, maxWidth: 760, fontWeight: 650}}>
+          A practical first review turns the current site, the existing work, and the obvious opportunities into a clear next move.
+        </div>
+      </div>
+      <div style={{height: 360, borderRadius: 20, background: '#fff', border: `4px solid ${C.line}`, boxShadow: '0 34px 90px rgba(0,0,0,.18)', padding: 42, opacity: fade(f, 24, 46), transform: `translateY(${(1 - pop(f, 24)) * 45}px)`}}>
+        <div style={{display: 'flex', alignItems: 'center', gap: 18}}>
+          <Img src={logo} style={{width: 72, height: 72, borderRadius: 14}} />
+          <div>
+            <div style={{fontSize: 28, fontWeight: 950, color: C.green}}>Web By Elie</div>
+            <div style={{fontSize: 22, fontWeight: 750, color: C.muted, marginTop: 4}}>Website refresh / search / spend cleanup</div>
+          </div>
+        </div>
+        <div style={{marginTop: 58, padding: '28px 32px', borderRadius: 999, background: C.ink, color: '#fff', fontSize: 33, fontWeight: 950, textAlign: 'center', transform: `scale(${0.96 + pop(f, 56) * 0.04})`}}>
+          hello@web-by-elie.com
+        </div>
+      </div>
+    </div>
+  </SceneShell>
+);
+
 export const WebByElieExplainer: React.FC = () => {
   const frame = useCurrentFrame();
-  const scenes = [Scene1, Scene2, Scene3, Scene4, Scene5, Scene6, Scene7, Scene8, Scene9, Scene10];
+  const scenes = [Scene1, Scene2, Scene3, Scene4, Scene5, Scene6, Scene7, Scene8, Scene9, Scene10, Scene11];
   const index = sceneStarts.findLastIndex((start) => frame >= start);
   const Scene = scenes[index] || Scene1;
   const f = sceneFrame(frame, index);
