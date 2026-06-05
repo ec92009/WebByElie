@@ -4,57 +4,57 @@ export const SCENES = [
   {
     "id": "hero",
     "startFrame": 0,
-    "durationFrames": 312
+    "durationFrames": 365
   },
   {
     "id": "intro",
-    "startFrame": 312,
-    "durationFrames": 349
+    "startFrame": 365,
+    "durationFrames": 413
   },
   {
     "id": "problem",
-    "startFrame": 661,
-    "durationFrames": 418
+    "startFrame": 778,
+    "durationFrames": 489
   },
   {
     "id": "passes",
-    "startFrame": 1079,
-    "durationFrames": 294
+    "startFrame": 1267,
+    "durationFrames": 338
   },
   {
     "id": "refresh",
-    "startFrame": 1373,
-    "durationFrames": 383
+    "startFrame": 1605,
+    "durationFrames": 459
   },
   {
     "id": "search",
-    "startFrame": 1756,
-    "durationFrames": 445
+    "startFrame": 2064,
+    "durationFrames": 546
   },
   {
     "id": "ai",
-    "startFrame": 2201,
-    "durationFrames": 416
+    "startFrame": 2610,
+    "durationFrames": 525
   },
   {
     "id": "cost",
-    "startFrame": 2617,
-    "durationFrames": 435
+    "startFrame": 3135,
+    "durationFrames": 537
   },
   {
     "id": "work",
-    "startFrame": 3052,
-    "durationFrames": 294
+    "startFrame": 3672,
+    "durationFrames": 333
   },
   {
     "id": "retainer",
-    "startFrame": 3346,
-    "durationFrames": 341
+    "startFrame": 4005,
+    "durationFrames": 397
   },
   {
     "id": "cta",
-    "startFrame": 3687,
-    "durationFrames": 223
+    "startFrame": 4402,
+    "durationFrames": 261
   }
 ] as const;
 export const LINES = [
@@ -65,7 +65,7 @@ export const LINES = [
     "text": "A website refresh does not have to mean starting over.",
     "file": "voiceover/01-hero-01-female.mp3",
     "startFrame": 16,
-    "durationFrames": 81
+    "durationFrames": 93
   },
   {
     "id": "01-hero-02-male",
@@ -73,8 +73,8 @@ export const LINES = [
     "speaker": "male",
     "text": "Right. The goal is a sharper web presence: better looking, easier to find, and less wasteful to run.",
     "file": "voiceover/01-hero-02-male.mp3",
-    "startFrame": 105,
-    "durationFrames": 171
+    "startFrame": 117,
+    "durationFrames": 212
   },
   {
     "id": "02-intro-01-male",
@@ -82,8 +82,8 @@ export const LINES = [
     "speaker": "male",
     "text": "This starts with decades of software engineering judgment.",
     "file": "voiceover/02-intro-01-male.mp3",
-    "startFrame": 328,
-    "durationFrames": 90
+    "startFrame": 381,
+    "durationFrames": 100
   },
   {
     "id": "02-intro-02-female",
@@ -91,8 +91,8 @@ export const LINES = [
     "speaker": "female",
     "text": "Yes, and that means looking past the surface: structure, maintainability, search signals, tool choices, and costs.",
     "file": "voiceover/02-intro-02-female.mp3",
-    "startFrame": 426,
-    "durationFrames": 199
+    "startFrame": 489,
+    "durationFrames": 253
   },
   {
     "id": "03-problem-01-female",
@@ -100,8 +100,8 @@ export const LINES = [
     "speaker": "female",
     "text": "Most independent businesses have already put real work into their current website.",
     "file": "voiceover/03-problem-01-female.mp3",
-    "startFrame": 677,
-    "durationFrames": 124
+    "startFrame": 794,
+    "durationFrames": 132
   },
   {
     "id": "03-problem-02-male",
@@ -109,8 +109,8 @@ export const LINES = [
     "speaker": "male",
     "text": "Exactly. But over time, the look can age, search signals can weaken, AI clarity can fade, and recurring costs can pile up quietly.",
     "file": "voiceover/03-problem-02-male.mp3",
-    "startFrame": 809,
-    "durationFrames": 234
+    "startFrame": 934,
+    "durationFrames": 297
   },
   {
     "id": "04-passes-01-male",
@@ -118,8 +118,8 @@ export const LINES = [
     "speaker": "male",
     "text": "The work follows a practical checklist.",
     "file": "voiceover/04-passes-01-male.mp3",
-    "startFrame": 1095,
-    "durationFrames": 66
+    "startFrame": 1283,
+    "durationFrames": 75
   },
   {
     "id": "04-passes-02-female",
@@ -127,8 +127,8 @@ export const LINES = [
     "speaker": "female",
     "text": "Right: refresh the look, improve search, make the site AI-ready, and clean up unnecessary spend.",
     "file": "voiceover/04-passes-02-female.mp3",
-    "startFrame": 1169,
-    "durationFrames": 168
+    "startFrame": 1366,
+    "durationFrames": 203
   },
   {
     "id": "05-refresh-01-female",
@@ -136,8 +136,8 @@ export const LINES = [
     "speaker": "female",
     "text": "Instead of guessing from abstract design ideas, we compare real visual directions.",
     "file": "voiceover/05-refresh-01-female.mp3",
-    "startFrame": 1389,
-    "durationFrames": 133
+    "startFrame": 1621,
+    "durationFrames": 151
   },
   {
     "id": "05-refresh-02-male",
@@ -145,8 +145,8 @@ export const LINES = [
     "speaker": "male",
     "text": "Yes. Real options make the choice easier, preserve useful existing work, and give everyone a clear sign-off direction.",
     "file": "voiceover/05-refresh-02-male.mp3",
-    "startFrame": 1530,
-    "durationFrames": 190
+    "startFrame": 1780,
+    "durationFrames": 248
   },
   {
     "id": "06-search-01-male",
@@ -154,8 +154,8 @@ export const LINES = [
     "speaker": "male",
     "text": "Search Engine Optimization is precise. Search engines read visible content and behind-the-scenes details.",
     "file": "voiceover/06-search-01-male.mp3",
-    "startFrame": 1772,
-    "durationFrames": 170
+    "startFrame": 2080,
+    "durationFrames": 221
   },
   {
     "id": "06-search-02-female",
@@ -163,8 +163,8 @@ export const LINES = [
     "speaker": "female",
     "text": "Exactly: titles, headings, links, service wording, locations, and image labels each help the site explain itself clearly.",
     "file": "voiceover/06-search-02-female.mp3",
-    "startFrame": 1950,
-    "durationFrames": 215
+    "startFrame": 2309,
+    "durationFrames": 265
   },
   {
     "id": "07-ai-01-female",
@@ -172,8 +172,8 @@ export const LINES = [
     "speaker": "female",
     "text": "Today, many searches begin in chat boxes and AI assistants, not only search engines.",
     "file": "voiceover/07-ai-01-female.mp3",
-    "startFrame": 2217,
-    "durationFrames": 142
+    "startFrame": 2626,
+    "durationFrames": 178
   },
   {
     "id": "07-ai-02-male",
@@ -181,8 +181,8 @@ export const LINES = [
     "speaker": "male",
     "text": "Right. AI systems look for clear facts: who you are, what you do, where you work, which services matter, and what answer you provide.",
     "file": "voiceover/07-ai-02-male.mp3",
-    "startFrame": 2367,
-    "durationFrames": 214
+    "startFrame": 2812,
+    "durationFrames": 287
   },
   {
     "id": "08-cost-01-male",
@@ -190,8 +190,8 @@ export const LINES = [
     "speaker": "male",
     "text": "Then there are the small bills: domains, hosting, plugins, email add-ons, booking tools, analytics, and image tools.",
     "file": "voiceover/08-cost-01-male.mp3",
-    "startFrame": 2633,
-    "durationFrames": 214
+    "startFrame": 3151,
+    "durationFrames": 277
   },
   {
     "id": "08-cost-02-female",
@@ -199,8 +199,8 @@ export const LINES = [
     "speaker": "female",
     "text": "Yes. Some are essential. Some overlap. Some renew because nobody has looked at them in years.",
     "file": "voiceover/08-cost-02-female.mp3",
-    "startFrame": 2855,
-    "durationFrames": 161
+    "startFrame": 3436,
+    "durationFrames": 200
   },
   {
     "id": "09-work-01-female",
@@ -208,8 +208,8 @@ export const LINES = [
     "speaker": "female",
     "text": "The process starts with a short intake conversation.",
     "file": "voiceover/09-work-01-female.mp3",
-    "startFrame": 3068,
-    "durationFrames": 84
+    "startFrame": 3688,
+    "durationFrames": 91
   },
   {
     "id": "09-work-02-male",
@@ -217,8 +217,8 @@ export const LINES = [
     "speaker": "male",
     "text": "Right. What is already working? What should be preserved? Where are visitors getting stuck?",
     "file": "voiceover/09-work-02-male.mp3",
-    "startFrame": 3160,
-    "durationFrames": 150
+    "startFrame": 3787,
+    "durationFrames": 182
   },
   {
     "id": "10-retainer-01-male",
@@ -226,8 +226,8 @@ export const LINES = [
     "speaker": "male",
     "text": "Work begins with a practical initial bundle, usually around ten hours.",
     "file": "voiceover/10-retainer-01-male.mp3",
-    "startFrame": 3362,
-    "durationFrames": 115
+    "startFrame": 4021,
+    "durationFrames": 135
   },
   {
     "id": "10-retainer-02-female",
@@ -235,8 +235,8 @@ export const LINES = [
     "speaker": "female",
     "text": "Exactly. Progress is tracked clearly, with notes on what changed and a warning when the budget reaches halfway.",
     "file": "voiceover/10-retainer-02-female.mp3",
-    "startFrame": 3485,
-    "durationFrames": 166
+    "startFrame": 4164,
+    "durationFrames": 202
   },
   {
     "id": "11-cta-01-female",
@@ -244,8 +244,8 @@ export const LINES = [
     "speaker": "female",
     "text": "Send the link.",
     "file": "voiceover/11-cta-01-female.mp3",
-    "startFrame": 3703,
-    "durationFrames": 30
+    "startFrame": 4418,
+    "durationFrames": 26
   },
   {
     "id": "11-cta-02-male",
@@ -253,32 +253,32 @@ export const LINES = [
     "speaker": "male",
     "text": "Yes. Get the first pass. A clearer site starts with knowing what is already there.",
     "file": "voiceover/11-cta-02-male.mp3",
-    "startFrame": 3741,
-    "durationFrames": 133
+    "startFrame": 4452,
+    "durationFrames": 175
   }
 ] as const;
 export const CUES = {
-  "problemDated": 859,
-  "problemSearch": 885,
-  "problemAi": 933,
-  "problemCosts": 978,
-  "refreshGuessing": 1407,
-  "refreshPreserve": 1598,
-  "refreshSignoff": 1680,
-  "searchTitles": 1966,
-  "searchHeadings": 1980,
-  "searchServices": 2010,
-  "searchImages": 2067,
-  "aiWhoWhat": 2452,
-  "aiServices": 2499,
-  "aiFacts": 2410,
-  "aiAnswers": 2542,
-  "costDomains": 2692,
-  "costHosting": 2709,
-  "costPlugins": 2725,
-  "costEmail": 2742,
-  "costBooking": 2770,
-  "costAnalytics": 2797,
-  "costImages": 2825
+  "problemDated": 998,
+  "problemSearch": 1030,
+  "problemAi": 1092,
+  "problemCosts": 1149,
+  "refreshGuessing": 1641,
+  "refreshPreserve": 1868,
+  "refreshSignoff": 1975,
+  "searchTitles": 2329,
+  "searchHeadings": 2346,
+  "searchServices": 2383,
+  "searchImages": 2454,
+  "aiWhoWhat": 2926,
+  "aiServices": 2989,
+  "aiFacts": 2870,
+  "aiAnswers": 3047,
+  "costDomains": 3227,
+  "costHosting": 3249,
+  "costPlugins": 3270,
+  "costEmail": 3292,
+  "costBooking": 3328,
+  "costAnalytics": 3364,
+  "costImages": 3399
 } as const;
-export const TOTAL_FRAMES = 3910;
+export const TOTAL_FRAMES = 4663;
