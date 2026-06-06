@@ -2,9 +2,9 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v94.1`
+Current visible version: `v98.0`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=94.1`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=98.0`
 
 Intended domain: `web-by-elie.com`
 
@@ -39,6 +39,7 @@ Then open `http://localhost:8094/`.
 - `index.html`: promoted Studio Clean homepage.
 - `assets/styles.css`: site styling.
 - `assets/theme.js`: day/night mode toggle.
+- `apple-touch-icon.png`, `site.webmanifest`, `assets/icon-192.png`, `assets/icon-512.png`: mobile home-screen and browser install icons.
 - `assets/web-refresh-workspace.png`: generated shared hero image.
 - `robots.txt`, `sitemap.xml`: production crawl and sitemap basics.
 - `privacy.html`, `terms.html`, `data-deletion.html`: baseline public policy pages.
@@ -57,6 +58,6 @@ Then open `http://localhost:8094/`.
 
 - Public pages are indexable and include canonical metadata for `https://web-by-elie.com/`.
 - Archived proposal redirect pages remain `noindex, nofollow`.
-- Production basics now include `robots.txt` and `sitemap.xml`.
+- Production basics now include `robots.txt`, `sitemap.xml`, and mobile home-screen icon metadata.
 - 3D print/coaster files are kept locally under `private-print-assets/` and ignored by Git.
 - If the domain is hosted through Cloudflare, keep DNS and production edge settings in Cloudflare, with GitHub as source control.
