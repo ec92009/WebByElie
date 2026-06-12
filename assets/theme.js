@@ -24,6 +24,19 @@
     });
   }
 
+  document.querySelectorAll("[data-email-link]").forEach((link) => {
+    const user = link.dataset.emailUser || "hello";
+    const domain = link.dataset.emailDomain || "web-by-elie.com";
+    const subject = link.dataset.emailSubject;
+    const address = `${user}@${domain}`;
+    const query = subject ? `?subject=${encodeURIComponent(subject)}` : "";
+
+    link.href = `mailto:${address}${query}`;
+    if (link.dataset.emailLabel === "address") {
+      link.textContent = address;
+    }
+  });
+
   const revealSelectors = [
     ".demo-hero > div",
     ".demo-photo",

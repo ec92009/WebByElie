@@ -40,7 +40,8 @@ Clock state: running
 | 2026-06-12 | 21:49 CEST | 21:56 CEST | 0:03 | Requested Liquid Glass styling, hover animations, and a versioned public site refresh. |
 | 2026-06-12 | 22:04 CEST | 22:07 CEST | 0:01 | Requested phone-visible appear/disappear scroll animation. |
 | 2026-06-12 | 22:21 CEST | 22:30 CEST | 0:02 | Requested additional polish: glass sheen, card cascade, tap feedback, and mobile sticky CTA. |
+| 2026-06-12 | 22:34 CEST | 22:35 CEST | 0:01 | Reported broken email CTA after Cloudflare email obfuscation and requested production fix. |
 
 ## Totals
 
-Active collaboration time used: 0:49
+Active collaboration time used: 0:50
