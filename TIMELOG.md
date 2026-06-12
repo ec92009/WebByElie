@@ -37,7 +37,8 @@ Clock state: running
 | 2026-06-02 | 12:55 CEST | 13:05 CEST | 0:03 | Reviewed coaster print quality, installed OpenSCAD, and regenerated an STL-only dodecagon coaster with taller QR relief. |
 | 2026-06-03 | 17:40 CEST | 17:54 CEST | 0:04 | Reviewed NotebookLM audio/video output, identified ambiguity risks, and approved a NotebookLM-backed Remotion iteration. |
 | 2026-06-06 | 11:40 CEST | 11:41 CEST | 0:01 | Requested GitHub refresh and mobile home-screen logo icon fix. |
+| 2026-06-12 | 21:49 CEST | 21:56 CEST | 0:03 | Requested Liquid Glass styling, hover animations, and a versioned public site refresh. |
 
 ## Totals
 
-Active collaboration time used: 0:43
+Active collaboration time used: 0:46
