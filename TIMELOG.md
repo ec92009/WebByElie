@@ -38,7 +38,8 @@ Clock state: running
 | 2026-06-03 | 17:40 CEST | 17:54 CEST | 0:04 | Reviewed NotebookLM audio/video output, identified ambiguity risks, and approved a NotebookLM-backed Remotion iteration. |
 | 2026-06-06 | 11:40 CEST | 11:41 CEST | 0:01 | Requested GitHub refresh and mobile home-screen logo icon fix. |
 | 2026-06-12 | 21:49 CEST | 21:56 CEST | 0:03 | Requested Liquid Glass styling, hover animations, and a versioned public site refresh. |
+| 2026-06-12 | 22:04 CEST | 22:07 CEST | 0:01 | Requested phone-visible appear/disappear scroll animation. |
 
 ## Totals
 
-Active collaboration time used: 0:46
+Active collaboration time used: 0:47

@@ -783,6 +783,29 @@ button:focus-visible {
   outline-offset: 4px;
 }
 
+.reveal-ready .reveal-item {
+  opacity: 0;
+  transform: translateY(22px) scale(0.985);
+  filter: blur(5px);
+  transition:
+    opacity 480ms var(--ease-out) var(--reveal-delay, 0ms),
+    transform 520ms var(--ease-out) var(--reveal-delay, 0ms),
+    filter 520ms ease var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-ready .reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .reveal-ready .reveal-item.is-visible:hover {
+    transform: translateY(-3px);
+  }
+}
+
 .friendly-demo {
   --paper: #fff8ee;
   --soft: #f7eadb;
@@ -1085,7 +1108,11 @@ html[data-theme="night"] .tag {
   .signoff-box:hover,
   .policy-card:hover,
   .demo-photo:hover,
-  .demo-photo:hover img {
+  .demo-photo:hover img,
+  .reveal-ready .reveal-item,
+  .reveal-ready .reveal-item.is-visible {
     transform: none;
+    opacity: 1;
+    filter: none;
   }
 }
