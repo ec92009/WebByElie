@@ -45,8 +45,12 @@
     root.classList.add("reveal-ready");
 
     revealItems.forEach((item, index) => {
+      const cardGroup = item.closest(".studio-services, .work-steps");
+      const groupItems = cardGroup ? Array.from(cardGroup.querySelectorAll("article")) : [];
+      const delayIndex = groupItems.length ? groupItems.indexOf(item) : index % 3;
+
       item.classList.add("reveal-item");
-      item.style.setProperty("--reveal-delay", `${Math.min(index % 4, 3) * 55}ms`);
+      item.style.setProperty("--reveal-delay", `${Math.max(delayIndex, 0) * 70}ms`);
     });
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -59,5 +63,18 @@
     });
 
     revealItems.forEach((item) => revealObserver.observe(item));
+  }
+
+  const stickyCta = document.querySelector(".mobile-sticky-cta");
+  const hero = document.querySelector(".demo-hero");
+
+  if (stickyCta && hero) {
+    const syncStickyCta = () => {
+      stickyCta.classList.toggle("is-visible", hero.getBoundingClientRect().bottom < 120);
+    };
+
+    syncStickyCta();
+    window.addEventListener("scroll", syncStickyCta, { passive: true });
+    window.addEventListener("resize", syncStickyCta);
   }
 })();
