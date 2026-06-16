@@ -1,16 +1,16 @@
 # Web By Elie Summary
 
-Last updated: 2026-06-06 11:45 CEST
+Last updated: 2026-06-17 00:50 CEST
 
 ## Current State
 
 - Repo: `/Users/ecohen/Dev/WebByElie`
 - Branch: `main`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=98.0`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=109.0`
 - Local preview: `http://localhost:8094/`
 - Intended domain: `web-by-elie.com`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v98.0`
+- Current visible version: `v109.0`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -26,12 +26,13 @@ Last updated: 2026-06-06 11:45 CEST
 - Archived the chooser and losing proposals under `Archive/`.
 - Left old proposal URLs as simple moved pages that route back to the main site.
 - Added a shared generated hero image showing a geeky desk setup with two monitors, compact desktop computer, keyboard, mouse, notebook, and coffee.
-- Added a day/night mode toggle through `assets/theme.js`.
+- Added a gear settings panel through `assets/theme.js`, including day/night mode and display preferences.
 - Added public policy pages: Privacy, Terms, and Data Deletion.
 - Added launch crawl basics: `robots.txt`, `sitemap.xml`, canonical metadata, and indexable public pages.
 - Added mobile home-screen and browser install icon metadata using the Web By Elie logo.
 - Added generated logo, QR assets, and a local-only print/coaster asset folder.
 - Added the site to the Webapps hub at `/Users/ecohen/Dev/Webapps`.
+- Upgraded the public site with a unified gear settings panel, day/night segmented control, English/French/Spanish language preference, glass transparency/translucency sliders, reveal effects, and a phone sticky email CTA.
 
 ## Current Offer Copy
 
@@ -55,7 +56,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `98.0`, displayed as `v98.0`.
+- Current version is `109.0`, displayed as `v109.0`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Public pages are indexable; archived redirect pages remain `noindex, nofollow`.
@@ -73,8 +74,8 @@ The money-saving angle was added after discussing work with Magali: in addition 
 1. Prepare custom-domain launch.
    Configure `web-by-elie.com` using the GitHub/Cloudflare SOP, verify DNS/HTTPS, and preserve email-related records.
 
-2. Final browser/device polish.
-   Check the homepage, policy pages, sticky header, theme toggle, hero image, CTA layout, and service cards at desktop and phone widths.
+2. Continue browser/device polish.
+   Recheck the homepage, policy pages, sticky header, settings panel, hero image, CTA layout, and service cards when future copy or layout changes land.
 
 3. Decide whether to keep GitHub Pages as preview only.
    If production should live on Cloudflare Pages, prepare that deployment path and keep GitHub Pages as a public preview/fallback.

@@ -41,7 +41,8 @@ Clock state: running
 | 2026-06-12 | 22:04 CEST | 22:07 CEST | 0:01 | Requested phone-visible appear/disappear scroll animation. |
 | 2026-06-12 | 22:21 CEST | 22:30 CEST | 0:02 | Requested additional polish: glass sheen, card cascade, tap feedback, and mobile sticky CTA. |
 | 2026-06-12 | 22:34 CEST | 22:35 CEST | 0:01 | Reported broken email CTA after Cloudflare email obfuscation and requested production fix. |
+| 2026-06-17 | 00:41 CEST | 00:43 CEST | 0:02 | Requested skill-based public site upgrade with unified settings controls. |
 
 ## Totals
 
-Active collaboration time used: 0:50
+Active collaboration time used: 0:52
