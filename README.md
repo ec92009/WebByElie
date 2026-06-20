@@ -4,9 +4,9 @@ Static public-facing site for Web By Elie, a small-business web presence offer.
 
 Current visible version: `v112.0`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=112.0`
+Production URL: `https://web-by-elie.com/`
 
-Intended domain: `web-by-elie.com`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=112.0`
 
 Contact email: `hello@web-by-elie.com`
 
@@ -60,5 +60,6 @@ Then open `http://localhost:8094/`.
 - Public pages are indexable and include canonical metadata for `https://web-by-elie.com/`.
 - Archived proposal redirect pages remain `noindex, nofollow`.
 - Production basics now include `robots.txt`, `sitemap.xml`, and mobile home-screen icon metadata.
+- Production is served by Cloudflare Pages project `web-by-elie` (`web-by-elie.pages.dev`), with GitHub Pages retained as the public preview/fallback.
 - 3D print/coaster files are kept locally under `private-print-assets/` and ignored by Git.
-- If the domain is hosted through Cloudflare, keep DNS and production edge settings in Cloudflare, with GitHub as source control.
+- Keep DNS and production edge settings in Cloudflare, with GitHub as source control.

@@ -1,14 +1,15 @@
 # Web By Elie Summary
 
-Last updated: 2026-06-20 19:00 CEST
+Last updated: 2026-06-20 19:14 CEST
 
 ## Current State
 
 - Repo: `/Users/ecohen/Dev/WebByElie`
 - Branch: `main`
+- Production URL: `https://web-by-elie.com/`
+- Production host: Cloudflare Pages project `web-by-elie`
 - Public preview: `https://ec92009.github.io/WebByElie/?v=112.0`
 - Local preview: `http://localhost:8094/`
-- Intended domain: `web-by-elie.com`
 - Contact email: `hello@web-by-elie.com`
 - Current visible version: `v112.0`
 - Selected look: `Studio Clean`
@@ -59,6 +60,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 - Current version is `112.0`, displayed as `v112.0`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
+- Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
 - Public pages are indexable; archived redirect pages remain `noindex, nofollow`.
 - Mobile install icons are declared through `apple-touch-icon.png` and `site.webmanifest`.
 - Print/coaster files are kept locally in `private-print-assets/` and ignored by Git.
@@ -71,8 +73,8 @@ The money-saving angle was added after discussing work with Magali: in addition 
 
 ## Fresh Numbered Backlog
 
-1. Prepare custom-domain launch.
-   Configure `web-by-elie.com` using the GitHub/Cloudflare SOP, verify DNS/HTTPS, and preserve email-related records.
+1. Keep Cloudflare Pages deployment repeatable.
+   Preserve the clean static publish set for production deploys, keep DNS/HTTPS on Cloudflare, and protect email-related DNS records.
 
 2. Continue browser/device polish.
    Recheck the homepage, policy pages, sticky header, settings panel, hero image, CTA layout, and service cards when future copy or layout changes land.
