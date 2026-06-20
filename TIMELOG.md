@@ -43,7 +43,8 @@ Clock state: running
 | 2026-06-12 | 22:34 CEST | 22:35 CEST | 0:01 | Reported broken email CTA after Cloudflare email obfuscation and requested production fix. |
 | 2026-06-17 | 00:41 CEST | 00:43 CEST | 0:02 | Requested skill-based public site upgrade with unified settings controls. |
 | 2026-06-18 | 23:54 CEST | 2026-06-19 00:00 CEST | 0:02 | Requested central Tickets intake for WebByElie and reviewed progress/closeout updates. |
+| 2026-06-20 | 19:00 CEST | 19:02 CEST | 0:02 | Reported that language selection persisted but did not translate site copy. |
 
 ## Totals
 
-Active collaboration time used: 0:54
+Active collaboration time used: 0:56

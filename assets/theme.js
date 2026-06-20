@@ -5,6 +5,7 @@
   const legacyThemeKey = "web-by-elie-theme";
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+  const translations = window.webByElieI18n || {};
   const defaults = {
     language: "en",
     theme: "day",
@@ -55,20 +56,20 @@
   let state = readSettings();
 
   if (settingsRoot && !settingsRoot.querySelector("[data-settings-panel]")) {
-    const version = settingsRoot.dataset.siteVersion || "v109.0";
+    const version = settingsRoot.dataset.siteVersion || "v112.0";
     settingsRoot.insertAdjacentHTML(
       "beforeend",
       `<div class="settings-panel" id="site-settings-panel" role="dialog" aria-label="Site settings" data-settings-panel hidden>
         <div class="settings-panel-head">
-          <strong>Settings</strong>
+          <strong data-settings-label="title">Settings</strong>
           <button class="settings-close" type="button" data-settings-close aria-label="Close site settings">&times;</button>
         </div>
         <div class="settings-about" aria-label="About">
-          <span>About</span>
+          <span data-settings-label="about">About</span>
           <strong data-settings-version>${version}</strong>
         </div>
         <label class="settings-field" for="site-language">
-          <span>Language</span>
+          <span data-settings-label="language">Language</span>
           <select id="site-language" data-language-select>
             <option value="en">English</option>
             <option value="fr">French</option>
@@ -76,18 +77,18 @@
           </select>
         </label>
         <div class="settings-field">
-          <span>Theme</span>
+          <span data-settings-label="theme">Theme</span>
           <div class="settings-segmented" role="group" aria-label="Theme">
             <button type="button" data-theme-choice="day">Day</button>
             <button type="button" data-theme-choice="night">Night</button>
           </div>
         </div>
         <label class="settings-field" for="site-transparency">
-          <span>Transparency <output data-transparency-value for="site-transparency">86%</output></span>
+          <span><span data-settings-label="transparency">Transparency</span> <output data-transparency-value for="site-transparency">86%</output></span>
           <input id="site-transparency" type="range" min="68" max="94" step="1" value="86" data-transparency-range />
         </label>
         <label class="settings-field" for="site-translucency">
-          <span>Translucency <output data-translucency-value for="site-translucency">24px</output></span>
+          <span><span data-settings-label="translucency">Translucency</span> <output data-translucency-value for="site-translucency">24px</output></span>
           <input id="site-translucency" type="range" min="8" max="28" step="1" value="24" data-translucency-range />
         </label>
       </div>`
@@ -103,6 +104,68 @@
   const translucencyRange = document.querySelector("[data-translucency-range]");
   const translucencyValue = document.querySelector("[data-translucency-value]");
   const themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
+
+  const getCopy = () => translations[state.language] || translations.en || {};
+  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v112.0";
+  const setAllText = (selector, value) => {
+    if (value === undefined) {
+      return;
+    }
+    document.querySelectorAll(selector).forEach((node) => {
+      node.textContent = value;
+    });
+  };
+  const setText = (selector, value) => {
+    if (value === undefined) {
+      return;
+    }
+    const node = document.querySelector(selector);
+    if (node) {
+      node.textContent = value;
+    }
+  };
+  const setAttribute = (selector, attr, value) => {
+    if (value === undefined) {
+      return;
+    }
+    const node = document.querySelector(selector);
+    if (node) {
+      node.setAttribute(attr, value);
+    }
+  };
+  const setListText = (selector, values) => {
+    if (!values) {
+      return;
+    }
+    document.querySelectorAll(selector).forEach((node, index) => {
+      if (values[index] !== undefined) {
+        node.textContent = values[index];
+      }
+    });
+  };
+  const setListHtml = (selector, values) => {
+    if (!values) {
+      return;
+    }
+    document.querySelectorAll(selector).forEach((node, index) => {
+      if (values[index] !== undefined) {
+        node.innerHTML = values[index];
+      }
+    });
+  };
+  const getPageKey = () => {
+    const fileName = window.location.pathname.split("/").pop() || "index.html";
+    if (fileName === "privacy.html") {
+      return "privacy";
+    }
+    if (fileName === "terms.html") {
+      return "terms";
+    }
+    if (fileName === "data-deletion.html") {
+      return "deletion";
+    }
+    return "home";
+  };
 
   const saveSettings = () => {
     safeStorage.set(settingsKey, JSON.stringify(state));
@@ -127,6 +190,83 @@
     if (languageSelect) {
       languageSelect.value = state.language;
     }
+  };
+
+  const applyTranslations = () => {
+    const copy = getCopy();
+    const common = copy.common || {};
+    const settings = copy.settings || {};
+    const page = (copy.pages && copy.pages[getPageKey()]) || {};
+    const version = getSiteVersion();
+
+    setAllText('.nav a[href="#services"], .nav a[href="index.html#services"]', common.navServices);
+    setAllText('.nav a[href="#process"], .nav a[href="index.html#process"]', common.navProcess);
+    setAllText('.nav a[href="#contact"], .nav a[href="index.html#contact"]', common.navContact);
+    setAllText('.footer-links a[href="privacy.html"], .nav a[href="privacy.html"]', common.privacy);
+    setAllText('.footer-links a[href="terms.html"], .nav a[href="terms.html"]', common.terms);
+    setAllText('.footer-links a[href="data-deletion.html"], .nav a[href="data-deletion.html"]', common.dataDeletion);
+    setAllText(".footer-inner > span", (common.versionLine || "Web By Elie · {version}").replace("{version}", version));
+
+    setAttribute("[data-settings-toggle]", "aria-label", settings.open);
+    setAttribute("[data-settings-panel]", "aria-label", settings.panel);
+    setAttribute("[data-settings-close]", "aria-label", settings.close);
+    setText('[data-settings-label="title"]', settings.title);
+    setText('[data-settings-label="about"]', settings.about);
+    setText('[data-settings-label="language"]', settings.language);
+    setText('[data-language-select] option[value="en"]', settings.english);
+    setText('[data-language-select] option[value="fr"]', settings.french);
+    setText('[data-language-select] option[value="es"]', settings.spanish);
+    setText('[data-settings-label="theme"]', settings.theme);
+    setAttribute(".settings-segmented", "aria-label", settings.theme);
+    setText('[data-theme-choice="day"]', settings.day);
+    setText('[data-theme-choice="night"]', settings.night);
+    setText('[data-settings-label="transparency"]', settings.transparency);
+    setText('[data-settings-label="translucency"]', settings.translucency);
+
+    document.querySelectorAll("[data-email-link]").forEach((link) => {
+      if (common.emailSubject) {
+        link.dataset.emailSubject = common.emailSubject;
+      }
+      if (!link.dataset.emailLabel && common.emailCta) {
+        link.textContent = common.emailCta;
+      }
+    });
+
+    if (page.title) {
+      document.title = page.title;
+    }
+    setAttribute('meta[name="description"]', "content", page.description);
+
+    if (getPageKey() === "home") {
+      setAttribute(".demo-photo img", "alt", page.imageAlt);
+      setText(".demo-hero .eyebrow", page.heroEyebrow);
+      setText(".demo-hero h1", page.heroTitle);
+      setText(".demo-hero .lede", page.heroLede);
+      setText(".demo-hero .button.secondary", page.seeServices);
+      setListText(".studio-services article h2", (page.services || []).map((item) => item[0]));
+      setListText(".studio-services article p", (page.services || []).map((item) => item[1]));
+      setText("#process .section-head .eyebrow", page.processEyebrow);
+      setText("#process .section-head h2", page.processTitle);
+      setText("#process .section-head .lede", page.processLede);
+      setListText(".work-steps article h3", (page.steps || []).map((item) => item[0]));
+      setListText(".work-steps article p", (page.steps || []).map((item) => item[1]));
+      setText(".about-layout .eyebrow", page.aboutEyebrow);
+      setText(".about-layout h2", page.aboutTitle);
+      setListText(".about-copy p", page.aboutCopy);
+      setText(".savings-layout .eyebrow", page.savingsEyebrow);
+      setText(".savings-layout h2", page.savingsTitle);
+      setListHtml(".savings-list p", page.savings);
+      setText(".budget-layout .eyebrow", page.budgetEyebrow);
+      setText(".budget-layout h2", page.budgetTitle);
+      setListHtml(".budget-list p", page.budget);
+      setText("#contact .eyebrow", page.contactEyebrow);
+      setText("#contact h2", page.contactTitle);
+      return;
+    }
+
+    setText(".policy-card .eyebrow", page.eyebrow);
+    setText(".policy-card h1", page.heading);
+    setListHtml(".policy-card > p:not(.eyebrow)", page.paragraphs);
   };
 
   const applyGlass = () => {
@@ -159,7 +299,9 @@
   const applySettings = () => {
     applyTheme();
     applyLanguage();
+    applyTranslations();
     applyGlass();
+    applyEmailLinks();
   };
 
   const setPanelOpen = (open) => {
@@ -212,7 +354,7 @@
   if (languageSelect) {
     languageSelect.addEventListener("change", () => {
       state = { ...state, language: languageSelect.value };
-      applyLanguage();
+      applySettings();
       saveSettings();
     });
   }
@@ -241,18 +383,20 @@
     });
   }
 
-  document.querySelectorAll("[data-email-link]").forEach((link) => {
-    const user = link.dataset.emailUser || "hello";
-    const domain = link.dataset.emailDomain || "web-by-elie.com";
-    const subject = link.dataset.emailSubject;
-    const address = `${user}@${domain}`;
-    const query = subject ? `?subject=${encodeURIComponent(subject)}` : "";
+  function applyEmailLinks() {
+    document.querySelectorAll("[data-email-link]").forEach((link) => {
+      const user = link.dataset.emailUser || "hello";
+      const domain = link.dataset.emailDomain || "web-by-elie.com";
+      const subject = link.dataset.emailSubject;
+      const address = `${user}@${domain}`;
+      const query = subject ? `?subject=${encodeURIComponent(subject)}` : "";
 
-    link.href = `mailto:${address}${query}`;
-    if (link.dataset.emailLabel === "address") {
-      link.textContent = address;
-    }
-  });
+      link.href = `mailto:${address}${query}`;
+      if (link.dataset.emailLabel === "address") {
+        link.textContent = address;
+      }
+    });
+  }
 
   const revealSelectors = [
     ".demo-hero > div",

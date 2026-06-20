@@ -2,9 +2,9 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v109.0`
+Current visible version: `v112.0`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=109.0`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=112.0`
 
 Intended domain: `web-by-elie.com`
 
@@ -38,7 +38,8 @@ Then open `http://localhost:8094/`.
 - `VERSION`: source of truth for the visible site version.
 - `index.html`: promoted Studio Clean homepage.
 - `assets/styles.css`: site styling.
-- `assets/theme.js`: settings popover, day/night mode, language preference, glass controls, reveal effects, and mobile sticky CTA.
+- `assets/i18n.js`: English, French, and Spanish site copy.
+- `assets/theme.js`: settings popover, language switching, day/night mode, glass controls, reveal effects, and mobile sticky CTA.
 - `apple-touch-icon.png`, `site.webmanifest`, `assets/icon-192.png`, `assets/icon-512.png`: mobile home-screen and browser install icons.
 - `assets/web-refresh-workspace.png`: generated shared hero image.
 - `robots.txt`, `sitemap.xml`: production crawl and sitemap basics.

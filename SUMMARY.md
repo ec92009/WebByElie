@@ -1,16 +1,16 @@
 # Web By Elie Summary
 
-Last updated: 2026-06-17 00:50 CEST
+Last updated: 2026-06-20 19:00 CEST
 
 ## Current State
 
 - Repo: `/Users/ecohen/Dev/WebByElie`
 - Branch: `main`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=109.0`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=112.0`
 - Local preview: `http://localhost:8094/`
 - Intended domain: `web-by-elie.com`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v109.0`
+- Current visible version: `v112.0`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -32,7 +32,7 @@ Last updated: 2026-06-17 00:50 CEST
 - Added mobile home-screen and browser install icon metadata using the Web By Elie logo.
 - Added generated logo, QR assets, and a local-only print/coaster asset folder.
 - Added the site to the Webapps hub at `/Users/ecohen/Dev/Webapps`.
-- Upgraded the public site with a unified gear settings panel, day/night segmented control, English/French/Spanish language preference, glass transparency/translucency sliders, reveal effects, and a phone sticky email CTA.
+- Upgraded the public site with a unified gear settings panel, day/night segmented control, English/French/Spanish translated copy, glass transparency/translucency sliders, reveal effects, and a phone sticky email CTA.
 
 ## Current Offer Copy
 
@@ -56,7 +56,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `109.0`, displayed as `v109.0`.
+- Current version is `112.0`, displayed as `v112.0`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Public pages are indexable; archived redirect pages remain `noindex, nofollow`.
