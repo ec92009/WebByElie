@@ -12,10 +12,8 @@ Repo-level working preferences for `/Users/ecohen/Dev/WebByElie`.
 
 ## Workflow
 
-- Prefer small, direct edits.
 - Keep secrets, private client context, and unpublished strategy out of source files.
 - Include public policy pages for Privacy, Terms, and Data Deletion.
-- Commit and push public-facing changes once complete unless the user asks not to.
 
 ## Versioning
 
@@ -28,7 +26,6 @@ Repo-level working preferences for `/Users/ecohen/Dev/WebByElie`.
 
 - Track active collaboration time in `TIMELOG.md`.
 - Follow `~/Dev/.SOPs/TIMELOG_SOP.md`.
-- Count only active user collaboration time, not Codex background work or deployment waits.
 
 ## Preview
 
