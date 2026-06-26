@@ -18,9 +18,6 @@ Repo-level working preferences for `/Users/ecohen/Dev/WebByElie`.
 ## Versioning
 
 - Follow `~/Dev/.SOPs/VERSIONING_SOP.md`.
-- `VERSION` is the source of truth for the visible site version, without the leading `v`.
-- Use the shared calendar visible version format from the SOP.
-- When public HTML or CSS changes, keep the visible footer version and `assets/styles.css?v=X.Y` cache-bust strings in sync.
 
 ## Timelog
 
