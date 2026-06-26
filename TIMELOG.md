@@ -47,7 +47,8 @@ Clock state: running
 | 2026-06-26 | 10:20 CEST | 10:23 CEST | 0:03 | Requested SEO/AIO implementation including canonical cleanup, structured data, localized pages, indexing setup, and crawler policy. |
 | 2026-06-26 | 11:31 CEST | 14:06 CEST | 0:07 | Completed account-side Google/Bing verification, sitemap submission, URL inspection/indexing requests, and the Bing logo alt cleanup. |
 | 2026-06-26 | 14:32 CEST | 14:33 CEST | 0:01 | Requested a public selected-work section for sites created, refreshed, and maintained. |
+| 2026-06-26 | 15:26 CEST | 15:27 CEST | 0:01 | Refined selected-work examples to Assurances de Rueil, Golden Years Tax Strategy, and Photos By Elie. |
 
 ## Totals
 
-Active collaboration time used: 1:07
+Active collaboration time used: 1:08

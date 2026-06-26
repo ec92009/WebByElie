@@ -915,24 +915,24 @@ h3 {
   height: 12px;
 }
 
-.work-preview-webbyelie {
-  background: #eef6f2;
+.work-preview-assurances {
+  background: #edf4fb;
 }
 
-.work-preview-webbyelie span:nth-child(1) {
-  background: #151f25;
+.work-preview-assurances span:nth-child(1) {
+  background: #173a5c;
 }
 
-.work-preview-webbyelie span:nth-child(2) {
-  background: #658f80;
+.work-preview-assurances span:nth-child(2) {
+  background: #4f8cab;
 }
 
-.work-preview-webbyelie span:nth-child(3) {
-  background: #df6f45;
+.work-preview-assurances span:nth-child(3) {
+  background: #d96b5f;
 }
 
-.work-preview-webbyelie span:nth-child(4) {
-  background: #526f9d;
+.work-preview-assurances span:nth-child(4) {
+  background: #7bb0a8;
 }
 
 .work-preview-golden {
@@ -955,24 +955,24 @@ h3 {
   background: #efe2b9;
 }
 
-.work-preview-olea {
-  background: #f4eee7;
+.work-preview-photos {
+  background: #f0f3f5;
 }
 
-.work-preview-olea span:nth-child(1) {
-  background: #263f38;
+.work-preview-photos span:nth-child(1) {
+  background: #20262d;
 }
 
-.work-preview-olea span:nth-child(2) {
-  background: #c76f4a;
+.work-preview-photos span:nth-child(2) {
+  background: #6e8794;
 }
 
-.work-preview-olea span:nth-child(3) {
-  background: #738b8c;
+.work-preview-photos span:nth-child(3) {
+  background: #cf704a;
 }
 
-.work-preview-olea span:nth-child(4) {
-  background: #d7c0a3;
+.work-preview-photos span:nth-child(4) {
+  background: #d6b96c;
 }
 
 .work-body {

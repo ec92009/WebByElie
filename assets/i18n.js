@@ -54,34 +54,34 @@ window.webByElieI18n = {
         ],
         workEyebrow: "Selected work",
         workTitle: "Public sites, built to stay useful.",
-        workLede: "A few public examples where the work is visible: new static builds, refreshed positioning, launch infrastructure, and ongoing upkeep.",
+        workLede: "A few public examples where the work is visible: WordPress upkeep, search-focused refreshes, and full-design photography commerce.",
         workExamples: [
           {
-            title: "Web By Elie",
-            role: "Created / maintained",
-            summary: "A multilingual service site for practical refresh, search, AI-ready structure, and web-spend cleanup.",
-            detail: "Static site, Cloudflare Pages, localized routes, structured data, crawler policy, and account-side indexing.",
-            url: "https://web-by-elie.com/",
+            title: "Assurances de Rueil",
+            role: "Refresh / WordPress maintenance",
+            summary: "A French insurance brokerage site refreshed for clearer service navigation, local trust signals, and a steadier WordPress foundation.",
+            detail: "WordPress maintenance, public page fixes, metadata and content cleanup, mobile polish, and ongoing technical upkeep.",
+            url: "https://assurancesderueil.fr/",
             cta: "Visit site",
-            theme: "webbyelie"
+            theme: "assurances"
           },
           {
             title: "Golden Years Tax Strategy",
-            role: "Refreshed / launched",
-            summary: "A public tax strategy site rebuilt around clearer positioning, direct conversion flow, and production-safe static hosting.",
-            detail: "Cloudflare Pages launch, policy pages, metadata cleanup, SEO/AIO structure, and ongoing technical maintenance.",
+            role: "Refresh / SEO optimization",
+            summary: "A public tax-strategy site refreshed around clearer service positioning, stronger search structure, and a direct consultation flow.",
+            detail: "SEO metadata cleanup, answer-friendly page structure, Cloudflare Pages launch, policy pages, and ongoing technical maintenance.",
             url: "https://www.goldenyearstaxstrategy.com/",
             cta: "Visit site",
             theme: "golden"
           },
           {
-            title: "Olea Media Co",
-            role: "Created / previewed",
-            summary: "A visual listing-upgrade site for real-estate photo cleanup, new shoots, virtual staging, and physical staging.",
-            detail: "Public preview, multilingual offer copy, variant structure, and downloadable offer-sheet workflow.",
-            url: "https://ec92009.github.io/oleamediaco/",
-            cta: "View preview",
-            theme: "olea"
+            title: "Photos By Elie",
+            role: "Full design",
+            summary: "A photography-commerce site designed around travel collections, photo detail pages, social campaigns, and digital-download paths.",
+            detail: "Brand system, catalog browsing, campaign pages, policy and support flows, and a public production domain.",
+            url: "https://photos-by-elie.com/",
+            cta: "Visit site",
+            theme: "photos"
           }
         ],
         aboutEyebrow: "About Elie",
@@ -208,34 +208,34 @@ window.webByElieI18n = {
         ],
         workEyebrow: "Réalisations",
         workTitle: "Des sites publics, conçus pour rester utiles.",
-        workLede: "Quelques exemples publics où le travail est visible : créations statiques, positionnement clarifié, infrastructure de lancement et maintenance continue.",
+        workLede: "Quelques exemples publics où le travail est visible : maintenance WordPress, refontes orientées recherche et design complet pour un site photo marchand.",
         workExamples: [
           {
-            title: "Web By Elie",
-            role: "Créé / maintenu",
-            summary: "Un site de services multilingue pour la refonte pratique, la recherche, la structure prête pour l’IA et le nettoyage des dépenses web.",
-            detail: "Site statique, Cloudflare Pages, routes localisées, données structurées, règles de crawl et indexation côté comptes.",
-            url: "https://web-by-elie.com/",
+            title: "Assurances de Rueil",
+            role: "Refonte / maintenance WordPress",
+            summary: "Un site de courtage en assurances à Rueil-Malmaison rafraîchi pour clarifier les services, renforcer les signaux locaux et stabiliser la base WordPress.",
+            detail: "Maintenance WordPress, corrections de pages publiques, nettoyage du contenu et des métadonnées, finition mobile et suivi technique continu.",
+            url: "https://assurancesderueil.fr/",
             cta: "Voir le site",
-            theme: "webbyelie"
+            theme: "assurances"
           },
           {
             title: "Golden Years Tax Strategy",
-            role: "Refondu / lancé",
-            summary: "Un site public de stratégie fiscale reconstruit autour d’un positionnement plus clair, d’un parcours de conversion direct et d’un hébergement statique sûr.",
-            detail: "Lancement Cloudflare Pages, pages de politique, nettoyage des métadonnées, structure SEO/AIO et maintenance technique continue.",
+            role: "Refonte / optimisation SEO",
+            summary: "Un site public de stratégie fiscale refondu autour d’un positionnement plus clair, d’une structure de recherche plus solide et d’un parcours de consultation direct.",
+            detail: "Nettoyage des métadonnées SEO, structure de pages facile à citer, lancement Cloudflare Pages, pages de politique et maintenance technique continue.",
             url: "https://www.goldenyearstaxstrategy.com/",
             cta: "Voir le site",
             theme: "golden"
           },
           {
-            title: "Olea Media Co",
-            role: "Créé / prévisualisé",
-            summary: "Un site de présentation pour l’amélioration visuelle d’annonces immobilières : retouche, prises de vue, staging virtuel et staging réel.",
-            detail: "Aperçu public, texte d’offre multilingue, structure de variantes et workflow de fiches d’offre téléchargeables.",
-            url: "https://ec92009.github.io/oleamediaco/",
-            cta: "Voir l’aperçu",
-            theme: "olea"
+            title: "Photos By Elie",
+            role: "Design complet",
+            summary: "Un site photo marchand conçu autour de collections de voyage, pages photo, campagnes sociales et parcours de téléchargement numérique.",
+            detail: "Système de marque, navigation catalogue, pages de campagne, parcours de politique et support, et domaine public de production.",
+            url: "https://photos-by-elie.com/",
+            cta: "Voir le site",
+            theme: "photos"
           }
         ],
         aboutEyebrow: "À propos d’Elie",
@@ -362,34 +362,34 @@ window.webByElieI18n = {
         ],
         workEyebrow: "Trabajos seleccionados",
         workTitle: "Sitios públicos, creados para seguir siendo útiles.",
-        workLede: "Algunos ejemplos públicos donde el trabajo se puede ver: nuevas webs estáticas, posicionamiento renovado, infraestructura de lanzamiento y mantenimiento continuo.",
+        workLede: "Algunos ejemplos públicos donde el trabajo se puede ver: mantenimiento WordPress, renovaciones orientadas a búsqueda y diseño completo para comercio fotográfico.",
         workExamples: [
           {
-            title: "Web By Elie",
-            role: "Creado / mantenido",
-            summary: "Un sitio de servicios multilingüe para renovación práctica, búsqueda, estructura preparada para IA y limpieza de gasto web.",
-            detail: "Sitio estático, Cloudflare Pages, rutas localizadas, datos estructurados, política de rastreo e indexación desde cuentas.",
-            url: "https://web-by-elie.com/",
+            title: "Assurances de Rueil",
+            role: "Renovación / mantenimiento WordPress",
+            summary: "Un sitio francés de corretaje de seguros renovado para aclarar la navegación de servicios, reforzar señales locales y estabilizar la base WordPress.",
+            detail: "Mantenimiento WordPress, correcciones de páginas públicas, limpieza de contenido y metadatos, pulido móvil y seguimiento técnico continuo.",
+            url: "https://assurancesderueil.fr/",
             cta: "Ver sitio",
-            theme: "webbyelie"
+            theme: "assurances"
           },
           {
             title: "Golden Years Tax Strategy",
-            role: "Renovado / lanzado",
-            summary: "Un sitio público de estrategia fiscal reconstruido con posicionamiento más claro, conversión directa y hosting estático seguro.",
-            detail: "Lanzamiento en Cloudflare Pages, páginas legales, limpieza de metadatos, estructura SEO/AIO y mantenimiento técnico continuo.",
+            role: "Renovación / optimización SEO",
+            summary: "Un sitio público de estrategia fiscal renovado con posicionamiento más claro, estructura de búsqueda más fuerte y flujo directo de consulta.",
+            detail: "Limpieza de metadatos SEO, estructura de páginas fácil de citar, lanzamiento en Cloudflare Pages, páginas legales y mantenimiento técnico continuo.",
             url: "https://www.goldenyearstaxstrategy.com/",
             cta: "Ver sitio",
             theme: "golden"
           },
           {
-            title: "Olea Media Co",
-            role: "Creado / en preview",
-            summary: "Un sitio de mejora visual de anuncios inmobiliarios para retoque de fotos, nuevas sesiones, staging virtual y staging real.",
-            detail: "Preview público, texto de oferta multilingüe, estructura de variantes y flujo de hojas de oferta descargables.",
-            url: "https://ec92009.github.io/oleamediaco/",
-            cta: "Ver preview",
-            theme: "olea"
+            title: "Photos By Elie",
+            role: "Diseño completo",
+            summary: "Un sitio de comercio fotográfico diseñado alrededor de colecciones de viaje, páginas de fotos, campañas sociales y descargas digitales.",
+            detail: "Sistema de marca, navegación de catálogo, páginas de campaña, flujos de políticas y soporte, y dominio público de producción.",
+            url: "https://photos-by-elie.com/",
+            cta: "Ver sitio",
+            theme: "photos"
           }
         ],
         aboutEyebrow: "Sobre Elie",
