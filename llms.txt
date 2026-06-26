@@ -1,0 +1,33 @@
+# Web By Elie
+
+Web By Elie helps independent businesses refresh existing websites, improve
+search clarity, prepare site structure for AI-assisted search, and review
+avoidable web/tooling costs.
+
+## Canonical Site
+
+- Home: https://web-by-elie.com/
+- French: https://web-by-elie.com/fr/
+- Spanish: https://web-by-elie.com/es/
+- Privacy: https://web-by-elie.com/privacy
+- Terms: https://web-by-elie.com/terms
+- Data deletion: https://web-by-elie.com/data-deletion
+
+## Services
+
+- Website refresh: preserve useful existing website work, compare real visual
+  options, and prepare a final site direction.
+- Search Engine Optimization: review titles, descriptions, headings, links,
+  service wording, locations, and page structure.
+- AI-ready structure: make basic business facts easier for people, search
+  engines, and AI assistants to understand.
+- Web spend cleanup: review unused subscriptions, overlapping tools, paid
+  tiers, renewals, and account ownership gaps.
+
+## Important Notes
+
+- SEO and AI-search work can improve clarity and technical readiness, but no
+  ranking, traffic, lead, or AI-answer placement is guaranteed.
+- Most projects begin with a practical 10-hour initial bundle.
+- Work is tracked at 100 USD per hour, with a check-in at 50% of the retainer.
+- Contact: hello@web-by-elie.com

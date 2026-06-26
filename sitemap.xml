@@ -1,15 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://web-by-elie.com/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/" />
   </url>
   <url>
-    <loc>https://web-by-elie.com/privacy.html</loc>
+    <loc>https://web-by-elie.com/fr/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/" />
   </url>
   <url>
-    <loc>https://web-by-elie.com/terms.html</loc>
+    <loc>https://web-by-elie.com/es/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/" />
   </url>
   <url>
-    <loc>https://web-by-elie.com/data-deletion.html</loc>
+    <loc>https://web-by-elie.com/privacy</loc>
+    <lastmod>2026-06-26</lastmod>
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/terms</loc>
+    <lastmod>2026-06-26</lastmod>
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/data-deletion</loc>
+    <lastmod>2026-06-26</lastmod>
   </url>
 </urlset>

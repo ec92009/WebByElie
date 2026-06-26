@@ -6,6 +6,7 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   const translations = window.webByElieI18n || {};
+  const supportedLanguages = ["en", "fr", "es"];
   const defaults = {
     language: "en",
     theme: "day",
@@ -32,6 +33,17 @@
   };
 
   const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+  const getPathParts = () => window.location.pathname.split("/").filter(Boolean);
+  const pageLanguage = () => {
+    const pathLanguage = getPathParts()[0];
+    if (supportedLanguages.includes(root.lang)) {
+      return root.lang;
+    }
+    if (supportedLanguages.includes(pathLanguage)) {
+      return pathLanguage;
+    }
+    return defaults.language;
+  };
 
   const readSettings = () => {
     const saved = safeStorage.get(settingsKey);
@@ -46,7 +58,7 @@
 
     const legacyTheme = safeStorage.get(legacyThemeKey);
     return {
-      language: ["en", "fr", "es"].includes(parsed.language) ? parsed.language : defaults.language,
+      language: supportedLanguages.includes(parsed.language) ? parsed.language : pageLanguage(),
       theme: parsed.theme === "night" || legacyTheme === "night" ? "night" : defaults.theme,
       transparency: clamp(Number(parsed.transparency) || defaults.transparency, 68, 94),
       translucency: clamp(Number(parsed.translucency) || defaults.translucency, 8, 28),
@@ -56,7 +68,7 @@
   let state = readSettings();
 
   if (settingsRoot && !settingsRoot.querySelector("[data-settings-panel]")) {
-    const version = settingsRoot.dataset.siteVersion || "v112.0";
+    const version = settingsRoot.dataset.siteVersion || "v118.0";
     settingsRoot.insertAdjacentHTML(
       "beforeend",
       `<div class="settings-panel" id="site-settings-panel" role="dialog" aria-label="Site settings" data-settings-panel hidden>
@@ -106,7 +118,7 @@
   const themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
 
   const getCopy = () => translations[state.language] || translations.en || {};
-  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v112.0";
+  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v118.0";
   const setAllText = (selector, value) => {
     if (value === undefined) {
       return;
@@ -154,14 +166,16 @@
     });
   };
   const getPageKey = () => {
-    const fileName = window.location.pathname.split("/").pop() || "index.html";
-    if (fileName === "privacy.html") {
+    const parts = getPathParts();
+    const fileName = parts[parts.length - 1] || "index.html";
+    const pageName = fileName === "index.html" && parts.length > 1 ? parts[parts.length - 2] : fileName.replace(/\.html$/, "");
+    if (pageName === "privacy") {
       return "privacy";
     }
-    if (fileName === "terms.html") {
+    if (pageName === "terms") {
       return "terms";
     }
-    if (fileName === "data-deletion.html") {
+    if (pageName === "data-deletion") {
       return "deletion";
     }
     return "home";
@@ -199,12 +213,12 @@
     const page = (copy.pages && copy.pages[getPageKey()]) || {};
     const version = getSiteVersion();
 
-    setAllText('.nav a[href="#services"], .nav a[href="index.html#services"]', common.navServices);
-    setAllText('.nav a[href="#process"], .nav a[href="index.html#process"]', common.navProcess);
-    setAllText('.nav a[href="#contact"], .nav a[href="index.html#contact"]', common.navContact);
-    setAllText('.footer-links a[href="privacy.html"], .nav a[href="privacy.html"]', common.privacy);
-    setAllText('.footer-links a[href="terms.html"], .nav a[href="terms.html"]', common.terms);
-    setAllText('.footer-links a[href="data-deletion.html"], .nav a[href="data-deletion.html"]', common.dataDeletion);
+    setAllText('.nav a[href="#services"], .nav a[href="./#services"], .nav a[href="../#services"], .nav a[href="index.html#services"]', common.navServices);
+    setAllText('.nav a[href="#process"], .nav a[href="./#process"], .nav a[href="../#process"], .nav a[href="index.html#process"]', common.navProcess);
+    setAllText('.nav a[href="#contact"], .nav a[href="./#contact"], .nav a[href="../#contact"], .nav a[href="index.html#contact"]', common.navContact);
+    setAllText('.footer-links a[href="privacy"], .footer-links a[href="../privacy"], .footer-links a[href="privacy.html"], .nav a[href="privacy"], .nav a[href="../privacy"], .nav a[href="privacy.html"]', common.privacy);
+    setAllText('.footer-links a[href="terms"], .footer-links a[href="../terms"], .footer-links a[href="terms.html"], .nav a[href="terms"], .nav a[href="../terms"], .nav a[href="terms.html"]', common.terms);
+    setAllText('.footer-links a[href="data-deletion"], .footer-links a[href="../data-deletion"], .footer-links a[href="data-deletion.html"], .nav a[href="data-deletion"], .nav a[href="../data-deletion"], .nav a[href="data-deletion.html"]', common.dataDeletion);
     setAllText(".footer-inner > span", (common.versionLine || "Web By Elie · {version}").replace("{version}", version));
 
     setAttribute("[data-settings-toggle]", "aria-label", settings.open);
@@ -259,6 +273,11 @@
       setText(".budget-layout .eyebrow", page.budgetEyebrow);
       setText(".budget-layout h2", page.budgetTitle);
       setListHtml(".budget-list p", page.budget);
+      setText("#answers .section-head .eyebrow", page.answersEyebrow);
+      setText("#answers .section-head h2", page.answersTitle);
+      setText("#answers .section-head .lede", page.answersLede);
+      setListText(".answer-list article h3", (page.answers || []).map((item) => item[0]));
+      setListText(".answer-list article p", (page.answers || []).map((item) => item[1]));
       setText("#contact .eyebrow", page.contactEyebrow);
       setText("#contact h2", page.contactTitle);
       return;

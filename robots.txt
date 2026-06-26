@@ -1,4 +1,24 @@
 User-agent: *
 Allow: /
 
+# Public discovery policy: Web By Elie is intended to be visible to
+# compliant search engines and answer engines.
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://web-by-elie.com/sitemap.xml

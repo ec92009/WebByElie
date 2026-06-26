@@ -423,6 +423,7 @@ h3 {
 .settings-button::before,
 .mobile-sticky-cta::before,
 .studio-services article::before,
+.answer-list article::before,
 .work-steps article::before,
 .signoff-box::before,
 .policy-card::before,
@@ -743,6 +744,7 @@ h3 {
 .demo-panel,
 .demo-cards article,
 .studio-services article,
+.answer-list article,
 .advisor-table div,
 .advisor-checklist {
   position: relative;
@@ -809,6 +811,16 @@ h3 {
   padding: 22px;
 }
 
+.answer-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.answer-list article {
+  padding: 20px;
+}
+
 .work-steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -835,11 +847,13 @@ h3 {
   font-weight: 900;
 }
 
-.work-steps h3 {
+.work-steps h3,
+.answer-list h3 {
   margin: 8px 0 10px;
 }
 
-.work-steps p {
+.work-steps p,
+.answer-list p {
   color: var(--muted);
 }
 
@@ -894,6 +908,7 @@ h3 {
   .demo-panel:hover,
   .demo-cards article:hover,
   .studio-services article:hover,
+  .answer-list article:hover,
   .advisor-table div:hover,
   .advisor-checklist:hover,
   .work-steps article:hover,
@@ -922,6 +937,7 @@ h3 {
   .demo-panel:hover,
   .demo-cards article:hover,
   .studio-services article:hover,
+  .answer-list article:hover,
   .advisor-table div:hover,
   .advisor-checklist:hover,
   .work-steps article:hover,
@@ -1073,6 +1089,7 @@ html[data-theme="night"] .policy-card,
 html[data-theme="night"] .demo-panel,
 html[data-theme="night"] .demo-cards article,
 html[data-theme="night"] .studio-services article,
+html[data-theme="night"] .answer-list article,
 html[data-theme="night"] .advisor-table div,
 html[data-theme="night"] .advisor-checklist,
 html[data-theme="night"] .work-steps article,
@@ -1226,6 +1243,7 @@ html[data-theme="night"] .tag {
   .demo-cards,
   .studio-services,
   .work-steps,
+  .answer-list,
   .demo-split,
   .savings-layout,
   .about-layout,
@@ -1341,6 +1359,7 @@ html[data-theme="night"] .tag {
   .settings-button:active,
   .mobile-sticky-cta:active,
   .studio-services article:active,
+  .answer-list article:active,
   .work-steps article:active,
   .signoff-box:active {
     box-shadow: inset 0 1px 0 var(--glass-shine), 0 12px 28px rgba(29, 41, 48, 0.2);
@@ -1350,6 +1369,7 @@ html[data-theme="night"] .tag {
   .settings-button:active::before,
   .mobile-sticky-cta:active::before,
   .studio-services article:active::before,
+  .answer-list article:active::before,
   .work-steps article:active::before,
   .signoff-box:active::before {
     animation: glassSheen 720ms var(--ease-out) 1;
@@ -1375,6 +1395,7 @@ html[data-theme="night"] .tag {
   .demo-panel:hover,
   .demo-cards article:hover,
   .studio-services article:hover,
+  .answer-list article:hover,
   .advisor-table div:hover,
   .advisor-checklist:hover,
   .work-steps article:hover,
@@ -1401,6 +1422,7 @@ html[data-theme="night"] .tag {
   .settings-button::before,
   .mobile-sticky-cta::before,
   .studio-services article::before,
+  .answer-list article::before,
   .work-steps article::before,
   .signoff-box::before,
   .policy-card::before,

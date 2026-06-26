@@ -72,6 +72,16 @@ window.webByElieI18n = {
           "<strong>Accounting:</strong> work is tracked in clear $100/hour increments, with notes on what was done and what changed.",
           "<strong>Visibility:</strong> you are kept up to date as the budget is used, with a clear manual check-in when the retainer reaches 50%."
         ],
+        answersEyebrow: "Quick answers",
+        answersTitle: "Useful facts, easy to quote.",
+        answersLede: "These are the plain-language answers people, search engines, and AI assistants should be able to extract from the site.",
+        answers: [
+          ["Who is Web By Elie for?", "Web By Elie is for independent businesses that already have a website or web tools and want a practical refresh, clearer search signals, AI-readable structure, and a review of avoidable web spending."],
+          ["What happens in the first pass?", "The first pass reviews the current site, preserves useful work, identifies visitor friction, compares design directions, and checks page titles, descriptions, headings, service wording, links, mobile flow, AI-readable facts, and avoidable costs."],
+          ["Can SEO or AI answer placement be guaranteed?", "No ranking, traffic, lead, or AI answer placement is guaranteed. The work improves clarity, crawlability, structure, and answer quality so the site is easier for people, search engines, and AI assistants to understand."],
+          ["Is the existing website replaced from scratch?", "Not by default. The process starts by preserving what works, then offers practical design and structure improvements before preparing a final site direction."],
+          ["How is the initial budget handled?", "Most projects begin with a 10-hour initial bundle. Work is tracked at $100 per hour with progress notes and a manual check-in when the retainer reaches 50%."]
+        ],
         contactEyebrow: "Next",
         contactTitle: "Send the link. Get the first pass."
       },
@@ -183,6 +193,16 @@ window.webByElieI18n = {
           "<strong>Suivi :</strong> le travail est comptabilisé clairement à 100 $/heure, avec des notes sur ce qui a été fait et ce qui a changé.",
           "<strong>Visibilité :</strong> vous êtes tenu au courant de l’utilisation du budget, avec un point manuel clair quand le forfait atteint 50 %."
         ],
+        answersEyebrow: "Réponses rapides",
+        answersTitle: "Des faits utiles, faciles à citer.",
+        answersLede: "Voici les réponses en langage clair que les personnes, les moteurs de recherche et les assistants IA doivent pouvoir extraire du site.",
+        answers: [
+          ["À qui s’adresse Web By Elie ?", "Web By Elie s’adresse aux entreprises indépendantes qui ont déjà un site ou des outils web et veulent une refonte pratique, des signaux de recherche plus clairs, une structure lisible par l’IA et un examen des dépenses web évitables."],
+          ["Que se passe-t-il lors de la première passe ?", "La première passe examine le site actuel, préserve le travail utile, repère les frictions visiteurs, compare des directions visuelles et vérifie les titres, descriptions, sections, formulations de services, liens, parcours mobile, faits lisibles par l’IA et coûts évitables."],
+          ["Le SEO ou la présence dans les réponses IA peuvent-ils être garantis ?", "Aucun classement, trafic, prospect ou placement dans une réponse IA n’est garanti. Le travail améliore la clarté, l’accessibilité aux robots, la structure et la qualité des réponses afin que le site soit plus facile à comprendre."],
+          ["Le site existant est-il remplacé de zéro ?", "Pas par défaut. Le processus commence par préserver ce qui fonctionne, puis propose des améliorations pratiques de design et de structure avant de préparer la direction finale du site."],
+          ["Comment le budget initial est-il géré ?", "La plupart des projets commencent par un forfait initial de 10 heures. Le travail est suivi à 100 $/heure avec des notes de progrès et un point manuel quand le forfait atteint 50 %."]
+        ],
         contactEyebrow: "Suite",
         contactTitle: "Envoyez le lien. Recevez une première passe."
       },
@@ -293,6 +313,16 @@ window.webByElieI18n = {
           "<strong>Inicio:</strong> la mayoría de los proyectos empiezan con un paquete inicial práctico de 10 horas, para poder revisar, diseñar y avanzar sin un ciclo largo de propuesta.",
           "<strong>Contabilidad:</strong> el trabajo se registra en incrementos claros de 100 $/hora, con notas sobre lo que se hizo y lo que cambió.",
           "<strong>Visibilidad:</strong> se le mantiene al día a medida que se usa el presupuesto, con una revisión manual clara cuando el paquete alcanza el 50 %."
+        ],
+        answersEyebrow: "Respuestas rápidas",
+        answersTitle: "Datos útiles, fáciles de citar.",
+        answersLede: "Estas son las respuestas en lenguaje claro que las personas, los buscadores y los asistentes de IA deberían poder extraer del sitio.",
+        answers: [
+          ["¿Para quién es Web By Elie?", "Web By Elie es para negocios independientes que ya tienen un sitio web o herramientas web y quieren una renovación práctica, señales de búsqueda más claras, estructura legible para IA y una revisión del gasto web evitable."],
+          ["¿Qué ocurre en la primera pasada?", "La primera pasada revisa el sitio actual, conserva el trabajo útil, identifica fricciones para visitantes, compara direcciones de diseño y revisa títulos, descripciones, encabezados, redacción de servicios, enlaces, flujo móvil, datos legibles para IA y costes evitables."],
+          ["¿Se puede garantizar el SEO o aparecer en respuestas de IA?", "No se garantiza ningún posicionamiento, tráfico, cliente potencial ni aparición en respuestas de IA. El trabajo mejora la claridad, rastreabilidad, estructura y calidad de las respuestas para que el sitio sea más fácil de entender."],
+          ["¿Se sustituye el sitio existente desde cero?", "No por defecto. El proceso empieza preservando lo que funciona y luego propone mejoras prácticas de diseño y estructura antes de preparar la dirección final del sitio."],
+          ["¿Cómo se gestiona el presupuesto inicial?", "La mayoría de los proyectos empiezan con un paquete inicial de 10 horas. El trabajo se registra a 100 $/hora con notas de progreso y una revisión manual cuando el paquete alcanza el 50 %."]
         ],
         contactEyebrow: "Siguiente",
         contactTitle: "Envíe el enlace. Reciba la primera pasada."

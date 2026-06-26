@@ -2,11 +2,11 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v112.0`
+Current visible version: `v118.0`
 
 Production URL: `https://web-by-elie.com/`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=112.0`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=118.0`
 
 Contact email: `hello@web-by-elie.com`
 
@@ -37,6 +37,7 @@ Then open `http://localhost:8094/`.
 
 - `VERSION`: source of truth for the visible site version.
 - `index.html`: promoted Studio Clean homepage.
+- `fr/index.html`, `es/index.html`: static localized homepages with hreflang metadata.
 - `assets/styles.css`: site styling.
 - `assets/i18n.js`: English, French, and Spanish site copy.
 - `assets/theme.js`: settings popover, language switching, day/night mode, glass controls, reveal effects, and mobile sticky CTA.
@@ -44,6 +45,9 @@ Then open `http://localhost:8094/`.
 - `assets/web-refresh-workspace.png`: generated shared hero image.
 - `robots.txt`, `sitemap.xml`: production crawl and sitemap basics.
 - `privacy.html`, `terms.html`, `data-deletion.html`: baseline public policy pages.
+- `privacy/`, `terms/`, `data-deletion/`: extensionless policy routes for static preview and production canonical URLs.
+- `llms.txt`: concise public summary for answer-engine crawlers.
+- `SEO_INDEXING.md`: Search Console and Bing Webmaster setup/checklist notes.
 - `SUMMARY.md`: current project handoff and backlog.
 - `TIMELOG.md`: active collaboration timelog.
 
@@ -58,6 +62,9 @@ Then open `http://localhost:8094/`.
 ## Launch Notes
 
 - Public pages are indexable and include canonical metadata for `https://web-by-elie.com/`.
+- Home pages include Open Graph/Twitter metadata, JSON-LD structured data, and English/French/Spanish hreflang alternates.
+- Canonical policy URLs use extensionless production routes.
+- `robots.txt` explicitly allows compliant search and AI discovery crawlers.
 - Archived proposal redirect pages remain `noindex, nofollow`.
 - Production basics now include `robots.txt`, `sitemap.xml`, and mobile home-screen icon metadata.
 - Production is served by Cloudflare Pages project `web-by-elie` (`web-by-elie.pages.dev`), with GitHub Pages retained as the public preview/fallback.

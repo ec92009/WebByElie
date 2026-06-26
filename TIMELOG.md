@@ -44,7 +44,8 @@ Clock state: running
 | 2026-06-17 | 00:41 CEST | 00:43 CEST | 0:02 | Requested skill-based public site upgrade with unified settings controls. |
 | 2026-06-18 | 23:54 CEST | 2026-06-19 00:00 CEST | 0:02 | Requested central Tickets intake for WebByElie and reviewed progress/closeout updates. |
 | 2026-06-20 | 19:00 CEST | 19:02 CEST | 0:02 | Reported that language selection persisted but did not translate site copy. |
+| 2026-06-26 | 10:20 CEST | 10:23 CEST | 0:03 | Requested SEO/AIO implementation including canonical cleanup, structured data, localized pages, indexing setup, and crawler policy. |
 
 ## Totals
 
-Active collaboration time used: 0:56
+Active collaboration time used: 0:59
