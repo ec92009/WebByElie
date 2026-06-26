@@ -159,7 +159,7 @@ ${ogAlternates}
     <div class="shell topbar-stack">
       <div class="topbar-inner">
         <a class="brand" href="./?v=${version}">
-          <img class="brand-mark" src="../assets/web-by-elie-logo.svg" alt="" />
+          <img class="brand-mark" src="../assets/web-by-elie-logo.svg" alt="Web By Elie logo" />
           <span>Web By Elie</span>
         </a>
         <div class="topbar-actions">

@@ -2,11 +2,11 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v118.0`
+Current visible version: `v118.1`
 
 Production URL: `https://web-by-elie.com/`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=118.0`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=118.1`
 
 Contact email: `hello@web-by-elie.com`
 
@@ -63,6 +63,7 @@ Then open `http://localhost:8094/`.
 
 - Public pages are indexable and include canonical metadata for `https://web-by-elie.com/`.
 - Home pages include Open Graph/Twitter metadata, JSON-LD structured data, and English/French/Spanish hreflang alternates.
+- Google Search Console and Bing Webmaster Tools are verified, with the sitemap submitted and key URLs requested for indexing.
 - Canonical policy URLs use extensionless production routes.
 - `robots.txt` explicitly allows compliant search and AI discovery crawlers.
 - Archived proposal redirect pages remain `noindex, nofollow`.

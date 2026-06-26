@@ -1,6 +1,8 @@
 # Web By Elie Search Indexing
 
-Current public version: `v118.0`
+Current public version: `v118.1`
+
+Last account-side indexing run: 2026-06-26
 
 ## Public URLs To Submit
 
@@ -11,26 +13,41 @@ Current public version: `v118.0`
 
 ## Google Search Console
 
-Status: ready for account-side setup.
+Status: verified and submitted.
 
-1. Add property for `https://web-by-elie.com/`.
-2. Verify ownership with a DNS TXT record or an HTML verification file.
-3. Submit `https://web-by-elie.com/sitemap.xml`.
-4. Inspect the homepage URL after deployment.
-5. Request indexing after the production deploy is live.
+1. Added the domain property for `web-by-elie.com`.
+2. Verified ownership with a Cloudflare DNS TXT record.
+3. Submitted `https://web-by-elie.com/sitemap.xml`.
+4. Confirmed sitemap status: Success, last read 2026-06-26, 6 discovered pages.
+5. Inspected and requested indexing for:
+   - `https://web-by-elie.com/`: Page is indexed.
+   - `https://web-by-elie.com/fr/`: Discovered, currently not indexed.
+   - `https://web-by-elie.com/es/`: Discovered, currently not indexed.
 
-No Google verification token is stored in this repo yet.
+The Google verification value is intentionally not stored in this repo.
 
 ## Bing Webmaster Tools
 
-Status: ready for account-side setup.
+Status: verified and submitted.
 
-1. Add site `https://web-by-elie.com/`.
-2. Verify ownership with DNS TXT, XML, or meta tag verification.
-3. Submit `https://web-by-elie.com/sitemap.xml`.
-4. Use URL inspection for the homepage and localized pages.
+1. Added site `https://web-by-elie.com/`.
+2. Verified ownership with a Cloudflare DNS CNAME record.
+3. Submitted `https://web-by-elie.com/sitemap.xml`.
+4. Confirmed sitemap status: submitted successfully, Processing, 1 known sitemap, 0 errors, 0 warnings.
+5. Inspected and requested indexing for:
+   - `https://web-by-elie.com/`: Indexed successfully, URL can appear on Bing.
+   - `https://web-by-elie.com/fr/`: Not discovered yet, indexing requested.
+   - `https://web-by-elie.com/es/`: Not discovered yet, indexing requested.
 
-No Bing verification token is stored in this repo yet.
+Bing flagged one homepage SEO/GEO notice for the logo image alt text. This was fixed in `v118.1` by giving the visible brand mark a meaningful `alt`.
+
+The Bing verification value is intentionally not stored in this repo.
+
+## Follow-Up Checks
+
+- Recheck Google coverage for `/fr/` and `/es/` after Search Console processes the indexing requests.
+- Recheck Bing sitemap processing after the dashboard's processing window, especially discovered URL count.
+- Re-run Bing URL Inspection for the homepage after `v118.1` is deployed and crawled to confirm the logo alt notice clears.
 
 ## Pages To Check
 
