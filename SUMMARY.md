@@ -1,6 +1,6 @@
 # Web By Elie Summary
 
-Last updated: 2026-06-26 14:06 CEST
+Last updated: 2026-06-26 14:33 CEST
 
 ## Current State
 
@@ -8,10 +8,10 @@ Last updated: 2026-06-26 14:06 CEST
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=118.1`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=118.2`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v118.1`
+- Current visible version: `v118.2`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -32,7 +32,8 @@ Last updated: 2026-06-26 14:06 CEST
 - Added launch crawl basics: `robots.txt`, `sitemap.xml`, canonical metadata, and indexable public pages.
 - Added SEO/AIO improvements: extensionless canonical policy URLs, static French and Spanish homepages, hreflang sitemap entries, Open Graph/Twitter metadata, JSON-LD structured data, answer-friendly FAQ copy, `llms.txt`, and explicit compliant search/AI crawler policy.
 - Completed account-side indexing setup in Google Search Console and Bing Webmaster Tools, including sitemap submission, URL inspection, and indexing requests for the homepage plus French and Spanish routes.
-- Fixed Bing's homepage logo alt-text notice in `v118.1`.
+- Fixed Bing's homepage logo alt-text notice and kept that cleanup in `v118.2`.
+- Added a localized selected-work showcase for public sites Web By Elie created, refreshed/launched, or maintains.
 - Added mobile home-screen and browser install icon metadata using the Web By Elie logo.
 - Added generated logo, QR assets, and a local-only print/coaster asset folder.
 - Added the site to the Webapps hub at `/Users/ecohen/Dev/Webapps`.
@@ -60,7 +61,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `118.1`, displayed as `v118.1`.
+- Current version is `118.2`, displayed as `v118.2`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
@@ -78,22 +79,25 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Fresh Numbered Backlog
 
 1. Monitor search indexing pickup.
-   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v118.1` has deployed and crawlers have processed the requests.
+   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v118.2` has deployed and crawlers have processed the requests.
 
 2. Keep Cloudflare Pages deployment repeatable.
    Preserve the clean static publish set for production deploys, keep DNS/HTTPS on Cloudflare, and protect email-related DNS records.
 
-3. Continue browser/device polish.
+3. Replace schematic work previews with approved case-study assets.
+   When each public example has approved screenshots, metrics, or case-study copy, replace the abstract preview blocks with richer proof while keeping private client context out of source.
+
+4. Continue browser/device polish.
    Recheck the homepage, policy pages, sticky header, settings panel, hero image, CTA layout, and service cards when future copy or layout changes land.
 
-4. Do a final policy wording review.
+5. Do a final policy wording review.
    Confirm Privacy, Terms, and Data Deletion are acceptable for launch and update if forms, analytics, payments, or accounts are added.
 
-5. Keep local print assets private.
+6. Keep local print assets private.
    Keep coaster/3D-print files in `private-print-assets/`; do not re-add them to published assets unless explicitly requested.
 
-6. Build a reusable chooser scaffold.
+7. Build a reusable chooser scaffold.
    If more chooser projects repeat this pattern, turn `CHOOSER_WORKFLOW_SOP.md` into a Codex skill or starter template.
 
-7. Keep the timelog current.
+8. Keep the timelog current.
    Update `TIMELOG.md` at the end of active collaboration bursts and whenever the clock is paused/resumed.

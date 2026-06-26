@@ -3,6 +3,7 @@ window.webByElieI18n = {
     common: {
       navServices: "Services",
       navProcess: "Process",
+      navWork: "Work",
       navContact: "Contact",
       privacy: "Privacy",
       terms: "Terms",
@@ -50,6 +51,38 @@ window.webByElieI18n = {
           ["Explore possible looks", "You get a small palette of design directions so you can compare real options instead of guessing from abstract descriptions."],
           ["Choose and combine", "You can pick one direction or mix pieces from different options, including the existing website, until the site feels right."],
           ["Prepare the final site", "Once the direction is chosen, we tighten the pages, search details, AI-ready structure, mobile flow, and practical launch items."]
+        ],
+        workEyebrow: "Selected work",
+        workTitle: "Public sites, built to stay useful.",
+        workLede: "A few public examples where the work is visible: new static builds, refreshed positioning, launch infrastructure, and ongoing upkeep.",
+        workExamples: [
+          {
+            title: "Web By Elie",
+            role: "Created / maintained",
+            summary: "A multilingual service site for practical refresh, search, AI-ready structure, and web-spend cleanup.",
+            detail: "Static site, Cloudflare Pages, localized routes, structured data, crawler policy, and account-side indexing.",
+            url: "https://web-by-elie.com/",
+            cta: "Visit site",
+            theme: "webbyelie"
+          },
+          {
+            title: "Golden Years Tax Strategy",
+            role: "Refreshed / launched",
+            summary: "A public tax strategy site rebuilt around clearer positioning, direct conversion flow, and production-safe static hosting.",
+            detail: "Cloudflare Pages launch, policy pages, metadata cleanup, SEO/AIO structure, and ongoing technical maintenance.",
+            url: "https://www.goldenyearstaxstrategy.com/",
+            cta: "Visit site",
+            theme: "golden"
+          },
+          {
+            title: "Olea Media Co",
+            role: "Created / previewed",
+            summary: "A visual listing-upgrade site for real-estate photo cleanup, new shoots, virtual staging, and physical staging.",
+            detail: "Public preview, multilingual offer copy, variant structure, and downloadable offer-sheet workflow.",
+            url: "https://ec92009.github.io/oleamediaco/",
+            cta: "View preview",
+            theme: "olea"
+          }
         ],
         aboutEyebrow: "About Elie",
         aboutTitle: "Decades of software judgment, applied practically.",
@@ -124,6 +157,7 @@ window.webByElieI18n = {
     common: {
       navServices: "Services",
       navProcess: "Méthode",
+      navWork: "Réalisations",
       navContact: "Contact",
       privacy: "Confidentialité",
       terms: "Conditions",
@@ -171,6 +205,38 @@ window.webByElieI18n = {
           ["Explorer des pistes visuelles", "Vous recevez une petite palette de directions graphiques afin de comparer de vraies options au lieu de deviner à partir de descriptions abstraites."],
           ["Choisir et combiner", "Vous pouvez choisir une direction ou mélanger des éléments de plusieurs options, y compris du site existant, jusqu’à ce que le site sonne juste."],
           ["Préparer le site final", "Une fois la direction choisie, nous affinons les pages, les détails de recherche, la structure prête pour l’IA, le parcours mobile et les éléments pratiques du lancement."]
+        ],
+        workEyebrow: "Réalisations",
+        workTitle: "Des sites publics, conçus pour rester utiles.",
+        workLede: "Quelques exemples publics où le travail est visible : créations statiques, positionnement clarifié, infrastructure de lancement et maintenance continue.",
+        workExamples: [
+          {
+            title: "Web By Elie",
+            role: "Créé / maintenu",
+            summary: "Un site de services multilingue pour la refonte pratique, la recherche, la structure prête pour l’IA et le nettoyage des dépenses web.",
+            detail: "Site statique, Cloudflare Pages, routes localisées, données structurées, règles de crawl et indexation côté comptes.",
+            url: "https://web-by-elie.com/",
+            cta: "Voir le site",
+            theme: "webbyelie"
+          },
+          {
+            title: "Golden Years Tax Strategy",
+            role: "Refondu / lancé",
+            summary: "Un site public de stratégie fiscale reconstruit autour d’un positionnement plus clair, d’un parcours de conversion direct et d’un hébergement statique sûr.",
+            detail: "Lancement Cloudflare Pages, pages de politique, nettoyage des métadonnées, structure SEO/AIO et maintenance technique continue.",
+            url: "https://www.goldenyearstaxstrategy.com/",
+            cta: "Voir le site",
+            theme: "golden"
+          },
+          {
+            title: "Olea Media Co",
+            role: "Créé / prévisualisé",
+            summary: "Un site de présentation pour l’amélioration visuelle d’annonces immobilières : retouche, prises de vue, staging virtuel et staging réel.",
+            detail: "Aperçu public, texte d’offre multilingue, structure de variantes et workflow de fiches d’offre téléchargeables.",
+            url: "https://ec92009.github.io/oleamediaco/",
+            cta: "Voir l’aperçu",
+            theme: "olea"
+          }
         ],
         aboutEyebrow: "À propos d’Elie",
         aboutTitle: "Des décennies de jugement logiciel, appliquées concrètement.",
@@ -245,6 +311,7 @@ window.webByElieI18n = {
     common: {
       navServices: "Servicios",
       navProcess: "Proceso",
+      navWork: "Trabajos",
       navContact: "Contacto",
       privacy: "Privacidad",
       terms: "Condiciones",
@@ -292,6 +359,38 @@ window.webByElieI18n = {
           ["Explorar posibles estilos", "Recibe una pequeña paleta de direcciones de diseño para comparar opciones reales en lugar de decidir a partir de descripciones abstractas."],
           ["Elegir y combinar", "Puede elegir una dirección o mezclar piezas de distintas opciones, incluido el sitio existente, hasta que el sitio se sienta correcto."],
           ["Preparar el sitio final", "Una vez elegida la dirección, ajustamos las páginas, los detalles de búsqueda, la estructura preparada para IA, el flujo móvil y los elementos prácticos del lanzamiento."]
+        ],
+        workEyebrow: "Trabajos seleccionados",
+        workTitle: "Sitios públicos, creados para seguir siendo útiles.",
+        workLede: "Algunos ejemplos públicos donde el trabajo se puede ver: nuevas webs estáticas, posicionamiento renovado, infraestructura de lanzamiento y mantenimiento continuo.",
+        workExamples: [
+          {
+            title: "Web By Elie",
+            role: "Creado / mantenido",
+            summary: "Un sitio de servicios multilingüe para renovación práctica, búsqueda, estructura preparada para IA y limpieza de gasto web.",
+            detail: "Sitio estático, Cloudflare Pages, rutas localizadas, datos estructurados, política de rastreo e indexación desde cuentas.",
+            url: "https://web-by-elie.com/",
+            cta: "Ver sitio",
+            theme: "webbyelie"
+          },
+          {
+            title: "Golden Years Tax Strategy",
+            role: "Renovado / lanzado",
+            summary: "Un sitio público de estrategia fiscal reconstruido con posicionamiento más claro, conversión directa y hosting estático seguro.",
+            detail: "Lanzamiento en Cloudflare Pages, páginas legales, limpieza de metadatos, estructura SEO/AIO y mantenimiento técnico continuo.",
+            url: "https://www.goldenyearstaxstrategy.com/",
+            cta: "Ver sitio",
+            theme: "golden"
+          },
+          {
+            title: "Olea Media Co",
+            role: "Creado / en preview",
+            summary: "Un sitio de mejora visual de anuncios inmobiliarios para retoque de fotos, nuevas sesiones, staging virtual y staging real.",
+            detail: "Preview público, texto de oferta multilingüe, estructura de variantes y flujo de hojas de oferta descargables.",
+            url: "https://ec92009.github.io/oleamediaco/",
+            cta: "Ver preview",
+            theme: "olea"
+          }
         ],
         aboutEyebrow: "Sobre Elie",
         aboutTitle: "Décadas de criterio de software, aplicadas de forma práctica.",

@@ -166,6 +166,7 @@ ${ogAlternates}
           <nav class="nav" aria-label="Primary navigation">
             <a href="#services">${text(common.navServices)}</a>
             <a href="#process">${text(common.navProcess)}</a>
+            <a href="#work">${text(common.navWork)}</a>
             <a href="#contact">${text(common.navContact)}</a>
           </nav>
           ${settingsButton}
@@ -217,6 +218,38 @@ ${ogAlternates}
             <span>${String(index + 1).padStart(2, "0")}</span>
             <h3>${text(heading)}</h3>
             <p>${text(paragraph)}</p>
+          </article>`
+            )
+            .join("\n          ")}
+        </div>
+      </div>
+    </section>
+    <section id="work" class="section work-showcase">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">${text(page.workEyebrow)}</p>
+            <h2>${text(page.workTitle)}</h2>
+          </div>
+          <p class="lede">${text(page.workLede)}</p>
+        </div>
+        <div class="work-grid">
+          ${page.workExamples
+            .map(
+              (site) => `<article class="work-card">
+            <div class="work-preview work-preview-${text(site.theme)}" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="work-body">
+              <span class="work-role">${text(site.role)}</span>
+              <h3>${text(site.title)}</h3>
+              <p>${text(site.summary)}</p>
+              <p class="work-detail">${text(site.detail)}</p>
+              <a class="text-link" href="${text(site.url)}"${site.url === baseUrl + "/" ? "" : ' target="_blank" rel="noopener"'}>${text(site.cta)}</a>
+            </div>
           </article>`
             )
             .join("\n          ")}

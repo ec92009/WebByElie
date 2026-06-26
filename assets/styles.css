@@ -424,6 +424,7 @@ h3 {
 .mobile-sticky-cta::before,
 .studio-services article::before,
 .answer-list article::before,
+.work-card::before,
 .work-steps article::before,
 .signoff-box::before,
 .policy-card::before,
@@ -745,6 +746,7 @@ h3 {
 .demo-cards article,
 .studio-services article,
 .answer-list article,
+.work-card,
 .advisor-table div,
 .advisor-checklist {
   position: relative;
@@ -857,6 +859,173 @@ h3 {
   color: var(--muted);
 }
 
+.work-showcase {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.28), rgba(237, 245, 241, 0.24) 48%, rgba(82, 111, 157, 0.1)),
+    rgba(255, 255, 255, 0.16);
+  border-block: 1px solid var(--glass-line);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(var(--glass-blur)) saturate(1.15);
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.15);
+}
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.work-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100%;
+  isolation: isolate;
+}
+
+.work-preview {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  gap: 10px;
+  min-height: 154px;
+  padding: 16px;
+  border-bottom: 1px solid var(--glass-line);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.52), rgba(255, 255, 255, 0.16)),
+    var(--soft);
+}
+
+.work-preview span {
+  display: block;
+  border-radius: 6px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24), 0 10px 24px rgba(29, 41, 48, 0.11);
+}
+
+.work-preview span:nth-child(1) {
+  grid-column: 1 / -1;
+  height: 42px;
+}
+
+.work-preview span:nth-child(2),
+.work-preview span:nth-child(3) {
+  min-height: 64px;
+}
+
+.work-preview span:nth-child(4) {
+  grid-column: 1 / -1;
+  height: 12px;
+}
+
+.work-preview-webbyelie {
+  background: #eef6f2;
+}
+
+.work-preview-webbyelie span:nth-child(1) {
+  background: #151f25;
+}
+
+.work-preview-webbyelie span:nth-child(2) {
+  background: #658f80;
+}
+
+.work-preview-webbyelie span:nth-child(3) {
+  background: #df6f45;
+}
+
+.work-preview-webbyelie span:nth-child(4) {
+  background: #526f9d;
+}
+
+.work-preview-golden {
+  background: #f7f2df;
+}
+
+.work-preview-golden span:nth-child(1) {
+  background: #13231b;
+}
+
+.work-preview-golden span:nth-child(2) {
+  background: #72947a;
+}
+
+.work-preview-golden span:nth-child(3) {
+  background: #c79c36;
+}
+
+.work-preview-golden span:nth-child(4) {
+  background: #efe2b9;
+}
+
+.work-preview-olea {
+  background: #f4eee7;
+}
+
+.work-preview-olea span:nth-child(1) {
+  background: #263f38;
+}
+
+.work-preview-olea span:nth-child(2) {
+  background: #c76f4a;
+}
+
+.work-preview-olea span:nth-child(3) {
+  background: #738b8c;
+}
+
+.work-preview-olea span:nth-child(4) {
+  background: #d7c0a3;
+}
+
+.work-body {
+  display: grid;
+  gap: 10px;
+  align-content: start;
+  padding: 20px;
+}
+
+.work-role {
+  width: max-content;
+  max-width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.54);
+  border-radius: 999px;
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.36);
+  color: var(--accent-dark);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.38);
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
+.work-body h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.12;
+}
+
+.work-body p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.work-detail {
+  font-size: 0.94rem;
+}
+
+.text-link {
+  justify-self: start;
+  width: max-content;
+  max-width: 100%;
+  border-bottom: 2px solid rgba(163, 70, 39, 0.28);
+  color: var(--accent-dark);
+  font-weight: 900;
+  text-decoration: none;
+  transition: border-color 180ms ease, color 180ms ease, transform 180ms var(--ease-out);
+}
+
+.text-link:hover {
+  border-color: currentColor;
+  color: var(--ink);
+}
+
 .demo-cards h2,
 .studio-services h2 {
   margin-bottom: 10px;
@@ -909,6 +1078,7 @@ h3 {
   .demo-cards article:hover,
   .studio-services article:hover,
   .answer-list article:hover,
+  .work-card:hover,
   .advisor-table div:hover,
   .advisor-checklist:hover,
   .work-steps article:hover,
@@ -938,6 +1108,7 @@ h3 {
   .demo-cards article:hover,
   .studio-services article:hover,
   .answer-list article:hover,
+  .work-card:hover,
   .advisor-table div:hover,
   .advisor-checklist:hover,
   .work-steps article:hover,
@@ -989,6 +1160,7 @@ button:focus-visible {
   .button:hover::before,
   .settings-button:hover::before,
   .studio-services article:hover::before,
+  .work-card:hover::before,
   .work-steps article:hover::before,
   .signoff-box:hover::before,
   .policy-card:hover::before,
@@ -1090,6 +1262,7 @@ html[data-theme="night"] .demo-panel,
 html[data-theme="night"] .demo-cards article,
 html[data-theme="night"] .studio-services article,
 html[data-theme="night"] .answer-list article,
+html[data-theme="night"] .work-card,
 html[data-theme="night"] .advisor-table div,
 html[data-theme="night"] .advisor-checklist,
 html[data-theme="night"] .work-steps article,
@@ -1243,7 +1416,9 @@ html[data-theme="night"] .tag {
   .demo-cards,
   .studio-services,
   .work-steps,
+  .work-grid,
   .answer-list,
+  .section-head,
   .demo-split,
   .savings-layout,
   .about-layout,
@@ -1360,6 +1535,7 @@ html[data-theme="night"] .tag {
   .mobile-sticky-cta:active,
   .studio-services article:active,
   .answer-list article:active,
+  .work-card:active,
   .work-steps article:active,
   .signoff-box:active {
     box-shadow: inset 0 1px 0 var(--glass-shine), 0 12px 28px rgba(29, 41, 48, 0.2);
@@ -1370,6 +1546,7 @@ html[data-theme="night"] .tag {
   .mobile-sticky-cta:active::before,
   .studio-services article:active::before,
   .answer-list article:active::before,
+  .work-card:active::before,
   .work-steps article:active::before,
   .signoff-box:active::before {
     animation: glassSheen 720ms var(--ease-out) 1;
@@ -1396,6 +1573,7 @@ html[data-theme="night"] .tag {
   .demo-cards article:hover,
   .studio-services article:hover,
   .answer-list article:hover,
+  .work-card:hover,
   .advisor-table div:hover,
   .advisor-checklist:hover,
   .work-steps article:hover,
@@ -1423,6 +1601,7 @@ html[data-theme="night"] .tag {
   .mobile-sticky-cta::before,
   .studio-services article::before,
   .answer-list article::before,
+  .work-card::before,
   .work-steps article::before,
   .signoff-box::before,
   .policy-card::before,
