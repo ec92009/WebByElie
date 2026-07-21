@@ -1,6 +1,6 @@
 # Web By Elie Search Indexing
 
-Current public version: `v143.0`
+Current public version: `v143.2`
 
 Last account-side indexing run: 2026-06-26
 
@@ -40,7 +40,7 @@ Status: verified and submitted.
    - `https://web-by-elie.com/fr/`: Not discovered yet, indexing requested.
    - `https://web-by-elie.com/es/`: Not discovered yet, indexing requested.
 
-Bing flagged one homepage SEO/GEO notice for the logo image alt text. The visible brand mark now has a meaningful `alt`, and that fix remains present in `v143.0`.
+Bing flagged one homepage SEO/GEO notice for the logo image alt text. The visible brand mark now has a meaningful `alt`, and that fix remains present in `v143.2`.
 
 The Bing verification value is intentionally not stored in this repo.
 
@@ -48,7 +48,7 @@ The Bing verification value is intentionally not stored in this repo.
 
 - Recheck Google coverage for `/fr/` and `/es/` after Search Console processes the indexing requests.
 - Recheck Bing sitemap processing after the dashboard's processing window, especially discovered URL count.
-- Re-run Bing URL Inspection for the homepage after `v143.0` is deployed and crawled to confirm the logo alt notice clears.
+- Re-run Bing URL Inspection for the homepage after `v143.2` is deployed and crawled to confirm the logo alt notice clears.
 
 ## Pages To Check
 

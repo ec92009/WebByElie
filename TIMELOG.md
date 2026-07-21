@@ -50,7 +50,10 @@ Clock state: running
 | 2026-06-26 | 15:26 CEST | 15:27 CEST | 0:01 | Refined selected-work examples to Assurances de Rueil, Golden Years Tax Strategy, and Photos By Elie. |
 | 2026-07-21 | 10:47 CEST | 10:48 CEST | 0:01 | Resumed the approved Golden Years case-study build after closing billing follow-ups. |
 | 2026-07-21 | 11:00 CEST | 11:01 CEST | 0:01 | Approved publishing the Golden Years case study to the production Web By Elie site. |
+| 2026-07-21 | 14:15 CEST | 14:17 CEST | 0:02 | Requested a livelier Golden Years case study harmonized with the main Web By Elie visual system. |
+| 2026-07-21 | 14:28 CEST | 14:29 CEST | 0:01 | Requested realistic laptop and phone hardware framing for the case-study screenshots. |
+| 2026-07-21 | 14:35 CEST | 14:36 CEST | 0:01 | Approved the harmonized Golden Years case study for production publishing. |
 
 ## Totals
 
-Active collaboration time used: 1:10
+Active collaboration time used: 1:14
