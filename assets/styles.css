@@ -977,6 +977,7 @@ h3 {
   grid-template-rows: auto 1fr;
   min-height: 100%;
   isolation: isolate;
+  border-color: rgba(29, 41, 48, 0.16);
 }
 
 .work-card-hit {
@@ -995,7 +996,7 @@ h3 {
   position: relative;
   min-height: 190px;
   overflow: hidden;
-  border-bottom: 1px solid var(--glass-line);
+  border-bottom: 0;
   background: var(--soft);
 }
 
@@ -1013,6 +1014,8 @@ h3 {
   height: 190px;
   object-fit: cover;
   object-position: top center;
+  transform: scale(1.04);
+  transform-origin: top center;
   transition: transform 260ms var(--ease-out), filter 260ms ease;
 }
 
@@ -1178,7 +1181,7 @@ h3 {
   }
 
   .work-card:hover .work-preview img {
-    transform: scale(1.025);
+    transform: scale(1.065);
     filter: saturate(1.04) contrast(1.03);
   }
 }
@@ -1361,6 +1364,10 @@ html[data-theme="night"] .work-role {
   background: #f7fbf8;
   color: #18242c;
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
+}
+
+html[data-theme="night"] .work-card {
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .warm-note {

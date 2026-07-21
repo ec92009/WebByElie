@@ -8,10 +8,10 @@ Last updated: 2026-07-21 19:23 CEST
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=143.10`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=143.11`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v143.10`
+- Current visible version: `v143.11`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -63,7 +63,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `143.10`, displayed as `v143.10`.
+- Current version is `143.11`, displayed as `v143.11`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
@@ -81,7 +81,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Fresh Numbered Backlog
 
 1. Monitor search indexing pickup.
-   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v143.10` has deployed and crawlers have processed the requests.
+   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v143.11` has deployed and crawlers have processed the requests.
 
 2. Keep Cloudflare Pages deployment repeatable.
    Preserve the clean static publish set for production deploys, keep DNS/HTTPS on Cloudflare, and protect email-related DNS records.
