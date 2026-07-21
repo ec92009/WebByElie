@@ -68,7 +68,7 @@
   let state = readSettings();
 
   if (settingsRoot && !settingsRoot.querySelector("[data-settings-panel]")) {
-    const version = settingsRoot.dataset.siteVersion || "v118.3";
+    const version = settingsRoot.dataset.siteVersion || "v143.0";
     settingsRoot.insertAdjacentHTML(
       "beforeend",
       `<div class="settings-panel" id="site-settings-panel" role="dialog" aria-label="Site settings" data-settings-panel hidden>
@@ -118,7 +118,7 @@
   const themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
 
   const getCopy = () => translations[state.language] || translations.en || {};
-  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v118.3";
+  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v143.0";
   const setAllText = (selector, value) => {
     if (value === undefined) {
       return;
@@ -264,6 +264,26 @@
       setText("#process .section-head .lede", page.processLede);
       setListText(".work-steps article h3", (page.steps || []).map((item) => item[0]));
       setListText(".work-steps article p", (page.steps || []).map((item) => item[1]));
+      setText("#work .section-head .eyebrow", page.workEyebrow);
+      setText("#work .section-head h2", page.workTitle);
+      setText("#work .section-head .lede", page.workLede);
+      document.querySelectorAll(".work-card").forEach((card, index) => {
+        const item = (page.workExamples || [])[index];
+        if (!item) return;
+        const links = card.querySelectorAll(".work-links .text-link");
+        card.querySelector(".work-role").textContent = item.role;
+        card.querySelector("h3").textContent = item.title;
+        card.querySelector(".work-body > p:not(.work-detail)").textContent = item.summary;
+        card.querySelector(".work-detail").textContent = item.detail;
+        if (links[0]) {
+          links[0].textContent = item.cta;
+          links[0].href = item.url;
+        }
+        if (links[1] && item.caseStudyUrl) {
+          links[1].textContent = item.caseStudyCta;
+          links[1].href = item.caseStudyUrl;
+        }
+      });
       setText(".about-layout .eyebrow", page.aboutEyebrow);
       setText(".about-layout h2", page.aboutTitle);
       setListText(".about-copy p", page.aboutCopy);

@@ -72,6 +72,8 @@ window.webByElieI18n = {
             detail: "SEO metadata cleanup, answer-friendly page structure, Cloudflare Pages launch, policy pages, and ongoing technical maintenance.",
             url: "https://www.goldenyearstaxstrategy.com/",
             cta: "Visit site",
+            caseStudyUrl: "https://web-by-elie.com/case-studies/golden-years/",
+            caseStudyCta: "Read case study",
             theme: "golden"
           },
           {
@@ -226,6 +228,8 @@ window.webByElieI18n = {
             detail: "Nettoyage des métadonnées SEO, structure de pages facile à citer, lancement Cloudflare Pages, pages de politique et maintenance technique continue.",
             url: "https://www.goldenyearstaxstrategy.com/",
             cta: "Voir le site",
+            caseStudyUrl: "https://web-by-elie.com/case-studies/golden-years/",
+            caseStudyCta: "Lire l’étude de cas",
             theme: "golden"
           },
           {
@@ -380,6 +384,8 @@ window.webByElieI18n = {
             detail: "Limpieza de metadatos SEO, estructura de páginas fácil de citar, lanzamiento en Cloudflare Pages, páginas legales y mantenimiento técnico continuo.",
             url: "https://www.goldenyearstaxstrategy.com/",
             cta: "Ver sitio",
+            caseStudyUrl: "https://web-by-elie.com/case-studies/golden-years/",
+            caseStudyCta: "Ver el caso práctico",
             theme: "golden"
           },
           {

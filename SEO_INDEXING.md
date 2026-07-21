@@ -1,6 +1,6 @@
 # Web By Elie Search Indexing
 
-Current public version: `v118.3`
+Current public version: `v143.0`
 
 Last account-side indexing run: 2026-06-26
 
@@ -10,6 +10,7 @@ Last account-side indexing run: 2026-06-26
 - Sitemap: `https://web-by-elie.com/sitemap.xml`
 - Robots: `https://web-by-elie.com/robots.txt`
 - LLM summary: `https://web-by-elie.com/llms.txt`
+- Golden Years case study: `https://web-by-elie.com/case-studies/golden-years/`
 
 ## Google Search Console
 
@@ -39,7 +40,7 @@ Status: verified and submitted.
    - `https://web-by-elie.com/fr/`: Not discovered yet, indexing requested.
    - `https://web-by-elie.com/es/`: Not discovered yet, indexing requested.
 
-Bing flagged one homepage SEO/GEO notice for the logo image alt text. The visible brand mark now has a meaningful `alt`, and that fix remains present in `v118.3`.
+Bing flagged one homepage SEO/GEO notice for the logo image alt text. The visible brand mark now has a meaningful `alt`, and that fix remains present in `v143.0`.
 
 The Bing verification value is intentionally not stored in this repo.
 
@@ -47,13 +48,14 @@ The Bing verification value is intentionally not stored in this repo.
 
 - Recheck Google coverage for `/fr/` and `/es/` after Search Console processes the indexing requests.
 - Recheck Bing sitemap processing after the dashboard's processing window, especially discovered URL count.
-- Re-run Bing URL Inspection for the homepage after `v118.3` is deployed and crawled to confirm the logo alt notice clears.
+- Re-run Bing URL Inspection for the homepage after `v143.0` is deployed and crawled to confirm the logo alt notice clears.
 
 ## Pages To Check
 
 - `https://web-by-elie.com/`
 - `https://web-by-elie.com/fr/`
 - `https://web-by-elie.com/es/`
+- `https://web-by-elie.com/case-studies/golden-years/`
 - `https://web-by-elie.com/privacy`
 - `https://web-by-elie.com/terms`
 - `https://web-by-elie.com/data-deletion`

@@ -1010,6 +1010,12 @@ h3 {
   font-size: 0.94rem;
 }
 
+.work-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+}
+
 .text-link {
   justify-self: start;
   width: max-content;

@@ -9,6 +9,7 @@ avoidable web/tooling costs.
 - Home: https://web-by-elie.com/
 - French: https://web-by-elie.com/fr/
 - Spanish: https://web-by-elie.com/es/
+- Golden Years case study: https://web-by-elie.com/case-studies/golden-years/
 - Privacy: https://web-by-elie.com/privacy
 - Terms: https://web-by-elie.com/terms
 - Data deletion: https://web-by-elie.com/data-deletion
@@ -23,6 +24,15 @@ avoidable web/tooling costs.
   engines, and AI assistants to understand.
 - Web spend cleanup: review unused subscriptions, overlapping tools, paid
   tiers, renewals, and account ownership gaps.
+
+## Case Study
+
+- Golden Years Tax Strategy: a focused SEO/AIO and website-structure pass
+  clarified audience positioning, search metadata, headings, prospective-client
+  questions, and the consultation path. The site also moved from Squarespace to
+  Cloudflare, creating a path to eliminate the Squarespace website subscription.
+- The owner reported that prospective contacts began saying they found the
+  practice through Google, which she said had not happened before.
 
 ## Important Notes
 

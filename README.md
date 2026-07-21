@@ -2,11 +2,11 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v118.3`
+Current visible version: `v143.0`
 
 Production URL: `https://web-by-elie.com/`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=118.3`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=143.0`
 
 Contact email: `hello@web-by-elie.com`
 
@@ -38,6 +38,7 @@ Then open `http://localhost:8094/`.
 - `VERSION`: source of truth for the visible site version.
 - `index.html`: promoted Studio Clean homepage.
 - `fr/index.html`, `es/index.html`: static localized homepages with hreflang metadata.
+- `case-studies/golden-years/`: approved Golden Years Tax Strategy case study with current public-site screenshots.
 - `assets/styles.css`: site styling.
 - `assets/i18n.js`: English, French, and Spanish site copy.
 - `assets/theme.js`: settings popover, language switching, day/night mode, glass controls, reveal effects, and mobile sticky CTA.
@@ -63,7 +64,7 @@ Then open `http://localhost:8094/`.
 
 - Public pages are indexable and include canonical metadata for `https://web-by-elie.com/`.
 - Home pages include Open Graph/Twitter metadata, JSON-LD structured data, and English/French/Spanish hreflang alternates.
-- The homepage includes a localized selected-work section for Assurances de Rueil, Golden Years Tax Strategy, and Photos By Elie.
+- The homepage includes a localized selected-work section for Assurances de Rueil, Golden Years Tax Strategy, and Photos By Elie, with a public Golden Years case-study link.
 - Google Search Console and Bing Webmaster Tools are verified, with the sitemap submitted and key URLs requested for indexing.
 - Canonical policy URLs use extensionless production routes.
 - `robots.txt` explicitly allows compliant search and AI discovery crawlers.

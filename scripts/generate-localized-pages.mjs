@@ -248,7 +248,9 @@ ${ogAlternates}
               <h3>${text(site.title)}</h3>
               <p>${text(site.summary)}</p>
               <p class="work-detail">${text(site.detail)}</p>
-              <a class="text-link" href="${text(site.url)}"${site.url === baseUrl + "/" ? "" : ' target="_blank" rel="noopener"'}>${text(site.cta)}</a>
+              <div class="work-links">
+                <a class="text-link" href="${text(site.url)}"${site.url === baseUrl + "/" ? "" : ' target="_blank" rel="noopener"'}>${text(site.cta)}</a>
+${site.caseStudyUrl ? `                <a class="text-link" href="${text(site.caseStudyUrl)}">${text(site.caseStudyCta)}</a>\n` : ""}              </div>
             </div>
           </article>`
             )
