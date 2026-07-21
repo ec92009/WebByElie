@@ -238,7 +238,7 @@ ${ogAlternates}
             .map(
               (site) => `<article class="work-card">
             <a class="work-card-hit" href="${text(site.url)}"${site.url === baseUrl + "/" ? "" : ' target="_blank" rel="noopener"'} aria-label="${text(site.cta)}: ${text(site.title)}"></a>
-            <div class="work-preview">
+            <div class="work-preview work-preview-${text(site.theme)}">
               <img src="../assets/work-${text(site.theme === "golden" ? "golden-years" : site.theme === "photos" ? "photos-by-elie" : "assurances")}.png" alt="${text(site.title)} homepage" loading="lazy" />
             </div>
             <div class="work-body">

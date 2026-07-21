@@ -60,7 +60,8 @@ Clock state: running
 | 2026-07-21 | 20:15 CEST | 20:16 CEST | 0:01 | Flagged the remaining portfolio category badge contrast issue from a screenshot. |
 | 2026-07-21 | 20:17 CEST | 20:19 CEST | 0:02 | Rejected the abstract portfolio wireframes and requested real previews with fully clickable cards. |
 | 2026-07-21 | 20:30 CEST | 20:31 CEST | 0:01 | Clarified that the remaining white bars were screenshot/card separators, not category labels. |
+| 2026-07-21 | 20:34 CEST | 20:35 CEST | 0:01 | Identified the exact ADR screenshot side gutters and approved keeping the rest of the portfolio treatment unchanged. |
 
 ## Totals
 
-Active collaboration time used: 1:24
+Active collaboration time used: 1:25

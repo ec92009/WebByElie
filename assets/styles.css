@@ -1019,6 +1019,10 @@ h3 {
   transition: transform 260ms var(--ease-out), filter 260ms ease;
 }
 
+.work-preview-assurances img {
+  transform: scale(1.95);
+}
+
 .work-body {
   position: relative;
   display: grid;
@@ -1183,6 +1187,11 @@ h3 {
   .work-card:hover .work-preview img {
     transform: scale(1.065);
     filter: saturate(1.04) contrast(1.03);
+  }
+
+
+  .work-card:hover .work-preview-assurances img {
+    transform: scale(2);
   }
 }
 
