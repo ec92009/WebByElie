@@ -226,7 +226,7 @@ figcaption { color: var(--muted); font-size: 0.88rem; }
 footer { padding: 38px 0 90px; color: var(--muted); }
 .footer-inner { display: flex; justify-content: space-between; gap: 24px; padding-top: 28px; border-top: 1px solid var(--line); }
 .footer-inner div { display: flex; flex-wrap: wrap; gap: 18px; }
-.version-pill { position: fixed; right: 18px; bottom: 18px; z-index: 35; padding: 7px 10px; border: 1px solid var(--glass-line); border-radius: 999px; background: rgba(255,255,255,var(--glass-alpha)); box-shadow: 0 10px 26px rgba(29,41,48,0.12); font-size: 0.76rem; font-weight: 800; backdrop-filter: blur(18px); }
+.version-pill { position: fixed; right: 18px; bottom: 18px; z-index: 35; padding: 7px 10px; border: 1px solid rgba(29,41,48,0.18); border-radius: 999px; color: #111a20; background: rgba(255,255,255,0.94); box-shadow: 0 10px 26px rgba(29,41,48,0.18); font-size: 0.76rem; font-weight: 800; backdrop-filter: blur(18px); }
 .mobile-cta { display: none; }
 
 [data-theme="night"] { --ink: #f2f6f4; --muted: #b8c5c3; --paper: #111a20; --soft: #17242a; --line: rgba(255,255,255,0.12); --panel: rgba(24,35,41,0.64); --glass-line: rgba(255,255,255,0.15); --glass-shine: rgba(255,255,255,0.16); }

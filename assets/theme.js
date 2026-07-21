@@ -68,7 +68,7 @@
   let state = readSettings();
 
   if (settingsRoot && !settingsRoot.querySelector("[data-settings-panel]")) {
-    const version = settingsRoot.dataset.siteVersion || "v143.4";
+    const version = settingsRoot.dataset.siteVersion || "v143.5";
     settingsRoot.insertAdjacentHTML(
       "beforeend",
       `<div class="settings-panel" id="site-settings-panel" role="dialog" aria-label="Site settings" data-settings-panel hidden>
@@ -118,7 +118,7 @@
   const themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
 
   const getCopy = () => translations[state.language] || translations.en || {};
-  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v143.4";
+  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v143.5";
   const setAllText = (selector, value) => {
     if (value === undefined) {
       return;

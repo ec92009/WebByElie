@@ -2,11 +2,11 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v143.4`
+Current visible version: `v143.5`
 
 Production URL: `https://web-by-elie.com/`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=143.4`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=143.5`
 
 Contact email: `hello@web-by-elie.com`
 
