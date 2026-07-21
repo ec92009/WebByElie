@@ -237,11 +237,9 @@ ${ogAlternates}
           ${page.workExamples
             .map(
               (site) => `<article class="work-card">
-            <div class="work-preview work-preview-${text(site.theme)}" aria-hidden="true">
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
+            <a class="work-card-hit" href="${text(site.url)}"${site.url === baseUrl + "/" ? "" : ' target="_blank" rel="noopener"'} aria-label="${text(site.cta)}: ${text(site.title)}"></a>
+            <div class="work-preview">
+              <img src="../assets/work-${text(site.theme === "golden" ? "golden-years" : site.theme === "photos" ? "photos-by-elie" : "assurances")}.png" alt="${text(site.title)} homepage" loading="lazy" />
             </div>
             <div class="work-body">
               <span class="work-role">${text(site.role)}</span>

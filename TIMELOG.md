@@ -58,7 +58,8 @@ Clock state: running
 | 2026-07-21 | 19:44 CEST | 19:46 CEST | 0:01 | Reviewed the meta quality of the quick-answers section and requested a livelier visual treatment. |
 | 2026-07-21 | 19:51 CEST | 19:52 CEST | 0:01 | Approved the livelier direction and requested stronger contrast across the full site. |
 | 2026-07-21 | 20:15 CEST | 20:16 CEST | 0:01 | Flagged the remaining portfolio category badge contrast issue from a screenshot. |
+| 2026-07-21 | 20:17 CEST | 20:19 CEST | 0:02 | Rejected the abstract portfolio wireframes and requested real previews with fully clickable cards. |
 
 ## Totals
 
-Active collaboration time used: 1:21
+Active collaboration time used: 1:23
