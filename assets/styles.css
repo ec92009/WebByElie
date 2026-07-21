@@ -1,18 +1,18 @@
 :root {
   --ink: #1d2930;
-  --muted: #5f6e75;
+  --muted: #46565e;
   --paper: #f7faf7;
-  --panel: rgba(255, 255, 255, 0.56);
+  --panel: rgba(255, 255, 255, 0.74);
   --soft: #edf5f1;
   --line: #d9e1dd;
   --accent: #df6f45;
-  --accent-dark: #a34627;
-  --green: #658f80;
-  --blue: #526f9d;
-  --glass: rgba(255, 255, 255, 0.42);
-  --glass-strong: rgba(255, 255, 255, 0.7);
-  --glass-line: rgba(255, 255, 255, 0.58);
-  --glass-edge: rgba(29, 41, 48, 0.12);
+  --accent-dark: #84391f;
+  --green: #4b786a;
+  --blue: #405f91;
+  --glass: rgba(255, 255, 255, 0.58);
+  --glass-strong: rgba(255, 255, 255, 0.82);
+  --glass-line: rgba(29, 41, 48, 0.2);
+  --glass-edge: rgba(29, 41, 48, 0.22);
   --glass-shine: rgba(255, 255, 255, 0.72);
   --shadow: 0 22px 58px rgba(29, 41, 48, 0.15);
   --hover-shadow: 0 28px 70px rgba(29, 41, 48, 0.2);
@@ -20,7 +20,7 @@
   --glass-alpha: 0.86;
   --glass-dark-alpha: 0.14;
   --glass-blur: 24px;
-  --surface-glass-alpha: 0.58;
+  --surface-glass-alpha: 0.82;
 }
 
 * {
@@ -128,6 +128,7 @@ a {
   gap: 14px;
   color: var(--muted);
   font-size: 0.94rem;
+  font-weight: 700;
 }
 
 .nav a {
@@ -402,8 +403,8 @@ h3 {
 }
 
 .button.secondary {
-  border-color: var(--glass-line);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.56), rgba(255, 255, 255, 0.22));
+  border-color: rgba(29, 41, 48, 0.26);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(244, 248, 246, 0.66));
   color: var(--ink);
 }
 
@@ -412,7 +413,7 @@ h3 {
 }
 
 .section.alt {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.46);
   border-block: 1px solid var(--glass-line);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34);
   backdrop-filter: blur(var(--glass-blur)) saturate(1.15);
@@ -825,7 +826,7 @@ h3 {
   isolation: isolate;
   min-height: 190px;
   padding: 24px 24px 22px;
-  border-color: rgba(82, 111, 157, 0.24);
+  border-color: rgba(64, 95, 145, 0.34);
   background:
     radial-gradient(circle at 94% 8%, rgba(82, 111, 157, 0.17), transparent 36%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(245, 249, 247, 0.38)),
@@ -882,7 +883,7 @@ h3 {
   top: 16px;
   right: 18px;
   z-index: -1;
-  color: rgba(82, 111, 157, 0.15);
+  color: rgba(64, 95, 145, 0.28);
   font-size: 2.8rem;
   font-weight: 900;
   letter-spacing: -0.08em;
@@ -890,7 +891,7 @@ h3 {
 }
 
 .answer-list article:nth-child(2n) {
-  border-color: rgba(62, 139, 118, 0.25);
+  border-color: rgba(53, 104, 88, 0.34);
   background:
     radial-gradient(circle at 94% 8%, rgba(62, 139, 118, 0.16), transparent 36%),
     linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(239, 248, 244, 0.38)),
@@ -901,7 +902,7 @@ h3 {
   grid-column: 1 / -1;
   min-height: 0;
   padding: 28px clamp(24px, 4vw, 40px);
-  border-color: rgba(62, 139, 118, 0.38);
+  border-color: rgba(53, 104, 88, 0.52);
   background:
     radial-gradient(circle at 86% 15%, rgba(82, 111, 157, 0.24), transparent 35%),
     linear-gradient(118deg, rgba(62, 139, 118, 0.16), rgba(255, 255, 255, 0.7) 42%, rgba(82, 111, 157, 0.14)),
@@ -1080,10 +1081,10 @@ h3 {
 .work-role {
   width: max-content;
   max-width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.54);
+  border: 1px solid var(--glass-edge);
   border-radius: 999px;
   padding: 5px 9px;
-  background: rgba(255, 255, 255, 0.36);
+  background: rgba(255, 255, 255, 0.72);
   color: var(--accent-dark);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.38);
   font-size: 0.76rem;
@@ -1115,7 +1116,7 @@ h3 {
   justify-self: start;
   width: max-content;
   max-width: 100%;
-  border-bottom: 2px solid rgba(163, 70, 39, 0.28);
+  border-bottom: 2px solid currentColor;
   color: var(--accent-dark);
   font-weight: 900;
   text-decoration: none;
@@ -1228,7 +1229,7 @@ h3 {
 
 a:focus-visible,
 button:focus-visible {
-  outline: 3px solid rgba(82, 111, 157, 0.48);
+  outline: 3px solid #315f9f;
   outline-offset: 4px;
 }
 
@@ -1305,16 +1306,16 @@ html[data-theme="night"] .friendly-demo,
 html[data-theme="night"] .studio-demo,
 html[data-theme="night"] .advisor-demo {
   --ink: #f7fbf8;
-  --muted: #c0cbd0;
+  --muted: #d4dde1;
   --paper: #111a20;
-  --panel: rgba(24, 36, 44, 0.58);
+  --panel: rgba(24, 36, 44, 0.76);
   --soft: #20313a;
   --line: rgba(255, 255, 255, 0.14);
   --accent-dark: #f0a56f;
   --glass: rgba(255, 255, 255, 0.08);
   --glass-strong: rgba(255, 255, 255, 0.16);
-  --glass-line: rgba(255, 255, 255, 0.16);
-  --glass-edge: rgba(255, 255, 255, 0.1);
+  --glass-line: rgba(255, 255, 255, 0.28);
+  --glass-edge: rgba(255, 255, 255, 0.24);
   --glass-shine: rgba(255, 255, 255, 0.22);
   --shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
   --hover-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
@@ -1322,12 +1323,12 @@ html[data-theme="night"] .advisor-demo {
 
 html[data-theme="night"] .topbar,
 html[data-theme="night"] .review-banner {
-  background: rgba(17, 26, 32, 0.66);
+  background: rgba(17, 26, 32, 0.9);
   color: #f7fbf8;
 }
 
 html[data-theme="night"] .section.alt {
-  background: rgba(22, 33, 41, 0.54);
+  background: rgba(22, 33, 41, 0.82);
 }
 
 html[data-theme="night"] .studio-band {
@@ -1348,7 +1349,8 @@ html[data-theme="night"] .button {
 }
 
 html[data-theme="night"] .button.secondary {
-  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.34);
+  background: rgba(255, 255, 255, 0.14);
   color: #f7fbf8;
 }
 
@@ -1405,7 +1407,7 @@ html[data-theme="night"] .tag {
 .studio-demo {
   --paper: #f7f8f6;
   --ink: #151f25;
-  --accent-dark: #4e7d6f;
+  --accent-dark: #356858;
 }
 
 .dark-demo-topbar {
