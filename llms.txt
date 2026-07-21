@@ -22,6 +22,10 @@ avoidable web/tooling costs.
   service wording, locations, and page structure.
 - AI-ready structure: make basic business facts easier for people, search
   engines, and AI assistants to understand.
+- AI-ready review: test whether a person or AI assistant can identify the
+  business, services, intended customers, service locations, pricing or pricing
+  factors, supporting evidence, and next step without guessing; document
+  missing or conflicting facts and recommend specific corrections.
 - Web spend cleanup: review unused subscriptions, overlapping tools, paid
   tiers, renewals, and account ownership gaps.
 
@@ -38,6 +42,9 @@ avoidable web/tooling costs.
 
 - SEO and AI-search work can improve clarity and technical readiness, but no
   ranking, traffic, lead, or AI-answer placement is guaranteed.
+- AI-ready reviews measure factual clarity and retrieval at the time of the
+  review. They do not guarantee that any AI system will cite or recommend the
+  site.
 - Most projects begin with a practical 10-hour initial bundle.
 - Work is tracked at 100 USD per hour, with a check-in at 50% of the retainer.
 - Contact: hello@web-by-elie.com

@@ -54,7 +54,8 @@ Clock state: running
 | 2026-07-21 | 14:28 CEST | 14:29 CEST | 0:01 | Requested realistic laptop and phone hardware framing for the case-study screenshots. |
 | 2026-07-21 | 14:35 CEST | 14:36 CEST | 0:01 | Approved the harmonized Golden Years case study for production publishing. |
 | 2026-07-21 | 17:37 CEST | 17:38 CEST | 0:01 | Flagged the live case-study version badge contrast and requested a production correction. |
+| 2026-07-21 | 19:19 CEST | 19:23 CEST | 0:03 | Requested a practical test of the agent-readiness recommendations on Web By Elie and an ADR application example. |
 
 ## Totals
 
-Active collaboration time used: 1:15
+Active collaboration time used: 1:18
