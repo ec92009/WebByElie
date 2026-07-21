@@ -1,6 +1,6 @@
 # Web By Elie Summary
 
-Last updated: 2026-07-21 14:42 CEST
+Last updated: 2026-07-21 14:46 CEST
 
 ## Current State
 
@@ -8,10 +8,10 @@ Last updated: 2026-07-21 14:42 CEST
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=143.3`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=143.4`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v143.3`
+- Current visible version: `v143.4`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -32,7 +32,7 @@ Last updated: 2026-07-21 14:42 CEST
 - Added launch crawl basics: `robots.txt`, `sitemap.xml`, canonical metadata, and indexable public pages.
 - Added SEO/AIO improvements: extensionless canonical policy URLs, static French and Spanish homepages, hreflang sitemap entries, Open Graph/Twitter metadata, JSON-LD structured data, answer-friendly FAQ copy, `llms.txt`, and explicit compliant search/AI crawler policy.
 - Completed account-side indexing setup in Google Search Console and Bing Webmaster Tools, including sitemap submission, URL inspection, and indexing requests for the homepage plus French and Spanish routes.
-- Fixed Bing's homepage logo alt-text notice and kept that cleanup in `v143.3`.
+- Fixed Bing's homepage logo alt-text notice and kept that cleanup in `v143.4`.
 - Added a localized selected-work showcase featuring Assurances de Rueil, Golden Years Tax Strategy, and Photos By Elie.
 - Published an approved Golden Years case study with the owner-approved outcome wording, testimonial, a Web By Elie-aligned visual system, and current screenshots presented in laptop and phone frames.
 - Added mobile home-screen and browser install icon metadata using the Web By Elie logo.
@@ -62,7 +62,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `143.3`, displayed as `v143.3`.
+- Current version is `143.4`, displayed as `v143.4`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
@@ -80,7 +80,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Fresh Numbered Backlog
 
 1. Monitor search indexing pickup.
-   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v143.3` has deployed and crawlers have processed the requests.
+   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v143.4` has deployed and crawlers have processed the requests.
 
 2. Keep Cloudflare Pages deployment repeatable.
    Preserve the clean static publish set for production deploys, keep DNS/HTTPS on Cloudflare, and protect email-related DNS records.
