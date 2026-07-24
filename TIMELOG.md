@@ -61,7 +61,8 @@ Clock state: running
 | 2026-07-21 | 20:17 CEST | 20:19 CEST | 0:02 | Rejected the abstract portfolio wireframes and requested real previews with fully clickable cards. |
 | 2026-07-21 | 20:30 CEST | 20:31 CEST | 0:01 | Clarified that the remaining white bars were screenshot/card separators, not category labels. |
 | 2026-07-21 | 20:34 CEST | 20:35 CEST | 0:01 | Identified the exact ADR screenshot side gutters and approved keeping the rest of the portfolio treatment unchanged. |
+| 2026-07-24 | 21:02 CEST | 21:06 CEST | 0:01 | Reported the mobile night-mode settings contrast issue and reviewed the corrected control treatment. |
 
 ## Totals
 
-Active collaboration time used: 1:25
+Active collaboration time used: 1:26
