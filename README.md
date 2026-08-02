@@ -2,11 +2,11 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v143.13`
+Current visible version: `v155.0`
 
 Production URL: `https://web-by-elie.com/`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=143.13`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=155.0`
 
 Contact email: `hello@web-by-elie.com`
 
@@ -44,6 +44,8 @@ Then open `http://localhost:8094/`.
 - `assets/theme.js`: settings popover, language switching, day/night mode, glass controls, reveal effects, and mobile sticky CTA.
 - `apple-touch-icon.png`, `site.webmanifest`, `assets/icon-192.png`, `assets/icon-512.png`: mobile home-screen and browser install icons.
 - `assets/web-refresh-workspace.png`: generated shared hero image.
+- `assets/web-page-reassembly.mp4`: Remotion-rendered homepage loop that disassembles and rebuilds a page structure.
+- `remotion/WebPageReassembly.tsx`: source composition for the homepage motion loop.
 - `robots.txt`, `sitemap.xml`: production crawl and sitemap basics.
 - `privacy.html`, `terms.html`, `data-deletion.html`: baseline public policy pages.
 - `privacy/`, `terms/`, `data-deletion/`: extensionless policy routes for static preview and production canonical URLs.
