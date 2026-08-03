@@ -3,6 +3,7 @@ import {Composition} from 'remotion';
 import {WebByElieExplainer} from './WebByElieExplainer';
 import {NotebookLmExplainer, NOTEBOOK_LM_TOTAL_FRAMES} from './NotebookLmExplainer';
 import {WebPageReassembly, WEB_PAGE_REASSEMBLY_FRAMES} from './WebPageReassembly';
+import {SEOPageFlip, SEO_PAGE_FLIP_FRAMES} from './SEOPageFlip';
 import {TOTAL_FRAMES} from './narration.generated';
 
 export const Root: React.FC = () => {
@@ -28,6 +29,14 @@ export const Root: React.FC = () => {
         id="WebPageReassembly"
         component={WebPageReassembly}
         durationInFrames={WEB_PAGE_REASSEMBLY_FRAMES}
+        fps={30}
+        width={1920}
+        height={1080}
+      />
+      <Composition
+        id="SEOPageFlip"
+        component={SEOPageFlip}
+        durationInFrames={SEO_PAGE_FLIP_FRAMES}
         fps={30}
         width={1920}
         height={1080}

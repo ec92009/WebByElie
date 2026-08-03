@@ -7,7 +7,9 @@
     "remotion:render": "remotion render remotion/index.ts WebByElieExplainer outputs/web-by-elie-explainer.mp4",
     "remotion:render:notebooklm": "remotion render remotion/index.ts NotebookLmExplainer outputs/web-by-elie-notebooklm-explainer.mp4",
     "remotion:still:reassembly": "remotion still remotion/index.ts WebPageReassembly --frame=220 --output=outputs/web-page-reassembly-frame.png",
-    "remotion:render:reassembly": "remotion render remotion/index.ts WebPageReassembly assets/web-page-reassembly.mp4 --codec=h264 --crf=24"
+    "remotion:render:reassembly": "remotion render remotion/index.ts WebPageReassembly assets/web-page-reassembly.mp4 --codec=h264 --crf=24",
+    "remotion:still:seo": "remotion still remotion/index.ts SEOPageFlip --frame=220 --output=outputs/seo-page-flip-frame.png",
+    "remotion:render:seo": "remotion render remotion/index.ts SEOPageFlip assets/seo-page-flip.mp4 --codec=h264 --crf=24"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.376",

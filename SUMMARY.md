@@ -1,6 +1,6 @@
 # Web By Elie Summary
 
-Last updated: 2026-08-03 11:40 CEST
+Last updated: 2026-08-03 12:43 CEST
 
 ## Current State
 
@@ -42,6 +42,7 @@ Last updated: 2026-08-03 11:40 CEST
 - Upgraded the public site with a unified gear settings panel, day/night segmented control, English/French/Spanish translated copy, glass transparency/translucency sliders, reveal effects, and a phone sticky email CTA.
 - Added a standalone Remotion video that picks apart a current page, transforms the pieces, and reassembles them into a clearer structure.
 - Refined the video transform stage with an explicit copy pass: vague wording is scrutinized, marked too broad, and rewritten into clearer copy before reassembly. The video is intentionally not embedded in the public page yet.
+- Added a second standalone Remotion video, `SEOPageFlip`, that flips the page below its visible surface, exposes keywords, page data, and JSON-LD, then presents the signals to oversized search robots. It is also intentionally not embedded in the public page yet.
 
 ## Current Offer Copy
 
