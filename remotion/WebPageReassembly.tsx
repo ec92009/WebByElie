@@ -45,7 +45,7 @@ type PieceData = {
 const pieces: PieceData[] = [
   {id: 'nav', kind: 'nav', old: {x: 178, y: 305, width: 575, height: 46}, scatter: {x: 865, y: 160, width: 265, height: 48}, fresh: {x: 1146, y: 286, width: 602, height: 56}, oldColor: C.ink, freshColor: C.dark, oldLabel: 'menu / pages / links', freshLabel: 'clear path', oldRotation: 0, scatterRotation: -7, freshRotation: 0},
   {id: 'hero', kind: 'hero', old: {x: 178, y: 392, width: 374, height: 88}, scatter: {x: 820, y: 390, width: 340, height: 92}, fresh: {x: 1146, y: 374, width: 395, height: 124}, oldColor: C.rust, freshColor: C.green, oldLabel: 'headline', freshLabel: 'make the next step obvious', oldRotation: -1, scatterRotation: 5, freshRotation: 0},
-  {id: 'copy', kind: 'copy', old: {x: 178, y: 500, width: 460, height: 38}, scatter: {x: 968, y: 563, width: 270, height: 40}, fresh: {x: 1146, y: 522, width: 465, height: 48}, oldColor: C.line, freshColor: C.blue, oldLabel: 'paragraphs', freshLabel: 'facts people can find', oldRotation: 0, scatterRotation: -4, freshRotation: 0},
+  {id: 'copy', kind: 'copy', old: {x: 178, y: 500, width: 460, height: 38}, scatter: {x: 968, y: 563, width: 270, height: 40}, fresh: {x: 1146, y: 522, width: 465, height: 48}, oldColor: C.line, freshColor: C.blue, oldLabel: 'copy to review', freshLabel: 'clear facts people can find', oldRotation: 0, scatterRotation: -4, freshRotation: 0},
   {id: 'cta', kind: 'cta', old: {x: 178, y: 554, width: 166, height: 50}, scatter: {x: 770, y: 508, width: 178, height: 50}, fresh: {x: 1146, y: 590, width: 220, height: 56}, oldColor: C.ink, freshColor: C.ink, oldLabel: 'contact', freshLabel: 'next step', oldRotation: 0, scatterRotation: 9, freshRotation: 0},
   {id: 'image', kind: 'image', old: {x: 603, y: 392, width: 150, height: 212}, scatter: {x: 925, y: 758, width: 182, height: 112}, fresh: {x: 1640, y: 374, width: 108, height: 220}, oldColor: C.blue, freshColor: C.yellow, oldLabel: 'image', freshLabel: 'proof', oldRotation: 0, scatterRotation: 4, freshRotation: 0},
   {id: 'proof', kind: 'proof', old: {x: 178, y: 654, width: 310, height: 82}, scatter: {x: 1170, y: 698, width: 254, height: 60}, fresh: {x: 1146, y: 694, width: 602, height: 72}, oldColor: C.yellow, freshColor: C.mint, oldLabel: 'three cards', freshLabel: 'proof / signal / trust', oldRotation: 0, scatterRotation: -5, freshRotation: 0},
@@ -153,6 +153,43 @@ const StageMarker: React.FC<{frame: number}> = ({frame}) => {
   </div>;
 };
 
+const CopyScrutiny: React.FC<{frame: number}> = ({frame}) => {
+  const intro = tween(frame, 126, 142);
+  const inspect = tween(frame, 142, 166);
+  const oldOpacity = 1 - tween(frame, 164, 182);
+  const rewrite = tween(frame, 174, 202);
+  const exit = tween(frame, 214, 230);
+  const opacity = intro * (1 - exit);
+  return <div style={{position: 'absolute', left: 674, top: 264, width: 430, opacity, transform: `translateY(${lerp(12, 0, intro)}px)`, zIndex: 5, pointerEvents: 'none', ...labelStyle}}>
+    <div style={{display: 'flex', alignItems: 'stretch', gap: 8}}>
+      <div style={{padding: '8px 13px', borderRadius: '10px 10px 0 0', background: C.dark, color: '#fff', fontSize: 13, fontWeight: 950, textTransform: 'uppercase', letterSpacing: 1}}>copy pass</div>
+      <div style={{display: 'flex', alignItems: 'center', padding: '0 12px', borderRadius: '10px 10px 0 0', background: '#f7e4da', color: C.rust, fontSize: 11, fontWeight: 950, textTransform: 'uppercase', letterSpacing: 0.7}}>scrutinize → rework</div>
+    </div>
+    <div style={{position: 'relative', padding: '17px 20px 18px', border: `3px solid ${C.ink}`, borderTop: 0, borderRadius: '0 14px 14px 14px', background: '#fff', boxShadow: '0 18px 42px rgba(16,32,39,.18)'}}>
+      <div style={{color: C.muted, fontSize: 11, fontWeight: 950, letterSpacing: 1.1, textTransform: 'uppercase'}}>wording under review</div>
+      <div style={{position: 'relative', height: 54, marginTop: 8, opacity: oldOpacity, display: 'flex', alignItems: 'center'}}>
+        <span style={{color: C.ink, fontSize: 21, fontWeight: 850}}>We help with your website.</span>
+        <span style={{position: 'absolute', right: 2, top: -3, padding: '4px 7px', borderRadius: 5, background: '#f7e4da', color: C.rust, fontSize: 10, fontWeight: 950, textTransform: 'uppercase', letterSpacing: 0.7, opacity: inspect}}>too vague</span>
+        <span style={{position: 'absolute', left: 0, bottom: 6, width: `${42 + inspect * 58}%`, height: 4, borderRadius: 99, background: C.rust, transform: `rotate(-2deg) scaleX(${0.35 + inspect * 0.65})`, transformOrigin: 'left center'}} />
+        <span style={{position: 'absolute', left: 300 + inspect * 48, top: 0, width: 32, height: 32, border: `3px solid ${C.rust}`, borderRadius: 99, opacity: inspect}}>
+          <span style={{position: 'absolute', right: -13, bottom: -8, width: 17, height: 4, borderRadius: 99, background: C.rust, transform: 'rotate(45deg)'}} />
+        </span>
+      </div>
+      <div style={{position: 'relative', height: 54, marginTop: 4, opacity: rewrite, transform: `translateX(${lerp(18, 0, rewrite)}px)`}}>
+        <div style={{height: '100%', display: 'flex', alignItems: 'center', gap: 10, padding: '0 12px', borderRadius: 9, background: C.mint, color: C.ink, fontSize: 20, fontWeight: 950}}>
+          <span style={{display: 'grid', placeItems: 'center', width: 24, height: 24, borderRadius: 99, background: C.green, color: '#fff', fontSize: 16}}>✓</span>
+          <span>Clear facts people can find.</span>
+        </div>
+        <span style={{position: 'absolute', right: -8, top: -9, padding: '4px 7px', borderRadius: 5, background: C.green, color: '#fff', fontSize: 10, fontWeight: 950, textTransform: 'uppercase', letterSpacing: 0.7}}>reworked</span>
+      </div>
+      <div style={{display: 'flex', alignItems: 'center', gap: 9, marginTop: 12, color: C.muted, fontSize: 11, fontWeight: 850}}>
+        <span style={{width: 30, height: 3, borderRadius: 99, background: C.green}} />
+        <span>meaning stays · wording gets sharper</span>
+      </div>
+    </div>
+  </div>;
+};
+
 const Background: React.FC = () => <AbsoluteFill style={{background: `radial-gradient(circle at 50% 46%, #ffffff 0%, ${C.paper} 52%, #e9f1ed 100%)`}}><div style={{position: 'absolute', inset: 0, opacity: 0.32, backgroundImage: 'linear-gradient(rgba(79,131,115,.09) 1px, transparent 1px), linear-gradient(90deg, rgba(79,131,115,.09) 1px, transparent 1px)', backgroundSize: '48px 48px', maskImage: 'linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%)'}} /></AbsoluteFill>;
 
 export const WebPageReassembly: React.FC = () => {
@@ -171,6 +208,7 @@ export const WebPageReassembly: React.FC = () => {
     <BrowserShell x={130} y={220} fresh={false} opacity={oldOpacity * fade} />
     <BrowserShell x={1100} y={180} fresh opacity={freshOpacity * fade} />
     {pieces.map((piece, index) => <MovingPiece key={piece.id} piece={piece} frame={frame} index={index} />)}
+    <CopyScrutiny frame={frame} />
     <div style={{position: 'absolute', left: 82, bottom: 50, opacity: tween(frame, 22, 50) * fade, ...labelStyle}}>
       <div style={{color: C.muted, fontSize: 13, fontWeight: 950, letterSpacing: 1, textTransform: 'uppercase'}}>website refresh / search / AI-ready / spend cleanup</div>
       <div style={{marginTop: 8, color: C.ink, fontSize: 30, fontWeight: 950}}>Change the pieces. Keep the purpose.</div>

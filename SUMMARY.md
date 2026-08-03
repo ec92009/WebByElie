@@ -1,6 +1,6 @@
 # Web By Elie Summary
 
-Last updated: 2026-07-21 19:23 CEST
+Last updated: 2026-08-03 11:40 CEST
 
 ## Current State
 
@@ -8,10 +8,10 @@ Last updated: 2026-07-21 19:23 CEST
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=155.0`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=143.13`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v155.0`
+- Current visible version: `v143.13`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -40,7 +40,8 @@ Last updated: 2026-07-21 19:23 CEST
 - Added generated logo, QR assets, and a local-only print/coaster asset folder.
 - Added the site to the Webapps hub at `/Users/ecohen/Dev/Webapps`.
 - Upgraded the public site with a unified gear settings panel, day/night segmented control, English/French/Spanish translated copy, glass transparency/translucency sliders, reveal effects, and a phone sticky email CTA.
-- Added a Remotion-rendered homepage animation that picks apart a current page, transforms the pieces, and reassembles them into a clearer structure, with a reduced-motion poster fallback.
+- Added a standalone Remotion video that picks apart a current page, transforms the pieces, and reassembles them into a clearer structure.
+- Refined the video transform stage with an explicit copy pass: vague wording is scrutinized, marked too broad, and rewritten into clearer copy before reassembly. The video is intentionally not embedded in the public page yet.
 
 ## Current Offer Copy
 
@@ -64,7 +65,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `155.0`, displayed as `v155.0`.
+- Current version is `143.13`, displayed as `v143.13`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
@@ -82,7 +83,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Fresh Numbered Backlog
 
 1. Monitor search indexing pickup.
-   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v155.0` has deployed and crawlers have processed the requests.
+   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v143.13` has deployed and crawlers have processed the requests.
 
 2. Keep Cloudflare Pages deployment repeatable.
    Preserve the clean static publish set for production deploys, keep DNS/HTTPS on Cloudflare, and protect email-related DNS records.

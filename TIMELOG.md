@@ -62,8 +62,9 @@ Clock state: running
 | 2026-07-21 | 20:30 CEST | 20:31 CEST | 0:01 | Clarified that the remaining white bars were screenshot/card separators, not category labels. |
 | 2026-07-21 | 20:34 CEST | 20:35 CEST | 0:01 | Identified the exact ADR screenshot side gutters and approved keeping the rest of the portfolio treatment unchanged. |
 | 2026-07-24 | 21:02 CEST | 21:06 CEST | 0:01 | Reported the mobile night-mode settings contrast issue and reviewed the corrected control treatment. |
-| 2026-08-02 | 20:00 CEST | 20:10 CEST | 0:10 | Directed and reviewed a Remotion homepage animation that picks apart, transforms, and reassembles a web page, including local render and responsive preview checks. |
+| 2026-08-02 | 20:00 CEST | 20:10 CEST | 0:10 | Directed and reviewed a standalone Remotion video that picks apart, transforms, and reassembles a web page, including local render and responsive preview checks. |
+| 2026-08-03 | 11:28 CEST | 11:38 CEST | 0:10 | Requested and reviewed a clearer Remotion copy pass showing vague wording scrutinized, marked too broad, and reworked into a sharper line. |
 
 ## Totals
 
-Active collaboration time used: 1:36
+Active collaboration time used: 1:46
