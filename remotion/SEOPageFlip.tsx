@@ -38,7 +38,7 @@ const StageMarker: React.FC<{frame: number}> = ({frame}) => {
     {label: 'page surface', start: 0, end: 48, color: C.green},
     {label: 'flip below the surface', start: 48, end: 120, color: C.blue},
     {label: 'examine the signals', start: 120, end: 202, color: C.purple},
-    {label: 'present to search', start: 202, end: 292, color: C.googleBlue},
+    {label: 'harvest + store', start: 202, end: 304, color: C.googleBlue},
   ];
   const active = stages.find((stage) => frame >= stage.start && frame < stage.end);
   const opacity = tween(frame, 16, 34);
@@ -47,7 +47,7 @@ const StageMarker: React.FC<{frame: number}> = ({frame}) => {
     <div style={{position: 'relative', height: 5, marginTop: 10, borderRadius: 99, background: '#dbe5e0'}}>
       <div style={{height: '100%', width: `${clamp(frame / 292) * 100}%`, borderRadius: 99, background: active?.color || C.googleBlue}} />
     </div>
-    <div style={{height: 22, marginTop: 8, color: active?.color || C.googleBlue, fontSize: 14, fontWeight: 950, textAlign: 'center', textTransform: 'uppercase', letterSpacing: 1}}>{active?.label || 'signals delivered'}</div>
+    <div style={{height: 22, marginTop: 8, color: active?.color || C.googleBlue, fontSize: 14, fontWeight: 950, textAlign: 'center', textTransform: 'uppercase', letterSpacing: 1}}>{active?.label || 'database updated'}</div>
   </div>;
 };
 
@@ -139,6 +139,62 @@ const JsonPanel: React.FC<{frame: number}> = ({frame}) => {
   </div>;
 };
 
+const DatabaseVault: React.FC<{frame: number}> = ({frame}) => {
+  const reveal = tween(frame, 238, 266);
+  const stored = tween(frame, 264, 302);
+  const records = [
+    {label: 'keyword index', color: C.googleRed},
+    {label: 'page metadata', color: C.googleYellow},
+    {label: 'JSON-LD graph', color: C.googleBlue},
+    {label: 'location + service', color: C.googleGreen},
+  ];
+  return <div style={{position: 'absolute', left: 1450, top: 734, width: 400, opacity: reveal, transform: `translateY(${lerp(36, 0, reveal)}px)`, zIndex: 4, ...labelStyle}}>
+    <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '10px 14px', borderRadius: '12px 12px 0 0', background: C.dark, color: '#fff'}}>
+      <span style={{fontSize: 13, fontWeight: 950, textTransform: 'uppercase', letterSpacing: 0.9}}>big search database</span>
+      <span style={{color: '#b8d8ca', fontSize: 11, fontWeight: 950, textTransform: 'uppercase'}}>store / retrieve</span>
+    </div>
+    <div style={{position: 'relative', height: 222, padding: '16px 18px', border: `4px solid ${C.ink}`, borderTop: 0, borderRadius: '0 0 24px 24px', background: '#fff', boxShadow: '0 20px 42px rgba(16,32,39,.18)'}}>
+      <div style={{position: 'absolute', left: 18, right: 18, top: 12, height: 30, border: `3px solid ${C.googleBlue}`, borderRadius: '50%', background: '#e7f0ff'}} />
+      <div style={{position: 'absolute', left: 25, right: 25, top: 28, height: 164, border: `3px solid ${C.googleBlue}`, borderTop: 0, borderRadius: '0 0 22px 22px', background: '#f7fbff'}} />
+      <div style={{position: 'relative', display: 'grid', gap: 7, marginTop: 40}}>
+        {records.map((record, index) => {
+          const rowOpacity = tween(frame, 252 + index * 7, 270 + index * 7);
+          return <div key={record.label} style={{display: 'flex', alignItems: 'center', gap: 8, height: 25, padding: '0 9px', borderRadius: 6, background: `rgba(66,133,244,${0.08 + rowOpacity * 0.08})`, opacity: rowOpacity, color: C.ink, fontSize: 11, fontWeight: 950}}><span style={{width: 9, height: 9, borderRadius: 99, background: record.color}} /><span>{record.label}</span><span style={{marginLeft: 'auto', color: C.green, fontSize: 10, textTransform: 'uppercase'}}>indexed</span></div>;
+        })}
+      </div>
+      <div style={{position: 'absolute', right: 30, bottom: 13, color: stored > 0.5 ? C.green : C.muted, fontSize: 11, fontWeight: 950, textTransform: 'uppercase', letterSpacing: 0.7}}>{stored > 0.5 ? 'database updated ✓' : 'writing records...'}</div>
+    </div>
+  </div>;
+};
+
+const HarvestRoute: React.FC<{frame: number}> = ({frame}) => {
+  const reveal = tween(frame, 220, 248);
+  return <svg style={{position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', opacity: reveal}} viewBox="0 0 1920 1080" aria-hidden="true">
+    <path d="M1560 540 C1665 585 1572 684 1654 760" fill="none" stroke={C.googleBlue} strokeWidth="5" strokeDasharray="15 13" />
+    <path d="M1560 560 C1685 612 1598 702 1690 770" fill="none" stroke={C.googleGreen} strokeWidth="4" strokeDasharray="9 14" opacity=".72" />
+    <path d="M1650 760 l-14 -5 M1650 760 l-4 -14" fill="none" stroke={C.googleBlue} strokeWidth="5" strokeLinecap="round" />
+  </svg>;
+};
+
+const HarvestPackets: React.FC<{frame: number}> = ({frame}) => {
+  const packets = [
+    {label: '#SEO', color: C.googleRed, delay: 0},
+    {label: 'JSON', color: C.googleBlue, delay: 8},
+    {label: 'DATA', color: C.googleYellow, delay: 16},
+    {label: 'FAQ', color: C.googleGreen, delay: 24},
+  ];
+  return <div style={{position: 'absolute', inset: 0, zIndex: 6, pointerEvents: 'none'}}>
+    <div style={{position: 'absolute', left: 1620, top: 704, padding: '7px 11px', borderRadius: 99, background: C.googleBlue, color: '#fff', opacity: tween(frame, 224, 244) * (1 - tween(frame, 300, 316)), fontSize: 11, fontWeight: 950, textTransform: 'uppercase', letterSpacing: 0.8, ...labelStyle}}>harvest → store</div>
+    {packets.map((packet) => {
+      const travel = tween(frame, 232 + packet.delay, 270 + packet.delay);
+      const visible = tween(frame, 228 + packet.delay, 236 + packet.delay) * (1 - tween(frame, 268 + packet.delay, 278 + packet.delay));
+      const x = lerp(1530 + packet.delay * 0.7, 1630 + packet.delay * 0.8, travel);
+      const y = lerp(530 + packet.delay * 0.8, 775 + packet.delay * 0.6, travel) - Math.sin(travel * Math.PI) * 126;
+      return <div key={packet.label} style={{position: 'absolute', left: x, top: y, padding: '5px 8px', borderRadius: 6, background: packet.color, color: '#fff', opacity: visible, fontSize: 10, fontWeight: 950, letterSpacing: 0.7, boxShadow: '0 8px 18px rgba(16,32,39,.18)', ...labelStyle}}>{packet.label}</div>;
+    })}
+  </div>;
+};
+
 const SignalLines: React.FC<{frame: number}> = ({frame}) => {
   const reveal = tween(frame, 210, 246);
   return <svg style={{position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', opacity: reveal}} viewBox="0 0 1920 1080" aria-hidden="true">
@@ -152,6 +208,10 @@ const SignalLines: React.FC<{frame: number}> = ({frame}) => {
 const SearchRobot: React.FC<{frame: number; x: number; y: number; scale: number; delay: number; label: string}> = ({frame, x, y, scale, delay, label}) => {
   const reveal = tween(frame, 184 + delay, 230 + delay);
   const bob = Math.sin((frame + delay) * 0.09) * 5 * reveal;
+  const harvesting = tween(frame, 228 + delay, 258 + delay);
+  const stored = tween(frame, 260 + delay, 294 + delay);
+  const status = stored > 0.5 ? 'stored ✓' : harvesting > 0.35 ? 'harvesting...' : 'received';
+  const statusColor = stored > 0.5 ? C.googleGreen : harvesting > 0.35 ? C.googleBlue : C.googleBlue;
   return <div style={{position: 'absolute', left: x, top: y, width: 300, height: 430, opacity: reveal, transform: `translateY(${lerp(130, 0, reveal) + bob}px) scale(${scale})`, transformOrigin: 'center bottom', zIndex: 5, ...labelStyle}}>
     <div style={{position: 'absolute', left: 144, top: -25, width: 7, height: 33, background: C.ink, borderRadius: 99}} />
     <div style={{position: 'absolute', left: 132, top: -42, width: 30, height: 30, borderRadius: 99, background: C.googleRed, border: `5px solid ${C.ink}`}} />
@@ -163,7 +223,7 @@ const SearchRobot: React.FC<{frame: number; x: number; y: number; scale: number;
       <div style={{width: 68, height: 7, margin: '19px auto 0', borderRadius: 99, background: C.green}} />
     </div>
     <div style={{position: 'absolute', left: 43, top: 145, width: 214, height: 210, border: `5px solid ${C.ink}`, borderRadius: 30, background: '#f7fbff', boxShadow: '0 22px 42px rgba(16,32,39,.14)'}}>
-      <div style={{width: 142, height: 73, margin: '24px auto 0', padding: 11, borderRadius: 12, background: '#e7f0ff', border: `2px solid ${C.googleBlue}`, color: C.ink, fontSize: 15, fontWeight: 950, textAlign: 'center'}}><div style={{color: C.googleBlue, fontSize: 11, textTransform: 'uppercase'}}>received</div><div style={{marginTop: 7}}>JSON-LD ✓</div></div>
+      <div style={{width: 142, height: 73, margin: '24px auto 0', padding: 11, borderRadius: 12, background: '#e7f0ff', border: `2px solid ${statusColor}`, color: C.ink, fontSize: 15, fontWeight: 950, textAlign: 'center'}}><div style={{color: statusColor, fontSize: 11, textTransform: 'uppercase'}}>{status}</div><div style={{marginTop: 7}}>{stored > 0.5 ? 'INDEXED ✓' : harvesting > 0.35 ? 'LOADING DB' : 'JSON-LD ✓'}</div></div>
       <div style={{display: 'flex', justifyContent: 'center', gap: 8, marginTop: 22}}>{[C.googleBlue, C.googleRed, C.googleYellow, C.googleGreen].map((color) => <span key={color} style={{width: 16, height: 16, borderRadius: 99, background: color}} />)}</div>
       <div style={{width: 90, height: 7, margin: '22px auto 0', borderRadius: 99, background: C.ink}} />
     </div>
@@ -179,6 +239,8 @@ export const SEOPageFlip: React.FC = () => {
   const frame = useCurrentFrame();
   const scanner = tween(frame, 118, 198);
   const present = tween(frame, 210, 246);
+  const harvesting = tween(frame, 224, 260);
+  const stored = tween(frame, 264, 302);
   const logoOpacity = tween(frame, 12, 34);
   return <AbsoluteFill style={{fontFamily: 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif', background: C.paper, overflow: 'hidden'}}>
     <Background />
@@ -193,10 +255,12 @@ export const SEOPageFlip: React.FC = () => {
     <SignalChip frame={frame} delay={24} x={815} y={540} type="keyword" label="independent businesses" color={C.googleGreen} />
     <SignalChip frame={frame} delay={36} x={1052} y={530} type="keyword" label="clear next step" color={C.blue} />
     <JsonPanel frame={frame} />
+    <DatabaseVault frame={frame} />
+    <HarvestRoute frame={frame} />
     <SignalLines frame={frame} />
     <SearchRobot frame={frame} x={1410} y={260} scale={1.05} delay={0} label="Google robot / 01" />
     <SearchRobot frame={frame} x={1250} y={650} scale={0.62} delay={14} label="Google robot / 02" />
-    <div style={{position: 'absolute', left: 82, bottom: 48, opacity: tween(frame, 15, 34), ...labelStyle}}><div style={{color: C.muted, fontSize: 13, fontWeight: 950, letterSpacing: 1, textTransform: 'uppercase'}}>SEO / hidden words / page data / JSON-LD</div><div style={{marginTop: 8, color: C.ink, fontSize: 30, fontWeight: 950}}>{present > 0.5 ? 'Readable signals, ready for search.' : 'The page has more to say.'}</div></div>
-    <div style={{position: 'absolute', right: 83, bottom: 53, opacity: present, padding: '10px 14px', borderRadius: 99, background: C.mint, color: C.green, fontSize: 13, fontWeight: 950, textTransform: 'uppercase', letterSpacing: 0.8, ...labelStyle}}>signals received ✓</div>
+    <HarvestPackets frame={frame} />
+    <div style={{position: 'absolute', left: 82, bottom: 48, opacity: tween(frame, 15, 34), ...labelStyle}}><div style={{color: C.muted, fontSize: 13, fontWeight: 950, letterSpacing: 1, textTransform: 'uppercase'}}>SEO / hidden words / page data / JSON-LD</div><div style={{marginTop: 8, color: C.ink, fontSize: 30, fontWeight: 950}}>{stored > 0.5 ? 'Harvested, indexed, ready to retrieve.' : harvesting > 0.35 ? 'The robot is harvesting the page.' : present > 0.5 ? 'Robots receive the signals.' : 'The page has more to say.'}</div></div>
   </AbsoluteFill>;
 };
