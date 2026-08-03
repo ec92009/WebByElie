@@ -9,7 +9,9 @@
     "remotion:still:reassembly": "remotion still remotion/index.ts WebPageReassembly --frame=220 --output=outputs/web-page-reassembly-frame.png",
     "remotion:render:reassembly": "remotion render remotion/index.ts WebPageReassembly assets/web-page-reassembly.mp4 --codec=h264 --crf=24",
     "remotion:still:seo": "remotion still remotion/index.ts SEOPageFlip --frame=220 --output=outputs/seo-page-flip-frame.png",
-    "remotion:render:seo": "remotion render remotion/index.ts SEOPageFlip assets/seo-page-flip.mp4 --codec=h264 --crf=24"
+    "remotion:render:seo": "remotion render remotion/index.ts SEOPageFlip assets/seo-page-flip.mp4 --codec=h264 --crf=24",
+    "remotion:still:aio": "remotion still remotion/index.ts AIORecommendations --frame=240 --output=outputs/aio-recommendations-frame.png",
+    "remotion:render:aio": "remotion render remotion/index.ts AIORecommendations assets/aio-recommendations.mp4 --codec=h264 --crf=24"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.376",

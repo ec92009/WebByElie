@@ -46,8 +46,10 @@ Then open `http://localhost:8094/`.
 - `assets/web-refresh-workspace.png`: generated shared hero image.
 - `assets/web-page-reassembly.mp4`: Standalone Remotion video asset that disassembles and rebuilds a page structure, including a visible copy-scrutiny and rewrite pass.
 - `assets/seo-page-flip.mp4`: Standalone Remotion video asset that flips a page open, exposes SEO signals, and shows search robots harvesting them into a big database.
+- `assets/aio-recommendations.mp4`: Standalone Remotion video asset where OpenAI and Claude collect the SEO context, nudge Google into the background, and create bullet-point recommendations.
 - `remotion/WebPageReassembly.tsx`: source composition for the standalone page-reassembly video.
 - `remotion/SEOPageFlip.tsx`: source composition for the standalone SEO signal video.
+- `remotion/AIORecommendations.tsx`: source composition for the standalone AIO recommendations video.
 - `robots.txt`, `sitemap.xml`: production crawl and sitemap basics.
 - `privacy.html`, `terms.html`, `data-deletion.html`: baseline public policy pages.
 - `privacy/`, `terms/`, `data-deletion/`: extensionless policy routes for static preview and production canonical URLs.
