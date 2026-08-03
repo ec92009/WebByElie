@@ -11,7 +11,9 @@
     "remotion:still:seo": "remotion still remotion/index.ts SEOPageFlip --frame=220 --output=outputs/seo-page-flip-frame.png",
     "remotion:render:seo": "remotion render remotion/index.ts SEOPageFlip assets/seo-page-flip.mp4 --codec=h264 --crf=24",
     "remotion:still:aio": "remotion still remotion/index.ts AIORecommendations --frame=240 --output=outputs/aio-recommendations-frame.png",
-    "remotion:render:aio": "remotion render remotion/index.ts AIORecommendations assets/aio-recommendations.mp4 --codec=h264 --crf=24"
+    "remotion:render:aio": "remotion render remotion/index.ts AIORecommendations assets/aio-recommendations.mp4 --codec=h264 --crf=24",
+    "remotion:still:savings": "remotion still remotion/index.ts SavingsCat --frame=250 --output=outputs/savings-cat-frame.png",
+    "remotion:render:savings": "remotion render remotion/index.ts SavingsCat assets/savings-cat.mp4 --codec=h264 --crf=24"
   },
   "dependencies": {
     "@remotion/cli": "^4.0.376",
