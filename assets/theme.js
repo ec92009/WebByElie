@@ -68,7 +68,7 @@
   let state = readSettings();
 
   if (settingsRoot && !settingsRoot.querySelector("[data-settings-panel]")) {
-    const version = settingsRoot.dataset.siteVersion || "v143.13";
+    const version = settingsRoot.dataset.siteVersion || "v242.0";
     settingsRoot.insertAdjacentHTML(
       "beforeend",
       `<div class="settings-panel" id="site-settings-panel" role="dialog" aria-label="Site settings" data-settings-panel hidden>
@@ -118,7 +118,7 @@
   const themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
 
   const getCopy = () => translations[state.language] || translations.en || {};
-  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v143.13";
+  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v242.0";
   const setAllText = (selector, value) => {
     if (value === undefined) {
       return;
@@ -212,6 +212,7 @@
     const settings = copy.settings || {};
     const page = (copy.pages && copy.pages[getPageKey()]) || {};
     const version = getSiteVersion();
+    const serviceDetailRoot = document.querySelector("[data-service-detail]");
 
     setAllText('.nav a[href="#services"], .nav a[href="./#services"], .nav a[href="../#services"], .nav a[href="index.html#services"]', common.navServices);
     setAllText('.nav a[href="#process"], .nav a[href="./#process"], .nav a[href="../#process"], .nav a[href="index.html#process"]', common.navProcess);
@@ -250,6 +251,20 @@
       document.title = page.title;
     }
     setAttribute('meta[name="description"]', "content", page.description);
+
+    if (serviceDetailRoot) {
+      const serviceIndex = Number(serviceDetailRoot.dataset.serviceIndex);
+      const service = (copy.pages?.home?.services || [])[serviceIndex];
+      if (service) {
+        document.title = `${service[0]} | Web By Elie`;
+        setAttribute('meta[name="description"]', "content", service[1]);
+        setText("[data-service-eyebrow]", common.serviceDetailEyebrow);
+        setText("[data-service-back]", common.backToServices);
+        setText("[data-service-detail] h1", service[0]);
+        setText("[data-service-copy]", service[1]);
+      }
+      return;
+    }
 
     if (getPageKey() === "home") {
       setAttribute(".demo-photo img", "alt", page.imageAlt);
@@ -480,6 +495,43 @@
 
   const stickyCta = document.querySelector(".mobile-sticky-cta");
   const hero = document.querySelector(".demo-hero");
+  const servicePanels = Array.from(document.querySelectorAll("[data-service-panel]"));
+
+  if (servicePanels.length) {
+    const stopPanelVideo = (panel) => {
+      const video = panel.querySelector("[data-service-video]");
+      if (!video) return;
+      video.pause();
+      video.currentTime = 0;
+    };
+
+    const syncPanelVideo = (panel) => {
+      const video = panel.querySelector("[data-service-video]");
+      if (!video) return;
+      const wantsVideo = panel.matches(":hover");
+
+      if (reduceMotion.matches || !wantsVideo) {
+        stopPanelVideo(panel);
+        return;
+      }
+
+      const playResult = video.play();
+      if (playResult && typeof playResult.catch === "function") {
+        playResult.catch(() => {});
+      }
+    };
+
+    servicePanels.forEach((panel) => {
+      panel.addEventListener("mouseenter", () => syncPanelVideo(panel));
+      panel.addEventListener("mouseleave", () => syncPanelVideo(panel));
+    });
+
+    if (typeof reduceMotion.addEventListener === "function") {
+      reduceMotion.addEventListener("change", () => {
+        servicePanels.forEach((panel) => syncPanelVideo(panel));
+      });
+    }
+  }
 
   if (stickyCta && hero) {
     const syncStickyCta = () => {

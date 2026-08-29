@@ -4,7 +4,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://web-by-elie.com/</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/" />
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://web-by-elie.com/fr/</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/" />
@@ -20,11 +20,43 @@
   </url>
   <url>
     <loc>https://web-by-elie.com/es/</loc>
-    <lastmod>2026-07-21</lastmod>
+    <lastmod>2026-08-30</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/services/refresh/</loc>
+    <lastmod>2026-08-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/refresh/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/refresh/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/refresh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/refresh/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/services/seo/</loc>
+    <lastmod>2026-08-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/seo/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/seo/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/seo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/seo/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/services/ai-ready/</loc>
+    <lastmod>2026-08-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/ai-ready/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/ai-ready/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/ai-ready/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/ai-ready/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/services/cost-cleanup/</loc>
+    <lastmod>2026-08-30</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/cost-cleanup/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/cost-cleanup/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/cost-cleanup/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/cost-cleanup/" />
   </url>
   <url>
     <loc>https://web-by-elie.com/case-studies/golden-years/</loc>

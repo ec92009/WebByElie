@@ -1,0 +1,29 @@
+{
+  "name": "remotion-ag",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "remotion studio src/index.ts",
+    "build": "tsc",
+    "render:01": "remotion render src/index.ts PageReassembly outputs/01-page-reassembly.mp4 --codec=h264",
+    "render:02": "remotion render src/index.ts SeoHarvest outputs/02-seo-harvest.mp4 --codec=h264",
+    "render:03": "remotion render src/index.ts AioRecommendations outputs/03-aio-recommendations.mp4 --codec=h264",
+    "render:04": "remotion render src/index.ts CostEfficiency outputs/04-cost-efficiency.mp4 --codec=h264 --pixel-format=yuv420p",
+    "render:all-combined": "remotion render src/index.ts AllFourPreview outputs/all-four-preview.mp4 --codec=h264",
+    "render": "node scripts/render-all.js"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.376",
+    "@remotion/media": "^4.0.471",
+    "lucide-react": "^0.475.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "^4.0.376"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "typescript": "^5.8.2"
+  }
+}

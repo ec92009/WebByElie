@@ -18,6 +18,19 @@ const locales = {
 const baseUrl = "https://web-by-elie.com";
 const imageUrl = `${baseUrl}/assets/web-refresh-workspace.png`;
 const logoUrl = `${baseUrl}/assets/web-by-elie-logo.png`;
+const serviceVideoFiles = [
+  "service-refresh.mp4",
+  "service-seo.mp4",
+  "service-ai-ready.mp4",
+  "service-cost-cleanup.mp4",
+];
+const serviceSlugs = ["refresh", "seo", "ai-ready", "cost-cleanup"];
+const detailVideoFiles = [
+  "web-page-reassembly.mp4",
+  "seo-page-flip.mp4",
+  "aio-recommendations.mp4",
+  "savings-cat.mp4",
+];
 
 const html = (value) => String(value);
 const text = (value) =>
@@ -193,10 +206,16 @@ ${ogAlternates}
       <div class="shell studio-services">
         ${page.services
           .map(
-            ([heading, paragraph], index) => `<article>
-          <span>${String(index + 1).padStart(2, "0")}</span>
-          <h2>${text(heading)}</h2>
-          <p>${text(paragraph)}</p>
+            ([heading, paragraph], index) => `<article class="video-panel" data-service-panel>
+          <a class="panel-link" href="services/${serviceSlugs[index]}/?v=${version}" aria-label="${text(heading)}"></a>
+          <div class="panel-content">
+            <span>${String(index + 1).padStart(2, "0")}</span>
+            <h2>${text(heading)}</h2>
+            <p>${text(paragraph)}</p>
+          </div>
+          <video class="hover-video" data-service-video muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1">
+            <source src="../assets/${serviceVideoFiles[index]}" type="video/mp4" />
+          </video>
         </article>`
           )
           .join("\n        ")}
@@ -338,8 +357,155 @@ ${site.caseStudyUrl ? `                <a class="text-link" href="${text(site.ca
 `;
 };
 
+const serviceUrl = (lang, slug) => {
+  const localePrefix = locales[lang].path ? `${locales[lang].path}/` : "";
+  return `${baseUrl}/${localePrefix}services/${slug}/`;
+};
+
+const renderServiceDetail = (lang, index) => {
+  const copy = i18n[lang];
+  const common = copy.common;
+  const page = copy.pages.home;
+  const locale = locales[lang];
+  const [heading, description] = page.services[index];
+  const slug = serviceSlugs[index];
+  const canonical = serviceUrl(lang, slug);
+  const assetPrefix = locale.path ? "../../../" : "../../";
+  const homePrefix = "../../";
+  const homeHref = `${homePrefix}?v=${version}`;
+  const jsonLd = JSON.stringify(
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "@id": `${canonical}#service`,
+      name: heading,
+      serviceType: heading,
+      description,
+      url: canonical,
+      provider: {
+        "@type": "ProfessionalService",
+        name: "Web By Elie",
+        url: `${baseUrl}/`,
+        email: "hello@web-by-elie.com",
+      },
+    },
+    null,
+    2
+  );
+  const hreflangLinks = Object.keys(locales)
+    .map((code) => `  <link rel="alternate" hreflang="${code}" href="${serviceUrl(code, slug)}" />`)
+    .join("\n");
+  const serviceNav = page.services
+    .map(
+      ([name], serviceIndex) => `          <a class="${serviceIndex === index ? "is-current" : ""}"${serviceIndex === index ? ' aria-current="page"' : ""} href="${homePrefix}services/${serviceSlugs[serviceIndex]}/?v=${version}">${text(name)}</a>`
+    )
+    .join("\n");
+
+  return `<!doctype html>
+<html lang="${lang}">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="canonical" href="${canonical}" />
+  <link rel="icon" type="image/svg+xml" href="${assetPrefix}assets/web-by-elie-logo.svg" />
+  <link rel="icon" type="image/png" sizes="512x512" href="${assetPrefix}assets/icon-512.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="${assetPrefix}apple-touch-icon.png" />
+  <link rel="manifest" href="${assetPrefix}site.webmanifest" />
+  <meta name="theme-color" content="#f7faf7" />
+  <meta name="apple-mobile-web-app-title" content="Web By Elie" />
+  <meta name="application-name" content="Web By Elie" />
+  <title>${text(heading)} | Web By Elie</title>
+  <meta name="description" content="${text(description)}" />
+${hreflangLinks}
+  <meta property="og:site_name" content="Web By Elie" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="${text(heading)} | Web By Elie" />
+  <meta property="og:description" content="${text(description)}" />
+  <meta property="og:url" content="${canonical}" />
+  <meta property="og:image" content="${imageUrl}" />
+  <meta property="og:locale" content="${locale.ogLocale}" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="${text(heading)} | Web By Elie" />
+  <meta name="twitter:description" content="${text(description)}" />
+  <meta name="twitter:image" content="${imageUrl}" />
+  <script type="application/ld+json">
+  ${jsonLd}
+  </script>
+  <link rel="stylesheet" href="${assetPrefix}assets/styles.css?v=${version}" />
+</head>
+<body class="site-demo studio-demo service-detail-page">
+  <header class="topbar demo-topbar dark-demo-topbar">
+    <div class="shell topbar-stack">
+      <div class="topbar-inner">
+        <a class="brand" href="${homeHref}">
+          <img class="brand-mark" src="${assetPrefix}assets/web-by-elie-logo.svg" alt="Web By Elie logo" />
+          <span>Web By Elie</span>
+        </a>
+        <div class="topbar-actions">
+          <nav class="nav" aria-label="Primary navigation">
+            <a href="${homeHref}#services">${text(common.navServices)}</a>
+            <a href="${homeHref}#process">${text(common.navProcess)}</a>
+            <a href="${homeHref}#work">${text(common.navWork)}</a>
+            <a href="${homeHref}#contact">${text(common.navContact)}</a>
+          </nav>
+          ${settingsButton}
+        </div>
+      </div>
+    </div>
+  </header>
+  <main data-service-detail data-service-index="${index}">
+    <section class="section service-detail-hero">
+      <div class="shell">
+        <a class="text-link service-detail-back" href="${homeHref}#services"><span aria-hidden="true">←</span> <span data-service-back>${text(common.backToServices)}</span></a>
+        <div class="service-detail-heading">
+          <p class="eyebrow" data-service-eyebrow>${text(common.serviceDetailEyebrow)}</p>
+          <h1>${text(heading)}</h1>
+        </div>
+        <figure class="service-detail-video">
+          <video autoplay muted loop playsinline controls preload="metadata" aria-label="${text(heading)}">
+            <source src="${assetPrefix}assets/${detailVideoFiles[index]}" type="video/mp4" />
+          </video>
+        </figure>
+        <div class="service-detail-copy">
+          <p data-service-copy>${text(description)}</p>
+        </div>
+        <div class="actions service-detail-actions">
+          <a class="button" href="${homeHref}#contact" data-email-link data-email-user="hello" data-email-domain="web-by-elie.com" data-email-subject="${text(common.emailSubject)}">${text(common.emailCta)}</a>
+          <a class="button secondary" href="${homeHref}#services">${text(common.backToServices)}</a>
+        </div>
+        <nav class="service-detail-nav" aria-label="${text(common.navServices)}">
+${serviceNav}
+        </nav>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="shell footer-inner">
+      <span>${text(common.versionLine.replace("{version}", siteVersion))}</span>
+      <div class="footer-links">
+        <a href="${assetPrefix}privacy">${text(common.privacy)}</a>
+        <a href="${assetPrefix}terms">${text(common.terms)}</a>
+        <a href="${assetPrefix}data-deletion">${text(common.dataDeletion)}</a>
+      </div>
+    </div>
+  </footer>
+  <script src="${assetPrefix}assets/i18n.js?v=${version}"></script>
+  <script src="${assetPrefix}assets/theme.js?v=${version}"></script>
+</body>
+</html>
+`;
+};
+
 for (const lang of ["fr", "es"]) {
   const output = join(locales[lang].path, "index.html");
   mkdirSync(dirname(output), { recursive: true });
   writeFileSync(output, renderHome(lang));
+}
+
+for (const [lang, locale] of Object.entries(locales)) {
+  serviceSlugs.forEach((slug, index) => {
+    const output = join(locale.path, "services", slug, "index.html");
+    mkdirSync(dirname(output), { recursive: true });
+    writeFileSync(output, renderServiceDetail(lang, index));
+  });
 }

@@ -10,7 +10,9 @@ window.webByElieI18n = {
       dataDeletion: "Data deletion",
       emailCta: "Email Elie",
       emailSubject: "Web By Elie intro",
-      versionLine: "Web By Elie · {version}"
+      versionLine: "Web By Elie · {version}",
+      serviceDetailEyebrow: "Service detail",
+      backToServices: "Back to services"
     },
     settings: {
       open: "Open site settings",
@@ -167,7 +169,9 @@ window.webByElieI18n = {
       dataDeletion: "Suppression des données",
       emailCta: "Écrire à Elie",
       emailSubject: "Prise de contact Web By Elie",
-      versionLine: "Web By Elie · {version}"
+      versionLine: "Web By Elie · {version}",
+      serviceDetailEyebrow: "Détail du service",
+      backToServices: "Retour aux services"
     },
     settings: {
       open: "Ouvrir les réglages du site",
@@ -324,7 +328,9 @@ window.webByElieI18n = {
       dataDeletion: "Eliminación de datos",
       emailCta: "Escribir a Elie",
       emailSubject: "Contacto Web By Elie",
-      versionLine: "Web By Elie · {version}"
+      versionLine: "Web By Elie · {version}",
+      serviceDetailEyebrow: "Detalle del servicio",
+      backToServices: "Volver a los servicios"
     },
     settings: {
       open: "Abrir ajustes del sitio",

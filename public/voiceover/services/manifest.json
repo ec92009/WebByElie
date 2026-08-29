@@ -1,0 +1,86 @@
+{
+  "voiceRate": "320",
+  "pauseSeconds": 0.24,
+  "services": [
+    {
+      "slug": "refresh",
+      "copy": "You have already put real work into the current site. We preserve what is working, create a palette of possible looks, and help you choose and combine options into the final sign-off site.",
+      "lines": [
+        {
+          "text": "You have already put real work into the current site.",
+          "voice": "female",
+          "file": "public/voiceover/services/refresh-01-female.mp3",
+          "durationSeconds": 2.011
+        },
+        {
+          "text": "We preserve what is working, create a palette of possible looks, and help you choose and combine options into the final sign-off site.",
+          "voice": "male",
+          "file": "public/voiceover/services/refresh-02-male.mp3",
+          "durationSeconds": 4.78
+        }
+      ],
+      "landscapeDurationSeconds": 11.051,
+      "portraitDurationSeconds": 9.045
+    },
+    {
+      "slug": "seo",
+      "copy": "Search Engine Optimization is precise, but practical. Search engines read visible content and behind-the-scenes page details, so we work through a checklist: titles, descriptions, headings, links, service wording, locations, and structure.",
+      "lines": [
+        {
+          "text": "Search Engine Optimization is precise, but practical.",
+          "voice": "female",
+          "file": "public/voiceover/services/seo-01-female.mp3",
+          "durationSeconds": 2.429
+        },
+        {
+          "text": "Search engines read visible content and behind-the-scenes page details, so we work through a checklist: titles, descriptions, headings, links, service wording, locations, and structure.",
+          "voice": "male",
+          "file": "public/voiceover/services/seo-02-male.mp3",
+          "durationSeconds": 7.654
+        }
+      ],
+      "landscapeDurationSeconds": 11.051,
+      "portraitDurationSeconds": 11.051
+    },
+    {
+      "slug": "ai-ready",
+      "copy": "Many searches now start in a chat box, from ChatGPT to Google AI results. We make the basic facts easier to understand: who the business serves, what it offers, where it works, and which answers belong on the site.",
+      "lines": [
+        {
+          "text": "Many searches now start in a chat box, from ChatGPT to Google AI results.",
+          "voice": "female",
+          "file": "public/voiceover/services/ai-ready-01-female.mp3",
+          "durationSeconds": 3.161
+        },
+        {
+          "text": "We make the basic facts easier to understand: who the business serves, what it offers, where it works, and which answers belong on the site.",
+          "voice": "male",
+          "file": "public/voiceover/services/ai-ready-02-male.mp3",
+          "durationSeconds": 5.407
+        }
+      ],
+      "landscapeDurationSeconds": 11.051,
+      "portraitDurationSeconds": 9.045
+    },
+    {
+      "slug": "cost-cleanup",
+      "copy": "Small web costs add up quietly. We look for unused subscriptions, overlapping tools, paid tiers, renewals, and ownership gaps, then sort what is worth keeping, changing, or canceling.",
+      "lines": [
+        {
+          "text": "Small web costs add up quietly.",
+          "voice": "female",
+          "file": "public/voiceover/services/cost-cleanup-01-female.mp3",
+          "durationSeconds": 1.593
+        },
+        {
+          "text": "We look for unused subscriptions, overlapping tools, paid tiers, renewals, and ownership gaps, then sort what is worth keeping, changing, or canceling.",
+          "voice": "male",
+          "file": "public/voiceover/services/cost-cleanup-02-male.mp3",
+          "durationSeconds": 6.296
+        }
+      ],
+      "landscapeDurationSeconds": 10.048,
+      "portraitDurationSeconds": 10.048
+    }
+  ]
+}

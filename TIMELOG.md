@@ -68,7 +68,20 @@ Clock state: running
 | 2026-08-03 | 13:00 CEST | 13:10 CEST | 0:10 | Requested and reviewed the SEO video harvest refinement: the robot collects the signals and stores indexed records in a large search database. |
 | 2026-08-03 | 13:16 CEST | 13:26 CEST | 0:10 | Directed and reviewed standalone Phase 3 AIO video: OpenAI and Claude collect SEO context, nudge Google into the background, and form four bullet-point recommendations. |
 | 2026-08-03 | 13:39 CEST | 13:49 CEST | 0:10 | Directed and reviewed standalone video #4: the tool noise slides right, a fat cat scans for evaporating dollar signs, catches them with bare paws, and pockets the savings. |
+| 2026-08-04 | 13:34 CEST | 13:38 CEST | 0:04 | Approved embedding the four Antigravity-generated service videos in the Web By Elie homepage and reviewed desktop/mobile local previews. |
+| 2026-08-04 | 13:40 CEST | 13:52 CEST | 0:12 | Corrected the homepage service integration to preserve the portrait-video flip/accordion behavior, with desktop hover and mobile tap/keyboard checks. |
+| 2026-08-04 | 14:01 CEST | 14:03 CEST | 0:02 | Confirmed the local preview is serving the current Web By Elie build over the LAN for phone testing. |
+| 2026-08-04 | 14:04 CEST | 14:14 CEST | 0:10 | Added localized service detail routes, wired hero panel navigation, and placed each landscape Remotion video before its short description. |
+| 2026-08-06 | 10:27 CEST | 10:29 CEST | 0:02 | Reopened the local Web By Elie preview and restarted its LAN server for another phone review. |
+| 2026-08-06 | 10:30 CEST | 10:34 CEST | 0:04 | Replaced the service detail-page videos with the newest AG landscape renders and refreshed the versioned routes. |
+| 2026-08-06 | 10:35 CEST | 10:45 CEST | 0:10 | Added two-voice TTS narration from the homepage service copy to the portrait and landscape animations and refreshed the preview version. |
+| 2026-08-23 | 11:24 CEST | 11:28 CEST | 0:04 | Checked homepage links and runtime routes locally and in production. |
+| 2026-08-23 | 11:39 CEST | 11:40 CEST | 0:01 | Verified the WebByElie YouTrack project and issue namespace for this repository. |
+| 2026-08-23 | 11:52 CEST | 11:53 CEST | 0:01 | Reviewed the Tick/Tock skill startup sequence and clarified Tick's first action. |
+| 2026-08-27 | 13:00 CEST | 13:01 CEST | 0:01 | Started WebByElie GSA, scoped the WEBBYELIE queue, and presented the highest-priority human gate. |
+| 2026-08-30 | 00:33 CEST | 00:34 CEST | 0:01 | Checked whether the homepage video treatments are visible locally and in production, then opened the local preview. |
+| 2026-08-30 | 00:38 CEST | 00:39 CEST | 0:01 | Approved merging and publishing the reviewed homepage and service-detail video treatment. |
 
 ## Totals
 
-Active collaboration time used: 2:26
+Active collaboration time used: 3:19

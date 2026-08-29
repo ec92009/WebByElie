@@ -2,11 +2,11 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v143.13`
+Current visible version: `v242.0`
 
 Production URL: `https://web-by-elie.com/`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=143.13`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=242.0`
 
 Contact email: `hello@web-by-elie.com`
 
@@ -33,6 +33,14 @@ python3 -m http.server 8094
 
 Then open `http://localhost:8094/`.
 
+## Verification
+
+```sh
+npm test
+```
+
+This read-only source check validates public local links and fragments, generated-page reproducibility, visible version/cache-bust consistency, JavaScript syntax, and TypeScript compilation. It does not verify a deployment; production remains a separate browser and live-URL gate.
+
 ## Files
 
 - `VERSION`: source of truth for the visible site version.
@@ -48,6 +56,11 @@ Then open `http://localhost:8094/`.
 - `assets/seo-page-flip.mp4`: Standalone Remotion video asset that flips a page open, exposes SEO signals, and shows search robots harvesting them into a big database.
 - `assets/aio-recommendations.mp4`: Standalone Remotion video asset where OpenAI and Claude collect the SEO context, nudge Google into the background, and create bullet-point recommendations.
 - `assets/savings-cat.mp4`: Standalone Remotion video asset where a fat cat clears the tool noise, finds evaporating dollar signs on the page, catches them, and pockets the savings.
+- `assets/service-refresh.mp4`, `assets/service-seo.mp4`, `assets/service-ai-ready.mp4`, `assets/service-cost-cleanup.mp4`: Portrait Antigravity-generated service videos used by the homepage's hover/tap accordion panels.
+- `services/`, `fr/services/`, `es/services/`: localized service detail pages linked from the four homepage panels, each with its landscape Remotion video and short description.
+- The four detail-page landscape assets are synced from the latest numbered AG renders in `Remotion_AG/outputs/`.
+- `public/voiceover/services/`: two-voice service narration generated from the English homepage panel copy.
+- `scripts/generate-service-voiceover.mjs`: regenerates the service narration and embeds it into both portrait and landscape MP4 variants.
 - `remotion/WebPageReassembly.tsx`: source composition for the standalone page-reassembly video.
 - `remotion/SEOPageFlip.tsx`: source composition for the standalone SEO signal video.
 - `remotion/AIORecommendations.tsx`: source composition for the standalone AIO recommendations video.

@@ -1,6 +1,6 @@
 # Web By Elie Summary
 
-Last updated: 2026-08-03 13:49 CEST
+Last updated: 2026-08-30 00:39 CEST
 
 ## Current State
 
@@ -8,10 +8,10 @@ Last updated: 2026-08-03 13:49 CEST
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=143.13`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=242.0`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v143.13`
+- Current visible version: `v242.0`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -40,11 +40,14 @@ Last updated: 2026-08-03 13:49 CEST
 - Added generated logo, QR assets, and a local-only print/coaster asset folder.
 - Added the site to the Webapps hub at `/Users/ecohen/Dev/Webapps`.
 - Upgraded the public site with a unified gear settings panel, day/night segmented control, English/French/Spanish translated copy, glass transparency/translucency sliders, reveal effects, and a phone sticky email CTA.
-- Added a standalone Remotion video that picks apart a current page, transforms the pieces, and reassembles them into a clearer structure.
-- Refined the video transform stage with an explicit copy pass: vague wording is scrutinized, marked too broad, and rewritten into clearer copy before reassembly. The video is intentionally not embedded in the public page yet.
-- Added a second standalone Remotion video, `SEOPageFlip`, that flips the page below its visible surface, exposes keywords, page data, and JSON-LD, then shows oversized search robots harvesting the signals into a big indexed database. It is also intentionally not embedded in the public page yet.
-- Added a third standalone Remotion video, `AIORecommendations`, where OpenAI and Claude nudge Google into the background, collect the SEO context, and assemble four bullet-point recommendations. It is also intentionally not embedded in the public page yet.
-- Added a fourth standalone Remotion video, `SavingsCat`, where the surrounding tool stack slides right, a fat cat scans the page for evaporating dollar signs, catches them with bare paws, and places them into its pockets. It is also intentionally not embedded in the public page yet.
+- Added a standalone Remotion video that picks apart a current page, transforms the pieces, and reassembles them into a clearer structure; it now plays on the Refresh detail page.
+- Refined the video transform stage with an explicit copy pass: vague wording is scrutinized, marked too broad, and rewritten into clearer copy before reassembly.
+- Added a second standalone Remotion video, `SEOPageFlip`, that flips the page below its visible surface, exposes keywords, page data, and JSON-LD, then shows oversized search robots harvesting the signals into a big indexed database; it now plays on the SEO detail page.
+- Added a third standalone Remotion video, `AIORecommendations`, where OpenAI and Claude nudge Google into the background, collect the SEO context, and assemble four bullet-point recommendations; it now plays on the AI-ready detail page.
+- Added a fourth standalone Remotion video, `SavingsCat`, where the surrounding tool stack slides right, a fat cat scans the page for evaporating dollar signs, catches them with bare paws, and places them into its pockets; it now plays on the Cost cleanup detail page.
+- Wired the homepage's four portrait-video panels to localized service detail pages. Desktop hover still expands the accordion preview; clicking or tapping opens the selected detail page, where the landscape video is followed by the short service description.
+- Updated those detail pages to use the latest AG landscape renders: `01-page-reassembly`, `02-seo-harvest`, `03-aio-recommendations`, and `04-cost-efficiency`.
+- Added the selected two-voice TTS flow to the eight service animation variants: the English homepage panel copy is read by Flo and Reed, embedded in the portrait and landscape MP4s, and kept reproducible through `scripts/generate-service-voiceover.mjs`.
 
 ## Current Offer Copy
 
@@ -68,7 +71,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `143.13`, displayed as `v143.13`.
+- Current version is `242.0`, displayed as `v242.0`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
@@ -86,7 +89,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Fresh Numbered Backlog
 
 1. Monitor search indexing pickup.
-   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v143.13` has deployed and crawlers have processed the requests.
+   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v242.0` has deployed and crawlers have processed the requests.
 
 2. Keep Cloudflare Pages deployment repeatable.
    Preserve the clean static publish set for production deploys, keep DNS/HTTPS on Cloudflare, and protect email-related DNS records.
