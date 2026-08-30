@@ -29,6 +29,10 @@ jobs:
           npm ci
           npm ci --prefix Remotion_AG
           npm ci --prefix Three_AG
+      - name: Install FFmpeg
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes ffmpeg
       - name: Run source checks and studio builds
         run: |
           npm test
