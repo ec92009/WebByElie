@@ -18,11 +18,11 @@
     "remotion:render:savings": "remotion render remotion/index.ts SavingsCat assets/savings-cat.mp4 --codec=h264 --crf=24"
   },
   "dependencies": {
-    "@remotion/cli": "^4.0.376",
-    "@remotion/media": "^4.0.471",
+    "@remotion/cli": "^4.0.518",
+    "@remotion/media": "^4.0.518",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "remotion": "^4.0.376"
+    "remotion": "^4.0.518"
   },
   "devDependencies": {
     "@types/react": "^19.1.8",
