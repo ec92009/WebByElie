@@ -34,3 +34,4 @@ jobs:
           npm test
           npm --prefix Remotion_AG run build
           npm --prefix Three_AG run build
+          npm --prefix Three_AG run render:smoke

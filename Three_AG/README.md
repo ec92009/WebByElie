@@ -75,3 +75,14 @@ npm run render
 ```
 
 Rendered MP4s will be saved in `Three_AG/outputs/`.
+
+Before a full render, run the bounded smoke check:
+
+```bash
+cd Three_AG
+npm run render:smoke
+```
+
+The smoke check renders and encodes three frames in a temporary directory, then removes them. It does not replace production media or write to `frames/` or `outputs/`.
+
+The renderer discovers FFmpeg from `PATH` and uses Puppeteer's managed Chrome when available, followed by common system Chrome/Chromium locations. Set `FFMPEG_BIN` or `PUPPETEER_EXECUTABLE_PATH` (also `CHROME_BIN`) to override discovery. `THREE_AG_PORT` changes the preferred local port, and `THREE_AG_NO_SANDBOX=1` explicitly enables the Chrome no-sandbox flags outside CI.
