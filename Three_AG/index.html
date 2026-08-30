@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web By Elie — 3D Video Studio (Three.js)</title>
+  <style>
+    :root {
+      --bg-dark: #0f1115;
+      --panel-bg: rgba(22, 26, 33, 0.85);
+      --accent-green: #10b981;
+      --accent-gold: #f59e0b;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --border-color: rgba(255, 255, 255, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-main);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    #stage-container {
+      flex: 1;
+      position: relative;
+      width: 100%;
+      height: calc(100vh - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #14171d;
+    }
+
+    canvas#webgl-canvas {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    #controls-bar {
+      height: 80px;
+      background: var(--panel-bg);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      gap: 20px;
+      z-index: 10;
+    }
+
+    .btn {
+      background: #282e3a;
+      color: #fff;
+      border: 1px solid var(--border-color);
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn:hover {
+      background: #343c4c;
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .btn.active {
+      background: var(--accent-green);
+      color: #052e16;
+      border-color: var(--accent-green);
+      font-weight: 600;
+    }
+
+    .scene-select {
+      display: flex;
+      background: #1c212c;
+      padding: 4px;
+      border-radius: 10px;
+      border: 1px solid var(--border-color);
+      gap: 4px;
+    }
+
+    .scene-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 500;
+      transition: all 0.2s ease;
+    }
+
+    .scene-btn:hover {
+      color: var(--text-main);
+    }
+
+    .scene-btn.active {
+      background: #2e3646;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .timeline-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .timeline-slider {
+      width: 100%;
+      accent-color: var(--accent-green);
+      cursor: pointer;
+      height: 6px;
+    }
+
+    .timeline-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      font-family: monospace;
+      color: var(--text-muted);
+    }
+
+    .badge-resolution {
+      font-family: monospace;
+      font-size: 12px;
+      background: #1f2530;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      color: var(--accent-gold);
+    }
+  </style>
+</head>
+<body>
+  <div id="stage-container">
+    <canvas id="webgl-canvas"></canvas>
+  </div>
+
+  <div id="controls-bar">
+    <button id="btn-play" class="btn">
+      <span id="play-icon">▶</span> <span id="play-text">Play</span>
+    </button>
+
+    <div class="scene-select">
+      <button class="scene-btn active" data-scene="0">1. Reassembly</button>
+      <button class="scene-btn" data-scene="1">2. SEO Harvest</button>
+      <button class="scene-btn" data-scene="2">3. AI Recommendations</button>
+      <button class="scene-btn" data-scene="3">4. Savings Cat</button>
+      <button class="scene-btn" data-scene="4">All 4 (44s)</button>
+    </div>
+
+    <div class="timeline-container">
+      <input type="range" id="timeline-scrubber" class="timeline-slider" min="0" max="330" step="1" value="0">
+      <div class="timeline-meta">
+        <span id="time-display">0.00s / 11.00s</span>
+        <span id="frame-display">Frame: 0 / 330</span>
+      </div>
+    </div>
+
+    <div class="badge-resolution">1920 × 1080 @ 30fps</div>
+  </div>
+
+  <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

@@ -23,9 +23,14 @@ jobs:
           cache-dependency-path: |
             package-lock.json
             Remotion_AG/package-lock.json
+            Three_AG/package-lock.json
       - name: Install dependencies
         run: |
           npm ci
           npm ci --prefix Remotion_AG
-      - name: Run source checks
-        run: npm test
+          npm ci --prefix Three_AG
+      - name: Run source checks and studio builds
+        run: |
+          npm test
+          npm --prefix Remotion_AG run build
+          npm --prefix Three_AG run build

@@ -86,7 +86,8 @@ Clock state: running
 | 2026-08-30 | 10:12 CEST | 10:13 CEST | 0:01 | Refreshed build dependencies and Actions runtimes, then verified source checks, clean audits, and a bounded Remotion render. |
 | 2026-08-30 | 10:30 CEST | 10:34 CEST | 0:04 | Generalized the canonical external-service access order and diagnosed the YouTrack closeout as blocked by system-wide DNS. |
 | 2026-08-30 | 10:40 CEST | 10:42 CEST | 0:02 | Closed WEBBYELIE-12 through the API and inventoried the Three.js and Remotion experiment boundary without deleting artifacts. |
+| 2026-08-30 | 10:46 CEST | 10:47 CEST | 0:01 | Applied the approved experiment boundary: preserved authored sources, moved reproducible artifacts to Trash, and added isolated studio CI builds. |
 
 ## Totals
 
-Active collaboration time used: 3:30
+Active collaboration time used: 3:31

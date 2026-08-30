@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Service Hover Prototype</title>
+  <style>
+    :root {
+      --panel: #fdfdfd;
+      --glass-line: rgba(78, 125, 111, 0.2);
+      --glass-shine: rgba(255, 255, 255, 0.6);
+      --glass-blur: 16px;
+      --hover-shadow: 0 30px 60px rgba(29, 41, 48, 0.2);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    body {
+      background-color: #f7faf7;
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .shell {
+      max-width: 1400px; /* Widened to allow more room for expansion */
+      width: 100%;
+    }
+
+    /* Changed from Grid to Flex for smooth accordion expansion */
+    .studio-services {
+      display: flex;
+      gap: 16px;
+      height: 600px; /* Give it a fixed taller height so the video has room */
+    }
+
+    .studio-services article {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--glass-line);
+      border-radius: 16px;
+      background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.3)),
+        var(--panel);
+      box-shadow: inset 0 1px 0 var(--glass-shine), 0 16px 42px rgba(29, 41, 48, 0.1);
+      backdrop-filter: blur(var(--glass-blur)) saturate(1.3);
+      -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.3);
+
+      /* Flex properties for the accordion effect */
+      flex: 1;
+      transition: flex 0.6s var(--ease-out), border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s var(--ease-out);
+
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    /* On hover, this panel expands to take up significantly more space */
+    .studio-services article:hover {
+      flex: 2.5;
+      transform: translateY(-6px);
+      border-color: rgba(255, 255, 255, 0.9);
+      box-shadow: inset 0 1px 0 var(--glass-shine), var(--hover-shadow);
+      z-index: 10;
+    }
+
+    .studio-services span {
+      color: #9fc7b7;
+      font-weight: 900;
+      font-size: 1.4rem;
+    }
+
+    .studio-services h2 {
+      margin: 12px 0;
+      font-size: 2rem;
+      color: #1a1a1a;
+      white-space: nowrap; /* Keep title on one line during transitions */
+    }
+
+    .studio-services p {
+      color: #555;
+      line-height: 1.6;
+      font-size: 1.1rem;
+      /* Prevent text wrapping awkwardly when shrinking */
+      min-width: 250px;
+    }
+
+    /* Isolated Video & Hover Logic */
+    .panel-content {
+      position: relative;
+      z-index: 2;
+      transition: opacity 0.4s ease, transform 0.6s var(--ease-out);
+      height: 100%;
+    }
+
+    .hover-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 0.5s ease, transform 0.6s var(--ease-out);
+      z-index: 1;
+      pointer-events: none;
+      transform: scale(1.1); /* Slight zoom out effect on reveal */
+    }
+
+    /* When hovering the article, fade out content and fade in video */
+    .studio-services article:hover .panel-content {
+      opacity: 0;
+      transform: translateY(-20px); /* Slight upward drift as it fades out */
+    }
+    .studio-services article:hover .hover-video {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="shell">
+    <section class="studio-services">
+
+      <!-- Panel 01 with Video Substitution -->
+      <article class="video-panel">
+        <div class="panel-content">
+          <span>01</span>
+          <h2>Refresh</h2>
+          <p>You have already put real work into the current site. We preserve what is working, create a palette of possible looks, and help you choose and combine options into the final sign-off site.</p>
+        </div>
+        <!-- Portrait video asset -->
+        <video
+          class="hover-video"
+          src="out/01-page-reassembly-portrait.mp4"
+          muted
+          loop
+          playsinline>
+        </video>
+      </article>
+
+      <article class="video-panel">
+        <div class="panel-content">
+          <span>02</span>
+          <h2>SEO</h2>
+          <p>Search Engine Optimization is precise, but practical. Search engines read visible content and behind-the-scenes page details, so we work through a checklist: titles, descriptions, headings, links, service wording, locations, and structure.</p>
+        </div>
+        <video
+          class="hover-video"
+          src="out/02-seo-harvest-portrait.mp4"
+          muted
+          loop
+          playsinline>
+        </video>
+      </article>
+
+      <article class="video-panel">
+        <div class="panel-content">
+          <span>03</span>
+          <h2>AI-ready</h2>
+          <p>Many searches now start in a chat box, from ChatGPT to Google AI results. We make the basic facts easier to understand: who the business serves, what it offers, where it works, and which answers belong on the site.</p>
+        </div>
+        <video
+          class="hover-video"
+          src="out/03-aio-recommendations-portrait.mp4"
+          muted
+          loop
+          playsinline>
+        </video>
+      </article>
+
+      <article class="video-panel">
+        <div class="panel-content">
+          <span>04</span>
+          <h2>Cost cleanup</h2>
+          <p>Small web costs add up quietly. We look for unused subscriptions, overlapping tools, paid tiers, renewals, and ownership gaps, then sort what is worth keeping, changing, or canceling.</p>
+        </div>
+        <video
+          class="hover-video"
+          src="out/04-cost-efficiency-portrait.mp4"
+          muted
+          loop
+          playsinline>
+        </video>
+      </article>
+
+    </section>
+  </div>
+
+  <script>
+    document.querySelectorAll('.video-panel').forEach(panel => {
+      const video = panel.querySelector('video');
+      if (!video) return;
+
+      panel.addEventListener('mouseenter', () => {
+        video.play().catch(e => console.log('Autoplay prevented:', e));
+      });
+
+      panel.addEventListener('mouseleave', () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  </script>
+
+</body>
+</html>
