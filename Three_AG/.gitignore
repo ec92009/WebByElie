@@ -1,0 +1,5 @@
+# Reproducible dependency, build, frame, and render artifacts.
+node_modules/
+dist/
+frames/
+outputs/
