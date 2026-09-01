@@ -88,7 +88,13 @@ Clock state: running
 | 2026-08-30 | 10:40 CEST | 10:42 CEST | 0:02 | Closed WEBBYELIE-12 through the API and inventoried the Three.js and Remotion experiment boundary without deleting artifacts. |
 | 2026-08-30 | 10:46 CEST | 10:47 CEST | 0:01 | Applied the approved experiment boundary: preserved authored sources, moved reproducible artifacts to Trash, and added isolated studio CI builds. |
 | 2026-08-30 | 10:48 CEST | 11:01 CEST | 0:13 | Audited and refreshed the Three.js renderer, added portable Chrome/FFmpeg discovery, and verified a clean bounded render without changing approved media. |
+| 2026-08-31 | 15:19 CEST | 15:20 CEST | 0:01 | Inventoried the current first-service video variants, source lineage, narration, and live deployment state. |
+| 2026-08-31 | 15:21 CEST | 15:23 CEST | 0:02 | Directed and reviewed a portrait-only Refresh video candidate with three distinct looks, visible client choices, and a preserved-site outcome. |
+| 2026-08-31 | 16:30 CEST | 16:31 CEST | 0:01 | Refined the portrait Refresh candidate so two alternatives exit and the selected Bold direction expands cleanly to fill the frame. |
+| 2026-09-01 | 10:30 CEST | 10:31 CEST | 0:01 | Added a visible wastebasket and elastic genie-style suction for the two discarded Refresh directions. |
+| 2026-09-01 | 10:35 CEST | 10:36 CEST | 0:01 | Created and reviewed the matching 1920-by-1080 Refresh animation while preserving the portrait and published variants. |
+| 2026-09-01 | 10:41 CEST | 10:42 CEST | 0:01 | Approved the two Refresh videos for website integration and prepared an isolated GitHub Pages preview. |
 
 ## Totals
 
-Active collaboration time used: 3:44
+Active collaboration time used: 3:51

@@ -8,7 +8,7 @@ fs.mkdirSync(outputDir, { recursive: true });
 fs.mkdirSync(portraitDir, { recursive: true });
 
 const compositions = [
-  { id: 'PageReassembly', file: 'outputs/01-page-reassembly.mp4' },
+  { id: 'PageReassemblyLandscapeReview', file: 'outputs/01-page-reassembly.mp4' },
   { id: 'PageReassemblyPortrait', file: 'out/01-page-reassembly-portrait.mp4' },
   { id: 'SeoHarvest', file: 'outputs/02-seo-harvest.mp4' },
   { id: 'SeoHarvestPortrait', file: 'out/02-seo-harvest-portrait.mp4' },
