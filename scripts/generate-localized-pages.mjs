@@ -462,7 +462,7 @@ ${hreflangLinks}
           <h1>${text(heading)}</h1>
         </div>
         <figure class="service-detail-video">
-          <video autoplay muted loop playsinline controls preload="metadata" data-autoplay-video aria-label="${text(heading)}">
+          <video autoplay muted loop playsinline preload="metadata" data-autoplay-video tabindex="0" aria-label="${text(heading)}">
             <source src="${assetPrefix}assets/${detailVideoFiles[index]}" type="video/mp4" />
           </video>
         </figure>

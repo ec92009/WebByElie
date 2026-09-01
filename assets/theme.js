@@ -68,7 +68,7 @@
   let state = readSettings();
 
   if (settingsRoot && !settingsRoot.querySelector("[data-settings-panel]")) {
-    const version = settingsRoot.dataset.siteVersion || "v244.1";
+    const version = settingsRoot.dataset.siteVersion || "v244.2";
     settingsRoot.insertAdjacentHTML(
       "beforeend",
       `<div class="settings-panel" id="site-settings-panel" role="dialog" aria-label="Site settings" data-settings-panel hidden>
@@ -118,7 +118,7 @@
   const themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
 
   const getCopy = () => translations[state.language] || translations.en || {};
-  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v244.1";
+  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v244.2";
   const setAllText = (selector, value) => {
     if (value === undefined) {
       return;
@@ -499,6 +499,11 @@
   const autoplayVideos = Array.from(document.querySelectorAll("[data-autoplay-video]"));
 
   if (autoplayVideos.length) {
+    const enableVideoControls = (video) => {
+      video.controls = true;
+      video.classList.add("is-interactive");
+    };
+
     const startAutoplayVideos = () => {
       autoplayVideos.forEach((video) => {
         video.muted = true;
@@ -516,6 +521,9 @@
       if (!document.hidden) startAutoplayVideos();
     });
     autoplayVideos.forEach((video) => {
+      video.controls = false;
+      video.addEventListener("pointerdown", () => enableVideoControls(video), { once: true });
+      video.addEventListener("focus", () => enableVideoControls(video), { once: true });
       video.addEventListener("loadeddata", startAutoplayVideos, { once: true });
     });
   }

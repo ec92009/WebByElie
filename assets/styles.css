@@ -1622,6 +1622,10 @@ html[data-theme="night"] .work-card {
   background: #111b20;
 }
 
+.service-detail-video video[data-autoplay-video]:not(.is-interactive) {
+  cursor: none;
+}
+
 .service-detail-copy {
   max-width: 780px;
   margin: 28px auto 0;

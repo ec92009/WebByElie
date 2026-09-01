@@ -95,7 +95,8 @@ Clock state: running
 | 2026-09-01 | 10:35 CEST | 10:36 CEST | 0:01 | Created and reviewed the matching 1920-by-1080 Refresh animation while preserving the portrait and published variants. |
 | 2026-09-01 | 10:41 CEST | 10:42 CEST | 0:01 | Approved the two Refresh videos for website integration and prepared an isolated GitHub Pages preview. |
 | 2026-09-01 | 10:45 CEST | 10:46 CEST | 0:01 | Required and verified mouse-independent autoplay across all four service-detail pages. |
+| 2026-09-01 | 10:46 CEST | 10:47 CEST | 0:01 | Hid passive detail-video controls and the resting pointer until deliberate visitor interaction. |
 
 ## Totals
 
-Active collaboration time used: 3:52
+Active collaboration time used: 3:53
