@@ -1,223 +1,224 @@
 import React from 'react';
-import { interpolate, spring, useCurrentFrame, useVideoConfig } from 'remotion';
+import {
+  AbsoluteFill,
+  interpolate,
+  spring,
+  useCurrentFrame,
+  useVideoConfig,
+} from 'remotion';
+
+const C = {
+  ink: '#14262b',
+  muted: '#587078',
+  paper: '#f7f4ed',
+  white: '#fffdf8',
+  green: '#4f8373',
+  mint: '#dcece4',
+  blue: '#5f7f9b',
+  rust: '#c87345',
+  gold: '#e2b960',
+  line: '#ccd8d2',
+};
+
+const font = 'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
+const clamp = (value: number) => Math.max(0, Math.min(1, value));
+const ease = (frame: number, start: number, end: number) => {
+  const value = clamp(interpolate(frame, [start, end], [0, 1]));
+  return value * value * (3 - 2 * value);
+};
+
+const Brand: React.FC = () => (
+  <div style={{display: 'flex', alignItems: 'center', gap: 14}}>
+    <div style={{width: 44, height: 44, borderRadius: 13, background: C.green, display: 'grid', placeItems: 'center', color: C.white, fontSize: 22, fontWeight: 950}}>E</div>
+    <span style={{fontSize: 22, fontWeight: 900, color: C.ink}}>Web By Elie</span>
+  </div>
+);
+
+const KeepChip: React.FC<{label: string; delay: number}> = ({label, delay}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const pop = spring({frame: frame - delay, fps, config: {damping: 16, stiffness: 150}});
+  return (
+    <div style={{opacity: pop, transform: `scale(${0.82 + pop * 0.18})`, padding: '12px 18px', borderRadius: 99, background: C.mint, border: `2px solid ${C.green}`, color: C.ink, fontSize: 19, fontWeight: 850}}>
+      <span style={{color: C.green, marginRight: 8}}>✓</span>{label}
+    </div>
+  );
+};
+
+const BrowserTop: React.FC<{label: string; accent: string}> = ({label, accent}) => (
+  <div style={{height: 58, padding: '0 18px', display: 'flex', alignItems: 'center', gap: 9, background: '#eef2ef', borderBottom: `2px solid ${C.line}`}}>
+    {[C.rust, C.gold, C.green].map((color) => <span key={color} style={{width: 12, height: 12, borderRadius: 99, background: color}} />)}
+    <span style={{marginLeft: 10, color: C.muted, fontSize: 15, fontWeight: 800}}>{label}</span>
+    <span style={{marginLeft: 'auto', width: 66, height: 7, borderRadius: 99, background: accent}} />
+  </div>
+);
+
+const ExistingSite: React.FC<{opacity: number; scale: number}> = ({opacity, scale}) => (
+  <div style={{position: 'absolute', left: 90, top: 300, width: 900, height: 780, opacity, transform: `scale(${scale})`, transformOrigin: 'center top', borderRadius: 28, overflow: 'hidden', background: C.white, border: `3px solid ${C.line}`, boxShadow: '0 30px 70px rgba(20,38,43,.14)'}}>
+    <BrowserTop label="your current website" accent={C.gold} />
+    <div style={{padding: 42}}>
+      <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+        <strong style={{fontSize: 26, color: C.ink}}>Your business</strong>
+        <span style={{color: C.muted, fontSize: 16}}>About · Services · Contact</span>
+      </div>
+      <div style={{display: 'grid', gridTemplateColumns: '1.15fr .85fr', gap: 28, marginTop: 42}}>
+        <div>
+          <div style={{fontFamily: 'Georgia, serif', fontSize: 48, lineHeight: 1.05, color: C.ink}}>Built with care.<br/>Ready for a refresh.</div>
+          <div style={{marginTop: 24, width: '86%', height: 13, borderRadius: 99, background: '#dfe6e2'}} />
+          <div style={{marginTop: 12, width: '72%', height: 13, borderRadius: 99, background: '#e8edea'}} />
+          <div style={{marginTop: 32, width: 176, padding: '15px 0', borderRadius: 10, textAlign: 'center', color: C.white, background: C.ink, fontSize: 17, fontWeight: 850}}>Get in touch</div>
+        </div>
+        <div style={{height: 300, padding: 18, borderRadius: 22, background: '#e8ddd0'}}>
+          <div style={{height: '100%', borderRadius: 14, background: 'linear-gradient(150deg, #e0b875, #a5c0b5 52%, #6f8792)'}} />
+        </div>
+      </div>
+      <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginTop: 34}}>
+        {['Your story', 'Familiar photos', 'Trusted details'].map((label, index) => <div key={label} style={{padding: 22, minHeight: 108, borderRadius: 16, background: index === 1 ? '#f4eee4' : '#eef4f0', color: C.ink, fontSize: 18, fontWeight: 800}}>{label}<div style={{marginTop: 14, height: 7, width: '70%', borderRadius: 99, background: index === 1 ? C.gold : C.green, opacity: .55}} /></div>)}
+      </div>
+    </div>
+  </div>
+);
+
+type Look = {name: string; note: string; accent: string; background: string; fontFamily: string};
+const looks: Look[] = [
+  {name: 'Warm', note: 'welcoming colour', accent: C.rust, background: '#fbefe4', fontFamily: 'Georgia, serif'},
+  {name: 'Clear', note: 'easy layout', accent: C.green, background: '#edf5f1', fontFamily: font},
+  {name: 'Bold', note: 'strong headline', accent: C.blue, background: '#e9eef5', fontFamily: font},
+];
+
+const LookCard: React.FC<{look: Look; index: number; selected: boolean; compact: boolean; discard: number; exit: number}> = ({look, index, selected, compact, discard, exit}) => {
+  const frame = useCurrentFrame();
+  const {fps} = useVideoConfig();
+  const enter = spring({frame: frame - (43 + index * 7), fps, config: {damping: 18, stiffness: 120}});
+  const y = compact ? 310 + index * 205 : 315 + index * 300;
+  const height = compact ? 178 : 258;
+  const basketMouth = 1225;
+  const drop = Math.max(0, basketMouth - (y + height));
+  const wave = Math.sin(discard * Math.PI * 2) * 42 * (1 - discard);
+  const bend = Math.sin(discard * Math.PI) * (index === 0 ? -17 : 17);
+  const twist = Math.sin(discard * Math.PI * 1.6) * (index === 0 ? -10 : 10);
+  const discardOpacity = 1 - ease(discard, .82, 1);
+  return (
+    <div style={{position: 'absolute', left: 80, top: y, zIndex: 10 + index, width: 920, height, opacity: enter * discardOpacity * (1 - exit), transformOrigin: '50% 100%', transform: `translateX(${(1 - enter) * (index % 2 === 0 ? -170 : 170) + wave}px) translateY(${discard * drop}px) rotate(${twist}deg) skewX(${bend}deg) scaleX(${(selected ? 1.025 : 1) * (1 - discard * .95)}) scaleY(${1 - discard * .78})`, filter: discard > 0 ? `blur(${discard * 1.4}px)` : undefined, borderRadius: 25, padding: compact ? 20 : 26, background: look.background, border: `${selected ? 5 : 3}px solid ${selected ? look.accent : C.line}`, boxShadow: selected ? `0 20px 44px ${look.accent}33` : '0 16px 34px rgba(20,38,43,.08)', display: 'grid', gridTemplateColumns: '200px 1fr', gap: 24, overflow: 'hidden'}}>
+      <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+        <span style={{fontSize: 16, fontWeight: 900, color: look.accent, letterSpacing: 1.2, textTransform: 'uppercase'}}>Look {index + 1}</span>
+        <strong style={{fontFamily: look.fontFamily, fontSize: compact ? 34 : 42, color: C.ink, marginTop: 4}}>{look.name}</strong>
+        <span style={{fontSize: 16, color: C.muted, marginTop: 8}}>{look.note}</span>
+      </div>
+      <div style={{borderRadius: 17, background: C.white, overflow: 'hidden', border: `2px solid ${look.accent}55`}}>
+        <div style={{height: compact ? 28 : 34, background: C.ink, display: 'flex', alignItems: 'center', gap: 5, padding: '0 12px'}}>{[1, 2, 3].map((dot) => <span key={dot} style={{width: 6, height: 6, borderRadius: 99, background: '#fff', opacity: .65}} />)}</div>
+        <div style={{padding: compact ? 14 : 18, display: 'grid', gridTemplateColumns: index === 1 ? '1.35fr .65fr' : index === 2 ? '.72fr 1.28fr' : '1fr .8fr', gap: 13}}>
+          <div><div style={{fontFamily: look.fontFamily, fontSize: compact ? 21 : 29, lineHeight: 1.05, fontWeight: index === 2 ? 950 : 750, color: C.ink}}>{index === 0 ? 'Made to feel familiar.' : index === 1 ? 'Find what matters.' : 'Make a clear impression.'}</div><div style={{width: '78%', height: 7, marginTop: 12, borderRadius: 99, background: look.accent}} /></div>
+          <div style={{minHeight: compact ? 65 : 104, borderRadius: 11, background: `linear-gradient(145deg, ${look.accent}, ${look.background})`}} />
+        </div>
+      </div>
+      {selected && <div style={{position: 'absolute', right: 18, top: 16, width: 42, height: 42, borderRadius: 99, background: look.accent, color: C.white, display: 'grid', placeItems: 'center', fontSize: 25, fontWeight: 950}}>✓</div>}
+    </div>
+  );
+};
+
+const GenieTrail: React.FC<{progress: number; index: number; accent: string}> = ({progress, index, accent}) => {
+  const sourceY = index === 0 ? 399 : 604;
+  const mouthY = 1225;
+  const startY = interpolate(progress, [0, 1], [sourceY, mouthY - 24]);
+  const bend = (index === 0 ? -1 : 1) * (145 - progress * 90);
+  const visibility = ease(progress, .08, .24) * (1 - ease(progress, .72, 1));
+  const strokeWidth = interpolate(progress, [0, 1], [34, 7]);
+  const path = `M 540 ${startY} C ${540 + bend} ${startY + 90}, ${540 - bend} ${mouthY - 115}, 540 ${mouthY}`;
+  return <svg viewBox="0 0 1080 1440" style={{position: 'absolute', inset: 0, zIndex: 8, width: '100%', height: '100%', opacity: visibility, pointerEvents: 'none'}}>
+    <path d={path} fill="none" stroke={accent} strokeWidth={strokeWidth} strokeLinecap="round" strokeDasharray="34 22" strokeDashoffset={-progress * 190} opacity={.5} />
+    <path d={path} fill="none" stroke={C.white} strokeWidth={Math.max(3, strokeWidth * .22)} strokeLinecap="round" strokeDasharray="18 38" strokeDashoffset={progress * 150} opacity={.85} />
+  </svg>;
+};
+
+const WasteBasket: React.FC<{frame: number}> = ({frame}) => {
+  const {fps} = useVideoConfig();
+  const rise = spring({frame: frame - 134, fps, config: {damping: 15, stiffness: 145}});
+  const leave = ease(frame, 174, 182);
+  const visible = rise * (1 - leave);
+  return <div style={{position: 'absolute', left: 448, top: 1208, zIndex: 30, width: 184, height: 166, opacity: visible, transform: `translateY(${(1 - rise) * 130 + leave * 130}px) scale(${.82 + rise * .18})`, transformOrigin: 'center bottom'}}>
+    <div style={{position: 'absolute', left: 10, right: 10, top: 4, height: 30, borderRadius: 99, background: C.ink, boxShadow: '0 8px 18px rgba(20,38,43,.2)'}} />
+    <div style={{position: 'absolute', left: 22, right: 22, top: 18, bottom: 0, borderRadius: '14px 14px 36px 36px', background: 'linear-gradient(90deg, #78909a, #adc0c5 48%, #6a838d)', border: `5px solid ${C.ink}`, overflow: 'hidden'}}>
+      <div style={{position: 'absolute', inset: 15, opacity: .42, backgroundImage: `repeating-linear-gradient(90deg, transparent 0 21px, ${C.ink} 21px 27px)`}} />
+    </div>
+    <div style={{position: 'absolute', left: 0, right: 0, top: 0, height: 18, borderRadius: 99, background: '#c7d4d7', border: `5px solid ${C.ink}`}} />
+  </div>;
+};
+
+const Cursor: React.FC<{frame: number}> = ({frame}) => {
+  const x = interpolate(frame, [128, 146], [850, 825], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const y = interpolate(frame, [128, 146], [390, 835], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'});
+  const pulse = 1 + Math.sin(frame * .7) * .06;
+  return <div style={{position: 'absolute', left: x, top: y, zIndex: 20, transform: `rotate(-22deg) scale(${pulse})`, color: C.ink, fontSize: 74, textShadow: '0 3px 0 #fff, 3px 0 0 #fff, -3px 0 0 #fff'}}>➤</div>;
+};
+
+const ExpandedBoldSite: React.FC<{opacity: number}> = ({opacity}) => {
+  const frame = useCurrentFrame();
+  const grow = ease(frame, 178, 202);
+  const left = interpolate(grow, [0, 1], [80, 42]);
+  const top = interpolate(grow, [0, 1], [720, 245]);
+  const width = interpolate(grow, [0, 1], [920, 996]);
+  const height = interpolate(grow, [0, 1], [178, 1050]);
+  return <div style={{position: 'absolute', left, top, width, height, opacity, borderRadius: interpolate(grow, [0, 1], [25, 34]), overflow: 'hidden', background: C.white, border: `5px solid ${C.blue}`, boxShadow: '0 38px 90px rgba(20,38,43,.2)'}}>
+    <BrowserTop label="Look 3 selected · Bold" accent={C.blue} />
+    <div style={{padding: 40}}>
+      <div style={{fontSize: 18, color: C.blue, fontWeight: 950, letterSpacing: 1.5, textTransform: 'uppercase'}}>Your story · a bolder direction</div>
+      <div style={{display: 'grid', gridTemplateColumns: '1.22fr .78fr', gap: 26, marginTop: 22}}>
+        <div>
+          <div style={{fontSize: 58, lineHeight: .98, color: C.ink, fontWeight: 950, letterSpacing: -2}}>A clearer website that still feels like you.</div>
+          <div style={{fontSize: 21, lineHeight: 1.35, color: C.muted, marginTop: 24}}>Keep what customers recognise. Improve what helps them take the next step.</div>
+          <div style={{display: 'inline-block', marginTop: 28, padding: '17px 26px', borderRadius: 12, background: C.blue, color: C.white, fontSize: 19, fontWeight: 900}}>Let’s refresh your site</div>
+        </div>
+        <div style={{borderRadius: 22, background: `linear-gradient(155deg, ${C.blue}, ${C.mint} 58%, ${C.gold})`}} />
+      </div>
+      <div style={{marginTop: 34, padding: 28, borderRadius: 20, background: '#e9eef5', borderLeft: `8px solid ${C.blue}`}}>
+        <div style={{color: C.ink, fontSize: 27, lineHeight: 1.25, fontWeight: 800}}>“Elie doubled our leads in three weeks.”</div>
+        <div style={{marginTop: 12, color: C.muted, fontSize: 17, fontWeight: 800}}>— Local business owner</div>
+      </div>
+      <div style={{display: 'flex', justifyContent: 'center', marginTop: 30}}><span style={{padding: '11px 19px', borderRadius: 99, background: '#e9eef5', color: C.blue, fontSize: 16, fontWeight: 950}}>✓ Look 3 chosen</span></div>
+    </div>
+  </div>;
+};
+
+const StageHeading: React.FC<{frame: number}> = ({frame}) => {
+  const text = frame < 44 ? 'Your site already has good bones.' : frame < 128 ? 'Three ways it could feel.' : frame < 158 ? 'Choose a direction.' : frame < 202 ? 'Look 3: Bold.' : 'Refresh without starting over.';
+  return <div style={{position: 'absolute', left: 64, right: 64, top: 100, textAlign: 'center'}}><div style={{color: C.green, fontSize: 16, fontWeight: 950, letterSpacing: 2, textTransform: 'uppercase'}}>Website refresh</div><div style={{marginTop: 12, color: C.ink, fontSize: 46, lineHeight: 1.05, fontWeight: 900}}>{text}</div></div>;
+};
 
 export const PageReassemblyPortraitComposition: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
+  const loopBack = ease(frame, 257, 269);
+  const openingOpacity = (1 - ease(frame, 38, 55)) + loopBack;
+  const looksOpacity = ease(frame, 40, 55) * (1 - loopBack);
+  const compact = frame >= 126;
+  const discardWarm = ease(frame, 143, 166);
+  const discardClear = ease(frame, 148, 171);
+  const selectedCardIsExpanded = frame >= 178;
+  const dismissSelectedCard = selectedCardIsExpanded ? 1 : 0;
+  const expandedOpacity = (selectedCardIsExpanded ? 1 : 0) * (1 - loopBack);
 
-  // Total 300 frames (10s)
-  const time = frame / fps;
-  const progress = time / 10.0;
+  return <AbsoluteFill style={{fontFamily: font, background: C.paper, overflow: 'hidden'}}>
+    <div style={{position: 'absolute', inset: 0, opacity: .32, backgroundImage: `linear-gradient(${C.green}18 1px, transparent 1px), linear-gradient(90deg, ${C.green}18 1px, transparent 1px)`, backgroundSize: '52px 52px'}} />
+    <div style={{position: 'absolute', left: 42, top: 34}}><Brand /></div>
+    <StageHeading frame={loopBack > .55 ? 0 : frame} />
 
-  // Phase 1: Spread out (0.5s - 2s) -> Frames 15 - 60
-  const spreadProgress = spring({ frame: frame - 15, fps, config: { damping: 14 } });
-
-  // Phase 2: Swap Content (2s - 4s) -> Frames 60 - 120
-  const swapOutProgress = spring({ frame: frame - 60, fps, config: { damping: 14 } });
-  const swapInProgress = spring({ frame: frame - 80, fps, config: { damping: 14 } });
-
-  // Phase 3: Reorder (4s - 6.5s) -> Frames 120 - 195
-  const reorderProgress = spring({ frame: frame - 120, fps, config: { damping: 16 } });
-
-  // Phase 4: Snap Back (6.5s - 8s) -> Frames 195 - 240
-  const snapProgress = spring({ frame: frame - 195, fps, config: { damping: 14 } });
-
-  // Base positions scaled up 1.5x
-  const baseGap = 24;
-  const spreadGap = 90;
-
-  // Current gap dynamically calculated
-  const currentGap = interpolate(spreadProgress, [0, 1], [baseGap, spreadGap]) -
-                     interpolate(snapProgress, [0, 1], [0, spreadGap - baseGap]);
-
-  const blockWidth = 840;
-
-  // Block Heights (scaled ~1.5x)
-  const hNav = 75;
-  const hHero = 120;
-  const hCopy = 120;
-  const hProof = 90;
-  const hCards = 210;
-  const hCTA = 105;
-
-  // Initial order: Nav (0), Hero (1), Copy (2), Cards (3), Proof (4), CTA (5)
-  // Final order: Nav (0), Hero (1), Proof (4), NewCopy (2), Cards (3), CTA (5)
-
-  // Calculate Y offsets based on order and gap
-  const getBlockY = (orderIndex: number, gap: number, heights: number[]) => {
-    let y = 0;
-    for (let i = 0; i < orderIndex; i++) {
-      y += heights[i] + gap;
-    }
-    return y;
-  };
-
-  // The heights in initial and final order
-  const heightsInitial = [hNav, hHero, hCopy, hCards, hProof, hCTA];
-  const heightsFinal = [hNav, hHero, hProof, hCopy, hCards, hCTA];
-
-  // Helper to interpolate Y position during reorder phase
-  const getYPos = (initialIndex: number, finalIndex: number) => {
-    const startY = getBlockY(initialIndex, currentGap, heightsInitial);
-    const endY = getBlockY(finalIndex, currentGap, heightsFinal);
-    return interpolate(reorderProgress, [0, 1], [startY, endY]);
-  };
-
-  // Block Positions
-  const navY = getYPos(0, 0);
-  const heroY = getYPos(1, 1);
-  const copyY = getYPos(2, 3); // Copy moves from idx 2 to 3
-  const cardsY = getYPos(3, 4); // Cards move from idx 3 to 4
-  const proofY = getYPos(4, 2); // Proof moves from idx 4 to 2
-  const ctaY = getYPos(5, 5);
-
-  // Swap Animation for Copy Block
-  const oldCopyX = interpolate(swapOutProgress, [0, 1], [0, -1200]);
-  const newCopyX = interpolate(swapInProgress, [0, 1], [1200, 0]);
-
-  const isApprovedCopy = swapInProgress > 0.5;
-
-  let badgeText = "ANALYZING";
-  if (frame >= 45 && frame < 90) badgeText = "DECONSTRUCTING";
-  else if (frame >= 90 && frame < 150) badgeText = "REPLACING CONTENT";
-  else if (frame >= 150 && frame < 225) badgeText = "REORGANIZING FLOW";
-  else if (frame >= 225) badgeText = "OPTIMIZED ✓";
-
-  // Calculate total container height to center it
-  const totalInitialHeight = heightsInitial.reduce((a, b) => a + b, 0) + (5 * baseGap);
-  const startOffset = -totalInitialHeight / 2;
-
-  return (
-    <div style={{
-      width: 1080,
-      height: 1440,
-      backgroundColor: '#f6f5f1',
-      position: 'relative',
-      overflow: 'hidden',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontFamily: 'system-ui, sans-serif'
-    }}>
-      {/* Background pattern */}
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        backgroundImage: snapProgress > 0.5
-          ? 'radial-gradient(circle, rgba(16,185,129,0.08) 1px, transparent 1px)'
-          : 'radial-gradient(circle, rgba(0,0,0,0.05) 1px, transparent 1px)',
-        backgroundSize: '32px 32px',
-        transition: 'background-image 0.5s ease'
-      }} />
-
-      {/* Main Container */}
-      <div style={{
-        position: 'relative',
-        width: blockWidth,
-        transform: `translateY(${startOffset}px)`
-      }}>
-
-        {/* 1. Nav Block */}
-        <div style={{
-          position: 'absolute', top: navY, width: '100%', height: hNav,
-          backgroundColor: '#ffffff', borderRadius: 12, padding: '0 24px',
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          boxShadow: '0 6px 12px rgba(0,0,0,0.05)', border: '2px solid #e2ded4'
-        }}>
-          <div style={{ fontWeight: 'bold', fontSize: 24, color: '#1e293b' }}>Acme Services</div>
-          <div style={{ fontSize: 18, color: '#64748b' }}>Home • About • Services • Contact</div>
-        </div>
-
-        {/* 2. Hero Block */}
-        <div style={{
-          position: 'absolute', top: heroY, width: '100%', height: hHero,
-          backgroundColor: '#ffffff', borderRadius: 12,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          boxShadow: '0 6px 12px rgba(0,0,0,0.05)', border: '2px solid #e2ded4'
-        }}>
-          <div style={{ fontSize: 36, fontWeight: 'bold', color: '#0f172a' }}>
-            Modern Solutions For Your Business
-          </div>
-        </div>
-
-        {/* 3. Old Copy Block */}
-        <div style={{
-          position: 'absolute', top: copyY, left: oldCopyX, width: '100%', height: hCopy,
-          backgroundColor: '#fef2f2', borderRadius: 12, padding: 24,
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          boxShadow: '0 6px 12px rgba(0,0,0,0.05)', border: '3px solid #fca5a5',
-          opacity: interpolate(swapOutProgress, [0, 0.5], [1, 0])
-        }}>
-          <div style={{ fontSize: 24, fontWeight: 'bold', color: '#991b1b' }}>
-            We help with your website.
-          </div>
-          <div style={{ backgroundColor: '#ef4444', color: '#fff', fontSize: 16, fontWeight: 'bold', padding: '6px 14px', borderRadius: 6 }}>
-            TOO BROAD
-          </div>
-        </div>
-
-        {/* 4. New Copy Block */}
-        <div style={{
-          position: 'absolute', top: copyY, left: newCopyX, width: '100%', height: hCopy,
-          backgroundColor: '#ecfdf5', borderRadius: 12, padding: 24,
-          display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-          boxShadow: '0 6px 12px rgba(16,185,129,0.15)', border: '3px solid #10b981',
-          opacity: interpolate(swapInProgress, [0, 0.5], [0, 1])
-        }}>
-          <div style={{ fontSize: 24, fontWeight: 'bold', color: '#065f46' }}>
-            Clear facts people can find. Websites built to convert.
-          </div>
-          <div style={{ backgroundColor: '#10b981', color: '#fff', fontSize: 16, fontWeight: 'bold', padding: '6px 14px', borderRadius: 6 }}>
-            APPROVED ✓
-          </div>
-        </div>
-
-        {/* 5. Proof Block */}
-        <div style={{
-          position: 'absolute', top: proofY, width: '100%', height: hProof,
-          backgroundColor: '#f8fafc', borderRadius: 12, padding: 20,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          boxShadow: reorderProgress > 0 && reorderProgress < 1 ? '0 16px 32px rgba(37,99,235,0.2)' : '0 6px 12px rgba(0,0,0,0.05)',
-          border: '2px solid #cbd5e1', fontStyle: 'italic', color: '#334155', fontSize: 20,
-          transform: `scale(${interpolate(reorderProgress, [0, 0.5, 1], [1, 1.05, 1])})`,
-          zIndex: reorderProgress > 0 && reorderProgress < 1 ? 10 : 1
-        }}>
-          "Elie doubled our leads in 3 weeks!" — Local Business Owner
-        </div>
-
-        {/* 6. Cards Block */}
-        <div style={{
-          position: 'absolute', top: cardsY, width: '100%', height: hCards,
-          backgroundColor: '#ffffff', borderRadius: 12, padding: 24,
-          display: 'flex', gap: 16,
-          boxShadow: '0 6px 12px rgba(0,0,0,0.05)', border: '2px solid #e2ded4'
-        }}>
-          {[1, 2, 3].map(i => (
-            <div key={i} style={{ flex: 1, backgroundColor: '#f8fafc', border: '2px solid #cbd5e1', borderRadius: 8, padding: 16 }}>
-              <div style={{ fontWeight: 'bold', fontSize: 20, color: '#334155' }}>Service 0{i}</div>
-              <div style={{ fontSize: 16, color: '#64748b', marginTop: 8 }}>Standard features.</div>
-            </div>
-          ))}
-        </div>
-
-        {/* 7. CTA Block */}
-        <div style={{
-          position: 'absolute', top: ctaY, width: '100%', height: hCTA,
-          backgroundColor: '#ffffff', borderRadius: 12,
-          display: 'flex', alignItems: 'center', justifyContent: 'center',
-          boxShadow: '0 6px 12px rgba(0,0,0,0.05)', border: '2px solid #e2ded4'
-        }}>
-          <div style={{
-            backgroundColor: snapProgress > 0.5 ? '#10b981' : '#94a3b8',
-            color: '#ffffff', fontWeight: 'bold', fontSize: 24,
-            padding: '20px 60px', borderRadius: 12,
-            boxShadow: snapProgress > 0.5 ? '0 12px 24px rgba(16,185,129,0.4)' : 'none',
-            transition: 'all 0.3s ease'
-          }}>
-            {snapProgress > 0.5 ? "Get Your Audit →" : "Submit"}
-          </div>
-        </div>
+    <div style={{opacity: Math.min(1, openingOpacity)}}>
+      <ExistingSite opacity={1} scale={.98 + loopBack * .02} />
+      <div style={{position: 'absolute', left: 112, bottom: 112, display: 'flex', gap: 12}}>
+        <KeepChip label="your story" delay={16} />
+        <KeepChip label="familiar photos" delay={22} />
+        <KeepChip label="trusted details" delay={28} />
       </div>
     </div>
-  );
+
+    <div style={{opacity: looksOpacity}}>
+      <GenieTrail progress={discardWarm} index={0} accent={looks[0].accent} />
+      <GenieTrail progress={discardClear} index={1} accent={looks[1].accent} />
+      {looks.map((look, index) => <LookCard key={look.name} look={look} index={index} compact={compact} selected={index === 2 && frame >= 143} discard={index === 0 ? discardWarm : index === 1 ? discardClear : 0} exit={index === 2 ? dismissSelectedCard : 0} />)}
+      {frame >= 128 && frame < 160 && <Cursor frame={frame} />}
+      {frame >= 134 && frame < 183 && <WasteBasket frame={frame} />}
+    </div>
+
+    <ExpandedBoldSite opacity={expandedOpacity} />
+  </AbsoluteFill>;
 };
