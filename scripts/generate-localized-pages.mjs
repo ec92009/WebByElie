@@ -214,6 +214,7 @@ ${ogAlternates}
             <p>${text(paragraph)}</p>
           </div>
           <video class="hover-video" data-service-video muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1">
+            <source media="(max-width: 820px)" src="../assets/${detailVideoFiles[index]}" type="video/mp4" />
             <source src="../assets/${serviceVideoFiles[index]}" type="video/mp4" />
           </video>
         </article>`
