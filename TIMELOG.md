@@ -94,7 +94,8 @@ Clock state: running
 | 2026-09-01 | 10:30 CEST | 10:31 CEST | 0:01 | Added a visible wastebasket and elastic genie-style suction for the two discarded Refresh directions. |
 | 2026-09-01 | 10:35 CEST | 10:36 CEST | 0:01 | Created and reviewed the matching 1920-by-1080 Refresh animation while preserving the portrait and published variants. |
 | 2026-09-01 | 10:41 CEST | 10:42 CEST | 0:01 | Approved the two Refresh videos for website integration and prepared an isolated GitHub Pages preview. |
+| 2026-09-01 | 10:45 CEST | 10:46 CEST | 0:01 | Required and verified mouse-independent autoplay across all four service-detail pages. |
 
 ## Totals
 
-Active collaboration time used: 3:51
+Active collaboration time used: 3:52

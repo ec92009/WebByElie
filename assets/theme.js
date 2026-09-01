@@ -68,7 +68,7 @@
   let state = readSettings();
 
   if (settingsRoot && !settingsRoot.querySelector("[data-settings-panel]")) {
-    const version = settingsRoot.dataset.siteVersion || "v244.0";
+    const version = settingsRoot.dataset.siteVersion || "v244.1";
     settingsRoot.insertAdjacentHTML(
       "beforeend",
       `<div class="settings-panel" id="site-settings-panel" role="dialog" aria-label="Site settings" data-settings-panel hidden>
@@ -118,7 +118,7 @@
   const themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
 
   const getCopy = () => translations[state.language] || translations.en || {};
-  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v244.0";
+  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v244.1";
   const setAllText = (selector, value) => {
     if (value === undefined) {
       return;
@@ -496,6 +496,29 @@
   const stickyCta = document.querySelector(".mobile-sticky-cta");
   const hero = document.querySelector(".demo-hero");
   const servicePanels = Array.from(document.querySelectorAll("[data-service-panel]"));
+  const autoplayVideos = Array.from(document.querySelectorAll("[data-autoplay-video]"));
+
+  if (autoplayVideos.length) {
+    const startAutoplayVideos = () => {
+      autoplayVideos.forEach((video) => {
+        video.muted = true;
+        video.defaultMuted = true;
+        const playResult = video.play();
+        if (playResult && typeof playResult.catch === "function") {
+          playResult.catch(() => {});
+        }
+      });
+    };
+
+    startAutoplayVideos();
+    window.addEventListener("pageshow", startAutoplayVideos);
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden) startAutoplayVideos();
+    });
+    autoplayVideos.forEach((video) => {
+      video.addEventListener("loadeddata", startAutoplayVideos, { once: true });
+    });
+  }
 
   if (servicePanels.length) {
     const stopPanelVideo = (panel) => {

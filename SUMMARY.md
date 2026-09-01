@@ -1,6 +1,6 @@
 # Web By Elie Summary
 
-Last updated: 2026-09-01 10:40 CEST
+Last updated: 2026-09-01 10:46 CEST
 
 ## Current State
 
@@ -8,10 +8,10 @@ Last updated: 2026-09-01 10:40 CEST
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=244.0`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=244.1`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v244.0`
+- Current visible version: `v244.1`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -46,6 +46,7 @@ Last updated: 2026-09-01 10:40 CEST
 - Added a third standalone Remotion video, `AIORecommendations`, where OpenAI and Claude nudge Google into the background, collect the SEO context, and assemble four bullet-point recommendations; it now plays on the AI-ready detail page.
 - Added a fourth standalone Remotion video, `SavingsCat`, where the surrounding tool stack slides right, a fat cat scans the page for evaporating dollar signs, catches them with bare paws, and places them into its pockets; it now plays on the Cost cleanup detail page.
 - Wired the homepage's four portrait-video panels to localized service detail pages. Desktop hover still expands the accordion preview; clicking or tapping opens the selected detail page, where the landscape video is followed by the short service description.
+- Made all four service-detail videos start automatically when their pages load or return to the foreground, independently of mouse position; homepage previews remain hover-controlled.
 - Updated those detail pages to use the latest AG landscape renders: `01-page-reassembly`, `02-seo-harvest`, `03-aio-recommendations`, and `04-cost-efficiency`.
 - Replaced the Refresh portrait and landscape videos with the approved three-look choice sequence: Warm and Clear disappear into a wastebasket with a genie effect, then Bold expands into the finished site.
 - Added the selected two-voice TTS flow to the eight service animation variants: the English homepage panel copy is read by Flo and Reed, embedded in the portrait and landscape MP4s, and kept reproducible through `scripts/generate-service-voiceover.mjs`.
@@ -72,7 +73,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `244.0`, displayed as `v244.0`.
+- Current version is `244.1`, displayed as `v244.1`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
@@ -90,7 +91,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Fresh Numbered Backlog
 
 1. Monitor search indexing pickup.
-   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v244.0` has deployed and crawlers have processed the requests.
+   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v244.1` has deployed and crawlers have processed the requests.
 
 2. Keep Cloudflare Pages deployment repeatable.
    Preserve the clean static publish set for production deploys, keep DNS/HTTPS on Cloudflare, and protect email-related DNS records.
