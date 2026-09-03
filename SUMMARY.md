@@ -1,6 +1,6 @@
 # Web By Elie Summary
 
-Last updated: 2026-09-01 20:11 CEST
+Last updated: 2026-09-03 11:19 CEST
 
 ## Current State
 
@@ -8,10 +8,10 @@ Last updated: 2026-09-01 20:11 CEST
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=244.3`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=246.0`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v244.3`
+- Current visible version: `v246.0`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -47,7 +47,8 @@ Last updated: 2026-09-01 20:11 CEST
 - Added a fourth standalone Remotion video, `SavingsCat`, where the surrounding tool stack slides right, a fat cat scans the page for evaporating dollar signs, catches them with bare paws, and places them into its pockets; it now plays on the Cost cleanup detail page.
 - Wired the homepage's four portrait-video panels to localized service detail pages. Desktop hover still expands the accordion preview; clicking or tapping opens the selected detail page, where the landscape video is followed by the short service description.
 - Made homepage service panels 01–04 select their landscape renders at the existing 820px narrow-layout breakpoint while preserving portrait renders on wider pages.
-- Made all four service-detail videos start automatically when their pages load or return to the foreground, independently of mouse position; homepage previews remain hover-controlled.
+- Made all four service-detail videos start automatically when their pages load or return to the foreground, independently of mouse position; wider homepage previews remain hover-controlled.
+- Made narrow homepage service videos visible without hover and start them while their cards are on screen, with compact labels retained over the landscape animation and reduced-motion playback respected.
 - Kept detail videos visually clean on arrival by hiding the resting pointer and native controls until the visitor clicks, taps, or keyboard-focuses the video.
 - Updated those detail pages to use the latest AG landscape renders: `01-page-reassembly`, `02-seo-harvest`, `03-aio-recommendations`, and `04-cost-efficiency`.
 - Replaced the Refresh portrait and landscape videos with the approved three-look choice sequence: Warm and Clear disappear into a wastebasket with a genie effect, then Bold expands into the finished site.
@@ -75,7 +76,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `244.3`, displayed as `v244.3`.
+- Current version is `246.0`, displayed as `v246.0`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
@@ -93,7 +94,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Fresh Numbered Backlog
 
 1. Monitor search indexing pickup.
-   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v244.3` has deployed and crawlers have processed the requests.
+   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v246.0` has deployed and crawlers have processed the requests.
 
 2. Keep Cloudflare Pages deployment repeatable.
    Preserve the clean static publish set for production deploys, keep DNS/HTTPS on Cloudflare, and protect email-related DNS records.
