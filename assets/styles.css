@@ -1827,6 +1827,11 @@ html[data-theme="night"] .work-card {
     font-size: clamp(1.15rem, 5.5vw, 1.45rem);
   }
 
+  .studio-services article:nth-child(4) .panel-content {
+    inline-size: min-content;
+    min-inline-size: 5.5rem;
+  }
+
   .studio-services article .panel-content p {
     display: none;
   }
