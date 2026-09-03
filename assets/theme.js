@@ -4,6 +4,7 @@
   const settingsKey = "web-by-elie-settings";
   const legacyThemeKey = "web-by-elie-theme";
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const narrowServiceLayout = window.matchMedia("(max-width: 820px)");
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   const translations = window.webByElieI18n || {};
   const supportedLanguages = ["en", "fr", "es"];
@@ -68,7 +69,7 @@
   let state = readSettings();
 
   if (settingsRoot && !settingsRoot.querySelector("[data-settings-panel]")) {
-    const version = settingsRoot.dataset.siteVersion || "v244.3";
+    const version = settingsRoot.dataset.siteVersion || "v246.0";
     settingsRoot.insertAdjacentHTML(
       "beforeend",
       `<div class="settings-panel" id="site-settings-panel" role="dialog" aria-label="Site settings" data-settings-panel hidden>
@@ -118,7 +119,7 @@
   const themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
 
   const getCopy = () => translations[state.language] || translations.en || {};
-  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v244.3";
+  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v246.0";
   const setAllText = (selector, value) => {
     if (value === undefined) {
       return;
@@ -529,23 +530,29 @@
   }
 
   if (servicePanels.length) {
-    const stopPanelVideo = (panel) => {
+    const visibleServicePanels = new Set();
+
+    const stopPanelVideo = (panel, reset = true) => {
       const video = panel.querySelector("[data-service-video]");
       if (!video) return;
       video.pause();
-      video.currentTime = 0;
+      if (reset) video.currentTime = 0;
     };
 
     const syncPanelVideo = (panel) => {
       const video = panel.querySelector("[data-service-video]");
       if (!video) return;
-      const wantsVideo = panel.matches(":hover");
+      const wantsVideo = narrowServiceLayout.matches
+        ? visibleServicePanels.has(panel)
+        : panel.matches(":hover");
 
       if (reduceMotion.matches || !wantsVideo) {
-        stopPanelVideo(panel);
+        stopPanelVideo(panel, !narrowServiceLayout.matches);
         return;
       }
 
+      video.muted = true;
+      video.defaultMuted = true;
       const playResult = video.play();
       if (playResult && typeof playResult.catch === "function") {
         playResult.catch(() => {});
@@ -556,6 +563,39 @@
       panel.addEventListener("mouseenter", () => syncPanelVideo(panel));
       panel.addEventListener("mouseleave", () => syncPanelVideo(panel));
     });
+
+    if ("IntersectionObserver" in window) {
+      const serviceVideoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visibleServicePanels.add(entry.target);
+          } else {
+            visibleServicePanels.delete(entry.target);
+          }
+          syncPanelVideo(entry.target);
+        });
+      }, {
+        rootMargin: "-10% 0px -10% 0px",
+        threshold: 0.35,
+      });
+
+      servicePanels.forEach((panel) => serviceVideoObserver.observe(panel));
+    } else if (narrowServiceLayout.matches) {
+      servicePanels.forEach((panel) => {
+        visibleServicePanels.add(panel);
+        syncPanelVideo(panel);
+      });
+    }
+
+    if (typeof narrowServiceLayout.addEventListener === "function") {
+      narrowServiceLayout.addEventListener("change", () => {
+        servicePanels.forEach((panel) => {
+          const video = panel.querySelector("[data-service-video]");
+          if (video) video.load();
+          syncPanelVideo(panel);
+        });
+      });
+    }
 
     if (typeof reduceMotion.addEventListener === "function") {
       reduceMotion.addEventListener("change", () => {
