@@ -23,6 +23,7 @@ const ignoredDirectories = new Set([
   "Remotion_AG",
   "Three_AG",
   "node_modules",
+  "dist",
   "output",
   "outputs",
 ]);

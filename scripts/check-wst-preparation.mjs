@@ -46,9 +46,9 @@ assert.deepEqual(manifest, {
   name: "Web By Elie",
   production_url: "https://web-by-elie.com/",
   ownership_verified: true,
-  approval_status: "awaiting",
+  approval_status: "approved",
   beacon_verified: false,
   operational_state: "active",
 });
 
-console.log("WST preparation checks passed: three localized homepages, stable CTA IDs, disabled beacon, awaiting manifest.");
+console.log("WST pilot checks passed: three localized homepages, stable CTA IDs, fail-closed bootstrap, approved manifest.");

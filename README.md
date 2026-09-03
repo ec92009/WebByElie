@@ -2,11 +2,11 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v246.1`
+Current visible version: `v246.2`
 
 Production URL: `https://web-by-elie.com/`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=246.1`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=246.2`
 
 Contact email: `hello@web-by-elie.com`
 
@@ -83,6 +83,10 @@ This read-only source check validates public local links and fragments, generate
 
 ## Launch Notes
 
+- The WST pilot counts homepage visits and marked CTA presses only after explicit analytics opt-in. Analytics choices in the homepage footer permits withdrawal; browser privacy signals disable tracking. Previews and noncanonical hosts stay disabled. `?wst_test=1` marks owner verification as synthetic, excluded from business totals.
+- The collector endpoint is `https://web-signals-collector.ec92009.workers.dev/v1/events`. Contact clicks have no delivery receipt and must not be reported as accepted conversions.
+- Public policy copy describes the consent preference, session token, processing and retention. The public `.wst/site.json` declaration is approved; live receipt verification is recorded separately in the WST registry/ticket.
+
 - Public pages are indexable and include canonical metadata for `https://web-by-elie.com/`.
 - Home pages include Open Graph/Twitter metadata, JSON-LD structured data, and English/French/Spanish hreflang alternates.
 - The homepage includes a localized selected-work section for Assurances de Rueil, Golden Years Tax Strategy, and Photos By Elie, with a public Golden Years case-study link.
@@ -92,5 +96,6 @@ This read-only source check validates public local links and fragments, generate
 - Archived proposal redirect pages remain `noindex, nofollow`.
 - Production basics now include `robots.txt`, `sitemap.xml`, and mobile home-screen icon metadata.
 - Production is served by Cloudflare Pages project `web-by-elie` (`web-by-elie.pages.dev`), with GitHub Pages retained as the public preview/fallback.
+- Cloudflare builds with `node scripts/build-public.mjs` and publishes `dist/`, an allowlisted public-file bundle. The prior production deployment `68c36c81-b8f2-4642-83e3-6845268fc0bd` is the pre-WST rollback point.
 - 3D print/coaster files are kept locally under `private-print-assets/` and ignored by Git.
 - Keep DNS and production edge settings in Cloudflare, with GitHub as source control.

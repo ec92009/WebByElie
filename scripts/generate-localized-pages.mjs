@@ -359,6 +359,8 @@ ${site.caseStudyUrl ? `                <a class="text-link" href="${text(site.ca
   </footer>
   <script src="../assets/i18n.js?v=${version}"></script>
   <script src="../assets/theme.js?v=${version}"></script>
+  <link rel="stylesheet" href="../assets/wst-consent.css?v=${version}" />
+  <script defer src="../assets/wst-consent.js?v=${version}"></script>
   <script defer src="../assets/wst-beacon.js" data-wst-enabled="false" data-wst-endpoint="" data-wst-site="webbyelie" data-wst-environment="production" data-wst-consent="unknown"></script>
 </body>
 </html>

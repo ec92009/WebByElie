@@ -1,0 +1,10 @@
+.analytics-panel { margin-block: 1rem; padding: 1rem; border: 1px solid currentColor; border-radius: 12px; }
+.analytics-panel[hidden] { display: none; }
+.analytics-panel h2 { margin: 0; font-size: 1.1rem; }
+.analytics-panel p { max-width: 70ch; margin-block: .5rem; font-size: 1rem; }
+.analytics-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; }
+.analytics-actions button { min-height: 44px; font: inherit; cursor: pointer; }
+.analytics-actions button[aria-pressed="true"] { outline: 2px solid currentColor; outline-offset: 2px; }
+.analytics-actions button:disabled { opacity: .6; cursor: default; }
+.analytics-choices { color: inherit; background: transparent; border: 0; font: inherit; text-decoration: underline; cursor: pointer; min-height: 44px; }
+.analytics-panel :focus-visible, .analytics-choices:focus-visible { outline: 3px solid currentColor; outline-offset: 3px; }

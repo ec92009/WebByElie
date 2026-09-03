@@ -128,9 +128,9 @@ window.webByElieI18n = {
         eyebrow: "Policy",
         heading: "Privacy Policy",
         paragraphs: [
-          "This site does not use accounts, payments, analytics, forms, or a database.",
+          "With your permission, Web Signals counts visits and marked button presses on our English, French and Spanish homepages. It sends the page path, language, referring site, campaign labels, event time and a random site-scoped session token to our Cloudflare-hosted collector. It does not read form contents or contact details, and WST does not store your full IP address.",
           "If you contact Web By Elie by email, your name, email address, website link, and message are handled inside the email service you use and the mailbox receiving the message. That information is used to respond to your request and discuss possible work.",
-          "Links that open email or other external services are controlled by those services, which may process data under their own policies.",
+          "Analytics is off until you allow it. Your choice is saved in local browser storage; the session token is kept in session storage, expires after 30 minutes of inactivity and is capped at 24 hours. Event/visit deduplication records are retained for up to 30 days and daily totals for up to 25 months. Use Analytics choices on a homepage to turn it off; browser privacy signals are respected. External email services have their own policies.",
           "To request correction or deletion of information you sent by email, contact <a href=\"index.html#contact\" data-email-link data-email-user=\"hello\" data-email-domain=\"web-by-elie.com\" data-email-label=\"address\">hello [at] web-by-elie.com</a>."
         ]
       },
@@ -150,10 +150,10 @@ window.webByElieI18n = {
         eyebrow: "Policy",
         heading: "Data Deletion Instructions",
         paragraphs: [
-          "This site does not have login, forms, payments, analytics, or a database, so it does not store visitor account data directly.",
+          "This site has no visitor accounts, payment system or contact forms. Optional analytics uses a random session token, not your name or email address. You can stop future collection through Analytics choices on any homepage; choosing No thanks also removes the local analytics session token.",
           "If you sent information by email, you can request deletion or correction by replying to the same email thread or contacting <a href=\"index.html#contact\" data-email-link data-email-user=\"hello\" data-email-domain=\"web-by-elie.com\" data-email-label=\"address\">hello [at] web-by-elie.com</a> with enough detail to identify the message.",
           "Include your name, email address, approximate message date, and what you want deleted or corrected. Platform-controlled data, such as data held by your email provider, must be managed through that platform's own privacy tools.",
-          "If the site later adds forms, analytics, accounts, payments, or platform integrations, these instructions should be replaced with a more specific deletion workflow."
+          "Clearing this site's browser storage removes the saved analytics choice. Event/visit deduplication records expire within 30 days and aggregate totals within 25 months. Aggregate totals are not linked to your name or email and cannot reliably be isolated using those details."
         ]
       }
     }
@@ -287,9 +287,9 @@ window.webByElieI18n = {
         eyebrow: "Politique",
         heading: "Politique de confidentialité",
         paragraphs: [
-          "Ce site n’utilise pas de comptes, de paiements, d’outils d’analyse, de formulaires ni de base de données.",
+          "Avec votre accord, Web Signals compte les visites et les clics balisés sur nos pages d’accueil en anglais, français et espagnol. Le chemin de page, la langue, le site référent, les libellés de campagne, l’heure et un jeton de session aléatoire propre au site sont envoyés à notre collecteur hébergé chez Cloudflare. Il ne lit ni formulaires ni coordonnées ; WST ne conserve pas votre adresse IP complète.",
           "Si vous contactez Web By Elie par e-mail, votre nom, votre adresse e-mail, le lien de votre site et votre message sont traités dans le service de messagerie que vous utilisez et dans la boîte mail qui reçoit le message. Ces informations servent à répondre à votre demande et à discuter d’un éventuel travail.",
-          "Les liens qui ouvrent l’e-mail ou d’autres services externes sont contrôlés par ces services, qui peuvent traiter les données selon leurs propres politiques.",
+          "L’analyse reste désactivée sans votre accord. Le choix est conservé dans le stockage local du navigateur ; le jeton de session expire après 30 minutes d’inactivité, avec un maximum de 24 heures. Les traces de déduplication sont conservées au plus 30 jours, les totaux quotidiens au plus 25 mois. Choix statistiques sur une page d’accueil permet de désactiver le suivi. Les signaux de confidentialité du navigateur sont respectés. Les messageries externes ont leurs propres politiques.",
           "Pour demander la correction ou la suppression des informations envoyées par e-mail, contactez <a href=\"index.html#contact\" data-email-link data-email-user=\"hello\" data-email-domain=\"web-by-elie.com\" data-email-label=\"address\">hello [at] web-by-elie.com</a>."
         ]
       },
@@ -309,10 +309,10 @@ window.webByElieI18n = {
         eyebrow: "Politique",
         heading: "Instructions de suppression des données",
         paragraphs: [
-          "Ce site ne propose ni connexion, formulaires, paiements, outils d’analyse ni base de données ; il ne stocke donc pas directement de données de compte visiteur.",
+          "Ce site ne propose ni compte visiteur, paiement ni formulaire de contact. L’analyse facultative utilise un jeton de session aléatoire, sans nom ni e-mail. Choix statistiques sur une page d’accueil permet d’arrêter la collecte ; Non merci supprime aussi le jeton de session local.",
           "Si vous avez envoyé des informations par e-mail, vous pouvez demander leur suppression ou correction en répondant au même fil de discussion ou en contactant <a href=\"index.html#contact\" data-email-link data-email-user=\"hello\" data-email-domain=\"web-by-elie.com\" data-email-label=\"address\">hello [at] web-by-elie.com</a> avec assez de détails pour identifier le message.",
           "Indiquez votre nom, votre adresse e-mail, la date approximative du message et ce que vous souhaitez supprimer ou corriger. Les données contrôlées par une plateforme, comme celles détenues par votre fournisseur de messagerie, doivent être gérées avec les outils de confidentialité de cette plateforme.",
-          "Si le site ajoute plus tard des formulaires, de l’analyse, des comptes, des paiements ou des intégrations de plateforme, ces instructions devront être remplacées par une procédure de suppression plus précise."
+          "Effacer le stockage du site dans le navigateur supprime le choix enregistré. Les traces de déduplication expirent sous 30 jours, les totaux agrégés sous 25 mois. Les totaux ne sont pas liés à votre nom ou e-mail et ne peuvent pas être isolés de façon fiable avec ces informations."
         ]
       }
     }
@@ -446,9 +446,9 @@ window.webByElieI18n = {
         eyebrow: "Política",
         heading: "Política de privacidad",
         paragraphs: [
-          "Este sitio no utiliza cuentas, pagos, analítica, formularios ni una base de datos.",
+          "Con su permiso, Web Signals cuenta visitas y clics marcados en nuestras páginas de inicio en inglés, francés y español. Envía la ruta de página, idioma, sitio de referencia, etiquetas de campaña, hora y un token aleatorio de sesión propio del sitio a nuestro colector alojado en Cloudflare. No lee formularios ni datos de contacto, y WST no almacena su dirección IP completa.",
           "Si se pone en contacto con Web By Elie por correo electrónico, su nombre, dirección de correo, enlace del sitio web y mensaje se gestionan dentro del servicio de correo que utiliza y del buzón que recibe el mensaje. Esa información se usa para responder a su solicitud y hablar de un posible trabajo.",
-          "Los enlaces que abren el correo u otros servicios externos son controlados por esos servicios, que pueden tratar datos según sus propias políticas.",
+          "La analítica permanece desactivada hasta que la permita. Su elección se guarda en el almacenamiento local del navegador; el token de sesión caduca tras 30 minutos de inactividad, con un máximo de 24 horas. Los registros de deduplicación se conservan hasta 30 días y los totales diarios hasta 25 meses. Opciones de analítica en una página de inicio permite desactivarla. Respetamos las señales de privacidad del navegador. Los servicios de correo externos tienen sus propias políticas.",
           "Para solicitar la corrección o eliminación de información enviada por correo, contacte con <a href=\"index.html#contact\" data-email-link data-email-user=\"hello\" data-email-domain=\"web-by-elie.com\" data-email-label=\"address\">hello [at] web-by-elie.com</a>."
         ]
       },
@@ -468,10 +468,10 @@ window.webByElieI18n = {
         eyebrow: "Política",
         heading: "Instrucciones para eliminar datos",
         paragraphs: [
-          "Este sitio no tiene inicio de sesión, formularios, pagos, analítica ni una base de datos, por lo que no almacena directamente datos de cuentas de visitantes.",
+          "Este sitio no tiene cuentas de visitantes, pagos ni formularios de contacto. La analítica opcional utiliza un token aleatorio de sesión, no su nombre ni correo. Puede detener la recopilación desde Opciones de analítica en una página de inicio; No, gracias también elimina el token local de sesión.",
           "Si envió información por correo electrónico, puede solicitar su eliminación o corrección respondiendo al mismo hilo o contactando con <a href=\"index.html#contact\" data-email-link data-email-user=\"hello\" data-email-domain=\"web-by-elie.com\" data-email-label=\"address\">hello [at] web-by-elie.com</a> con suficientes detalles para identificar el mensaje.",
           "Incluya su nombre, dirección de correo, fecha aproximada del mensaje y qué quiere eliminar o corregir. Los datos controlados por plataformas, como los datos que mantiene su proveedor de correo, deben gestionarse con las herramientas de privacidad de esa plataforma.",
-          "Si el sitio añade más adelante formularios, analítica, cuentas, pagos o integraciones de plataforma, estas instrucciones deberán sustituirse por un flujo de eliminación más específico."
+          "Borrar el almacenamiento del sitio elimina la elección guardada. Los registros de deduplicación caducan en 30 días y los totales agregados en 25 meses. Los totales no están vinculados a su nombre o correo y no pueden aislarse de forma fiable con esos datos."
         ]
       }
     }
