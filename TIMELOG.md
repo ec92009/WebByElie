@@ -99,7 +99,8 @@ Clock state: running
 | 2026-09-01 | 11:47 CEST | 11:48 CEST | 0:01 | Approved and completed integration of the reviewed video refinements into main, with GitHub Pages and production readback. |
 | 2026-09-01 | 20:10 CEST | 20:11 CEST | 0:01 | Requested landscape homepage videos at narrow widths and approved Cloudflare publication. |
 | 2026-09-03 | 11:17 CEST | 11:19 CEST | 0:02 | Reported that homepage animations were not visible on mobile and reviewed the touch-first playback correction. |
+| 2026-09-03 | 15:11 CEST | 15:13 CEST | 0:02 | Requested and approved a narrower three-line mobile label for the Cost cleanup animation. |
 
 ## Totals
 
-Active collaboration time used: 3:57
+Active collaboration time used: 3:59

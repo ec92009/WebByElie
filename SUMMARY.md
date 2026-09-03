@@ -1,6 +1,6 @@
 # Web By Elie Summary
 
-Last updated: 2026-09-03 11:19 CEST
+Last updated: 2026-09-03 15:13 CEST
 
 ## Current State
 
@@ -8,10 +8,10 @@ Last updated: 2026-09-03 11:19 CEST
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=246.0`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=246.1`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v246.0`
+- Current visible version: `v246.1`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -49,6 +49,7 @@ Last updated: 2026-09-03 11:19 CEST
 - Made homepage service panels 01–04 select their landscape renders at the existing 820px narrow-layout breakpoint while preserving portrait renders on wider pages.
 - Made all four service-detail videos start automatically when their pages load or return to the foreground, independently of mouse position; wider homepage previews remain hover-controlled.
 - Made narrow homepage service videos visible without hover and start them while their cards are on screen, with compact labels retained over the landscape animation and reduced-motion playback respected.
+- Narrowed the mobile Cost cleanup label into three lines so less of its animation is obscured.
 - Kept detail videos visually clean on arrival by hiding the resting pointer and native controls until the visitor clicks, taps, or keyboard-focuses the video.
 - Updated those detail pages to use the latest AG landscape renders: `01-page-reassembly`, `02-seo-harvest`, `03-aio-recommendations`, and `04-cost-efficiency`.
 - Replaced the Refresh portrait and landscape videos with the approved three-look choice sequence: Warm and Clear disappear into a wastebasket with a genie effect, then Bold expands into the finished site.
@@ -76,7 +77,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `246.0`, displayed as `v246.0`.
+- Current version is `246.1`, displayed as `v246.1`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
@@ -94,7 +95,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Fresh Numbered Backlog
 
 1. Monitor search indexing pickup.
-   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v246.0` has deployed and crawlers have processed the requests.
+   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v246.1` has deployed and crawlers have processed the requests.
 
 2. Keep Cloudflare Pages deployment repeatable.
    Preserve the clean static publish set for production deploys, keep DNS/HTTPS on Cloudflare, and protect email-related DNS records.
