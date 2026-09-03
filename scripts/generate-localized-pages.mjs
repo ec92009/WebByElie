@@ -25,6 +25,12 @@ const serviceVideoFiles = [
   "service-cost-cleanup.mp4",
 ];
 const serviceSlugs = ["refresh", "seo", "ai-ready", "cost-cleanup"];
+const serviceCtaIds = ["service_refresh", "service_seo", "service_ai_ready", "service_cost_cleanup"];
+const portfolioCtaIds = {
+  assurances: "portfolio_adr",
+  golden: "portfolio_golden",
+  photos: "portfolio_photosbyelie",
+};
 const detailVideoFiles = [
   "web-page-reassembly.mp4",
   "seo-page-flip.mp4",
@@ -194,8 +200,8 @@ ${ogAlternates}
         <h1>${text(page.heroTitle)}</h1>
         <p class="lede">${text(page.heroLede)}</p>
         <div class="actions">
-          <a class="button" href="#contact" data-email-link data-email-user="hello" data-email-domain="web-by-elie.com" data-email-subject="${text(common.emailSubject)}">${text(common.emailCta)}</a>
-          <a class="button secondary" href="#services">${text(page.seeServices)}</a>
+          <a class="button" href="#contact" data-wst-cta="contact_primary" data-email-link data-email-user="hello" data-email-domain="web-by-elie.com" data-email-subject="${text(common.emailSubject)}">${text(common.emailCta)}</a>
+          <a class="button secondary" href="#services" data-wst-cta="services_overview">${text(page.seeServices)}</a>
         </div>
       </div>
       <figure class="demo-photo">
@@ -207,7 +213,7 @@ ${ogAlternates}
         ${page.services
           .map(
             ([heading, paragraph], index) => `<article class="video-panel" data-service-panel>
-          <a class="panel-link" href="services/${serviceSlugs[index]}/?v=${version}" aria-label="${text(heading)}"></a>
+          <a class="panel-link" href="services/${serviceSlugs[index]}/?v=${version}" aria-label="${text(heading)}" data-wst-cta="${serviceCtaIds[index]}"></a>
           <div class="panel-content">
             <span>${String(index + 1).padStart(2, "0")}</span>
             <h2>${text(heading)}</h2>
@@ -257,7 +263,7 @@ ${ogAlternates}
           ${page.workExamples
             .map(
               (site) => `<article class="work-card">
-            <a class="work-card-hit" href="${text(site.url)}"${site.url === baseUrl + "/" ? "" : ' target="_blank" rel="noopener"'} aria-label="${text(site.cta)}: ${text(site.title)}"></a>
+            <a class="work-card-hit" href="${text(site.url)}"${site.url === baseUrl + "/" ? "" : ' target="_blank" rel="noopener"'} aria-label="${text(site.cta)}: ${text(site.title)}" data-wst-cta="${portfolioCtaIds[site.theme]}"></a>
             <div class="work-preview work-preview-${text(site.theme)}">
               <img src="../assets/work-${text(site.theme === "golden" ? "golden-years" : site.theme === "photos" ? "photos-by-elie" : "assurances")}.png" alt="${text(site.title)} homepage" loading="lazy" />
             </div>
@@ -267,8 +273,8 @@ ${ogAlternates}
               <p>${text(site.summary)}</p>
               <p class="work-detail">${text(site.detail)}</p>
               <div class="work-links">
-                <a class="text-link" href="${text(site.url)}"${site.url === baseUrl + "/" ? "" : ' target="_blank" rel="noopener"'}>${text(site.cta)}</a>
-${site.caseStudyUrl ? `                <a class="text-link" href="${text(site.caseStudyUrl)}">${text(site.caseStudyCta)}</a>\n` : ""}              </div>
+                <a class="text-link" href="${text(site.url)}"${site.url === baseUrl + "/" ? "" : ' target="_blank" rel="noopener"'} data-wst-cta="${portfolioCtaIds[site.theme]}">${text(site.cta)}</a>
+${site.caseStudyUrl ? `                <a class="text-link" href="${text(site.caseStudyUrl)}" data-wst-cta="portfolio_golden_case_study">${text(site.caseStudyCta)}</a>\n` : ""}              </div>
             </div>
           </article>`
             )
@@ -336,11 +342,11 @@ ${site.caseStudyUrl ? `                <a class="text-link" href="${text(site.ca
           <p class="eyebrow">${text(page.contactEyebrow)}</p>
           <h2>${text(page.contactTitle)}</h2>
         </div>
-        <a class="button" href="#contact" data-email-link data-email-user="hello" data-email-domain="web-by-elie.com" data-email-subject="${text(common.emailSubject)}" data-email-label="address">${text(common.emailCta)}</a>
+        <a class="button" href="#contact" data-wst-cta="contact_section" data-email-link data-email-user="hello" data-email-domain="web-by-elie.com" data-email-subject="${text(common.emailSubject)}" data-email-label="address">${text(common.emailCta)}</a>
       </div>
     </section>
   </main>
-  <a class="mobile-sticky-cta" href="#contact" data-email-link data-email-user="hello" data-email-domain="web-by-elie.com" data-email-subject="${text(common.emailSubject)}">${text(common.emailCta)}</a>
+  <a class="mobile-sticky-cta" href="#contact" data-wst-cta="contact_mobile" data-email-link data-email-user="hello" data-email-domain="web-by-elie.com" data-email-subject="${text(common.emailSubject)}">${text(common.emailCta)}</a>
   <footer class="footer">
     <div class="shell footer-inner">
       <span>${text(common.versionLine.replace("{version}", siteVersion))}</span>
@@ -353,6 +359,7 @@ ${site.caseStudyUrl ? `                <a class="text-link" href="${text(site.ca
   </footer>
   <script src="../assets/i18n.js?v=${version}"></script>
   <script src="../assets/theme.js?v=${version}"></script>
+  <script defer src="../assets/wst-beacon.js" data-wst-enabled="false" data-wst-endpoint="" data-wst-site="webbyelie" data-wst-environment="production" data-wst-consent="unknown"></script>
 </body>
 </html>
 `;

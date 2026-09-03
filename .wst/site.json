@@ -1,0 +1,10 @@
+{
+  "manifest_version": "wst.site.v1",
+  "site_id": "webbyelie",
+  "name": "Web By Elie",
+  "production_url": "https://web-by-elie.com/",
+  "ownership_verified": true,
+  "approval_status": "awaiting",
+  "beacon_verified": false,
+  "operational_state": "active"
+}

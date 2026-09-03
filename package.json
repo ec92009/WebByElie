@@ -2,7 +2,7 @@
   "name": "web-by-elie-remotion",
   "private": true,
   "scripts": {
-    "test": "node scripts/check-site.mjs && node --check assets/theme.js && node --check assets/i18n.js && node --check scripts/generate-localized-pages.mjs && tsc --noEmit --pretty false",
+    "test": "node scripts/check-site.mjs && node scripts/check-wst-preparation.mjs && node --check assets/theme.js && node --check assets/i18n.js && node --check assets/wst-beacon.js && node --check scripts/generate-localized-pages.mjs && tsc --noEmit --pretty false",
     "service-videos:build": "npm --prefix Remotion_AG run render && node scripts/generate-service-voiceover.mjs",
     "remotion:preview": "remotion studio remotion/index.ts",
     "remotion:still": "remotion still remotion/index.ts WebByElieExplainer --frame=300 --output=outputs/web-by-elie-explainer-frame.png",
