@@ -69,7 +69,7 @@
   let state = readSettings();
 
   if (settingsRoot && !settingsRoot.querySelector("[data-settings-panel]")) {
-    const version = settingsRoot.dataset.siteVersion || "v246.2";
+    const version = settingsRoot.dataset.siteVersion || "v247.0";
     settingsRoot.insertAdjacentHTML(
       "beforeend",
       `<div class="settings-panel" id="site-settings-panel" role="dialog" aria-label="Site settings" data-settings-panel hidden>
@@ -119,7 +119,7 @@
   const themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
 
   const getCopy = () => translations[state.language] || translations.en || {};
-  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v246.2";
+  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v247.0";
   const setAllText = (selector, value) => {
     if (value === undefined) {
       return;
@@ -222,6 +222,7 @@
     setAllText('.footer-links a[href="terms"], .footer-links a[href="../terms"], .footer-links a[href="terms.html"], .nav a[href="terms"], .nav a[href="../terms"], .nav a[href="terms.html"]', common.terms);
     setAllText('.footer-links a[href="data-deletion"], .footer-links a[href="../data-deletion"], .footer-links a[href="data-deletion.html"], .nav a[href="data-deletion"], .nav a[href="../data-deletion"], .nav a[href="data-deletion.html"]', common.dataDeletion);
     setAllText(".footer-inner > span", (common.versionLine || "Web By Elie · {version}").replace("{version}", version));
+    setAllText(".footer-notice", common.analyticsNotice);
 
     setAttribute("[data-settings-toggle]", "aria-label", settings.open);
     setAttribute("[data-settings-panel]", "aria-label", settings.panel);

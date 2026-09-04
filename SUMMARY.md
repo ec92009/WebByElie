@@ -1,6 +1,6 @@
 # Web By Elie Summary
 
-Last updated: 2026-09-03 15:13 CEST
+Last updated: 2026-09-04 15:49 CEST
 
 ## Current State
 
@@ -8,10 +8,10 @@ Last updated: 2026-09-03 15:13 CEST
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=246.2`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=247.0`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v246.2`
+- Current visible version: `v247.0`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -54,6 +54,7 @@ Last updated: 2026-09-03 15:13 CEST
 - Updated those detail pages to use the latest AG landscape renders: `01-page-reassembly`, `02-seo-harvest`, `03-aio-recommendations`, and `04-cost-efficiency`.
 - Replaced the Refresh portrait and landscape videos with the approved three-look choice sequence: Warm and Clear disappear into a wastebasket with a genie effect, then Bold expands into the finished site.
 - Added the selected two-voice TTS flow to the eight service animation variants: the English homepage panel copy is read by Flo and Reed, embedded in the portrait and landscape MP4s, and kept reproducible through `scripts/generate-service-voiceover.mjs`.
+- Released the WST-16 simpler analytics mode: default-on, cookieless aggregate page views and marked CTA presses, no visitor/session identifier, quiet footer disclosure, browser GPC/Do Not Track suppression, and aligned policy copy. Cloudflare is the canonical production surface; GitHub Pages remains the separate phone-test preview and stays outside production totals.
 
 ## Current Offer Copy
 
@@ -77,7 +78,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `246.2`, displayed as `v246.2`.
+- Current version is `247.0`, displayed as `v247.0`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
@@ -95,7 +96,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Fresh Numbered Backlog
 
 1. Monitor search indexing pickup.
-   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v246.2` has deployed and crawlers have processed the requests.
+   Recheck Google coverage for `/fr/` and `/es/`, Bing sitemap processing, and Bing's homepage logo-alt notice after `v247.0` has deployed and crawlers have processed the requests.
 
 2. Keep Cloudflare Pages deployment repeatable.
    Preserve the clean static publish set for production deploys, keep DNS/HTTPS on Cloudflare, and protect email-related DNS records.

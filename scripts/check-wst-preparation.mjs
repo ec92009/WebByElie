@@ -28,11 +28,14 @@ for (const homepage of homepages) {
   const beaconTags = source.match(/<script\b[^>]*\bsrc="(?:\.\.\/)?assets\/wst-beacon\.js"[^>]*><\/script>/g) ?? [];
   assert.equal(beaconTags.length, 1, `${homepage}: expected exactly one WST beacon tag`);
   const beacon = beaconTags[0];
-  assert.match(beacon, /data-wst-enabled="false"/);
-  assert.match(beacon, /data-wst-endpoint=""/);
+  assert.match(beacon, /data-wst-enabled="true"/);
+  assert.match(beacon, /data-wst-endpoint="https:\/\/web-signals-collector\.ec92009\.workers\.dev\/v1\/events"/);
   assert.match(beacon, /data-wst-site="webbyelie"/);
   assert.match(beacon, /data-wst-environment="production"/);
-  assert.match(beacon, /data-wst-consent="unknown"/);
+  assert.match(beacon, /data-wst-consent="not_required"/);
+  assert.match(beacon, /data-wst-sessionless="true"/);
+  assert.equal(source.includes("wst-consent.js"), false, `${homepage}: legacy consent prompt must not load`);
+  assert.equal(source.includes("wst-consent.css"), false, `${homepage}: legacy consent styling must not load`);
 }
 
 const beaconSource = readFileSync(join(root, "assets/wst-beacon.js"), "utf8");

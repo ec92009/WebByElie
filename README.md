@@ -2,11 +2,11 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v246.2`
+Current visible version: `v247.0`
 
 Production URL: `https://web-by-elie.com/`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=246.2`
+Preview URL: `https://ec92009.github.io/WebByElie/?v=247.0`
 
 Contact email: `hello@web-by-elie.com`
 
@@ -83,9 +83,9 @@ This read-only source check validates public local links and fragments, generate
 
 ## Launch Notes
 
-- The WST pilot counts homepage visits and marked CTA presses only after explicit analytics opt-in. Analytics choices in the homepage footer permits withdrawal; browser privacy signals disable tracking. Previews and noncanonical hosts stay disabled. `?wst_test=1` marks owner verification as synthetic, excluded from business totals.
+- The WST pilot counts aggregate homepage page views and marked CTA presses by default in a cookieless, sessionless mode. It never creates a visitor/session identifier, so Visits and session attribution are unavailable. The footer notice discloses the measurement; Global Privacy Control and Do Not Track suppress collection. Cloudflare is the canonical production surface; GitHub Pages remains a separate phone-test preview and stays outside production totals. `?wst_test=1` marks owner verification as synthetic, excluded from business totals.
 - The collector endpoint is `https://web-signals-collector.ec92009.workers.dev/v1/events`. Contact clicks have no delivery receipt and must not be reported as accepted conversions.
-- Public policy copy describes the consent preference, session token, processing and retention. The public `.wst/site.json` declaration is approved; live receipt verification is recorded separately in the WST registry/ticket.
+- Public policy copy describes the aggregate measurement, sessionless processing, browser privacy signals and retention. The public `.wst/site.json` declaration is approved; live receipt verification is recorded separately in the WST registry/ticket.
 
 - Public pages are indexable and include canonical metadata for `https://web-by-elie.com/`.
 - Home pages include Open Graph/Twitter metadata, JSON-LD structured data, and English/French/Spanish hreflang alternates.
