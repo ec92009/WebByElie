@@ -49,7 +49,7 @@ This read-only source check validates public local links and fragments, generate
 - `case-studies/golden-years/`: approved Golden Years Tax Strategy case study with current public-site screenshots.
 - `assets/styles.css`: site styling.
 - `assets/i18n.js`: English, French, and Spanish site copy.
-- `assets/theme.js`: settings popover, language switching, day/night mode, glass controls, reveal effects, and mobile sticky CTA.
+- `assets/theme.js`: settings popover, language switching, day/night mode, glass controls, reveal effects, mobile sticky CTA, and the fixed version pill sourced from the same release marker as About.
 - `apple-touch-icon.png`, `site.webmanifest`, `assets/icon-192.png`, `assets/icon-512.png`: mobile home-screen and browser install icons.
 - `assets/web-refresh-workspace.png`: generated shared hero image.
 - `assets/web-page-reassembly.mp4`: Standalone Remotion video asset that disassembles and rebuilds a page structure, including a visible copy-scrutiny and rewrite pass.

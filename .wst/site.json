@@ -104,7 +104,7 @@
     "standards_evidence": [
       "v247.0 source includes English, French, and Spanish homepages, stable WST CTA IDs, public policy routes, and explicit version/cache-bust markers.",
       "WST pilot checks cover fail-closed collection, non-blocking navigation, preview exclusion, synthetic labeling, and GPC/Do Not Track suppression.",
-      "Source review found settings, reduced-motion and focus-visible controls, mobile sticky CTA behavior, overflow safeguards, and preserved SEO/policy routes; the full live matrix is still pending."
+      "Source review found settings, a fixed bottom-right version pill, reduced-motion and focus-visible controls, mobile sticky CTA behavior, overflow safeguards, and preserved SEO/policy routes; the full live matrix is still pending."
     ],
     "standards_next_action": "Run and record the 320/375/390/768/1280 plus landscape, 200% zoom, keyboard, reduced-motion, fixed-control, and Chrome DevTools performance matrix; then refresh live version evidence.",
     "disable_tracking": "Remove the WST beacon script or set data-wst-enabled to false; collection must stop without affecting navigation or the site.",
