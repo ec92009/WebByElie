@@ -103,7 +103,8 @@ Clock state: running
 | 2026-09-03 | 16:03 CEST | 16:04 CEST | 0:01 | Directed a personal-tool WST pilot with a safe, reviewable WebByElie integration before activation. |
 
 | 2026-09-03 | 20:25 CEST | 20:26 CEST | 0:01 | Approved the consent-aware Web Signals pilot on the public WebByElie homepages. |
+| 2026-09-04 | 15:03 CEST | 15:18 CEST | 0:15 | Implemented the isolated WST-16 simpler aggregate mode: default-on sessionless page-view/CTA counting, quiet footer disclosure, privacy-policy alignment, and desktop/mobile checks; public deployment remains unchanged pending review. |
 
 ## Totals
 
-Active collaboration time used: 4:01
+Active collaboration time used: 4:16

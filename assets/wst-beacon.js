@@ -1,4 +1,4 @@
-/* Web Signals browser beacon v1.0.0 — no dependencies, cookies, or navigation blocking. */
+/* Web Signals browser beacon v1.1.0 — aggregate mode uses no visitor/session identifier. */
 (function installWebSignals(window, document, navigator) {
   "use strict";
 
@@ -13,6 +13,7 @@
       environment: script.dataset.wstEnvironment || "production",
       consentState: script.dataset.wstConsent || "unknown",
       synthetic: script.dataset.wstSynthetic === "true",
+      sessionless: script.dataset.wstSessionless === "true",
     };
     const allowedConsent = new Set(["granted", "denied", "not_required", "unknown"]);
     const allowedEnvironment = new Set(["production", "preview", "staging", "development", "test"]);
@@ -25,6 +26,7 @@
     if (!config.enabled) return;
     if (!siteId.test(config.siteId) || !allowedEnvironment.has(config.environment)) return;
     if (!allowedConsent.has(config.consentState)) config.consentState = "unknown";
+    if (navigator.globalPrivacyControl === true || navigator.doNotTrack === "1") config.consentState = "denied";
 
     const endpoint = new URL(config.endpoint, window.location.href);
     if (endpoint.protocol !== "https:" && endpoint.hostname !== "127.0.0.1" && endpoint.hostname !== "localhost") return;
@@ -113,7 +115,8 @@
     function track(eventName, eventProperties) {
       if (!isAllowedToSend() || !allowedBrowserEvents.has(eventName)) return false;
       const path = normalizePath(window.location.pathname);
-      const properties = { path, session_id: sessionId() };
+      const properties = { path };
+      if (!config.sessionless) properties.session_id = sessionId();
       const locale = safeLocale(document.documentElement.lang || navigator.language);
       const referrerSite = safeReferrerSite();
       const campaign = safeCampaign();

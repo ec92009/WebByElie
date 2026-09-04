@@ -1,6 +1,6 @@
 # Web By Elie Summary
 
-Last updated: 2026-09-03 15:13 CEST
+Last updated: 2026-09-04 15:18 CEST
 
 ## Current State
 
@@ -54,6 +54,7 @@ Last updated: 2026-09-03 15:13 CEST
 - Updated those detail pages to use the latest AG landscape renders: `01-page-reassembly`, `02-seo-harvest`, `03-aio-recommendations`, and `04-cost-efficiency`.
 - Replaced the Refresh portrait and landscape videos with the approved three-look choice sequence: Warm and Clear disappear into a wastebasket with a genie effect, then Bold expands into the finished site.
 - Added the selected two-voice TTS flow to the eight service animation variants: the English homepage panel copy is read by Flo and Reed, embedded in the portrait and landscape MP4s, and kept reproducible through `scripts/generate-service-voiceover.mjs`.
+- Prepared an isolated WST-16 simpler analytics mode: default-on, cookieless aggregate page views and marked CTA presses, no visitor/session identifier, quiet footer disclosure, browser GPC/Do Not Track suppression, and aligned policy copy. This branch is locally verified but not deployed; the public site remains on the existing opt-in pilot pending review.
 
 ## Current Offer Copy
 

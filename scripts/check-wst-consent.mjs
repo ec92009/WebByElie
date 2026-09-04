@@ -18,27 +18,27 @@ class Element {
   focus() { this.focused = true; }
 }
 
-function run({ origin = "https://web-by-elie.com", saved, privacy = false, search = "", storageDenied = false } = {}) {
+function run({ origin = "https://web-by-elie.com", saved, privacy = false, dnt = false, search = "", storageDenied = false, loadConsent = true, beaconDataset = {} } = {}) {
   const sent = [], local = new Map(saved ? [["wbe:analytics-consent:v1", saved]] : []), session = new Map();
   const storage = (items) => ({
     getItem(key) { if (storageDenied) throw Error("blocked"); return items.get(key) || null; },
     setItem(key, value) { if (storageDenied) throw Error("blocked"); items.set(key, value); },
     removeItem(key) { items.delete(key); },
   });
-  const beacon = { dataset: { wstEnabled: "false", wstEndpoint: "", wstConsent: "unknown", wstSite: "webbyelie", wstEnvironment: "production" } };
+  const beacon = { dataset: { wstEnabled: "false", wstEndpoint: "", wstConsent: "unknown", wstSite: "webbyelie", wstEnvironment: "production", ...beaconDataset } };
   const main = new Element("main"), footer = new Element("footer"), listeners = {};
   const context = {
     Element, URL, URLSearchParams, Uint8Array, Date, Set, console,
-    navigator: { globalPrivacyControl: privacy, language: "en", webdriver: false, sendBeacon(url, body) { sent.push({ url, ...JSON.parse(body) }); return true; } },
+    navigator: { globalPrivacyControl: privacy, doNotTrack: dnt ? "1" : "0", language: "en", webdriver: false, sendBeacon(url, body) { sent.push({ url, ...JSON.parse(body) }); return true; } },
     document: { currentScript: beacon, documentElement: { lang: "en" }, referrer: "", createElement: (tag) => new Element(tag),
       querySelector: (selector) => selector === "script[data-wst-site]" ? beacon : selector === "main" ? main : footer,
       addEventListener: (name, fn) => { listeners[name] = fn; } },
     window: { location: { origin, hostname: new URL(origin).hostname, href: origin + "/" + search, pathname: "/", search }, crypto: webcrypto,
       btoa: (value) => Buffer.from(value, "binary").toString("base64"), localStorage: storage(local), sessionStorage: storage(session) },
   };
-  vm.runInNewContext(consentSource, context);
+  if (loadConsent) vm.runInNewContext(consentSource, context);
   vm.runInNewContext(beaconSource, context);
-  const panel = main.previous, actions = panel.children[2], result = panel.children[3];
+  const panel = main.previous, actions = panel?.children[2], result = panel?.children[3];
   const choose = (value) => actions.children.find((button) => button.dataset.consent === value).listeners.click();
   const clickCta = () => { const target = new Element("a"); target.dataset.wstCta = "contact_primary"; listeners.click?.({ target }); };
   return { context, sent, session, local, panel, actions, result, footer, choose, clickCta };
@@ -81,4 +81,35 @@ deniedStorage.choose("granted");
 assert.equal(deniedStorage.sent.length, 1);
 deniedStorage.choose("denied");
 assert.equal(deniedStorage.result.textContent, "Analytics off");
-console.log("WST consent runtime checks passed: opt-in, withdrawal, replay, privacy signal, preview exclusion, synthetic marking, storage failure.");
+
+const aggregate = run({
+  loadConsent: false,
+  beaconDataset: {
+    wstEnabled: "true",
+    wstEndpoint: "https://collector.example/v1/events",
+    wstConsent: "not_required",
+    wstSessionless: "true",
+  },
+});
+assert.equal(aggregate.sent.length, 1, "aggregate mode sends the initial page view without a prompt");
+assert.equal(Object.hasOwn(aggregate.sent[0].properties, "session_id"), false, "aggregate mode omits session IDs");
+assert.equal(aggregate.session.size, 0, "aggregate mode does not write a session");
+aggregate.clickCta();
+assert.equal(aggregate.sent.length, 2);
+assert.equal(Object.hasOwn(aggregate.sent[1].properties, "session_id"), false);
+
+for (const privacySignal of [{ privacy: true }, { dnt: true }]) {
+  const suppressed = run({
+    ...privacySignal,
+    loadConsent: false,
+    beaconDataset: {
+      wstEnabled: "true",
+      wstEndpoint: "https://collector.example/v1/events",
+      wstConsent: "not_required",
+      wstSessionless: "true",
+    },
+  });
+  assert.equal(suppressed.sent.length, 0, "browser privacy signals suppress aggregate events");
+}
+
+console.log("WST consent runtime checks passed: legacy opt-in, withdrawal, replay, privacy signal, preview exclusion, synthetic marking, storage failure, and sessionless aggregate mode.");

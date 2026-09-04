@@ -356,12 +356,13 @@ ${site.caseStudyUrl ? `                <a class="text-link" href="${text(site.ca
         <a href="../data-deletion">${text(common.dataDeletion)}</a>
       </div>
     </div>
+    <div class="shell">
+      <p class="footer-notice">${text(common.analyticsNotice)}</p>
+    </div>
   </footer>
   <script src="../assets/i18n.js?v=${version}"></script>
   <script src="../assets/theme.js?v=${version}"></script>
-  <link rel="stylesheet" href="../assets/wst-consent.css?v=${version}" />
-  <script defer src="../assets/wst-consent.js?v=${version}"></script>
-  <script defer src="../assets/wst-beacon.js" data-wst-enabled="false" data-wst-endpoint="" data-wst-site="webbyelie" data-wst-environment="production" data-wst-consent="unknown"></script>
+  <script defer src="../assets/wst-beacon.js" data-wst-enabled="true" data-wst-endpoint="https://web-signals-collector.ec92009.workers.dev/v1/events" data-wst-site="webbyelie" data-wst-environment="production" data-wst-consent="not_required" data-wst-sessionless="true"></script>
 </body>
 </html>
 `;

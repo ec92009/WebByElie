@@ -100,6 +100,14 @@ a {
   padding: 16px 0;
 }
 
+.footer-notice {
+  margin: 0;
+  padding: 0 0 16px;
+  max-width: 75ch;
+  font-size: .875rem;
+  line-height: 1.6;
+}
+
 .brand {
   grid-area: brand;
   display: inline-flex;
