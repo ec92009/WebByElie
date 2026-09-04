@@ -6,5 +6,119 @@
   "ownership_verified": true,
   "approval_status": "approved",
   "beacon_verified": false,
-  "operational_state": "active"
+  "operational_state": "active",
+  "monitorability": {
+    "contract_version": "wst.monitorable.v1",
+    "owner_role": "Elie (site owner)",
+    "approval_ref": "WST-8: homepage pilot approved 2026-09-03",
+    "route_scope": ["/", "/fr/", "/es/"],
+    "surfaces": [
+      {
+        "environment": "development",
+        "url": "http://localhost:8094/",
+        "version": "247.0",
+        "version_url": "http://localhost:8094/VERSION",
+        "note": "Configured local static preview; the server need not be running."
+      },
+      {
+        "environment": "preview",
+        "url": "https://ec92009.github.io/WebByElie/",
+        "version": "247.0",
+        "version_url": "https://ec92009.github.io/WebByElie/VERSION",
+        "note": "GitHub Pages phone-test preview; live parity and version are verified separately and never count as production."
+      },
+      {
+        "environment": "production",
+        "url": "https://web-by-elie.com/",
+        "version": "247.0",
+        "version_url": "https://web-by-elie.com/VERSION",
+        "note": "Cloudflare Pages production surface; the declared source release is not a live beacon receipt."
+      }
+    ],
+    "capabilities": {
+      "browser_traffic": {
+        "state": "implemented",
+        "source": "WST sessionless aggregate homepage beacon",
+        "freshness_hours": 24,
+        "next_action": "Verify a live page_view receipt; sessionless events do not create Visits or session attribution."
+      },
+      "edge_traffic": {
+        "state": "planned",
+        "source": null,
+        "freshness_hours": null,
+        "next_action": "Connect a read-only Cloudflare aggregate source and compare it with browser page views without mixing environments."
+      },
+      "cta": {
+        "state": "implemented",
+        "source": "Stable data-wst-cta attributes on the localized homepages",
+        "freshness_hours": 24,
+        "next_action": "Verify CTA receipts and preserve IDs when copy or layout changes."
+      },
+      "conversions": {
+        "state": "not_applicable",
+        "source": null,
+        "freshness_hours": null,
+        "next_action": "Report No receipt; an email launch or navigation press is not an authoritative acceptance outcome."
+      },
+      "health": {
+        "state": "implemented",
+        "source": "WST read-only HTTP health probe",
+        "freshness_hours": 24,
+        "next_action": "Repeat a safe GET check after releases and record status/content evidence separately."
+      },
+      "field_vitals": {
+        "state": "planned",
+        "source": null,
+        "freshness_hours": null,
+        "next_action": "Connect privacy-safe field vitals when sufficient desktop and mobile samples exist, or retain insufficient-data status."
+      },
+      "lab_performance": {
+        "state": "planned",
+        "source": "Chrome DevTools",
+        "freshness_hours": 168,
+        "next_action": "Record trace receipts for the shared responsive viewport matrix."
+      }
+    },
+    "cta_ids": [
+      "contact_primary",
+      "services_overview",
+      "service_refresh",
+      "service_seo",
+      "service_ai_ready",
+      "service_cost_cleanup",
+      "portfolio_adr",
+      "portfolio_golden",
+      "portfolio_golden_case_study",
+      "portfolio_photosbyelie",
+      "contact_section",
+      "contact_mobile"
+    ],
+    "conversion_receipts": [],
+    "privacy_profile": "wst.event.v1",
+    "consent_authority": "approved-cookieless",
+    "collector_url": "https://web-signals-collector.ec92009.workers.dev/v1/events",
+    "performance_profile": "wst.responsive-performance.v1",
+    "standards_profile": "elies-websites",
+    "standards_profile_version": "elies-websites.v1",
+    "standards_status": "partial",
+    "standards_evidence": [
+      "v247.0 source includes English, French, and Spanish homepages, stable WST CTA IDs, public policy routes, and explicit version/cache-bust markers.",
+      "WST pilot checks cover fail-closed collection, non-blocking navigation, preview exclusion, synthetic labeling, and GPC/Do Not Track suppression.",
+      "Source review found settings, reduced-motion and focus-visible controls, mobile sticky CTA behavior, overflow safeguards, and preserved SEO/policy routes; the full live matrix is still pending."
+    ],
+    "standards_next_action": "Run and record the 320/375/390/768/1280 plus landscape, 200% zoom, keyboard, reduced-motion, fixed-control, and Chrome DevTools performance matrix; then refresh live version evidence.",
+    "disable_tracking": "Remove the WST beacon script or set data-wst-enabled to false; collection must stop without affecting navigation or the site.",
+    "exceptions": [
+      {
+        "requirement": "observed beacon readiness",
+        "reason": "The declaration and synthetic checks exist, but WST has not stored a verified live page_view and CTA receipt in this source release.",
+        "next_action": "Verify one labelled production page_view and CTA receipt; keep synthetic activity out of business totals."
+      },
+      {
+        "requirement": "responsive and performance evidence",
+        "reason": "The source has baseline responsive/accessibility controls, but the complete viewport, keyboard, reduced-motion, fixed-control, and performance receipt is not yet recorded.",
+        "next_action": "Run the shared responsive-performance matrix and record desktop/mobile lab evidence before claiming aligned standards."
+      }
+    ]
+  }
 }
