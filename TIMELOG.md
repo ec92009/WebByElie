@@ -104,7 +104,8 @@ Clock state: running
 
 | 2026-09-03 | 20:25 CEST | 20:26 CEST | 0:01 | Approved the consent-aware Web Signals pilot on the public WebByElie homepages. |
 | 2026-09-04 | 15:03 CEST | 15:18 CEST | 0:15 | Implemented the isolated WST-16 simpler aggregate mode: default-on sessionless page-view/CTA counting, quiet footer disclosure, privacy-policy alignment, and desktop/mobile checks; public deployment remains unchanged pending review. |
+| 2026-09-04 | 15:48 CEST | 15:52 CEST | 0:04 | Authorized the WST-16 simpler mode for Cloudflare production and prepared the versioned v247.0 release while keeping GitHub Pages as the phone-test preview. |
 
 ## Totals
 
-Active collaboration time used: 4:16
+Active collaboration time used: 4:20
