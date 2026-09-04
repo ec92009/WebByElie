@@ -1,6 +1,6 @@
 # Web By Elie Search Indexing
 
-Current public version: `v246.2`
+Current public version: `v248.0` (preview branch; Cloudflare production remains on its prior release)
 
 Last account-side indexing run: 2026-06-26
 
