@@ -31,7 +31,7 @@ for (const homepage of homepages) {
   assert.match(beacon, /data-wst-enabled="true"/);
   assert.match(beacon, /data-wst-endpoint="https:\/\/web-signals-collector\.ec92009\.workers\.dev\/v1\/events"/);
   assert.match(beacon, /data-wst-site="webbyelie"/);
-  assert.match(beacon, /data-wst-environment="production"/);
+  assert.match(beacon, /data-wst-environment="preview"/);
   assert.match(beacon, /data-wst-consent="not_required"/);
   assert.match(beacon, /data-wst-sessionless="true"/);
   assert.equal(source.includes("wst-consent.js"), false, `${homepage}: legacy consent prompt must not load`);

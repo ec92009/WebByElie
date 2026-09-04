@@ -81,6 +81,8 @@ This read-only source check validates public local links and fragments, generate
 - Follow `~/Dev/.SOPs/CHOOSER_WORKFLOW_SOP.md` when using temporary site/look choosers.
 - Public-facing changes should be committed and pushed once complete unless the user asks otherwise.
 
+- This branch is the GitHub Pages phone-test preview for WST. It emits `environment=preview` events so page views and marked CTA presses can be watched in the WST diagnostic panel without changing production totals. Keep this branch separate from the Cloudflare production-ready simpler branch.
+
 ## Launch Notes
 
 - The WST pilot counts aggregate homepage page views and marked CTA presses by default in a cookieless, sessionless mode. It never creates a visitor/session identifier, so Visits and session attribution are unavailable. The footer notice discloses the measurement; Global Privacy Control and Do Not Track suppress collection. Previews and noncanonical hosts stay disabled. `?wst_test=1` marks owner verification as synthetic, excluded from business totals.
