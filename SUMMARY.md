@@ -8,10 +8,10 @@ Last updated: 2026-09-04 15:49 CEST
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=247.0`
+- Public preview: `https://ec92009.github.io/WebByElie/?v=248.1`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v247.0`
+- Current visible version: `v248.1`
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -78,7 +78,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `247.0`, displayed as `v247.0`.
+- Current version is `248.1`, displayed as `v248.1`.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.

@@ -16,21 +16,21 @@
       {
         "environment": "development",
         "url": "http://localhost:8094/",
-        "version": "247.0",
+        "version": "248.1",
         "version_url": "http://localhost:8094/VERSION",
         "note": "Configured local static preview; the server need not be running."
       },
       {
         "environment": "preview",
         "url": "https://ec92009.github.io/WebByElie/",
-        "version": "247.0",
+        "version": "248.1",
         "version_url": "https://ec92009.github.io/WebByElie/VERSION",
         "note": "GitHub Pages phone-test preview; live parity and version are verified separately and never count as production."
       },
       {
         "environment": "production",
         "url": "https://web-by-elie.com/",
-        "version": "247.0",
+        "version": "248.1",
         "version_url": "https://web-by-elie.com/VERSION",
         "note": "Cloudflare Pages production surface; the declared source release is not a live beacon receipt."
       }
@@ -102,7 +102,7 @@
     "standards_profile_version": "elies-websites.v1",
     "standards_status": "partial",
     "standards_evidence": [
-      "v247.0 source includes English, French, and Spanish homepages, stable WST CTA IDs, public policy routes, and explicit version/cache-bust markers.",
+      "v248.1 source includes English, French, and Spanish homepages, stable WST CTA IDs, public policy routes, and explicit version/cache-bust markers.",
       "WST pilot checks cover fail-closed collection, non-blocking navigation, preview exclusion, synthetic labeling, and GPC/Do Not Track suppression.",
       "Source review found settings, a fixed bottom-right version pill, reduced-motion and focus-visible controls, mobile sticky CTA behavior, overflow safeguards, and preserved SEO/policy routes; the full live matrix is still pending."
     ],
