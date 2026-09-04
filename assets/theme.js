@@ -68,6 +68,16 @@
 
   let state = readSettings();
 
+  const versionPillVersion = settingsRoot?.dataset.siteVersion;
+  if (versionPillVersion && !document.querySelector(".version-pill")) {
+    const versionPill = document.createElement("div");
+    versionPill.className = "version-pill";
+    versionPill.dataset.versionPill = "true";
+    versionPill.textContent = versionPillVersion;
+    versionPill.setAttribute("aria-label", `Version ${versionPillVersion}`);
+    document.body.append(versionPill);
+  }
+
   if (settingsRoot && !settingsRoot.querySelector("[data-settings-panel]")) {
     const version = settingsRoot.dataset.siteVersion || "v248.0";
     settingsRoot.insertAdjacentHTML(

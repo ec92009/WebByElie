@@ -42,6 +42,14 @@ const beaconSource = readFileSync(join(root, "assets/wst-beacon.js"), "utf8");
 assert.match(beaconSource, /if \(!config\.enabled\) return;/, "beacon must fail closed before endpoint or listeners");
 assert.equal(beaconSource.includes("preventDefault"), false, "beacon must not block navigation");
 
+const themeSource = readFileSync(join(root, "assets/theme.js"), "utf8");
+assert.match(themeSource, /versionPillVersion/, "version pill must use the site settings version source");
+assert.match(themeSource, /className = "version-pill"/, "version pill must be created on the shared shell");
+const styleSource = readFileSync(join(root, "assets/styles.css"), "utf8");
+assert.match(styleSource, /\.version-pill\s*\{[\s\S]*position: fixed;/, "version pill must be fixed");
+assert.match(styleSource, /\.version-pill\s*\{[\s\S]*bottom: 18px;/, "version pill needs a bottom-right baseline");
+assert.match(styleSource, /\.version-pill\s*\{[\s\S]*pointer-events: none;/, "version pill must not block page controls");
+
 const manifest = JSON.parse(readFileSync(join(root, ".wst/site.json"), "utf8"));
 assert.equal(manifest.manifest_version, "wst.site.v1");
 assert.equal(manifest.site_id, "webbyelie");
