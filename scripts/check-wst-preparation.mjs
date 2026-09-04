@@ -43,15 +43,33 @@ assert.match(beaconSource, /if \(!config\.enabled\) return;/, "beacon must fail 
 assert.equal(beaconSource.includes("preventDefault"), false, "beacon must not block navigation");
 
 const manifest = JSON.parse(readFileSync(join(root, ".wst/site.json"), "utf8"));
-assert.deepEqual(manifest, {
-  manifest_version: "wst.site.v1",
-  site_id: "webbyelie",
-  name: "Web By Elie",
-  production_url: "https://web-by-elie.com/",
-  ownership_verified: true,
-  approval_status: "approved",
-  beacon_verified: false,
-  operational_state: "active",
-});
+assert.equal(manifest.manifest_version, "wst.site.v1");
+assert.equal(manifest.site_id, "webbyelie");
+assert.equal(manifest.name, "Web By Elie");
+assert.equal(manifest.production_url, "https://web-by-elie.com/");
+assert.equal(manifest.ownership_verified, true);
+assert.equal(manifest.approval_status, "approved");
+assert.equal(manifest.beacon_verified, false);
+assert.equal(manifest.operational_state, "active");
+assert.equal(manifest.monitorability.contract_version, "wst.monitorable.v1");
+assert.deepEqual(manifest.monitorability.route_scope, ["/", "/fr/", "/es/"]);
+assert.deepEqual(
+  [...manifest.monitorability.cta_ids].sort(),
+  expectedCtas,
+  "manifest CTA identifiers differ from the localized homepages",
+);
+assert.equal(manifest.monitorability.standards_profile, "elies-websites");
+assert.equal(manifest.monitorability.standards_profile_version, "elies-websites.v1");
+assert.ok(manifest.monitorability.standards_evidence.length);
+assert.ok(manifest.monitorability.standards_next_action);
+assert.equal(manifest.monitorability.surfaces.length, 3);
+assert.equal(
+  manifest.monitorability.surfaces.find((surface) => surface.environment === "preview").url,
+  "https://ec92009.github.io/WebByElie/",
+);
+assert.equal(
+  manifest.monitorability.surfaces.find((surface) => surface.environment === "production").url,
+  manifest.production_url,
+);
 
 console.log("WST pilot checks passed: three localized homepages, stable CTA IDs, fail-closed bootstrap, approved manifest.");
