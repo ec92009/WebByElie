@@ -108,7 +108,9 @@ Clock state: running
 | 2026-09-09 | 22:40 CEST | 22:58 CEST | 0:18 | Built and published a multilingual restaurant-menu QR demo with a language chooser, sample dish photos, and a live GitHub Pages preview route. |
 | 2026-09-09 | 23:00 CEST | 23:14 CEST | 0:10 | Refined the restaurant demo into a language-only landing screen and a QR-free menu with Starters, Entrées, and Desserts sections, then verified the live Pages route. |
 | 2026-09-09 | 23:15 CEST | 23:36 CEST | 0:18 | Added a visible language reset, numbered dishes, and Spanish companion descriptions for every menu item, then published and verified the updated Pages preview. |
+| 2026-09-09 | 23:42 CEST | 23:54 CEST | 0:10 | Simplified bilingual dish cards to bold customer copy and italic Spanish support copy, suppressed duplicate Spanish text in Spanish mode, and added a floating Back to top control. |
+| 2026-09-09 | 23:56 CEST | 23:59 CEST | 0:03 | Removed numbering from menu sections and category links so only dish numbers remain, then published and checked the Pages preview. |
 
 ## Totals
 
-Active collaboration time used: 5:06
+Active collaboration time used: 5:19
