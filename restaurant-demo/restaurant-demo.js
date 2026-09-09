@@ -15,6 +15,7 @@ const translations = {
       demo: "demo",
       language: "Language",
       changeLanguage: "Change language",
+      backToTop: "Back to top",
     },
     sectionNav: {
       label: "Choose a menu section",
@@ -46,10 +47,6 @@ const translations = {
       kicker: "Today's menu",
       title: "Choose your moment.",
       intro: "Start with the section that fits your mood. Each dish is described in your language and in Spanish for the local team.",
-      labels: {
-        customer: "Your language",
-        spanish: "Spanish",
-      },
       starters: {
         title: "Starters",
         intro: "Something to begin.",
@@ -130,6 +127,7 @@ const translations = {
       demo: "démo",
       language: "Langue",
       changeLanguage: "Changer de langue",
+      backToTop: "Retour en haut",
     },
     sectionNav: {
       label: "Choisir une section du menu",
@@ -161,10 +159,6 @@ const translations = {
       kicker: "Le menu du jour",
       title: "Choisissez votre moment.",
       intro: "Commencez par la section qui correspond à votre envie. Chaque plat est décrit dans votre langue et en espagnol pour l'équipe locale.",
-      labels: {
-        customer: "Votre langue",
-        spanish: "Espagnol",
-      },
       starters: {
         title: "Entrées",
         intro: "Pour commencer.",
@@ -245,6 +239,7 @@ const translations = {
       demo: "demo",
       language: "Idioma",
       changeLanguage: "Cambiar de idioma",
+      backToTop: "Volver arriba",
     },
     sectionNav: {
       label: "Elige una sección del menú",
@@ -275,11 +270,7 @@ const translations = {
     menu: {
       kicker: "El menú del día",
       title: "Elige tu momento.",
-      intro: "Empieza por la sección que encaje con tu ánimo. Cada plato está descrito en tu idioma y en español para el equipo local.",
-      labels: {
-        customer: "Tu idioma",
-        spanish: "Español",
-      },
+      intro: "Empieza por la sección que encaje con tu ánimo. Cada plato está descrito para ti y para el equipo local.",
       starters: {
         title: "Entrantes",
         intro: "Para empezar.",
@@ -354,6 +345,7 @@ const menuContent = document.querySelector("#menu-content");
 const footer = document.querySelector(".site-footer");
 const skipLink = document.querySelector(".skip-link");
 const languageSwitch = document.querySelector("#language-switch");
+const backToTop = document.querySelector("#back-to-top");
 
 const getCopy = (language, path) => path.split(".").reduce((value, key) => value?.[key], translations[language]);
 
@@ -372,12 +364,14 @@ const applyLanguage = (language, updateUrl = true) => {
   const text = translations[displayLanguage];
   const isMenuVisible = Boolean(selectedLanguage);
   root.lang = selectedLanguage ?? "en";
+  root.dataset.menuLanguage = selectedLanguage ?? "none";
   document.title = isMenuVisible ? text.meta.title : text.meta.gateTitle;
   document.querySelector('meta[name="description"]')?.setAttribute("content", isMenuVisible ? text.meta.description : text.meta.gateDescription);
   if (languageGate) languageGate.hidden = isMenuVisible;
   if (menuContent) menuContent.hidden = !isMenuVisible;
   if (footer) footer.hidden = !isMenuVisible;
   if (languageSwitch) languageSwitch.hidden = !isMenuVisible;
+  if (backToTop) backToTop.hidden = !isMenuVisible;
 
   document.querySelectorAll("[data-copy]").forEach((element) => {
     const value = getCopy(displayLanguage, element.dataset.copy);
@@ -417,6 +411,13 @@ languageSwitch?.addEventListener("click", () => {
   applyLanguage(null);
   window.scrollTo({ top: 0, behavior: "smooth" });
   languageCards[0]?.focus({ preventScroll: true });
+});
+
+backToTop?.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  const url = new URL(window.location.href);
+  url.hash = "";
+  window.history.replaceState({}, "", url);
 });
 
 const initialLanguage = new URLSearchParams(window.location.search).get("lang");
