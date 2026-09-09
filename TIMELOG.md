@@ -111,7 +111,8 @@ Clock state: running
 | 2026-09-09 | 23:42 CEST | 23:54 CEST | 0:10 | Simplified bilingual dish cards to bold customer copy and italic Spanish support copy, suppressed duplicate Spanish text in Spanish mode, and added a floating Back to top control. |
 | 2026-09-09 | 23:56 CEST | 23:59 CEST | 0:03 | Removed numbering from menu sections and category links so only dish numbers remain, then published and checked the Pages preview. |
 | 2026-09-10 | 00:00 CEST | 00:10 CEST | 0:10 | Added a mobile-first Casa Lumbre hero photograph with an optimized WebP source, readable gradient copy, and a PNG fallback, then prepared the phone-test preview. |
+| 2026-09-10 | 00:11 CEST | 00:15 CEST | 0:04 | Hardened the hero layer order for mobile Safari so the photo, gradient, and menu copy remain one composed hero on phone screens. |
 
 ## Totals
 
-Active collaboration time used: 5:29
+Active collaboration time used: 5:33
