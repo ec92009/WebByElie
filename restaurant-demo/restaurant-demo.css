@@ -555,21 +555,23 @@ h1 {
   gap: 0.18rem;
   max-width: 30rem;
   margin: 0;
-  color: var(--muted);
+  color: var(--ink);
   font-size: 0.92rem;
-}
-
-.description-label {
-  color: var(--green);
-  font-size: 0.66rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .dish-description-spanish {
   padding-top: 0.65rem;
   border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-style: italic;
+  font-weight: 400;
+}
+
+html[data-menu-language="es"] .dish-description-spanish {
+  display: none;
 }
 
 .demo-footer-card {
@@ -627,6 +629,30 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+}
+
+.back-to-top {
+  position: fixed;
+  z-index: 5;
+  right: clamp(1rem, 3vw, 2rem);
+  bottom: clamp(1rem, 3vw, 2rem);
+  display: grid;
+  width: 3.1rem;
+  height: 3.1rem;
+  place-items: center;
+  border: 1px solid var(--green);
+  border-radius: 50%;
+  background: var(--green-dark);
+  color: #fff;
+  cursor: pointer;
+  font: 1.45rem/1 Georgia, serif;
+  box-shadow: 0 12px 26px rgba(23, 37, 31, 0.22);
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.back-to-top:hover {
+  background: var(--green);
+  transform: translateY(-3px);
 }
 
 @media (max-width: 720px) {
