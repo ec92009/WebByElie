@@ -7,7 +7,7 @@
     <meta name="description" content="A multilingual sample restaurant menu by Web By Elie.">
     <link rel="canonical" href="https://ec92009.github.io/WebByElie/restaurant-demo/">
     <link rel="stylesheet" href="restaurant-demo.css">
-    <title>Casa Lumbre | Sample menu | Web By Elie</title>
+    <title>Casa Lumbre | Choose a language | Web By Elie</title>
   </head>
   <body>
     <a class="skip-link" href="#language-gate" data-copy="accessibility.skipGate">Skip to language selection</a>
@@ -19,13 +19,6 @@
           <span>Web By Elie</span>
           <span class="brand-tag" data-copy="nav.demo">demo</span>
         </a>
-
-        <div class="language-switcher" id="header-language-switcher" role="group" data-copy-attr="aria-label:nav.language" hidden>
-          <span class="language-label" data-copy="nav.language">Language</span>
-          <button type="button" class="language-button" data-lang="en" data-wst-cta="restaurant-demo-language-en" aria-pressed="true">EN</button>
-          <button type="button" class="language-button" data-lang="fr" data-wst-cta="restaurant-demo-language-fr" aria-pressed="false">FR</button>
-          <button type="button" class="language-button" data-lang="es" data-wst-cta="restaurant-demo-language-es" aria-pressed="false">ES</button>
-        </div>
       </div>
     </header>
 
@@ -58,148 +51,151 @@
 
       <div class="menu-content" id="menu-content" hidden>
         <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow" data-copy="hero.kicker">Sample restaurant menu</p>
-          <h1 id="hero-title">Casa Lumbre</h1>
-          <p class="hero-lede" data-copy="hero.lede">A small Mediterranean table, made for taking your time.</p>
-          <p class="demo-note">
-            <span class="note-dot" aria-hidden="true"></span>
-            <span data-copy="hero.note">Sample menu for demonstration only. Dishes and prices are placeholders.</span>
-          </p>
-          <a class="button button-primary" href="#menu" data-copy="hero.cta" data-wst-cta="restaurant-demo-menu">See the menu</a>
-        </div>
-
-        <aside class="qr-card" aria-labelledby="qr-title">
-          <div class="qr-heading">
-            <span class="qr-icon" aria-hidden="true">⌁</span>
-            <p id="qr-title" class="eyebrow" data-copy="qr.kicker">Ready for a table?</p>
+          <div class="hero-copy">
+            <p class="eyebrow" data-copy="hero.kicker">Casa Lumbre</p>
+            <h1 id="hero-title">A small table for good things.</h1>
+            <p class="hero-lede" data-copy="hero.lede">Take your time. Choose a course, settle in, and let the evening unfold.</p>
+            <p class="demo-note">
+              <span class="note-dot" aria-hidden="true"></span>
+              <span data-copy="hero.note">Sample menu for demonstration only. Dishes and prices are placeholders.</span>
+            </p>
+            <nav class="meal-nav" aria-label="Choose a section" data-copy-attr="aria-label:sectionNav.label">
+              <a class="meal-link" href="#starters" data-wst-cta="restaurant-demo-starters">
+                <span class="meal-index" aria-hidden="true">01</span>
+                <span class="meal-copy"><strong data-copy="sectionNav.starters">Starters</strong><small data-copy="sectionNav.startersHint">Begin lightly</small></span>
+                <span class="meal-arrow" aria-hidden="true">↘</span>
+              </a>
+              <a class="meal-link" href="#entrees" data-wst-cta="restaurant-demo-entrees">
+                <span class="meal-index" aria-hidden="true">02</span>
+                <span class="meal-copy"><strong data-copy="sectionNav.entrees">Entrées</strong><small data-copy="sectionNav.entreesHint">Settle in</small></span>
+                <span class="meal-arrow" aria-hidden="true">↘</span>
+              </a>
+              <a class="meal-link" href="#desserts" data-wst-cta="restaurant-demo-desserts">
+                <span class="meal-index" aria-hidden="true">03</span>
+                <span class="meal-copy"><strong data-copy="sectionNav.desserts">Desserts</strong><small data-copy="sectionNav.dessertsHint">End sweetly</small></span>
+                <span class="meal-arrow" aria-hidden="true">↘</span>
+              </a>
+            </nav>
           </div>
-          <p class="qr-label" data-copy="qr.label">Scan to open the menu</p>
-          <a class="qr-link" href="https://ec92009.github.io/WebByElie/restaurant-demo/" data-copy-attr="aria-label:qr.open" data-wst-cta="restaurant-demo-qr">
-            <img src="../assets/restaurant-demo/restaurant-menu-qr.svg" alt="QR code that opens the Casa Lumbre sample menu" data-copy-alt="qr.alt" width="784" height="784">
-          </a>
-          <p class="qr-hint" data-copy="qr.hint">The same short route can live on a coaster, card, or table sign.</p>
-          <a class="text-link" href="https://ec92009.github.io/WebByElie/restaurant-demo/" data-copy="qr.openText" data-wst-cta="restaurant-demo-open-link">Open the menu link</a>
-        </aside>
         </section>
 
         <section class="menu" id="menu" aria-labelledby="menu-title">
-        <div class="section-intro">
-          <p class="eyebrow" data-copy="menu.kicker">The menu</p>
-          <h2 id="menu-title" data-copy="menu.title">Take your time.</h2>
-          <p data-copy="menu.intro">Browse in your language, then settle on something that sounds good. This simple layout is ready for a real restaurant's dishes, prices, and details.</p>
-        </div>
+          <div class="section-intro">
+            <p class="eyebrow" data-copy="menu.kicker">Today's menu</p>
+            <h2 id="menu-title" data-copy="menu.title">Choose your moment.</h2>
+            <p data-copy="menu.intro">Start with the section that fits your mood. Each one has room for a real restaurant's dishes, prices, notes, and dietary details.</p>
+          </div>
 
-        <div class="menu-sections">
-          <section class="menu-section" aria-labelledby="starters-title">
-            <div class="menu-heading">
-              <span class="section-number" aria-hidden="true">01</span>
-              <div>
-                <h3 id="starters-title" data-copy="menu.starters.title">Starters</h3>
-                <p data-copy="menu.starters.intro">Something to begin.</p>
+          <div class="menu-sections">
+            <section class="menu-section" id="starters" aria-labelledby="starters-title">
+              <div class="menu-heading">
+                <span class="section-number" aria-hidden="true">01</span>
+                <div>
+                  <h3 id="starters-title" data-copy="menu.starters.title">Starters</h3>
+                  <p data-copy="menu.starters.intro">Something to begin.</p>
+                </div>
               </div>
-            </div>
-            <div class="dish-list">
-              <article class="dish-card dish-card-image">
-                <img src="../assets/restaurant-demo/starter-soup.png" alt="Roasted tomato and red pepper soup with basil oil" data-copy-alt="menu.starters.items.0.alt" loading="lazy" width="900" height="900">
-                <div class="dish-body">
-                  <div class="dish-topline">
-                    <h4 data-copy="menu.starters.items.0.name">Roasted tomato and pepper soup</h4>
-                    <span class="price">€8.50</span>
+              <div class="dish-list">
+                <article class="dish-card dish-card-image">
+                  <img src="../assets/restaurant-demo/starter-soup.png" alt="Roasted tomato and red pepper soup with basil oil" data-copy-alt="menu.starters.items.0.alt" loading="lazy" width="900" height="900">
+                  <div class="dish-body">
+                    <div class="dish-topline">
+                      <h4 data-copy="menu.starters.items.0.name">Roasted tomato and pepper soup</h4>
+                      <span class="price">€8.50</span>
+                    </div>
+                    <p data-copy="menu.starters.items.0.description">Basil oil and warm country bread.</p>
                   </div>
-                  <p data-copy="menu.starters.items.0.description">Basil oil and warm country bread.</p>
-                </div>
-              </article>
-              <article class="dish-card dish-card-plain">
-                <div class="dish-symbol" aria-hidden="true">02</div>
-                <div class="dish-body">
-                  <div class="dish-topline">
-                    <h4 data-copy="menu.starters.items.1.name">Marinated olives and citrus</h4>
-                    <span class="price">€6.00</span>
+                </article>
+                <article class="dish-card dish-card-plain">
+                  <div class="dish-symbol" aria-hidden="true">02</div>
+                  <div class="dish-body">
+                    <div class="dish-topline">
+                      <h4 data-copy="menu.starters.items.1.name">Marinated olives and citrus</h4>
+                      <span class="price">€6.00</span>
+                    </div>
+                    <p data-copy="menu.starters.items.1.description">Orange, fennel, and toasted almonds.</p>
                   </div>
-                  <p data-copy="menu.starters.items.1.description">Orange, fennel, and toasted almonds.</p>
-                </div>
-              </article>
-            </div>
-          </section>
+                </article>
+              </div>
+            </section>
 
-          <section class="menu-section" aria-labelledby="entrees-title">
-            <div class="menu-heading">
-              <span class="section-number" aria-hidden="true">02</span>
-              <div>
-                <h3 id="entrees-title" data-copy="menu.entrees.title">Entrées</h3>
-                <p data-copy="menu.entrees.intro">At the heart of the table.</p>
+            <section class="menu-section" id="entrees" aria-labelledby="entrees-title">
+              <div class="menu-heading">
+                <span class="section-number" aria-hidden="true">02</span>
+                <div>
+                  <h3 id="entrees-title" data-copy="menu.entrees.title">Entrées</h3>
+                  <p data-copy="menu.entrees.intro">At the heart of the table.</p>
+                </div>
               </div>
-            </div>
-            <div class="dish-list">
-              <article class="dish-card dish-card-image">
-                <img src="../assets/restaurant-demo/grilled-sea-bass.png" alt="Grilled Mediterranean sea bass with lemon and herbs" data-copy-alt="menu.entrees.items.0.alt" loading="lazy" width="900" height="900">
-                <div class="dish-body">
-                  <div class="dish-topline">
-                    <h4 data-copy="menu.entrees.items.0.name">Grilled sea bass</h4>
-                    <span class="price">€19.50</span>
+              <div class="dish-list">
+                <article class="dish-card dish-card-image">
+                  <img src="../assets/restaurant-demo/grilled-sea-bass.png" alt="Grilled Mediterranean sea bass with lemon and herbs" data-copy-alt="menu.entrees.items.0.alt" loading="lazy" width="900" height="900">
+                  <div class="dish-body">
+                    <div class="dish-topline">
+                      <h4 data-copy="menu.entrees.items.0.name">Grilled sea bass</h4>
+                      <span class="price">€19.50</span>
+                    </div>
+                    <p data-copy="menu.entrees.items.0.description">Lemon, herbs, and roasted potatoes.</p>
                   </div>
-                  <p data-copy="menu.entrees.items.0.description">Lemon, herbs, and roasted potatoes.</p>
-                </div>
-              </article>
-              <article class="dish-card dish-card-plain">
-                <div class="dish-symbol" aria-hidden="true">04</div>
-                <div class="dish-body">
-                  <div class="dish-topline">
-                    <h4 data-copy="menu.entrees.items.1.name">Charred vegetables and chickpeas</h4>
-                    <span class="price">€15.00</span>
+                </article>
+                <article class="dish-card dish-card-plain">
+                  <div class="dish-symbol" aria-hidden="true">04</div>
+                  <div class="dish-body">
+                    <div class="dish-topline">
+                      <h4 data-copy="menu.entrees.items.1.name">Charred vegetables and chickpeas</h4>
+                      <span class="price">€15.00</span>
+                    </div>
+                    <p data-copy="menu.entrees.items.1.description">Smoked paprika and green herb dressing.</p>
                   </div>
-                  <p data-copy="menu.entrees.items.1.description">Smoked paprika and green herb dressing.</p>
-                </div>
-              </article>
-            </div>
-          </section>
+                </article>
+              </div>
+            </section>
 
-          <section class="menu-section" aria-labelledby="desserts-title">
-            <div class="menu-heading">
-              <span class="section-number" aria-hidden="true">03</span>
-              <div>
-                <h3 id="desserts-title" data-copy="menu.desserts.title">Desserts</h3>
-                <p data-copy="menu.desserts.intro">A sweet ending.</p>
+            <section class="menu-section" id="desserts" aria-labelledby="desserts-title">
+              <div class="menu-heading">
+                <span class="section-number" aria-hidden="true">03</span>
+                <div>
+                  <h3 id="desserts-title" data-copy="menu.desserts.title">Desserts</h3>
+                  <p data-copy="menu.desserts.intro">A sweet ending.</p>
+                </div>
               </div>
-            </div>
-            <div class="dish-list">
-              <article class="dish-card dish-card-image">
-                <img src="../assets/restaurant-demo/olive-oil-cake.png" alt="Olive oil cake with mascarpone and berries" data-copy-alt="menu.desserts.items.0.alt" loading="lazy" width="900" height="900">
-                <div class="dish-body">
-                  <div class="dish-topline">
-                    <h4 data-copy="menu.desserts.items.0.name">Olive oil cake</h4>
-                    <span class="price">€7.50</span>
+              <div class="dish-list">
+                <article class="dish-card dish-card-image">
+                  <img src="../assets/restaurant-demo/olive-oil-cake.png" alt="Olive oil cake with mascarpone and berries" data-copy-alt="menu.desserts.items.0.alt" loading="lazy" width="900" height="900">
+                  <div class="dish-body">
+                    <div class="dish-topline">
+                      <h4 data-copy="menu.desserts.items.0.name">Olive oil cake</h4>
+                      <span class="price">€7.50</span>
+                    </div>
+                    <p data-copy="menu.desserts.items.0.description">Mascarpone and summer berries.</p>
                   </div>
-                  <p data-copy="menu.desserts.items.0.description">Mascarpone and summer berries.</p>
-                </div>
-              </article>
-              <article class="dish-card dish-card-plain">
-                <div class="dish-symbol" aria-hidden="true">06</div>
-                <div class="dish-body">
-                  <div class="dish-topline">
-                    <h4 data-copy="menu.desserts.items.1.name">Dark chocolate crema</h4>
-                    <span class="price">€7.50</span>
+                </article>
+                <article class="dish-card dish-card-plain">
+                  <div class="dish-symbol" aria-hidden="true">06</div>
+                  <div class="dish-body">
+                    <div class="dish-topline">
+                      <h4 data-copy="menu.desserts.items.1.name">Dark chocolate crema</h4>
+                      <span class="price">€7.50</span>
+                    </div>
+                    <p data-copy="menu.desserts.items.1.description">Sea salt and almond brittle.</p>
                   </div>
-                  <p data-copy="menu.desserts.items.1.description">Sea salt and almond brittle.</p>
-                </div>
-              </article>
-            </div>
-          </section>
-        </div>
+                </article>
+              </div>
+            </section>
+          </div>
         </section>
 
         <section class="demo-footer-card" aria-labelledby="demo-title">
-        <div>
-          <p class="eyebrow" data-copy="demo.kicker">A Web By Elie sample</p>
-          <h2 id="demo-title" data-copy="demo.title">Ready for a real menu.</h2>
-        </div>
-        <p data-copy="demo.body">A real version would use the owner's menu, prices, language choices, photographs, hours, location, and reservation link. Ordering and reservations are not connected in this demo.</p>
+          <div>
+            <p class="eyebrow" data-copy="demo.kicker">A Web By Elie sample</p>
+            <h2 id="demo-title" data-copy="demo.title">Ready for a real menu.</h2>
+          </div>
+          <p data-copy="demo.body">A real version would use the owner's menu, prices, language choices, photographs, hours, location, and reservation link. Ordering and reservations are not connected in this demo.</p>
         </section>
       </div>
     </main>
 
-    <footer class="site-footer">
+    <footer class="site-footer" hidden>
       <div class="footer-inner">
         <p><span data-copy="footer.demo">Demo menu by</span> <a href="../">Web By Elie</a></p>
         <nav aria-label="Policies">
