@@ -14,6 +14,7 @@ const translations = {
       home: "Return to Web By Elie",
       demo: "demo",
       language: "Language",
+      changeLanguage: "Change language",
     },
     sectionNav: {
       label: "Choose a menu section",
@@ -44,7 +45,11 @@ const translations = {
     menu: {
       kicker: "Today's menu",
       title: "Choose your moment.",
-      intro: "Start with the section that fits your mood. Each one has room for a real restaurant's dishes, prices, notes, and dietary details.",
+      intro: "Start with the section that fits your mood. Each dish is described in your language and in Spanish for the local team.",
+      labels: {
+        customer: "Your language",
+        spanish: "Spanish",
+      },
       starters: {
         title: "Starters",
         intro: "Something to begin.",
@@ -52,11 +57,13 @@ const translations = {
           {
             name: "Roasted tomato and pepper soup",
             description: "Basil oil and warm country bread.",
+            spanishDescription: "Aceite de albahaca y pan rústico caliente.",
             alt: "Roasted tomato and red pepper soup with basil oil",
           },
           {
             name: "Marinated olives and citrus",
             description: "Orange, fennel, and toasted almonds.",
+            spanishDescription: "Naranja, hinojo y almendras tostadas.",
           },
         ],
       },
@@ -67,11 +74,13 @@ const translations = {
           {
             name: "Grilled sea bass",
             description: "Lemon, herbs, and roasted potatoes.",
+            spanishDescription: "Limón, hierbas y patatas asadas.",
             alt: "Grilled Mediterranean sea bass with lemon and herbs",
           },
           {
             name: "Charred vegetables and chickpeas",
             description: "Smoked paprika and green herb dressing.",
+            spanishDescription: "Pimentón ahumado y aliño de hierbas verdes.",
           },
         ],
       },
@@ -82,11 +91,13 @@ const translations = {
           {
             name: "Olive oil cake",
             description: "Mascarpone and summer berries.",
+            spanishDescription: "Mascarpone y frutos rojos de temporada.",
             alt: "Olive oil cake with mascarpone and berries",
           },
           {
             name: "Dark chocolate crema",
             description: "Sea salt and almond brittle.",
+            spanishDescription: "Sal marina y almendra crujiente.",
           },
         ],
       },
@@ -118,6 +129,7 @@ const translations = {
       home: "Retour à Web By Elie",
       demo: "démo",
       language: "Langue",
+      changeLanguage: "Changer de langue",
     },
     sectionNav: {
       label: "Choisir une section du menu",
@@ -148,7 +160,11 @@ const translations = {
     menu: {
       kicker: "Le menu du jour",
       title: "Choisissez votre moment.",
-      intro: "Commencez par la section qui correspond à votre envie. Chacune peut accueillir les plats, les prix, les notes et les informations allergènes d'un vrai restaurant.",
+      intro: "Commencez par la section qui correspond à votre envie. Chaque plat est décrit dans votre langue et en espagnol pour l'équipe locale.",
+      labels: {
+        customer: "Votre langue",
+        spanish: "Espagnol",
+      },
       starters: {
         title: "Entrées",
         intro: "Pour commencer.",
@@ -156,11 +172,13 @@ const translations = {
           {
             name: "Soupe de tomates et poivrons rôtis",
             description: "Huile au basilic et pain de campagne chaud.",
+            spanishDescription: "Aceite de albahaca y pan rústico caliente.",
             alt: "Soupe de tomates et poivrons rouges rôtis avec huile au basilic",
           },
           {
             name: "Olives marinées aux agrumes",
             description: "Orange, fenouil et amandes grillées.",
+            spanishDescription: "Naranja, hinojo y almendras tostadas.",
           },
         ],
       },
@@ -171,11 +189,13 @@ const translations = {
           {
             name: "Bar grillé",
             description: "Citron, herbes et pommes de terre rôties.",
+            spanishDescription: "Limón, hierbas y patatas asadas.",
             alt: "Bar méditerranéen grillé avec citron et herbes",
           },
           {
             name: "Légumes grillés et pois chiches",
             description: "Paprika fumé et sauce aux herbes fraîches.",
+            spanishDescription: "Pimentón ahumado y aliño de hierbas verdes.",
           },
         ],
       },
@@ -186,11 +206,13 @@ const translations = {
           {
             name: "Gâteau à l'huile d'olive",
             description: "Mascarpone et fruits rouges de saison.",
+            spanishDescription: "Mascarpone y frutos rojos de temporada.",
             alt: "Gâteau à l'huile d'olive avec mascarpone et fruits rouges",
           },
           {
             name: "Crème au chocolat noir",
             description: "Fleur de sel et éclats d'amande.",
+            spanishDescription: "Sal marina y almendra crujiente.",
           },
         ],
       },
@@ -222,6 +244,7 @@ const translations = {
       home: "Volver a Web By Elie",
       demo: "demo",
       language: "Idioma",
+      changeLanguage: "Cambiar de idioma",
     },
     sectionNav: {
       label: "Elige una sección del menú",
@@ -252,7 +275,11 @@ const translations = {
     menu: {
       kicker: "El menú del día",
       title: "Elige tu momento.",
-      intro: "Empieza por la sección que encaje con tu ánimo. Cada una está lista para los platos, precios, notas e información de alérgenos de un restaurante real.",
+      intro: "Empieza por la sección que encaje con tu ánimo. Cada plato está descrito en tu idioma y en español para el equipo local.",
+      labels: {
+        customer: "Tu idioma",
+        spanish: "Español",
+      },
       starters: {
         title: "Entrantes",
         intro: "Para empezar.",
@@ -260,11 +287,13 @@ const translations = {
           {
             name: "Sopa de tomate y pimiento asados",
             description: "Aceite de albahaca y pan rústico caliente.",
+            spanishDescription: "Aceite de albahaca y pan rústico caliente.",
             alt: "Sopa de tomate y pimiento rojo asados con aceite de albahaca",
           },
           {
             name: "Aceitunas marinadas y cítricos",
             description: "Naranja, hinojo y almendras tostadas.",
+            spanishDescription: "Naranja, hinojo y almendras tostadas.",
           },
         ],
       },
@@ -275,11 +304,13 @@ const translations = {
           {
             name: "Lubina a la parrilla",
             description: "Limón, hierbas y patatas asadas.",
+            spanishDescription: "Limón, hierbas y patatas asadas.",
             alt: "Lubina mediterránea a la parrilla con limón y hierbas",
           },
           {
             name: "Verduras asadas y garbanzos",
             description: "Pimentón ahumado y aliño de hierbas verdes.",
+            spanishDescription: "Pimentón ahumado y aliño de hierbas verdes.",
           },
         ],
       },
@@ -290,11 +321,13 @@ const translations = {
           {
             name: "Bizcocho de aceite de oliva",
             description: "Mascarpone y frutos rojos de temporada.",
+            spanishDescription: "Mascarpone y frutos rojos de temporada.",
             alt: "Bizcocho de aceite de oliva con mascarpone y frutos rojos",
           },
           {
             name: "Crema de chocolate negro",
             description: "Sal marina y almendra crujiente.",
+            spanishDescription: "Sal marina y almendra crujiente.",
           },
         ],
       },
@@ -320,6 +353,7 @@ const languageGate = document.querySelector("#language-gate");
 const menuContent = document.querySelector("#menu-content");
 const footer = document.querySelector(".site-footer");
 const skipLink = document.querySelector(".skip-link");
+const languageSwitch = document.querySelector("#language-switch");
 
 const getCopy = (language, path) => path.split(".").reduce((value, key) => value?.[key], translations[language]);
 
@@ -343,6 +377,7 @@ const applyLanguage = (language, updateUrl = true) => {
   if (languageGate) languageGate.hidden = isMenuVisible;
   if (menuContent) menuContent.hidden = !isMenuVisible;
   if (footer) footer.hidden = !isMenuVisible;
+  if (languageSwitch) languageSwitch.hidden = !isMenuVisible;
 
   document.querySelectorAll("[data-copy]").forEach((element) => {
     const value = getCopy(displayLanguage, element.dataset.copy);
@@ -366,13 +401,22 @@ const applyLanguage = (language, updateUrl = true) => {
   if (updateUrl) {
     const url = new URL(window.location.href);
     if (selectedLanguage) url.searchParams.set("lang", selectedLanguage);
-    else url.searchParams.delete("lang");
+    else {
+      url.searchParams.delete("lang");
+      url.hash = "";
+    }
     window.history.replaceState({}, "", url);
   }
 };
 
 languageCards.forEach((card) => {
   card.addEventListener("click", () => applyLanguage(card.dataset.lang));
+});
+
+languageSwitch?.addEventListener("click", () => {
+  applyLanguage(null);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  languageCards[0]?.focus({ preventScroll: true });
 });
 
 const initialLanguage = new URLSearchParams(window.location.search).get("lang");

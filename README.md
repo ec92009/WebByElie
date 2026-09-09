@@ -33,6 +33,8 @@ python3 -m http.server 8094
 
 Then open `http://localhost:8094/`.
 
+The multilingual restaurant QR demo is at `http://localhost:8094/restaurant-demo/`. Its QR artwork opens the matching GitHub Pages preview route: `https://ec92009.github.io/WebByElie/restaurant-demo/`. Visitors choose a language first; the menu then offers a visible language reset, numbered dishes, and customer-language plus Spanish descriptions.
+
 ## Verification
 
 ```sh
@@ -47,6 +49,8 @@ This read-only source check validates public local links and fragments, generate
 - `index.html`: promoted Studio Clean homepage.
 - `fr/index.html`, `es/index.html`: static localized homepages with hreflang metadata.
 - `case-studies/golden-years/`: approved Golden Years Tax Strategy case study with current public-site screenshots.
+- `restaurant-demo/`: noindex multilingual restaurant-menu sample with three menu sections, generated dish photos, and a QR route for table-card testing.
+- `assets/restaurant-demo/`: sample dish images and QR artwork used by the restaurant demo.
 - `assets/styles.css`: site styling.
 - `assets/i18n.js`: English, French, and Spanish site copy.
 - `assets/theme.js`: settings popover, language switching, day/night mode, glass controls, reveal effects, mobile sticky CTA, and the fixed version pill sourced from the same release marker as About.
@@ -81,11 +85,9 @@ This read-only source check validates public local links and fragments, generate
 - Follow `~/Dev/.SOPs/CHOOSER_WORKFLOW_SOP.md` when using temporary site/look choosers.
 - Public-facing changes should be committed and pushed once complete unless the user asks otherwise.
 
-- This branch is the GitHub Pages phone-test preview for WST. It emits `environment=preview` events so page views and marked CTA presses can be watched in the WST diagnostic panel without changing production totals. Keep this branch separate from the Cloudflare production-ready simpler branch.
-
 ## Launch Notes
 
-- The WST pilot counts aggregate homepage page views and marked CTA presses by default in a cookieless, sessionless mode. It never creates a visitor/session identifier, so Visits and session attribution are unavailable. The footer notice discloses the measurement; Global Privacy Control and Do Not Track suppress collection. Previews and noncanonical hosts stay disabled. `?wst_test=1` marks owner verification as synthetic, excluded from business totals.
+- The WST pilot counts aggregate homepage page views and marked CTA presses by default in a cookieless, sessionless mode. It never creates a visitor/session identifier, so Visits and session attribution are unavailable. The footer notice discloses the measurement; Global Privacy Control and Do Not Track suppress collection. Cloudflare is the canonical production surface; GitHub Pages remains a separate phone-test preview and stays outside production totals. `?wst_test=1` marks owner verification as synthetic, excluded from business totals.
 - The collector endpoint is `https://web-signals-collector.ec92009.workers.dev/v1/events`. Contact clicks have no delivery receipt and must not be reported as accepted conversions.
 - Public policy copy describes the aggregate measurement, sessionless processing, browser privacy signals and retention. The public `.wst/site.json` declaration is approved; live receipt verification is recorded separately in the WST registry/ticket.
 
