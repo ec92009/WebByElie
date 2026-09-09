@@ -53,12 +53,14 @@ const translations = {
         items: [
           {
             name: "Roasted tomato and pepper soup",
+            spanishName: "Sopa de tomate y pimiento asados",
             description: "Basil oil and warm country bread.",
             spanishDescription: "Aceite de albahaca y pan rústico caliente.",
             alt: "Roasted tomato and red pepper soup with basil oil",
           },
           {
             name: "Marinated olives and citrus",
+            spanishName: "Aceitunas marinadas y cítricos",
             description: "Orange, fennel, and toasted almonds.",
             spanishDescription: "Naranja, hinojo y almendras tostadas.",
           },
@@ -70,12 +72,14 @@ const translations = {
         items: [
           {
             name: "Grilled sea bass",
+            spanishName: "Lubina a la parrilla",
             description: "Lemon, herbs, and roasted potatoes.",
             spanishDescription: "Limón, hierbas y patatas asadas.",
             alt: "Grilled Mediterranean sea bass with lemon and herbs",
           },
           {
             name: "Charred vegetables and chickpeas",
+            spanishName: "Verduras asadas y garbanzos",
             description: "Smoked paprika and green herb dressing.",
             spanishDescription: "Pimentón ahumado y aliño de hierbas verdes.",
           },
@@ -87,12 +91,14 @@ const translations = {
         items: [
           {
             name: "Olive oil cake",
+            spanishName: "Bizcocho de aceite de oliva",
             description: "Mascarpone and summer berries.",
             spanishDescription: "Mascarpone y frutos rojos de temporada.",
             alt: "Olive oil cake with mascarpone and berries",
           },
           {
             name: "Dark chocolate crema",
+            spanishName: "Crema de chocolate negro",
             description: "Sea salt and almond brittle.",
             spanishDescription: "Sal marina y almendra crujiente.",
           },
@@ -165,12 +171,14 @@ const translations = {
         items: [
           {
             name: "Soupe de tomates et poivrons rôtis",
+            spanishName: "Sopa de tomate y pimiento asados",
             description: "Huile au basilic et pain de campagne chaud.",
             spanishDescription: "Aceite de albahaca y pan rústico caliente.",
             alt: "Soupe de tomates et poivrons rouges rôtis avec huile au basilic",
           },
           {
             name: "Olives marinées aux agrumes",
+            spanishName: "Aceitunas marinadas y cítricos",
             description: "Orange, fenouil et amandes grillées.",
             spanishDescription: "Naranja, hinojo y almendras tostadas.",
           },
@@ -182,12 +190,14 @@ const translations = {
         items: [
           {
             name: "Bar grillé",
+            spanishName: "Lubina a la parrilla",
             description: "Citron, herbes et pommes de terre rôties.",
             spanishDescription: "Limón, hierbas y patatas asadas.",
             alt: "Bar méditerranéen grillé avec citron et herbes",
           },
           {
             name: "Légumes grillés et pois chiches",
+            spanishName: "Verduras asadas y garbanzos",
             description: "Paprika fumé et sauce aux herbes fraîches.",
             spanishDescription: "Pimentón ahumado y aliño de hierbas verdes.",
           },
@@ -199,12 +209,14 @@ const translations = {
         items: [
           {
             name: "Gâteau à l'huile d'olive",
+            spanishName: "Bizcocho de aceite de oliva",
             description: "Mascarpone et fruits rouges de saison.",
             spanishDescription: "Mascarpone y frutos rojos de temporada.",
             alt: "Gâteau à l'huile d'olive avec mascarpone et fruits rouges",
           },
           {
             name: "Crème au chocolat noir",
+            spanishName: "Crema de chocolate negro",
             description: "Fleur de sel et éclats d'amande.",
             spanishDescription: "Sal marina y almendra crujiente.",
           },
@@ -277,12 +289,14 @@ const translations = {
         items: [
           {
             name: "Sopa de tomate y pimiento asados",
+            spanishName: "Sopa de tomate y pimiento asados",
             description: "Aceite de albahaca y pan rústico caliente.",
             spanishDescription: "Aceite de albahaca y pan rústico caliente.",
             alt: "Sopa de tomate y pimiento rojo asados con aceite de albahaca",
           },
           {
             name: "Aceitunas marinadas y cítricos",
+            spanishName: "Aceitunas marinadas y cítricos",
             description: "Naranja, hinojo y almendras tostadas.",
             spanishDescription: "Naranja, hinojo y almendras tostadas.",
           },
@@ -294,12 +308,14 @@ const translations = {
         items: [
           {
             name: "Lubina a la parrilla",
+            spanishName: "Lubina a la parrilla",
             description: "Limón, hierbas y patatas asadas.",
             spanishDescription: "Limón, hierbas y patatas asadas.",
             alt: "Lubina mediterránea a la parrilla con limón y hierbas",
           },
           {
             name: "Verduras asadas y garbanzos",
+            spanishName: "Verduras asadas y garbanzos",
             description: "Pimentón ahumado y aliño de hierbas verdes.",
             spanishDescription: "Pimentón ahumado y aliño de hierbas verdes.",
           },
@@ -311,12 +327,14 @@ const translations = {
         items: [
           {
             name: "Bizcocho de aceite de oliva",
+            spanishName: "Bizcocho de aceite de oliva",
             description: "Mascarpone y frutos rojos de temporada.",
             spanishDescription: "Mascarpone y frutos rojos de temporada.",
             alt: "Bizcocho de aceite de oliva con mascarpone y frutos rojos",
           },
           {
             name: "Crema de chocolate negro",
+            spanishName: "Crema de chocolate negro",
             description: "Sal marina y almendra crujiente.",
             spanishDescription: "Sal marina y almendra crujiente.",
           },
