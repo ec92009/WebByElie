@@ -128,6 +128,26 @@ a:focus-visible {
   letter-spacing: 0.1em;
 }
 
+.language-switch {
+  padding: 0.65rem 0.95rem;
+  border: 1px solid var(--green);
+  border-radius: 99px;
+  background: transparent;
+  color: var(--green-dark);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.language-switch:hover {
+  background: var(--green);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
 .language-gate {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(18rem, 28rem);
@@ -481,11 +501,18 @@ h1 {
     var(--surface-warm);
 }
 
-.dish-symbol {
-  color: rgba(33, 90, 75, 0.3);
-  font-family: Georgia, serif;
-  font-size: clamp(3rem, 8vw, 5rem);
-  line-height: 0.8;
+.dish-number {
+  display: grid;
+  width: 2.15rem;
+  height: 2.15rem;
+  place-items: center;
+  margin-bottom: 0.9rem;
+  border-radius: 50%;
+  background: var(--green);
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
 }
 
 .dish-body {
@@ -517,11 +544,32 @@ h1 {
   white-space: nowrap;
 }
 
-.dish-body p {
+.dish-descriptions {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.9rem;
+}
+
+.dish-description {
+  display: grid;
+  gap: 0.18rem;
   max-width: 30rem;
-  margin-bottom: 0;
+  margin: 0;
   color: var(--muted);
   font-size: 0.92rem;
+}
+
+.description-label {
+  color: var(--green);
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.dish-description-spanish {
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--line);
 }
 
 .demo-footer-card {
@@ -585,6 +633,10 @@ h1 {
   .header-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .language-switch {
+    align-self: stretch;
   }
 
   .hero {
