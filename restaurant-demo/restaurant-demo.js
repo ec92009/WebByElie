@@ -15,6 +15,15 @@ const translations = {
       demo: "demo",
       language: "Language",
     },
+    sectionNav: {
+      label: "Choose a menu section",
+      starters: "Starters",
+      startersHint: "Begin lightly",
+      entrees: "Entrées",
+      entreesHint: "Settle in",
+      desserts: "Desserts",
+      dessertsHint: "End sweetly",
+    },
     gate: {
       title: "Choose your language",
       lede: "Start with the language you would like to use for the menu.",
@@ -27,23 +36,15 @@ const translations = {
       },
     },
     hero: {
-      kicker: "Sample restaurant menu",
-      lede: "A small Mediterranean table, made for taking your time.",
+      kicker: "Casa Lumbre",
+      lede: "Take your time. Choose a section, settle in, and let the evening unfold.",
       note: "Sample menu for demonstration only. Dishes and prices are placeholders.",
       cta: "See the menu",
     },
-    qr: {
-      kicker: "Ready for a table?",
-      label: "Scan to open the menu",
-      hint: "The same short route can live on a coaster, card, or table sign.",
-      open: "Open the Casa Lumbre menu",
-      openText: "Open the menu link",
-      alt: "QR code that opens the Casa Lumbre sample menu",
-    },
     menu: {
-      kicker: "The menu",
-      title: "Take your time.",
-      intro: "Browse in your language, then settle on something that sounds good. This simple layout is ready for a real restaurant's dishes, prices, and details.",
+      kicker: "Today's menu",
+      title: "Choose your moment.",
+      intro: "Start with the section that fits your mood. Each one has room for a real restaurant's dishes, prices, notes, and dietary details.",
       starters: {
         title: "Starters",
         intro: "Something to begin.",
@@ -118,6 +119,15 @@ const translations = {
       demo: "démo",
       language: "Langue",
     },
+    sectionNav: {
+      label: "Choisir une section du menu",
+      starters: "Entrées",
+      startersHint: "Commencer léger",
+      entrees: "Plats",
+      entreesHint: "S'installer",
+      desserts: "Desserts",
+      dessertsHint: "Finir en douceur",
+    },
     gate: {
       title: "Choisissez votre langue",
       lede: "Commencez par choisir la langue du menu.",
@@ -130,23 +140,15 @@ const translations = {
       },
     },
     hero: {
-      kicker: "Exemple de menu de restaurant",
-      lede: "Une petite table méditerranéenne, faite pour prendre son temps.",
+      kicker: "Casa Lumbre",
+      lede: "Prenez votre temps. Choisissez une section, installez-vous et laissez la soirée se dérouler.",
       note: "Menu présenté à titre d'exemple. Les plats et les prix sont fictifs.",
       cta: "Voir le menu",
     },
-    qr: {
-      kicker: "Prêt pour la table ?",
-      label: "Scannez pour ouvrir le menu",
-      hint: "La même adresse courte peut vivre sur un dessous de verre, une carte ou un chevalet de table.",
-      open: "Ouvrir le menu Casa Lumbre",
-      openText: "Ouvrir le lien du menu",
-      alt: "Code QR ouvrant le menu exemple de Casa Lumbre",
-    },
     menu: {
-      kicker: "Le menu",
-      title: "Prenez votre temps.",
-      intro: "Parcourez le menu dans votre langue, puis choisissez ce qui vous fait envie. Cette présentation simple est prête pour les plats, les prix et les informations d'un vrai restaurant.",
+      kicker: "Le menu du jour",
+      title: "Choisissez votre moment.",
+      intro: "Commencez par la section qui correspond à votre envie. Chacune peut accueillir les plats, les prix, les notes et les informations allergènes d'un vrai restaurant.",
       starters: {
         title: "Entrées",
         intro: "Pour commencer.",
@@ -221,6 +223,15 @@ const translations = {
       demo: "demo",
       language: "Idioma",
     },
+    sectionNav: {
+      label: "Elige una sección del menú",
+      starters: "Entrantes",
+      startersHint: "Empieza ligero",
+      entrees: "Platos principales",
+      entreesHint: "Acomódate",
+      desserts: "Postres",
+      dessertsHint: "Termina dulce",
+    },
     gate: {
       title: "Elige tu idioma",
       lede: "Empieza por elegir el idioma que quieres usar para el menú.",
@@ -233,23 +244,15 @@ const translations = {
       },
     },
     hero: {
-      kicker: "Menú de restaurante de muestra",
-      lede: "Una pequeña mesa mediterránea, pensada para disfrutar sin prisa.",
+      kicker: "Casa Lumbre",
+      lede: "Tómate tu tiempo. Elige una sección, acomódate y deja que la velada fluya.",
       note: "Menú de muestra para demostración. Los platos y precios son provisionales.",
       cta: "Ver el menú",
     },
-    qr: {
-      kicker: "¿Listo para la mesa?",
-      label: "Escanea para abrir el menú",
-      hint: "La misma dirección corta puede ir en un posavasos, una tarjeta o un soporte de mesa.",
-      open: "Abrir el menú de Casa Lumbre",
-      openText: "Abrir el enlace del menú",
-      alt: "Código QR que abre el menú de muestra de Casa Lumbre",
-    },
     menu: {
-      kicker: "El menú",
-      title: "Tómate tu tiempo.",
-      intro: "Consulta el menú en tu idioma y elige lo que más te apetezca. Este diseño sencillo está listo para los platos, precios y detalles de un restaurante real.",
+      kicker: "El menú del día",
+      title: "Elige tu momento.",
+      intro: "Empieza por la sección que encaje con tu ánimo. Cada una está lista para los platos, precios, notas e información de alérgenos de un restaurante real.",
       starters: {
         title: "Entrantes",
         intro: "Para empezar.",
@@ -312,11 +315,10 @@ const translations = {
 
 const supportedLanguages = Object.keys(translations);
 const root = document.documentElement;
-const languageButtons = [...document.querySelectorAll(".language-button")];
 const languageCards = [...document.querySelectorAll(".language-card")];
 const languageGate = document.querySelector("#language-gate");
 const menuContent = document.querySelector("#menu-content");
-const headerLanguageSwitcher = document.querySelector("#header-language-switcher");
+const footer = document.querySelector(".site-footer");
 const skipLink = document.querySelector(".skip-link");
 
 const getCopy = (language, path) => path.split(".").reduce((value, key) => value?.[key], translations[language]);
@@ -340,7 +342,7 @@ const applyLanguage = (language, updateUrl = true) => {
   document.querySelector('meta[name="description"]')?.setAttribute("content", isMenuVisible ? text.meta.description : text.meta.gateDescription);
   if (languageGate) languageGate.hidden = isMenuVisible;
   if (menuContent) menuContent.hidden = !isMenuVisible;
-  if (headerLanguageSwitcher) headerLanguageSwitcher.hidden = !isMenuVisible;
+  if (footer) footer.hidden = !isMenuVisible;
 
   document.querySelectorAll("[data-copy]").forEach((element) => {
     const value = getCopy(displayLanguage, element.dataset.copy);
@@ -361,10 +363,6 @@ const applyLanguage = (language, updateUrl = true) => {
     skipLink.textContent = isMenuVisible ? text.accessibility.skip : text.accessibility.skipGate;
   }
 
-  languageButtons.forEach((button) => {
-    button.setAttribute("aria-pressed", String(button.dataset.lang === selectedLanguage));
-  });
-
   if (updateUrl) {
     const url = new URL(window.location.href);
     if (selectedLanguage) url.searchParams.set("lang", selectedLanguage);
@@ -372,10 +370,6 @@ const applyLanguage = (language, updateUrl = true) => {
     window.history.replaceState({}, "", url);
   }
 };
-
-languageButtons.forEach((button) => {
-  button.addEventListener("click", () => applyLanguage(button.dataset.lang));
-});
 
 languageCards.forEach((card) => {
   card.addEventListener("click", () => applyLanguage(card.dataset.lang));
