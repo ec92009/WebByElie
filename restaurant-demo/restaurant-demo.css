@@ -317,7 +317,7 @@ h1 {
 
 .meal-link {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 0.8rem;
   align-items: center;
   min-height: 5.8rem;
@@ -333,19 +333,6 @@ h1 {
   border-color: var(--green);
   box-shadow: 0 12px 28px rgba(23, 37, 31, 0.1);
   transform: translateY(-3px);
-}
-
-.meal-index {
-  display: grid;
-  width: 2.25rem;
-  height: 2.25rem;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--green);
-  color: #fff;
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
 }
 
 .meal-copy {
@@ -436,20 +423,6 @@ h1 {
   align-items: flex-start;
   gap: 1rem;
   margin-bottom: 1.25rem;
-}
-
-.section-number {
-  display: grid;
-  width: 2.7rem;
-  height: 2.7rem;
-  flex: 0 0 auto;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--green);
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
 }
 
 .menu-heading h3 {
