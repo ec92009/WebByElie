@@ -106,7 +106,8 @@ Clock state: running
 | 2026-09-04 | 15:03 CEST | 15:18 CEST | 0:15 | Implemented the isolated WST-16 simpler aggregate mode: default-on sessionless page-view/CTA counting, quiet footer disclosure, privacy-policy alignment, and desktop/mobile checks; public deployment remains unchanged pending review. |
 | 2026-09-04 | 15:48 CEST | 15:52 CEST | 0:04 | Authorized the WST-16 simpler mode for Cloudflare production and prepared the versioned v247.0 release while keeping GitHub Pages as the phone-test preview. |
 | 2026-09-09 | 22:40 CEST | 22:58 CEST | 0:18 | Built and published a multilingual restaurant-menu QR demo with a language chooser, sample dish photos, and a live GitHub Pages preview route. |
+| 2026-09-09 | 23:00 CEST | 23:14 CEST | 0:10 | Refined the restaurant demo into a language-only landing screen and a QR-free menu with Starters, Entrées, and Desserts sections, then verified the live Pages route. |
 
 ## Totals
 
-Active collaboration time used: 4:38
+Active collaboration time used: 4:48
