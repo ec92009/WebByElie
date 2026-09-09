@@ -11,7 +11,7 @@ const rootFiles = new Set(["VERSION", "robots.txt", "sitemap.xml", "llms.txt", "
 for (const entry of readdirSync(root, { withFileTypes: true })) {
   if (entry.isFile() && (entry.name.endsWith(".html") || rootFiles.has(entry.name))) cpSync(join(root, entry.name), join(output, entry.name));
 }
-for (const directory of ["assets", "fr", "es", "services", "case-studies", "privacy", "terms", "data-deletion"]) {
+for (const directory of ["assets", "fr", "es", "services", "case-studies", "privacy", "terms", "data-deletion", "restaurant-demo"]) {
   cpSync(join(root, directory), join(output, directory), { recursive: true });
 }
 mkdirSync(join(output, ".wst"));

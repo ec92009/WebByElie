@@ -33,6 +33,8 @@ python3 -m http.server 8094
 
 Then open `http://localhost:8094/`.
 
+The multilingual restaurant QR demo is at `http://localhost:8094/restaurant-demo/`. Its QR artwork opens the matching GitHub Pages preview route: `https://ec92009.github.io/WebByElie/restaurant-demo/`.
+
 ## Verification
 
 ```sh
@@ -47,6 +49,8 @@ This read-only source check validates public local links and fragments, generate
 - `index.html`: promoted Studio Clean homepage.
 - `fr/index.html`, `es/index.html`: static localized homepages with hreflang metadata.
 - `case-studies/golden-years/`: approved Golden Years Tax Strategy case study with current public-site screenshots.
+- `restaurant-demo/`: noindex multilingual restaurant-menu sample with three menu sections, generated dish photos, and a QR route for table-card testing.
+- `assets/restaurant-demo/`: sample dish images and QR artwork used by the restaurant demo.
 - `assets/styles.css`: site styling.
 - `assets/i18n.js`: English, French, and Spanish site copy.
 - `assets/theme.js`: settings popover, language switching, day/night mode, glass controls, reveal effects, mobile sticky CTA, and the fixed version pill sourced from the same release marker as About.
