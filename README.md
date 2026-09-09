@@ -33,7 +33,7 @@ python3 -m http.server 8094
 
 Then open `http://localhost:8094/`.
 
-The multilingual restaurant QR demo is at `http://localhost:8094/restaurant-demo/`. Its QR artwork opens the matching GitHub Pages preview route: `https://ec92009.github.io/WebByElie/restaurant-demo/`. Visitors choose a language first; the menu then offers a visible language reset, numbered dishes, and customer-language plus Spanish descriptions.
+The multilingual restaurant QR demo is at `http://localhost:8094/restaurant-demo/`. Its QR artwork opens the matching GitHub Pages preview route: `https://ec92009.github.io/WebByElie/restaurant-demo/`. Visitors choose a language first; the menu then offers a visible language reset, a photographic Casa Lumbre hero, numbered dishes, and customer-language plus Spanish descriptions.
 
 ## Verification
 
