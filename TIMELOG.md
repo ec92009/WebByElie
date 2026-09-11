@@ -120,6 +120,8 @@ Clock state: running
 
 | 2026-09-11 | 12:33 CEST | 12:34 CEST | 0:01 | Confirmed restaurant offer integration and QR destination publication; background build time excluded. |
 
+| 2026-09-11 | 13:07 CEST | 13:08 CEST | 0:01 | Clarified one consistent VAT exclusion notice across restaurant pricing. |
+
 ## Totals
 
-Active collaboration time used: 5:51
+Active collaboration time used: 5:52
