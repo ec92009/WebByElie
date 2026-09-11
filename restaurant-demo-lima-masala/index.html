@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="Lima & Masala — a fictional Mexican and Indian restaurant menu.">
+  <meta name="theme-color" content="#22231e">
+  <title>Lima & Masala · Menu</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23d7fa46'/%3E%3Ctext x='16' y='24' text-anchor='middle' font-family='Georgia' font-size='26' fill='%2322231e'%3E%26%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="menu.js" defer></script>
+</head>
+<body>
+  <main id="app">
+    <section id="language-screen" aria-labelledby="welcome-title">
+      <div class="gate-art" aria-hidden="true">
+        <div class="gate-photo mexican-photo"><img src="assets/mexican.png" alt="" width="2172" height="724"></div>
+        <div class="gate-photo indian-photo"><img src="assets/indian.png" alt="" width="2172" height="724"></div>
+        <span class="seal">L<span>&</span>M</span>
+      </div>
+      <div class="welcome">
+        <p class="eyebrow">MEXICAN KITCHEN · INDIAN SOUL</p>
+        <h1 id="welcome-title">Lima <span>&</span> <br>Masala<span class="period">.</span></h1>
+        <div class="gate-heading"><h2>Choose your language</h2><p lang="fr">Choisissez votre langue <span aria-hidden="true">·</span> <span lang="es">Elige tu idioma</span></p></div>
+        <div class="language-options" aria-label="Menu languages">
+          <button data-language="en" lang="en"><span><small>01</small> English</span><span aria-hidden="true">↗</span></button>
+          <button data-language="fr" lang="fr"><span><small>02</small> Français</span><span aria-hidden="true">↗</span></button>
+          <button data-language="es" lang="es"><span><small>03</small> Español</span><span aria-hidden="true">↗</span></button>
+        </div>
+        <p class="gate-note">Fictional restaurant · Restaurant fictif · Restaurante ficticio</p>
+      </div>
+    </section>
+    <div id="menu-screen" hidden>
+      <header id="menu-top" tabindex="-1">
+        <button id="back-language" type="button"></button>
+        <div class="menu-brand"><p class="eyebrow" id="menu-kicker"></p><h1>Lima <span>&</span> Masala<span class="period">.</span></h1><p id="menu-note"></p></div>
+      </header>
+      <nav class="section-nav" aria-label="Menu sections"><a href="#mexican" data-section="mexican"></a><a href="#indian" data-section="indian"></a></nav>
+      <div id="dishes"><section id="mexican" hidden></section><section id="indian" hidden></section></div>
+      <footer><span>Lima & Masala</span><p id="footer-note"></p></footer>
+      <button id="back-top" type="button"><span aria-hidden="true">↑</span></button>
+    </div>
+    <noscript><p class="noscript">Please enable JavaScript to choose your menu language. / Activez JavaScript pour choisir la langue du menu. / Activa JavaScript para elegir el idioma del menú.</p></noscript>
+  </main>
+</body>
+</html>

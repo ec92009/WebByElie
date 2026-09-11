@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="description" content="Velluto — a fictional fine Italian dining menu. English, French and Spanish.">
+  <title>Velluto — Ristorante</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23151f30'/%3E%3Ctext x='32' y='47' text-anchor='middle' font-family='serif' font-size='46' fill='%23f5f3ee'%3EV%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css"><script src="dishes.js" defer></script><script src="menu.js" defer></script>
+</head>
+<body>
+  <main>
+    <section id="welcome" class="welcome" aria-labelledby="welcome-title">
+      <div class="welcome-brand"><span class="monogram" aria-hidden="true">V</span><p class="eyebrow">Ristorante italiano</p><h1 id="welcome-title">Velluto</h1><span class="rule"></span></div>
+      <div class="language-block"><p class="eyebrow">Menu · Carte · Carta</p><h2>Benvenuti</h2><div class="languages" aria-label="Choose your menu language">
+        <button data-lang="en" lang="en"><span>English</span><span aria-hidden="true">→</span></button>
+        <button data-lang="fr" lang="fr"><span>Français</span><span aria-hidden="true">→</span></button>
+        <button data-lang="es" lang="es"><span>Español</span><span aria-hidden="true">→</span></button>
+      </div></div>
+      <p class="gate-note">Fictional restaurant · Restaurant fictif · Restaurante ficticio</p>
+    </section>
+    <div id="menu" hidden>
+      <header class="menu-header" id="menu-top" tabindex="-1"><button id="language-back"></button><span class="header-mark" aria-hidden="true">V</span></header>
+      <div class="menu-masthead"><p class="eyebrow">Ristorante italiano</p><h1>Velluto</h1><p id="menu-subtitle"></p></div>
+      <nav id="courses" aria-label="Menu sections"></nav>
+      <div id="dishes" class="dishes"></div>
+      <footer><span class="footer-brand">Velluto</span><p id="demo-note"></p><p class="credit">Web By Elie</p></footer>
+      <button id="back-top" class="back-top" type="button">↑</button>
+    </div>
+    <noscript>This menu requires JavaScript. Ce menu nécessite JavaScript. Este menú requiere JavaScript.</noscript>
+  </main>
+</body>
+</html>
