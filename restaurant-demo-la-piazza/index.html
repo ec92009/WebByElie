@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow,noarchive">
+    <meta name="description" content="La Piazza, a warm multilingual restaurant-menu demo by Web By Elie.">
+    <link rel="canonical" href="https://ec92009.github.io/WebByElie/restaurant-demo-la-piazza/">
+    <link rel="stylesheet" href="la-piazza.css">
+    <title>La Piazza | Choose a language | Web By Elie</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#language-gate">Skip to language selection</a>
+
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="../" aria-label="Return to Web By Elie">
+          <span class="brand-mark" aria-hidden="true">LP</span>
+          <span class="brand-name">La Piazza</span>
+          <span class="brand-tag">demo</span>
+        </a>
+        <button class="language-switch" id="language-switch" type="button" aria-controls="language-gate" hidden>Change language</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="language-gate" id="language-gate" aria-labelledby="language-gate-title">
+        <div class="gate-image" aria-hidden="true">
+          <img src="assets/la-piazza-hero.png" alt="" width="1122" height="1402" fetchpriority="high">
+        </div>
+        <div class="gate-panel">
+          <p class="eyebrow">Web By Elie · menu demo</p>
+          <h1 id="language-gate-title" data-copy="gate.title">Welcome to La Piazza</h1>
+          <p class="gate-lede" data-copy="gate.lede">Choose the language you would like to use for the menu.</p>
+          <div class="language-options" role="list" aria-label="Menu language choices">
+            <button class="language-card" type="button" data-lang="en">
+              <span class="flag" aria-hidden="true">🇬🇧</span>
+              <span class="language-card-copy"><strong>English</strong><small>United Kingdom</small></span>
+              <span class="language-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button class="language-card" type="button" data-lang="fr">
+              <span class="flag" aria-hidden="true">🇫🇷</span>
+              <span class="language-card-copy"><strong>Français</strong><small>France</small></span>
+              <span class="language-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button class="language-card" type="button" data-lang="es">
+              <span class="flag" aria-hidden="true">🇪🇸</span>
+              <span class="language-card-copy"><strong>Español</strong><small>España</small></span>
+              <span class="language-arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
+          <div class="gate-qr">
+            <img src="assets/la-piazza-menu-qr.png" alt="QR code for the La Piazza demo menu" width="118" height="118">
+            <div>
+              <strong data-copy="gate.qrTitle">Scan for the menu</strong>
+              <p data-copy="gate.qrNote">A real restaurant can place this on a table card, coaster, or window sticker.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="menu-content" id="menu-content" hidden>
+        <div class="menu-shell">
+          <button class="back-language" id="back-language" type="button">← <span data-copy="nav.backToLanguages">Back to languages</span></button>
+
+          <section class="menu-hero" aria-labelledby="hero-title">
+            <div class="menu-hero-copy">
+              <p class="eyebrow" data-copy="hero.kicker">La Piazza · Pizzeria</p>
+              <h1 id="hero-title" data-copy="hero.title">Good food, shared.</h1>
+              <p class="hero-lede" data-copy="hero.lede">A simple Italian table for evenings that run a little longer.</p>
+              <p class="demo-note"><span aria-hidden="true"></span><span data-copy="hero.note">Sample menu for demonstration only. Dishes and prices are placeholders.</span></p>
+            </div>
+            <div class="hero-stamp" aria-hidden="true"><span>LP</span><small>Pizza · Pasta · Amici</small></div>
+          </section>
+
+          <nav class="section-nav" aria-label="Choose a menu section" data-copy-attr="aria-label:sectionNav.label">
+            <a href="#starters" data-section-link="starters"><span data-copy="sections.starters.title">Starters</span><b aria-hidden="true">↓</b></a>
+            <a href="#pizzas" data-section-link="pizzas"><span data-copy="sections.pizzas.title">Pizzas</span><b aria-hidden="true">↓</b></a>
+            <a href="#pasta" data-section-link="pasta"><span data-copy="sections.pasta.title">Pasta</span><b aria-hidden="true">↓</b></a>
+            <a href="#desserts" data-section-link="desserts"><span data-copy="sections.desserts.title">Desserts</span><b aria-hidden="true">↓</b></a>
+          </nav>
+
+          <section class="menu" id="menu" aria-labelledby="menu-title">
+            <div class="menu-intro">
+              <p class="eyebrow" data-copy="menu.kicker">Today at La Piazza</p>
+              <h2 id="menu-title" data-copy="menu.title">Choose your favourite.</h2>
+              <p data-copy="menu.intro">Browse at your leisure. Your language appears first, with the Spanish name underneath for the local team.</p>
+            </div>
+            <div class="menu-sections" id="menu-sections">
+              <section class="menu-section" id="starters" aria-hidden="true"></section>
+              <section class="menu-section" id="pizzas" aria-hidden="true"></section>
+              <section class="menu-section" id="pasta" aria-hidden="true"></section>
+              <section class="menu-section" id="desserts" aria-hidden="true"></section>
+            </div>
+          </section>
+
+          <section class="qr-card" aria-labelledby="qr-title">
+            <div>
+              <p class="eyebrow" data-copy="qr.kicker">Ready when you are</p>
+              <h2 id="qr-title" data-copy="qr.title">Keep the menu close.</h2>
+              <p data-copy="qr.body">The same menu can live behind a QR code on a table card, coaster, or entrance sticker. Updates stay online.</p>
+            </div>
+            <img src="assets/la-piazza-menu-qr.png" alt="QR code for the La Piazza demo menu" width="176" height="176" loading="lazy">
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer" hidden>
+      <div class="footer-inner">
+        <p><span data-copy="footer.demo">Demo menu by</span> <a href="../">Web By Elie</a></p>
+        <nav aria-label="Policies">
+          <a href="../privacy/" data-copy="footer.privacy">Privacy</a>
+          <a href="../terms/" data-copy="footer.terms">Terms</a>
+          <a href="../data-deletion/" data-copy="footer.data">Data deletion</a>
+        </nav>
+      </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" hidden>↑</button>
+    <script src="la-piazza.js" defer></script>
+  </body>
+</html>

@@ -104,7 +104,19 @@ Clock state: running
 
 | 2026-09-03 | 20:25 CEST | 20:26 CEST | 0:01 | Approved the consent-aware Web Signals pilot on the public WebByElie homepages. |
 | 2026-09-04 | 15:03 CEST | 15:18 CEST | 0:15 | Implemented the isolated WST-16 simpler aggregate mode: default-on sessionless page-view/CTA counting, quiet footer disclosure, privacy-policy alignment, and desktop/mobile checks; public deployment remains unchanged pending review. |
+| 2026-09-04 | 15:48 CEST | 15:52 CEST | 0:04 | Authorized the WST-16 simpler mode for Cloudflare production and prepared the versioned v247.0 release while keeping GitHub Pages as the phone-test preview. |
+| 2026-09-09 | 22:40 CEST | 22:58 CEST | 0:18 | Built and published a multilingual restaurant-menu QR demo with a language chooser, sample dish photos, and a live GitHub Pages preview route. |
+| 2026-09-09 | 23:00 CEST | 23:14 CEST | 0:10 | Refined the restaurant demo into a language-only landing screen and a QR-free menu with Starters, Entrées, and Desserts sections, then verified the live Pages route. |
+| 2026-09-09 | 23:15 CEST | 23:36 CEST | 0:18 | Added a visible language reset, numbered dishes, and Spanish companion descriptions for every menu item, then published and verified the updated Pages preview. |
+| 2026-09-09 | 23:42 CEST | 23:54 CEST | 0:10 | Simplified bilingual dish cards to bold customer copy and italic Spanish support copy, suppressed duplicate Spanish text in Spanish mode, and added a floating Back to top control. |
+| 2026-09-09 | 23:56 CEST | 23:59 CEST | 0:03 | Removed numbering from menu sections and category links so only dish numbers remain, then published and checked the Pages preview. |
+| 2026-09-10 | 00:00 CEST | 00:10 CEST | 0:10 | Added a mobile-first Casa Lumbre hero photograph with an optimized WebP source, readable gradient copy, and a PNG fallback, then prepared the phone-test preview. |
+| 2026-09-10 | 00:11 CEST | 00:15 CEST | 0:04 | Hardened the hero layer order for mobile Safari so the photo, gradient, and menu copy remain one composed hero on phone screens. |
+| 2026-09-10 | 00:16 CEST | 00:24 CEST | 0:08 | Added Spanish item names directly under each customer-language dish name and let text-only cards size to their content, then verified bilingual French and single-language Spanish views. |
+| 2026-09-10 | 00:25 CEST | 00:30 CEST | 0:05 | Extended the Casa Lumbre hero image to the language chooser with mobile-safe layering, a reading gradient, and translucent language cards. |
+| 2026-09-10 | 00:31 CEST | 00:35 CEST | 0:04 | Verified the photo-backed language chooser and documented the bilingual item-name treatment for the phone-test menu. |
+| 2026-09-11 | 09:28 CEST | 09:44 CEST | 0:16 | Built the separate La Piazza pizzeria-menu review option with a three-language chooser, QR-first entry, generated food photography, translated item names, return-to-language navigation, section links, and a floating Back to top control; verified local desktop flows and the repository checks without touching the existing restaurant demo. |
 
 ## Totals
 
-Active collaboration time used: 4:16
+Active collaboration time used: 5:50
