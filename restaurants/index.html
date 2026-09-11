@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="https://web-by-elie.com/restaurants/">
+<meta name="description" content="Carta web multilingüe con QR permanente. Actualice platos y precios sin reimprimir. Web By Elie.">
+<title>Una carta que cambia con la temporada | Web By Elie</title>
+  <style>
+    :root { color-scheme: light; --ink:#1e2926; --muted:#60706b; --paper:#f7f4ed; --card:#fffdf8; --accent:#c96d4a; --line:#d9dfd8; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    main { max-width:1120px; margin:auto; padding:24px; }
+    header { padding:64px 0 42px; max-width:760px; }
+    .eyebrow { color:var(--accent); font-size:.75rem; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
+    h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:500; line-height:1.08; }
+    h1 { font-size:clamp(2.8rem,7vw,5.8rem); margin:14px 0 22px; letter-spacing:-.04em; }
+    h2 { font-size:clamp(2rem,4vw,3.2rem); margin:0 0 14px; letter-spacing:-.03em; }
+    h3 { font-size:1.45rem; margin:0 0 8px; }
+    p { margin:0 0 16px; }
+    .lead { color:var(--muted); font-size:1.2rem; max-width:660px; }
+    .button { display:inline-block; margin-top:10px; padding:13px 19px; border:1px solid var(--ink); border-radius:999px; color:var(--ink); text-decoration:none; font-weight:700; }
+    section { padding:42px 0; border-top:1px solid var(--line); }
+    .section-intro { max-width:650px; margin-bottom:24px; color:var(--muted); }
+    .examples { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+    .example img { width:100%; height:210px; object-fit:cover; border-radius:12px; margin-bottom:16px; }
+    .example { display:flex; min-height:190px; padding:22px; flex-direction:column; justify-content:space-between; background:var(--card); border:1px solid var(--line); border-radius:20px; text-decoration:none; color:inherit; }
+    .example:hover,.example:focus-visible { border-color:var(--accent); outline:3px solid color-mix(in srgb,var(--accent) 24%,transparent); }
+    .example span { color:var(--accent); font-size:.78rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .example strong { font-family:Georgia,"Times New Roman",serif; font-size:1.65rem; font-weight:500; }
+    .example small { color:var(--muted); }
+    .columns { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+    .panel { padding:26px; background:var(--card); border:1px solid var(--line); border-radius:20px; }
+    ul { margin:0; padding-left:1.2rem; }
+    li + li { margin-top:8px; }
+    .price { font-family:Georgia,"Times New Roman",serif; font-size:2.5rem; margin:10px 0 6px; }
+    .note { color:var(--muted); font-size:.9rem; }
+    .boundary { background:#1e2926; color:#f8f4ec; border-radius:24px; padding:30px; }
+    .boundary .note { color:#cbd5d0; }
+    footer { padding:36px 0 18px; color:var(--muted); font-size:.9rem; }
+    @media (max-width:620px) { main { padding:18px; } .examples { grid-template-columns:1fr; } header { padding:40px 0 28px; } section { padding:30px 0; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div class="eyebrow">Web By Elie · carta para el móvil</div>
+      <h1>Una carta que cambia con la temporada.</h1>
+      <p class="lead">Convierta su carta de papel o PDF en una página rápida, clara y fácil de leer desde el teléfono. Un QR permanente lleva siempre a la misma dirección, aunque cambien los platos, los precios o el horario.</p>
+      <a class="button" href="#ejemplos">Ver ejemplos</a>
+    </header>
+
+    <section id="ejemplos">
+      <h2>Vea cómo funciona</h2>
+      <p class="section-intro">Cuatro demostraciones públicas muestran el recorrido completo: elegir idioma, consultar la carta y volver a la misma página cuando el contenido se actualiza.</p>
+      <div class="examples">
+        <a class="example" href="/restaurant-demo/">
+          <img src="/assets/restaurant-demo/casa-lumbre-hero.webp" alt="Vista del menú Casa Lumbre" loading="lazy">
+          <span>Casa Lumbre</span><strong>Carta mediterránea</strong><small>Abrir demostración →</small>
+        </a>
+        <a class="example" href="/restaurant-demo-la-piazza/">
+          <img src="/restaurant-demo-la-piazza/assets/la-piazza-hero.png" alt="Vista del menú La Piazza" loading="lazy">
+          <span>La Piazza</span><strong>Carta italiana</strong><small>Abrir demostración →</small>
+        </a>
+        <a class="example" href="/restaurant-demo-lima-masala/">
+          <img src="/restaurant-demo-lima-masala/assets/mexican.png" alt="Vista del menú Lima &amp; Masala" loading="lazy">
+          <span>Lima &amp; Masala</span><strong>Carta india y mexicana</strong><small>Abrir demostración →</small>
+        </a>
+        <a class="example" href="/restaurant-demo-velluto/">
+          <img src="/restaurant-demo-velluto/assets/tagliatelle.jpg" alt="Vista del menú Velluto" loading="lazy">
+          <span>Velluto</span><strong>Carta contemporánea</strong><small>Abrir demostración →</small>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <h2>Un servicio pequeño y claro</h2>
+      <div class="columns">
+        <div class="panel">
+          <h3>En el lanzamiento</h3>
+          <ul>
+            <li>Una dirección permanente y un QR para el local.</li>
+            <li>Hasta tres idiomas.</li>
+            <li>Platos con nombre y descripción para el cliente, más apoyo en español para el equipo.</li>
+            <li>Sus fotografías, una prueba privada y una ronda consolidada de correcciones.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Cada mes</h3>
+          <ul>
+            <li>Incorporación de nuevos platos, actualización de descripciones y cambios de precios, con hasta dos actualizaciones al mes. Todas las solicitudes deben enviarse por escrito, por correo electrónico.</li>
+            <li>La misma dirección y el mismo QR, sin rehacer la carta impresa.</li>
+            <li>Un registro claro de lo preparado, aprobado, publicado y actualizado.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Su carta web, con un alcance claro</h2>
+      <p class="section-intro">Consulte el presupuesto final para su local, incluidos los impuestos aplicables y, si corresponde, el envío.</p>
+      <div class="columns">
+        <div class="panel"><h3>Lanzamiento</h3><div class="price">295 €</div><p>Una vez por local, con el alcance descrito arriba.</p></div>
+        <div class="panel"><h3>Care</h3><div class="price">25 €<small>/mes</small></div><p>Nuevos platos, cambios de descripciones y precios: hasta dos actualizaciones al mes, solicitadas por escrito por correo electrónico.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Opciones adicionales</h2><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/coaster-spin-poster.png"><img src="assets/qr-octagon-spin.gif" alt="Posavasos QR octagonal verde oliva, con código blanco en una cara" width="360" height="360" style="max-width:100%;height:auto;border-radius:20px"></picture>
+      <p class="note">Servicios adicionales, con alcance y presupuesto confirmados antes de empezar.</p><div class="columns"><div class="panel"><h3>Idioma adicional</h3><p>50 € por idioma al incorporarlo, más 5 €/mes por idioma para mantenerlo actualizado, además del plan base.</p></div><div class="panel"><h3>Posavasos QR impresos en 3D</h3><p>Octágonos básicos de 10 cm, en dos colores. Lote de 20 unidades: 100 €.</p></div><div class="panel"><h3>Adhesivos QR</h3><p>Lote de 100 unidades; precio a confirmar según tamaño, material y acabado.</p></div><div class="panel"><h3>Imágenes de platos con IA</h3><p>Generación o retoque con inteligencia artificial, a partir de su carta o de fotos de móvil facilitadas por el propietario. Presupuesto según el número de imágenes y el trabajo necesario.</p></div></div>
+    </section>
+
+    <section>
+      <h2>Si ya tiene una carta</h2>
+      <p class="section-intro">También podemos convertir un PDF o fotografías de sus páginas en una carta web. Extraemos el texto o hacemos OCR, comprobamos nombres, descripciones, precios y secciones contra el original, y enviamos una prueba antes de publicar. El presupuesto se calcula por página, para páginas A4 o menores.</p>
+    </section>
+
+    <section>
+      <div class="boundary">
+        <h2>Qué no incluye la primera versión</h2>
+        <p>No procesa pedidos ni pagos, no gestiona reservas, facturas o mesas, no incluye analítica ni un panel de edición para el propietario. Si hace falta, podemos estudiar esos servicios por separado.</p>
+        <p class="note">También se pueden presupuestar aparte la generación o el retoque de imágenes de platos con IA y los posavasos QR impresos en 3D.</p>
+      </div>
+    </section>
+
+    <section><h2>Hablemos de su carta</h2><p>Envíeme su carta actual y los idiomas que necesita. Le confirmaré el alcance y el presupuesto.</p><a class="button" data-wst-cta="contact_email" href="mailto:hello@web-by-elie.com?subject=Carta%20web%20para%20mi%20restaurante">Enviar mi carta por email</a></section><footer><p>Web By Elie · v254.0</p><p>Contamos visitas a páginas y pulsaciones para mejorar esta web, sin cookies de analítica ni identificadores de visitantes.</p><a href="/privacy/">Privacidad</a> · <a href="/terms/">Condiciones</a> · <a href="/data-deletion/">Eliminación de datos</a></footer>
+  </main>
+<script defer src="/assets/wst-beacon.js" data-wst-enabled="true" data-wst-endpoint="https://web-signals-collector.ec92009.workers.dev/v1/events" data-wst-site="webbyelie" data-wst-environment="production" data-wst-consent="not_required" data-wst-sessionless="true"></script></body>
+</html>

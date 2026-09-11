@@ -118,6 +118,8 @@ Clock state: running
 | 2026-09-11 | 09:28 CEST | 09:44 CEST | 0:16 | Built the separate La Piazza pizzeria-menu review option with a three-language chooser, QR-first entry, generated food photography, translated item names, return-to-language navigation, section links, and a floating Back to top control; verified local desktop flows and the repository checks without touching the existing restaurant demo. |
 | 2026-09-11 | 09:56 CEST | 10:15 CEST | 0:19 | Removed La Piazza's duplicate top-right language button so the menu has one return-to-language control, replaced reused pizza/carbonara images with dish-matched prosciutto e funghi, tonno e cipolla, arrabbiata, and lasagne photos, and verified the existing Casa Lumbre demo already has one language-reset control. |
 
+| 2026-09-11 | 12:33 CEST | 12:34 CEST | 0:01 | Confirmed restaurant offer integration and QR destination publication; background build time excluded. |
+
 ## Totals
 
-Active collaboration time used: 5:50
+Active collaboration time used: 5:51
