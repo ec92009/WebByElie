@@ -115,6 +115,7 @@ Clock state: running
 | 2026-09-10 | 00:16 CEST | 00:24 CEST | 0:08 | Added Spanish item names directly under each customer-language dish name and let text-only cards size to their content, then verified bilingual French and single-language Spanish views. |
 | 2026-09-10 | 00:25 CEST | 00:30 CEST | 0:05 | Extended the Casa Lumbre hero image to the language chooser with mobile-safe layering, a reading gradient, and translucent language cards. |
 | 2026-09-10 | 00:31 CEST | 00:35 CEST | 0:04 | Verified the photo-backed language chooser and documented the bilingual item-name treatment for the phone-test menu. |
+| 2026-09-11 | 09:28 CEST | 09:44 CEST | 0:16 | Built the separate La Piazza pizzeria-menu review option with a three-language chooser, QR-first entry, generated food photography, translated item names, return-to-language navigation, section links, and a floating Back to top control; verified local desktop flows and the repository checks without touching the existing restaurant demo. |
 
 ## Totals
 

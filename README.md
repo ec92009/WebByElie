@@ -35,6 +35,8 @@ Then open `http://localhost:8094/`.
 
 The multilingual restaurant QR demo is at `http://localhost:8094/restaurant-demo/`. Its QR artwork opens the matching GitHub Pages preview route: `https://ec92009.github.io/WebByElie/restaurant-demo/`. Visitors choose a language first on a photo-backed chooser; the menu then offers a visible language reset, a photographic Casa Lumbre hero, numbered dishes, and customer-language item names and descriptions with Spanish support copy.
 
+The separate La Piazza restaurant-menu option is at `http://localhost:8094/restaurant-demo-la-piazza/`. It is a noindex review route with the same English/French/Spanish chooser and navigation contract, a warmer tomato-and-olive pizzeria treatment, generated dish photography, and a QR artifact aimed at the future GitHub Pages route `https://ec92009.github.io/WebByElie/restaurant-demo-la-piazza/`.
+
 ## Verification
 
 ```sh
@@ -50,6 +52,7 @@ This read-only source check validates public local links and fragments, generate
 - `fr/index.html`, `es/index.html`: static localized homepages with hreflang metadata.
 - `case-studies/golden-years/`: approved Golden Years Tax Strategy case study with current public-site screenshots.
 - `restaurant-demo/`: noindex multilingual restaurant-menu sample with three menu sections, generated dish photos, and a QR route for table-card testing.
+- `restaurant-demo-la-piazza/`: separate noindex multilingual pizzeria-menu review option with four menu sections, generated food photography, and an independent QR artifact.
 - `assets/restaurant-demo/`: sample dish images and QR artwork used by the restaurant demo.
 - `assets/styles.css`: site styling.
 - `assets/i18n.js`: English, French, and Spanish site copy.
