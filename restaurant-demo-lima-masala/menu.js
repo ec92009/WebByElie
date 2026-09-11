@@ -1,18 +1,20 @@
 const copy = {
-  en: {back:'← Back to language choice', kicker:'MEXICAN KITCHEN · INDIAN SOUL', note:'Demo menu · Fictional restaurant & sample prices', mexican:'Mexican', indian:'Indian', count:'3 DISHES', top:'Back to top', nav:'Menu sections', footer:'Fictional demo by Web By Elie. Illustrative food images and sample prices. No ordering or payments.'},
-  fr: {back:'← Retour au choix de langue', kicker:'CUISINE MEXICAINE · ÂME INDIENNE', note:'Menu démo · Restaurant fictif et prix indicatifs', mexican:'Mexicain', indian:'Indien', count:'3 PLATS', top:'Retour en haut', nav:'Sections du menu', footer:'Démo fictive par Web By Elie. Photos illustratives et prix indicatifs. Sans commande ni paiement.'},
-  es: {back:'← Volver a elegir idioma', kicker:'COCINA MEXICANA · ALMA INDIA', note:'Menú de muestra · Restaurante ficticio y precios orientativos', mexican:'Mexicano', indian:'Indio', count:'3 PLATOS', top:'Volver arriba', nav:'Secciones del menú', footer:'Demo ficticia de Web By Elie. Imágenes ilustrativas y precios orientativos. Sin pedidos ni pagos.'}
+  en: {back:'← Back to language choice', kicker:'MEXICAN KITCHEN · INDIAN SOUL', note:'Demo menu · Fictional restaurant & sample prices', starters:'Starters', mains:'Main courses', desserts:'Desserts', count:'2 DISHES', top:'Back to top', nav:'Menu sections', footer:'Fictional demo by Web By Elie. Illustrative food images and sample prices. No ordering or payments.'},
+  fr: {back:'← Retour au choix de langue', kicker:'CUISINE MEXICAINE · ÂME INDIENNE', note:'Menu démo · Restaurant fictif et prix indicatifs', starters:'Entrées', mains:'Plats', desserts:'Desserts', count:'2 PLATS', top:'Retour en haut', nav:'Sections du menu', footer:'Démo fictive par Web By Elie. Photos illustratives et prix indicatifs. Sans commande ni paiement.'},
+  es: {back:'← Volver a elegir idioma', kicker:'COCINA MEXICANA · ALMA INDIA', note:'Menú de muestra · Restaurante ficticio y precios orientativos', starters:'Entrantes', mains:'Platos principales', desserts:'Postres', count:'2 PLATOS', top:'Volver arriba', nav:'Secciones del menú', footer:'Demo ficticia de Web By Elie. Imágenes ilustrativas y precios orientativos. Sin pedidos ni pagos.'}
 };
 const dishes = {
-  mexican: [
-    {price:7.5,names:{en:'Guacamole & tortilla chips',fr:'Guacamole et chips de maïs',es:'Guacamole con totopos'}},
-    {price:12.5,names:{en:'Chicken tacos',fr:'Tacos au poulet',es:'Tacos de pollo'}},
-    {price:10,names:{en:'Cheese quesadilla',fr:'Quesadilla au fromage',es:'Quesadilla de queso'}}
+  starters: [
+    {price:7.5,image:'mexican',panel:0,names:{en:'Guacamole & tortilla chips',fr:'Guacamole et chips de maïs',es:'Guacamole con totopos'}},
+    {price:6.5,image:'indian',panel:0,names:{en:'Vegetable samosas',fr:'Samosas aux légumes',es:'Samosas de verduras'}}
   ],
-  indian: [
-    {price:6.5,names:{en:'Vegetable samosas',fr:'Samosas aux légumes',es:'Samosas de verduras'}},
-    {price:14.5,names:{en:'Butter chicken',fr:'Poulet au beurre',es:'Pollo a la mantequilla'}},
-    {price:13,names:{en:'Palak paneer',fr:'Palak paneer',es:'Palak paneer'}}
+  mains: [
+    {price:12.5,image:'mexican',panel:1,names:{en:'Chicken tacos',fr:'Tacos au poulet',es:'Tacos de pollo'}},
+    {price:14.5,image:'indian',panel:1,names:{en:'Butter chicken',fr:'Poulet au beurre',es:'Pollo a la mantequilla'}}
+  ],
+  desserts: [
+    {price:7,image:'desserts',panel:0,names:{en:'Churros with chocolate',fr:'Churros au chocolat',es:'Churros con chocolate'}},
+    {price:8,image:'desserts',panel:1,names:{en:'Gulab jamun',fr:'Gulab jamun',es:'Gulab jamun'}}
   ]
 };
 let currentLanguage = 'en';
@@ -40,7 +42,7 @@ function showMenu(language) {
     <section class="cuisine" id="${section}" aria-labelledby="${section}-title">
       <div class="cuisine-heading"><h2 id="${section}-title">${t[section]}</h2><span>${t.count}</span></div>
       <div class="dish-grid">${items.map((dish,index) => `<article class="dish">
-        <div class="dish-photo" style="--panel:${index}"><img src="assets/${section}.png" alt="${dish.names[language]}" width="2172" height="724" ${section === 'indian' ? 'loading="lazy"' : ''}><span class="dish-index" aria-hidden="true">0${index+1}</span></div>
+        <div class="dish-photo" style="--panel:${dish.panel}"><img src="assets/${dish.image}.png" alt="${dish.names[language]}" width="2172" height="724" loading="lazy"><span class="dish-index" aria-hidden="true">0${index+1}</span></div>
         <div class="dish-label"><h3>${dish.names[language]}</h3><span class="price">${new Intl.NumberFormat(language,{style:'currency',currency:'EUR'}).format(dish.price)}</span></div>
       </article>`).join('')}</div>
     </section>`).join('');
