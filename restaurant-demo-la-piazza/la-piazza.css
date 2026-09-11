@@ -61,9 +61,8 @@ button:focus-visible, a:focus-visible { outline: 3px solid var(--gold); outline-
 .brand-mark { display:grid; width:2.4rem; height:2.4rem; place-items:center; border:2px solid var(--tomato); border-radius:50%; background:var(--tomato); color:#fff; font:700 .7rem/1 Inter,sans-serif; letter-spacing:.1em; }
 .brand-name { font:700 1.1rem/1 Inter,sans-serif; letter-spacing:.1em; text-transform:uppercase; }
 .brand-tag { padding:.22rem .46rem; border-radius:.35rem; background:var(--olive); color:#fff; font-size:.62rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; }
-.language-switch, .back-language { border:1px solid var(--olive); border-radius:999px; background:transparent; color:var(--olive-dark); cursor:pointer; font:700 .78rem/1 Inter,sans-serif; letter-spacing:.02em; }
-.language-switch { padding:.7rem .9rem; }
-.language-switch:hover, .back-language:hover { background:var(--olive); color:#fff; }
+.back-language { border:1px solid var(--olive); border-radius:999px; background:transparent; color:var(--olive-dark); cursor:pointer; font:700 .78rem/1 Inter,sans-serif; letter-spacing:.02em; }
+.back-language:hover { background:var(--olive); color:#fff; }
 
 .language-gate { display:grid; grid-template-columns: minmax(0, 1.1fr) minmax(20rem, .9fr); min-height:calc(100svh - 4.75rem); max-width:1160px; margin:0 auto; overflow:hidden; background:var(--olive-dark); color:#fff; }
 .gate-image { min-height:42rem; }
@@ -151,7 +150,6 @@ h1, h2, h3, h4 { margin-top:0; font-family:Georgia, "Times New Roman", serif; fo
   .topbar { padding-inline:1rem; }
   .brand-name { font-size:.88rem; }
   .brand-tag { display:none; }
-  .language-switch { padding:.6rem .7rem; font-size:.7rem; }
   .gate-image { min-height:38vh; }
   .gate-qr { grid-template-columns:auto 1fr; }
   .menu-content { padding-top:.7rem; }

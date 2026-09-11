@@ -2,7 +2,7 @@ const translations = {
   en: {
     meta: { title: "La Piazza | Sample menu | Web By Elie", description: "A warm multilingual La Piazza menu demo by Web By Elie.", gateTitle: "La Piazza | Choose a language | Web By Elie", gateDescription: "Choose a language for the La Piazza sample menu." },
     gate: { title: "Welcome to La Piazza", lede: "Choose the language you would like to use for the menu.", qrTitle: "Scan for the menu", qrNote: "A real restaurant can place this on a table card, coaster, or window sticker." },
-    nav: { changeLanguage: "Change language", backToLanguages: "Back to languages", backToTop: "Back to top" },
+    nav: { backToLanguages: "Back to languages", backToTop: "Back to top" },
     sectionNav: { label: "Choose a menu section" },
     hero: { kicker: "La Piazza · Pizzeria", title: "Good food, shared.", lede: "A simple Italian table for evenings that run a little longer.", note: "Sample menu for demonstration only. Dishes and prices are placeholders." },
     menu: { kicker: "Today at La Piazza", title: "Choose your favourite.", intro: "Browse at your leisure. Your language appears first, with the Spanish name underneath for the local team." },
@@ -13,7 +13,7 @@ const translations = {
   fr: {
     meta: { title: "La Piazza | Menu exemple | Web By Elie", description: "Un exemple de menu multilingue pour La Piazza par Web By Elie.", gateTitle: "La Piazza | Choisir une langue | Web By Elie", gateDescription: "Choisissez une langue pour le menu exemple de La Piazza." },
     gate: { title: "Bienvenue à La Piazza", lede: "Choisissez la langue que vous souhaitez utiliser pour le menu.", qrTitle: "Scannez le menu", qrNote: "Un restaurant peut placer ce QR code sur une carte, un dessous-de-verre ou une vitrine." },
-    nav: { changeLanguage: "Changer de langue", backToLanguages: "Retour aux langues", backToTop: "Retour en haut" },
+    nav: { backToLanguages: "Retour aux langues", backToTop: "Retour en haut" },
     sectionNav: { label: "Choisir une section du menu" },
     hero: { kicker: "La Piazza · Pizzeria", title: "Le goût à partager.", lede: "Une table italienne simple pour les soirées qui s'attardent.", note: "Menu présenté à titre d'exemple. Les plats et les prix sont fictifs." },
     menu: { kicker: "Aujourd'hui à La Piazza", title: "Choisissez votre envie.", intro: "Parcourez le menu à votre rythme. Votre langue apparaît en premier, puis le nom espagnol pour l'équipe locale." },
@@ -24,7 +24,7 @@ const translations = {
   es: {
     meta: { title: "La Piazza | Menú de muestra | Web By Elie", description: "Un ejemplo de menú multilingüe para La Piazza de Web By Elie.", gateTitle: "La Piazza | Elige un idioma | Web By Elie", gateDescription: "Elige un idioma para el menú de muestra de La Piazza." },
     gate: { title: "Bienvenido a La Piazza", lede: "Elige el idioma que quieres usar para el menú.", qrTitle: "Escanea el menú", qrNote: "Un restaurante puede colocar este QR en una tarjeta, un posavasos o un adhesivo en el escaparate." },
-    nav: { changeLanguage: "Cambiar de idioma", backToLanguages: "Volver a los idiomas", backToTop: "Volver arriba" },
+    nav: { backToLanguages: "Volver a los idiomas", backToTop: "Volver arriba" },
     sectionNav: { label: "Elige una sección del menú" },
     hero: { kicker: "La Piazza · Pizzería", title: "Comida para compartir.", lede: "Una mesa italiana sencilla para las noches que se alargan.", note: "Menú de muestra para demostración. Los platos y precios son provisionales." },
     menu: { kicker: "Hoy en La Piazza", title: "Elige tu favorito.", intro: "Navega a tu ritmo. Tu idioma aparece primero y debajo queda el nombre en español para el equipo local." },
@@ -42,17 +42,17 @@ const menu = [
   ] },
   { id: "pizzas", image: "assets/margherita.jpg", items: [
     { n: "04", image: "assets/margherita.jpg", price: "€10", name: { en: "Margherita", fr: "Margherita", es: "Margherita" }, es: "Margherita", alt: "Neapolitan margherita pizza with basil" },
-    { n: "05", image: "assets/margherita.jpg", price: "€13", name: { en: "Prosciutto e funghi", fr: "Prosciutto e funghi", es: "Prosciutto e funghi" }, es: "Prosciutto e funghi", alt: "Pizza with prosciutto and mushrooms" },
+    { n: "05", image: "assets/prosciutto-funghi.jpg", price: "€13", name: { en: "Prosciutto e funghi", fr: "Prosciutto e funghi", es: "Prosciutto e funghi" }, es: "Prosciutto e funghi", alt: "Pizza with prosciutto and mushrooms" },
     { n: "06", image: "assets/diavola.jpg", price: "€13", name: { en: "Diavola", fr: "Diavola", es: "Diavola" }, es: "Diavola", alt: "Spicy salami pizza" },
     { n: "07", image: "assets/quattro-formaggi.jpg", price: "€14", name: { en: "Quattro formaggi", fr: "Quattro formaggi", es: "Quattro formaggi" }, es: "Quattro formaggi", alt: "Four cheese pizza" },
     { n: "08", image: "assets/vegetariana.jpg", price: "€12", name: { en: "Vegetariana", fr: "Vegetariana", es: "Vegetariana" }, es: "Vegetariana", alt: "Vegetable pizza" },
-    { n: "09", image: "assets/margherita.jpg", price: "€13", name: { en: "Tonno e cipolla", fr: "Tonno e cipolla", es: "Tonno e cipolla" }, es: "Tonno e cipolla", alt: "Tuna and onion pizza" }
+    { n: "09", image: "assets/tonno-cipolla.jpg", price: "€13", name: { en: "Tonno e cipolla", fr: "Tonno e cipolla", es: "Tonno e cipolla" }, es: "Tonno e cipolla", alt: "Tuna and onion pizza" }
   ] },
   { id: "pasta", image: "assets/carbonara.jpg", items: [
     { n: "10", image: "assets/carbonara.jpg", price: "€13", name: { en: "Spaghetti alla carbonara", fr: "Spaghetti alla carbonara", es: "Spaghetti alla carbonara" }, es: "Spaghetti alla carbonara", alt: "Spaghetti alla carbonara" },
     { n: "11", image: "assets/bolognese.jpg", price: "€13", name: { en: "Tagliatelle alla bolognese", fr: "Tagliatelle alla bolognese", es: "Tagliatelle alla bolognese" }, es: "Tagliatelle alla bolognese", alt: "Tagliatelle with bolognese sauce" },
-    { n: "12", image: "assets/carbonara.jpg", price: "€11", name: { en: "Penne all’arrabbiata", fr: "Penne all’arrabbiata", es: "Penne all’arrabbiata" }, es: "Penne all’arrabbiata", alt: "Penne with spicy tomato sauce" },
-    { n: "13", image: "assets/carbonara.jpg", price: "€14", name: { en: "Lasagne al forno", fr: "Lasagne al forno", es: "Lasagne al forno" }, es: "Lasagne al forno", alt: "Baked lasagne" }
+    { n: "12", image: "assets/arrabbiata.jpg", price: "€11", name: { en: "Penne all’arrabbiata", fr: "Penne all’arrabbiata", es: "Penne all’arrabbiata" }, es: "Penne all’arrabbiata", alt: "Penne with spicy tomato sauce" },
+    { n: "13", image: "assets/lasagne.jpg", price: "€14", name: { en: "Lasagne al forno", fr: "Lasagne al forno", es: "Lasagne al forno" }, es: "Lasagne al forno", alt: "Baked lasagne" }
   ] },
   { id: "desserts", image: "assets/tiramisu.jpg", items: [
     { n: "14", image: "assets/tiramisu.jpg", price: "€6", name: { en: "Tiramisù", fr: "Tiramisù", es: "Tiramisú" }, es: "Tiramisú", alt: "Tiramisu dusted with cocoa" },
@@ -65,7 +65,6 @@ const root = document.documentElement;
 const languageGate = document.querySelector("#language-gate");
 const menuContent = document.querySelector("#menu-content");
 const footer = document.querySelector(".site-footer");
-const languageSwitch = document.querySelector("#language-switch");
 const backLanguage = document.querySelector("#back-language");
 const backToTop = document.querySelector("#back-to-top");
 const menuSections = document.querySelector("#menu-sections");
@@ -109,8 +108,6 @@ const setLanguage = (language, updateUrl = true) => {
   languageGate.hidden = Boolean(selected);
   menuContent.hidden = !selected;
   footer.hidden = !selected;
-  languageSwitch.hidden = !selected;
-  languageSwitch.textContent = getCopy(display, "nav.changeLanguage");
   backToTop.setAttribute("aria-label", getCopy(display, "nav.backToTop"));
   backToTop.hidden = !selected || window.scrollY < 300;
   document.querySelector(".skip-link").setAttribute("href", selected ? "#menu" : "#language-gate");
@@ -123,7 +120,6 @@ const setLanguage = (language, updateUrl = true) => {
 };
 
 languageCards.forEach((card) => card.addEventListener("click", () => { setLanguage(card.dataset.lang); window.scrollTo({ top: 0, behavior: "smooth" }); }));
-languageSwitch.addEventListener("click", () => { setLanguage(null); window.scrollTo({ top: 0, behavior: "smooth" }); languageCards[0]?.focus({ preventScroll: true }); });
 backLanguage.addEventListener("click", () => { setLanguage(null); window.scrollTo({ top: 0, behavior: "smooth" }); languageCards[0]?.focus({ preventScroll: true }); });
 backToTop.addEventListener("click", () => { window.scrollTo({ top: 0, behavior: "smooth" }); document.querySelector("#menu")?.focus?.({ preventScroll: true }); });
 window.addEventListener("scroll", () => { backToTop.hidden = menuContent.hidden || window.scrollY < 300; }, { passive: true });
