@@ -145,3 +145,5 @@ stable CTA/form intent, respects GPC/DNT, and excludes non-production origins.
 It never receives form values, email, Stripe session IDs or private order URLs.
 Child declarations live at `.wst/june.rowan.json`, `.wst/nora.vela.json` and
 `.wst/elena.brooks.json`; root homepage identity remains `webbyelie`.
+
+Owner browser inspections use `?wst_synthetic=1` so activity stays outside business totals even when the controlled browser does not expose webdriver.
