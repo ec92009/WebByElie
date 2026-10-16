@@ -11,26 +11,30 @@
     "contract_version": "wst.monitorable.v1",
     "owner_role": "Elie (site owner)",
     "approval_ref": "WST-8: homepage pilot approved 2026-09-03",
-    "route_scope": ["/", "/fr/", "/es/"],
+    "route_scope": [
+      "/",
+      "/fr/",
+      "/es/"
+    ],
     "surfaces": [
       {
         "environment": "development",
         "url": "http://localhost:8094/",
-        "version": "254.3",
+        "version": "289.0",
         "version_url": "http://localhost:8094/VERSION",
         "note": "Configured local static preview; the server need not be running."
       },
       {
         "environment": "preview",
         "url": "https://ec92009.github.io/WebByElie/",
-        "version": "254.3",
+        "version": "289.0",
         "version_url": "https://ec92009.github.io/WebByElie/VERSION",
         "note": "GitHub Pages phone-test preview; live parity and version are verified separately and never count as production."
       },
       {
         "environment": "production",
         "url": "https://web-by-elie.com/",
-        "version": "254.3",
+        "version": "289.0",
         "version_url": "https://web-by-elie.com/VERSION",
         "note": "Cloudflare Pages production surface; the declared source release is not a live beacon receipt."
       }

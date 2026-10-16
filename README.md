@@ -2,7 +2,7 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v254.3`
+Current visible version: `v289.0`
 
 Production URL: `https://web-by-elie.com/`
 
@@ -106,3 +106,13 @@ This read-only source check validates public local links and fragments, generate
 - Cloudflare builds with `node scripts/build-public.mjs` and publishes `dist/`, an allowlisted public-file bundle. The prior production deployment `68c36c81-b8f2-4642-83e3-6845268fc0bd` is the pre-WST rollback point.
 - 3D print/coaster files are kept locally under `private-print-assets/` and ignored by Git.
 - Keep DNS and production edge settings in Cloudflare, with GitHub as source control.
+
+## TILBURY creator pages — 16 October 2026
+
+- `https://web-by-elie.com/june.rowan` — June Rowan, everyday wellness.
+- `https://web-by-elie.com/nora.vela` — Nora Vela, business experiments.
+- `https://web-by-elie.com/elena.brooks` — Elena Brooks, everyday relationships.
+
+All hosts are explicitly fictional AI characters. Each page uses the approved portrait and captioned pilot MP4, English captions and transcript, plus the verified Instagram profile and Reel URL. There are no forms, payments, analytics beacons or third-party embeds on these routes. Fonts are self-hosted. Display settings use local browser storage only.
+
+Regenerate their HTML with `python3 scripts/generate-creator-pages.py`, then build the allowlisted deployment with `node scripts/build-public.mjs`. The `creators.privacy`, `creators.terms` and `creators.data-deletion` policies cover this surface. Cloudflare Pages automatically deploys `main`. Roll back this addition by reverting its release commit; the pre-change deployment is `6c88d121-0ca8-4129-bac0-c49a5b7cd718`. No DNS changes are needed.
