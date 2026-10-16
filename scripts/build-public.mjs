@@ -15,5 +15,7 @@ for (const directory of ["assets", "fr", "es", "services", "case-studies", "priv
   cpSync(join(root, directory), join(output, directory), { recursive: true });
 }
 mkdirSync(join(output, ".wst"));
-cpSync(join(root, ".wst/site.json"), join(output, ".wst/site.json"));
+for (const name of readdirSync(join(root, ".wst"))) {
+  if (name.endsWith(".json")) cpSync(join(root, ".wst", name), join(output, ".wst", name));
+}
 console.log("Public static output ready in dist (no source, credentials, or working notes).");

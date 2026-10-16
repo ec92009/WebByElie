@@ -136,3 +136,12 @@ email recovery link. Downloads expire after 30 days; saved files remain usable.
 The dedicated Stripe webhook handles confirmed and asynchronous payment events.
 Backend download authorization checks Stripe payment, product, price and current
 refund/dispute state. No customer account or recurring payment is introduced.
+
+### TILBURY creator shops
+
+The three separately scoped shops have required delivery email and an optional,
+unchecked letter subscription. WST receives only sessionless page views and
+stable CTA/form intent, respects GPC/DNT, and excludes non-production origins.
+It never receives form values, email, Stripe session IDs or private order URLs.
+Child declarations live at `.wst/june.rowan.json`, `.wst/nora.vela.json` and
+`.wst/elena.brooks.json`; root homepage identity remains `webbyelie`.

@@ -1,0 +1,110 @@
+{
+  "manifest_version": "wst.site.v1",
+  "site_id": "tilbury-june-rowan",
+  "name": "June Rowan",
+  "production_url": "https://web-by-elie.com/june.rowan",
+  "ownership_verified": true,
+  "approval_status": "approved",
+  "beacon_verified": false,
+  "operational_state": "partial",
+  "monitorability": {
+    "contract_version": "wst.monitorable.v1",
+    "owner_role": "Elie (site owner)",
+    "approval_ref": "Elie: make the three shops monitor friendly and add to Websignals, 2026-10-16",
+    "route_scope": [
+      "/june.rowan"
+    ],
+    "surfaces": [
+      {
+        "environment": "development",
+        "url": "http://localhost:8094/june.rowan",
+        "version": "289.3",
+        "version_url": "http://localhost:8094/VERSION",
+        "note": "Local preview is excluded from collection."
+      },
+      {
+        "environment": "production",
+        "url": "https://web-by-elie.com/june.rowan",
+        "version": "289.3",
+        "version_url": "https://web-by-elie.com/VERSION",
+        "note": "One character shop; owner-approved aggregate collection."
+      }
+    ],
+    "capabilities": {
+      "browser_traffic": {
+        "state": "implemented",
+        "source": "WST sessionless aggregate creator-shop beacon",
+        "freshness_hours": 24,
+        "next_action": "Verify a live page_view receipt; sessionless events do not create Visits or session attribution."
+      },
+      "edge_traffic": {
+        "state": "not_applicable",
+        "source": null,
+        "freshness_hours": null,
+        "next_action": "Parent domain edge counts cannot be attributed to individual shops."
+      },
+      "cta": {
+        "state": "implemented",
+        "source": "Stable creator-shop CTA and form identifiers",
+        "freshness_hours": 24,
+        "next_action": "Verify CTA receipts and preserve IDs when copy or layout changes."
+      },
+      "conversions": {
+        "state": "planned",
+        "source": null,
+        "freshness_hours": null,
+        "next_action": "Connect Stripe-confirmed free kit claims separately from revenue and letter opt-ins; clicks do not prove completion."
+      },
+      "health": {
+        "state": "implemented",
+        "source": "WST read-only HTTP health probe",
+        "freshness_hours": 24,
+        "next_action": "Repeat a safe GET check after releases and record status/content evidence separately."
+      },
+      "field_vitals": {
+        "state": "planned",
+        "source": null,
+        "freshness_hours": null,
+        "next_action": "Connect privacy-safe field vitals when sufficient desktop and mobile samples exist, or retain insufficient-data status."
+      },
+      "lab_performance": {
+        "state": "planned",
+        "source": "Chrome DevTools",
+        "freshness_hours": 168,
+        "next_action": "Record trace receipts for the shared responsive viewport matrix."
+      }
+    },
+    "cta_ids": [
+      "kit_hero",
+      "kit_checkout",
+      "kit_mobile",
+      "product_preview",
+      "instagram_follow"
+    ],
+    "conversion_receipts": [],
+    "privacy_profile": "wst.event.v1",
+    "consent_authority": "approved-cookieless",
+    "collector_url": "https://web-signals-collector.ec92009.workers.dev/v1/events",
+    "performance_profile": "wst.responsive-performance.v1",
+    "standards_profile": "elies-websites",
+    "standards_profile_version": "elies-websites.v1",
+    "standards_status": "partial",
+    "standards_evidence": [
+      "Versioned responsive shop, approved identity, settings, policy links, email form and stable CTA identifiers. Full performance/accessibility matrix remains pending."
+    ],
+    "standards_next_action": "Run and record the 320/375/390/768/1280 plus landscape, 200% zoom, keyboard, reduced-motion, fixed-control, and Chrome DevTools performance matrix; then refresh live version evidence.",
+    "disable_tracking": "Remove the WST beacon script or set data-wst-enabled to false; collection must stop without affecting navigation or the site.",
+    "exceptions": [
+      {
+        "requirement": "observed beacon readiness",
+        "reason": "The declaration and synthetic checks exist, but WST has not stored a verified live page_view and CTA receipt in this source release.",
+        "next_action": "Verify one labelled production page_view and CTA receipt; keep synthetic activity out of business totals."
+      },
+      {
+        "requirement": "responsive and performance evidence",
+        "reason": "The source has baseline responsive/accessibility controls, but the complete viewport, keyboard, reduced-motion, fixed-control, and performance receipt is not yet recorded.",
+        "next_action": "Run the shared responsive-performance matrix and record desktop/mobile lab evidence before claiming aligned standards."
+      }
+    ]
+  }
+}
