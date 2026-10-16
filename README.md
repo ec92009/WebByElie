@@ -116,3 +116,23 @@ This read-only source check validates public local links and fragments, generate
 All hosts are explicitly fictional AI characters. Each page uses the approved portrait and captioned pilot MP4, English captions and transcript, plus the verified Instagram profile and Reel URL. There are no forms, payments, analytics beacons or third-party embeds on these routes. Fonts are self-hosted. Display settings use local browser storage only.
 
 Regenerate their HTML with `python3 scripts/generate-creator-pages.py`, then build the allowlisted deployment with `node scripts/build-public.mjs`. The `creators.privacy`, `creators.terms` and `creators.data-deletion` policies cover this surface. Cloudflare Pages automatically deploys `main`. Roll back this addition by reverting its release commit; the pre-change deployment is `6c88d121-0ca8-4129-bac0-c49a5b7cd718`. No DNS changes are needed.
+
+## Tilbury creator shops — 16 October 2026
+
+The three creator pages now sell original one-time digital kits in USD:
+June Rowan's Easier Week Kit ($15), Nora Vela's Before You Spend Kit ($19),
+and Elena Brooks's Say It Clearly ($15). Run `python3 scripts/generate-creator-shops.py`
+to rebuild these pages, their purchase policies and the private order landing page.
+The original pilot video and Instagram routes remain available on each page.
+
+Payments and private ZIP delivery use the isolated `/tilbury/` namespace on the
+existing PhotosByElie Cloudflare checkout backend. Stripe credentials stay there;
+no payment secret or paid product payload belongs in this public repository.
+Only the intended sample pages in `assets/shop/` are public. Product sources and
+private bundles are maintained separately in the Tilbury commerce project.
+
+The buyer flow is shop -> Stripe Checkout -> payment-confirmed delivery page and
+email recovery link. Downloads expire after 30 days; saved files remain usable.
+The dedicated Stripe webhook handles confirmed and asynchronous payment events.
+Backend download authorization checks Stripe payment, product, price and current
+refund/dispute state. No customer account or recurring payment is introduced.
