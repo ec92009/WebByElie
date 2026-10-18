@@ -5,7 +5,7 @@
  form?.addEventListener('submit',async event=>{
   event.preventDefault();if(busy||!form.reportValidity())return;
   busy=true;const button=form.querySelector('button[type=submit]'),status=form.querySelector('[role=status]'),label=button.textContent;
-  button.disabled=true;button.textContent='Opening free checkout…';status.textContent='Preparing your free introductory kit.';
+  button.disabled=true;button.textContent='Opening checkout…';status.textContent='Preparing your US$0.99 checkout.';
   try{
    const r=await fetch(backend+'/tilbury/checkout',{method:'POST',headers:{'content-type':'application/json','idempotency-key':attempt},body:JSON.stringify({sku:form.dataset.sku,email:form.elements.email.value.trim(),letterOptIn:form.elements.letter.checked,termsConsent:form.elements.terms.checked,digitalConsent:form.elements.digital.checked})});
    const data=await r.json();if(!r.ok||!data.url)throw Error(data.error||'Checkout is temporarily unavailable.');
