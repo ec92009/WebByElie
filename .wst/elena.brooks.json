@@ -18,14 +18,14 @@
       {
         "environment": "development",
         "url": "http://localhost:8094/elena.brooks",
-        "version": "294.2",
+        "version": "294.4",
         "version_url": "http://localhost:8094/VERSION",
         "note": "Local preview is excluded from collection."
       },
       {
         "environment": "production",
         "url": "https://web-by-elie.com/elena.brooks",
-        "version": "294.2",
+        "version": "294.4",
         "version_url": "https://web-by-elie.com/VERSION",
         "note": "One character shop; owner-approved aggregate collection."
       }
