@@ -20,21 +20,21 @@
       {
         "environment": "development",
         "url": "http://localhost:8094/",
-        "version": "294.1",
+        "version": "294.2",
         "version_url": "http://localhost:8094/VERSION",
         "note": "Configured local static preview; the server need not be running."
       },
       {
         "environment": "preview",
         "url": "https://ec92009.github.io/WebByElie/",
-        "version": "294.1",
+        "version": "294.2",
         "version_url": "https://ec92009.github.io/WebByElie/VERSION",
         "note": "GitHub Pages phone-test preview; live parity and version are verified separately and never count as production."
       },
       {
         "environment": "production",
         "url": "https://web-by-elie.com/",
-        "version": "294.1",
+        "version": "294.2",
         "version_url": "https://web-by-elie.com/VERSION",
         "note": "Cloudflare Pages production surface; the declared source release is not a live beacon receipt."
       }

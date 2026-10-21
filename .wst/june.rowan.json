@@ -18,14 +18,14 @@
       {
         "environment": "development",
         "url": "http://localhost:8094/june.rowan",
-        "version": "294.1",
+        "version": "294.2",
         "version_url": "http://localhost:8094/VERSION",
         "note": "Local preview is excluded from collection."
       },
       {
         "environment": "production",
         "url": "https://web-by-elie.com/june.rowan",
-        "version": "294.1",
+        "version": "294.2",
         "version_url": "https://web-by-elie.com/VERSION",
         "note": "One character shop; owner-approved aggregate collection."
       }

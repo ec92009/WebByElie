@@ -5,3 +5,6 @@
 node_modules/
 dist/
 private-print-assets/
+
+# Machine-local dependency directories and links
+node_modules
