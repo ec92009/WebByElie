@@ -113,3 +113,18 @@ for (const privacySignal of [{ privacy: true }, { dnt: true }]) {
 }
 
 console.log("WST consent runtime checks passed: legacy opt-in, withdrawal, replay, privacy signal, preview exclusion, synthetic marking, storage failure, and sessionless aggregate mode.");
+
+// Creator bootstrap stays route-scoped and never attributes preview traffic to production.
+const creatorSource = readFileSync(new URL('../assets/creator-monitoring.js', import.meta.url), 'utf8');
+for (const [origin, pathname, search, expected] of [
+ ['https://web-by-elie.com','/alex.ward','?wst_synthetic=1','tilbury-alex-ward'],
+ ['https://web-by-elie.com','/alex.ward/','','tilbury-alex-ward'],
+ ['http://localhost:8097','/alex.ward','',''],
+ ['https://web-by-elie.com','/unrelated','',''],
+]) {
+ const appended=[];
+ vm.runInNewContext(creatorSource,{location:{origin,pathname,search},navigator:{webdriver:false},URLSearchParams,document:{createElement:()=>({dataset:{}}),head:{appendChild:s=>appended.push(s)}}});
+ assert.equal(appended.length,expected?1:0);
+ if(expected){assert.equal(appended[0].dataset.wstSite,expected);assert.equal(appended[0].dataset.wstSessionless,'true');assert.equal(appended[0].dataset.wstSynthetic,search?'true':'false');}
+}
+console.log('Alex monitoring route and preview exclusion passed.');

@@ -1,6 +1,6 @@
 /* Owner-approved, route-scoped, sessionless shop monitoring. */
 (() => {
- const routes={'/june.rowan':'tilbury-june-rowan','/nora.vela':'tilbury-nora-vela','/elena.brooks':'tilbury-elena-brooks'};
+ const routes={'/june.rowan':'tilbury-june-rowan','/nora.vela':'tilbury-nora-vela','/elena.brooks':'tilbury-elena-brooks','/alex.ward':'tilbury-alex-ward'};
  const id=routes[location.pathname.replace(/\/$/,'')];
  if(location.origin!=='https://web-by-elie.com'||!id)return;
  const script=document.createElement('script');
