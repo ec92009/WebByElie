@@ -153,3 +153,7 @@ Owner browser inspections use `?wst_synthetic=1` so activity stays outside busin
 `https://web-by-elie.com/alex.ward` is the fourth fictional creator page. The Tech Proof Kit costs US$0.99 once and contains a seven-page workbook, offline HTML task-comparison calculator, CSV subscription review and START-HERE instructions. Regenerate it with `python3 scripts/generate-alex-shop.py`. The public page uses Alex's approved portrait, finished captioned 30-second episode and one intentionally public worksheet preview. Paid files remain in the private TilburyCommerce repository and private R2; never add the purchased ZIP to this public repo.
 
 The existing Stripe checkout, payment-confirmed webhook, delivery page, 30-day download window and 14-day refund request policy apply. No new email campaign or analytics collection is activated on Alex's route. Display settings support System/Day/Night, persisted readable opacity/blur and the shared VERSION pill/About identity. No DNS or other creator publication changes are required. Rollback the page by reverting this release; the previously deployed source was d1a003b.
+
+### Creator social profiles
+
+Each creator shop includes a shared Follow section, sourced from `scripts/creator_social.py`. Only verified accounts are listed: June (YouTube, Instagram, TikTok), Nora and Elena (YouTube, Instagram), Alex (YouTube). Stable `youtube_follow`, `instagram_follow`, and `tiktok_follow` CTA IDs make these outbound clicks monitorable. Keep the generated HTML and both shop generators in sync when adding an account.

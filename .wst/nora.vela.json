@@ -79,7 +79,8 @@
       "kit_checkout",
       "kit_mobile",
       "product_preview",
-      "instagram_follow"
+      "instagram_follow",
+      "youtube_follow"
     ],
     "conversion_receipts": [],
     "privacy_profile": "wst.event.v1",
