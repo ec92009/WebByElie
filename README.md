@@ -2,7 +2,7 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v289.0`
+Prepared release version: `v310.0` (local; publication pending)
 
 Production URL: `https://web-by-elie.com/`
 

@@ -1,19 +1,27 @@
 # Web By Elie Summary
 
-Last updated: 2026-09-04 15:49 CEST
+Last updated: 2026-11-06 CET
 
 ## Current State
 
 - Repo: `/Users/ecohen/Dev/WebByElie`
-- Branch: `main`
+- Release preparation branch: `t3/homepage-mobile-review` (local)
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=248.1`
+- Public preview: `https://ec92009.github.io/WebByElie/`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v248.1`
+- Prepared release version: `v310.0` (local; publication pending)
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
+
+## Release Preparation — 2026-11-06
+
+- Added persistent mobile descriptions and service links in English, French, and Spanish; desktop cards retain their existing design.
+- Compared against fetched `origin/main` at `b2a948b`; the reviewed improvement is a compatible descendant.
+- Prepared the existing version surfaces and generated pages for `v310.0`.
+- Checks passed: `npm test` (42 HTML files, 761 local references, 14 generated pages), `npm run build:public`, both studio builds, the bounded Three.js smoke render, and HTTP checks for localized homepages, policies and service routes.
+- Publication remains pending: after a fresh origin compatibility check, `git push origin HEAD:main` from this release branch would update the production source branch. The documented Cloudflare Pages integration builds `dist/` with `node scripts/build-public.mjs` and automatically deploys `main`.
 
 ## What We Built
 
@@ -78,7 +86,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `248.1`, displayed as `v248.1`.
+- Prepared version is `310.0`, displayed as `v310.0`; production publication is pending.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
