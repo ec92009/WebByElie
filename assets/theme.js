@@ -285,7 +285,12 @@
       setText(".demo-hero .lede", page.heroLede);
       setText(".demo-hero .button.secondary", page.seeServices);
       setListText(".studio-services article h2", (page.services || []).map((item) => item[0]));
-      setListText(".studio-services article p", (page.services || []).map((item) => item[1]));
+      setListText(".studio-services .panel-content p", (page.services || []).map((item) => item[1]));
+      setListText("[data-service-summary]", page.serviceSummaries);
+      document.querySelectorAll(".service-learn-more").forEach((link, index) => {
+        link.firstChild.textContent = `${page.learnMore} `;
+        link.setAttribute("aria-label", `${page.learnMore}: ${page.services[index][0]}`);
+      });
       setText("#process .section-head .eyebrow", page.processEyebrow);
       setText("#process .section-head h2", page.processTitle);
       setText("#process .section-head .lede", page.processLede);

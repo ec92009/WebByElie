@@ -223,6 +223,10 @@ ${ogAlternates}
             <source media="(max-width: 820px)" src="../assets/${detailVideoFiles[index]}" type="video/mp4" />
             <source src="../assets/${serviceVideoFiles[index]}" type="video/mp4" />
           </video>
+          <div class="service-mobile-details">
+            <p data-service-summary>${text(page.serviceSummaries[index])}</p>
+            <a class="service-learn-more" href="services/${serviceSlugs[index]}/?v=${version}" aria-label="${text(page.learnMore)}: ${text(heading)}" data-wst-cta="${serviceCtaIds[index]}">${text(page.learnMore)} <span aria-hidden="true">→</span></a>
+          </div>
         </article>`
           )
           .join("\n        ")}

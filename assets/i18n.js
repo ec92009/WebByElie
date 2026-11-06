@@ -40,6 +40,13 @@ window.webByElieI18n = {
         heroTitle: "New look, better reach.",
         heroLede: "Upgrade your website so it looks better, is easier for people, search engines, and AI assistants to find, and helps hunt wasteful costs.",
         seeServices: "See services",
+        learnMore: "Learn more",
+        serviceSummaries: [
+          "We preserve what is working, create a palette of possible looks, and help you choose and combine options into the final sign-off site.",
+          "Titles, descriptions, headings, links, service wording, locations, and structure.",
+          "We make the basic facts easier to understand: who the business serves, what it offers, where it works, and which answers belong on the site.",
+          "We look for unused subscriptions, overlapping tools, paid tiers, renewals, and ownership gaps."
+        ],
         services: [
           ["Refresh", "You have already put real work into the current site. We preserve what is working, create a palette of possible looks, and help you choose and combine options into the final sign-off site."],
           ["SEO", "Search Engine Optimization is precise, but practical. Search engines read visible content and behind-the-scenes page details, so we work through a checklist: titles, descriptions, headings, links, service wording, locations, and structure."],
@@ -200,6 +207,13 @@ window.webByElieI18n = {
         heroTitle: "Nouvelle allure, meilleure portée.",
         heroLede: "Améliorez votre site pour qu’il soit plus beau, plus facile à trouver par les personnes, les moteurs de recherche et les assistants IA, et plus utile pour repérer les coûts inutiles.",
         seeServices: "Voir les services",
+        learnMore: "En savoir plus",
+        serviceSummaries: [
+          "Nous gardons ce qui fonctionne, créons une palette d’orientations possibles et vous aidons à choisir puis combiner les options jusqu’au site final à valider.",
+          "Titres, descriptions, titres de section, liens, formulation des services, lieux et structure.",
+          "Nous rendons les informations de base plus faciles à comprendre : qui l’entreprise sert, ce qu’elle propose, où elle travaille et quelles réponses doivent se trouver sur le site.",
+          "Nous cherchons les abonnements inutilisés, les outils qui se chevauchent, les offres payantes, les renouvellements et les zones floues de propriété."
+        ],
         services: [
           ["Refonte", "Vous avez déjà investi du vrai travail dans le site actuel. Nous gardons ce qui fonctionne, créons une palette d’orientations possibles et vous aidons à choisir puis combiner les options jusqu’au site final à valider."],
           ["SEO", "Le Search Engine Optimization est précis, mais très concret. Les moteurs de recherche lisent le contenu visible et les détails cachés des pages, donc nous suivons une checklist : titres, descriptions, titres de section, liens, formulation des services, lieux et structure."],
@@ -360,6 +374,13 @@ window.webByElieI18n = {
         heroTitle: "Nueva imagen, más alcance.",
         heroLede: "Mejore su sitio para que se vea mejor, sea más fácil de encontrar por personas, buscadores y asistentes de IA, y ayude a detectar costes innecesarios.",
         seeServices: "Ver servicios",
+        learnMore: "Más información",
+        serviceSummaries: [
+          "Conservamos lo que funciona, creamos una paleta de posibles estilos y le ayudamos a elegir y combinar opciones hasta llegar al sitio final para aprobar.",
+          "Títulos, descripciones, encabezados, enlaces, redacción de servicios, ubicaciones y estructura.",
+          "Hacemos que los datos básicos sean más fáciles de entender: a quién atiende el negocio, qué ofrece, dónde trabaja y qué respuestas deben estar en el sitio.",
+          "Buscamos suscripciones sin uso, herramientas solapadas, planes de pago, renovaciones y dudas de propiedad."
+        ],
         services: [
           ["Renovación", "Usted ya ha invertido trabajo real en el sitio actual. Conservamos lo que funciona, creamos una paleta de posibles estilos y le ayudamos a elegir y combinar opciones hasta llegar al sitio final para aprobar."],
           ["SEO", "La optimización para buscadores es precisa, pero práctica. Los buscadores leen el contenido visible y los detalles internos de la página, así que seguimos una checklist: títulos, descripciones, encabezados, enlaces, redacción de servicios, ubicaciones y estructura."],
