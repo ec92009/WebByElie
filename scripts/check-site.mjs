@@ -5,7 +5,6 @@ import {
   mkdtempSync,
   mkdirSync,
   readFileSync,
-  readdirSync,
   rmSync,
   statSync,
 } from "node:fs";
@@ -13,21 +12,11 @@ import { tmpdir } from "node:os";
 import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { securityHeaders } from "./security-headers.mjs";
+import { publishedHtml } from "./public-site.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const version = readFileSync(join(root, "VERSION"), "utf8").trim();
 const expectedVersion = `v${version}`;
-const ignoredDirectories = new Set([
-  ".git",
-  ".playwright-cli",
-  "Archive",
-  "Remotion_AG",
-  "Three_AG",
-  "node_modules",
-  "dist",
-  "output",
-  "outputs",
-]);
 const failures = [];
 
 const fail = (message) => failures.push(message);
@@ -41,22 +30,13 @@ if (!existsSync(headersPath)) {
   if (headers !== securityHeaders(root)) fail("_headers is stale; run node scripts/security-headers.mjs");
 }
 
-const walkHtml = (directory, prefix = "") => {
-  const files = [];
-  for (const entry of readdirSync(directory, { withFileTypes: true })) {
-    if (entry.isDirectory() && ignoredDirectories.has(entry.name)) continue;
-    const relativePath = join(prefix, entry.name);
-    const absolutePath = join(directory, entry.name);
-    if (entry.isDirectory()) {
-      files.push(...walkHtml(absolutePath, relativePath));
-    } else if (entry.isFile() && entry.name.endsWith(".html")) {
-      files.push(relativePath);
-    }
-  }
-  return files;
-};
-
-const publicHtml = walkHtml(root).sort();
+const publicHtml = publishedHtml();
+// Hreflang alternates are part of the existing sitemap URL set too.
+const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
+const sitemapUrls = new Set([
+  ...[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]),
+  ...[...sitemap.matchAll(/\bhref="([^"]+)"/g)].map((match) => match[1]),
+]);
 
 const resolveLocalTarget = (sourceFile, rawReference) => {
   const reference = rawReference.split("#")[0].split("?")[0];
@@ -91,6 +71,9 @@ let localReferenceCount = 0;
 for (const sourceFile of publicHtml) {
   const sourcePath = join(root, sourceFile);
   const source = readFileSync(sourcePath, "utf8");
+  const noindex = /<meta\b[^>]*name="robots"[^>]*content="[^"]*\bnoindex\b/i.test(source);
+  const canonical = source.match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"/i)?.[1];
+  if (!noindex && (!canonical || !sitemapUrls.has(canonical))) fail(`${sourceFile}: published page needs a sitemap URL or noindex`);
   if (/<style\b|\sstyle\s*=|\son[a-z]+\s*=/i.test(source)) {
     fail(`${sourceFile}: inline style or event handler conflicts with CSP`);
   }
