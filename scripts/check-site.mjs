@@ -12,6 +12,7 @@ import {
 import { tmpdir } from "node:os";
 import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
+import { securityHeaders } from "./security-headers.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const version = readFileSync(join(root, "VERSION"), "utf8").trim();
@@ -30,6 +31,15 @@ const ignoredDirectories = new Set([
 const failures = [];
 
 const fail = (message) => failures.push(message);
+
+const headersPath = join(root, "_headers");
+if (!existsSync(headersPath)) {
+  fail("_headers is missing");
+} else {
+  const headers = readFileSync(headersPath, "utf8");
+  if (!headers.includes("Content-Security-Policy:")) fail("_headers lacks a CSP");
+  if (headers !== securityHeaders(root)) fail("_headers is stale; run node scripts/security-headers.mjs");
+}
 
 const walkHtml = (directory, prefix = "") => {
   const files = [];
@@ -81,6 +91,9 @@ let localReferenceCount = 0;
 for (const sourceFile of publicHtml) {
   const sourcePath = join(root, sourceFile);
   const source = readFileSync(sourcePath, "utf8");
+  if (/<style\b|\sstyle\s*=|\son[a-z]+\s*=/i.test(source)) {
+    fail(`${sourceFile}: inline style or event handler conflicts with CSP`);
+  }
   const references = [...source.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)].map(
     (match) => match[1],
   );

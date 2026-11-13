@@ -42,10 +42,11 @@ function showMenu(language) {
     <section class="cuisine" id="${section}" aria-labelledby="${section}-title">
       <div class="cuisine-heading"><h2 id="${section}-title">${t[section]}</h2><span>${t.count}</span></div>
       <div class="dish-grid">${items.map((dish,index) => `<article class="dish">
-        <div class="dish-photo" style="--panel:${dish.panel}"><img src="assets/${dish.image}.png" alt="${dish.names[language]}" width="2172" height="724" loading="lazy"><span class="dish-index" aria-hidden="true">0${index+1}</span></div>
+        <div class="dish-photo" data-panel="${dish.panel}"><img src="assets/${dish.image}.png" alt="${dish.names[language]}" width="2172" height="724" loading="lazy"><span class="dish-index" aria-hidden="true">0${index+1}</span></div>
         <div class="dish-label"><h3>${dish.names[language]}</h3><span class="price">${new Intl.NumberFormat(language,{style:'currency',currency:'EUR'}).format(dish.price)}</span></div>
       </article>`).join('')}</div>
     </section>`).join('');
+  document.querySelectorAll("[data-panel]").forEach(photo => photo.style.setProperty("--panel", photo.dataset.panel));
   gate.hidden = true;
   menu.hidden = false;
   window.scrollTo({top:0,behavior:'instant'});
