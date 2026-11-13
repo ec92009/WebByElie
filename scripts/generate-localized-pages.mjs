@@ -341,6 +341,7 @@ ${site.caseStudyUrl ? `                <a class="text-link" href="${text(site.ca
         <div>
           <p class="eyebrow">${text(page.contactEyebrow)}</p>
           <h2>${text(page.contactTitle)}</h2>
+          <noscript data-email-fallback><p>${text(common.emailFallback)}</p></noscript>
         </div>
         <a class="button" href="#contact" data-wst-cta="contact_section" data-email-link data-email-user="hello" data-email-domain="web-by-elie.com" data-email-subject="${text(common.emailSubject)}" data-email-label="address">${text(common.emailCta)}</a>
       </div>
@@ -506,6 +507,13 @@ ${serviceNav}
 </html>
 `;
 };
+
+// English keeps its established hand-authored content; only this fallback is generated.
+const englishHome = readFileSync("index.html", "utf8").replace(
+  /(<section id="contact"[\s\S]*?<\/h2>)(?:\n\s*<noscript data-email-fallback>[\s\S]*?<\/noscript>)?/,
+  (_, heading) => `${heading}\n          <noscript data-email-fallback><p>${text(i18n.en.common.emailFallback)}</p></noscript>`,
+);
+writeFileSync("index.html", englishHome);
 
 for (const lang of ["fr", "es"]) {
   const output = join(locales[lang].path, "index.html");

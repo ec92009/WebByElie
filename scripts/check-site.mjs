@@ -132,6 +132,7 @@ for (const homepage of ["index.html", "fr/index.html", "es/index.html"]) {
 }
 
 const generatedFiles = [
+  "index.html",
   "fr/index.html",
   "es/index.html",
   ...["", "fr", "es"].flatMap((locale) =>
@@ -146,6 +147,7 @@ try {
   mkdirSync(join(generationRoot, "assets"), { recursive: true });
   mkdirSync(join(generationRoot, "scripts"), { recursive: true });
   cpSync(join(root, "VERSION"), join(generationRoot, "VERSION"));
+  cpSync(join(root, "index.html"), join(generationRoot, "index.html"));
   cpSync(join(root, "assets", "i18n.js"), join(generationRoot, "assets", "i18n.js"));
   cpSync(
     join(root, "scripts", "generate-localized-pages.mjs"),
