@@ -518,6 +518,10 @@
 
     const startAutoplayVideos = () => {
       autoplayVideos.forEach((video) => {
+        if (reduceMotion.matches) {
+          video.pause();
+          return;
+        }
         video.muted = true;
         video.defaultMuted = true;
         const playResult = video.play();
@@ -529,6 +533,7 @@
 
     startAutoplayVideos();
     window.addEventListener("pageshow", startAutoplayVideos);
+    reduceMotion.addEventListener("change", startAutoplayVideos);
     document.addEventListener("visibilitychange", () => {
       if (!document.hidden) startAutoplayVideos();
     });

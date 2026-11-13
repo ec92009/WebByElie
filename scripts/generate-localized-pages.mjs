@@ -220,7 +220,7 @@ ${ogAlternates}
             <p>${text(paragraph)}</p>
           </div>
           </a>
-          <video class="hover-video" data-service-video muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1">
+          <video class="hover-video" poster="../assets/${serviceVideoFiles[index].replace(".mp4", "-poster.jpg")}" data-service-video muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1">
             <source media="(max-width: 820px)" src="../assets/${detailVideoFiles[index]}" type="video/mp4" />
             <source src="../assets/${serviceVideoFiles[index]}" type="video/mp4" />
           </video>
@@ -475,7 +475,7 @@ ${hreflangLinks}
           <h1>${text(heading)}</h1>
         </div>
         <figure class="service-detail-video">
-          <video autoplay muted loop playsinline preload="metadata" data-autoplay-video tabindex="0" aria-label="${text(heading)}">
+          <video poster="${assetPrefix}assets/${detailVideoFiles[index].replace(".mp4", "-poster.jpg")}" muted loop playsinline preload="metadata" data-autoplay-video tabindex="0" aria-label="${text(heading)}">
             <source src="${assetPrefix}assets/${detailVideoFiles[index]}" type="video/mp4" />
           </video>
         </figure>

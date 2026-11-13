@@ -77,7 +77,11 @@ for (const sourceFile of publicHtml) {
   if (/<style\b|\sstyle\s*=|\son[a-z]+\s*=/i.test(source)) {
     fail(`${sourceFile}: inline style or event handler conflicts with CSP`);
   }
-  const references = [...source.matchAll(/\b(?:href|src)=["']([^"']+)["']/gi)].map(
+  for (const [video] of source.matchAll(/<video\b[^>]*>/gi)) {
+    if (!/\bposter="[^"]+"/.test(video)) fail(`${sourceFile}: video needs a poster`);
+    if (/\sautoplay(?:\s|>|=)/i.test(video)) fail(`${sourceFile}: native autoplay bypasses reduced-motion preferences`);
+  }
+  const references = [...source.matchAll(/\b(?:href|src|poster)=["']([^"']+)["']/gi)].map(
     (match) => match[1],
   );
 
