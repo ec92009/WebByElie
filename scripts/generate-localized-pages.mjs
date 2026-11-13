@@ -213,12 +213,13 @@ ${ogAlternates}
         ${page.services
           .map(
             ([heading, paragraph], index) => `<article class="video-panel" data-service-panel>
-          <a class="panel-link" href="services/${serviceSlugs[index]}/?v=${version}" aria-label="${text(heading)}" data-wst-cta="${serviceCtaIds[index]}"></a>
+          <a class="panel-link" href="services/${serviceSlugs[index]}/?v=${version}" aria-labelledby="service-title-${index}" data-wst-cta="${serviceCtaIds[index]}">
           <div class="panel-content">
             <span>${String(index + 1).padStart(2, "0")}</span>
-            <h2>${text(heading)}</h2>
+            <h2 id="service-title-${index}">${text(heading)}</h2>
             <p>${text(paragraph)}</p>
           </div>
+          </a>
           <video class="hover-video" data-service-video muted loop playsinline preload="metadata" aria-hidden="true" tabindex="-1">
             <source media="(max-width: 820px)" src="../assets/${detailVideoFiles[index]}" type="video/mp4" />
             <source src="../assets/${serviceVideoFiles[index]}" type="video/mp4" />
@@ -263,7 +264,7 @@ ${ogAlternates}
           ${page.workExamples
             .map(
               (site) => `<article class="work-card">
-            <a class="work-card-hit" href="${text(site.url)}"${site.url === baseUrl + "/" ? "" : ' target="_blank" rel="noopener"'} aria-label="${text(site.cta)}: ${text(site.title)}" data-wst-cta="${portfolioCtaIds[site.theme]}"></a>
+            <a tabindex="-1" aria-hidden="true" class="work-card-hit" href="${text(site.url)}"${site.url === baseUrl + "/" ? "" : ' target="_blank" rel="noopener"'} aria-label="${text(site.cta)}: ${text(site.title)}" data-wst-cta="${portfolioCtaIds[site.theme]}"></a>
             <div class="work-preview work-preview-${text(site.theme)}">
               <img src="../assets/work-${text(site.theme === "golden" ? "golden-years" : site.theme === "photos" ? "photos-by-elie" : "assurances")}.png" alt="${text(site.title)} homepage" loading="lazy" />
             </div>
