@@ -15,6 +15,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v7
         with:
@@ -36,6 +38,7 @@ jobs:
       - name: Run source checks and studio builds
         run: |
           npm test
+          npm run build:public
           npm --prefix Remotion_AG run build
           npm --prefix Three_AG run build
           npm --prefix Three_AG run render:smoke

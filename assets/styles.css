@@ -325,7 +325,7 @@ a {
 
 .settings-segmented {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 6px;
   padding: 5px;
   border: 1px solid var(--glass-line);
@@ -1600,7 +1600,7 @@ html[data-theme="night"] .work-card {
   line-height: 1.6;
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (min-width: 821px) and (hover: hover) and (pointer: fine) {
   .studio-services article:hover {
     flex: 2.5;
     transform: translateY(-6px);
@@ -1844,7 +1844,7 @@ html[data-theme="night"] .work-card {
   .studio-services article .panel-content,
   .studio-services article.is-active .panel-content {
     align-self: flex-start;
-    width: auto;
+    width: fit-content;
     height: auto;
     margin: 14px;
     padding: 10px 12px;

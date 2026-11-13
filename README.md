@@ -2,11 +2,11 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Current visible version: `v317.0`
+Local candidate version: `v317.1` (unpublished)
 
 Production URL: `https://web-by-elie.com/`
 
-Preview URL: `https://ec92009.github.io/WebByElie/?v=317.0`
+Preview URL: `https://ec92009.github.io/WebByElie/` (deployed version not checked in this audit)
 
 Contact email: `hello@web-by-elie.com`
 
@@ -23,7 +23,7 @@ The current offer has four lanes:
 
 The selected public look is `Studio Clean`.
 
-Earlier chooser/proposal artifacts are archived under `Archive/`. The old proposal URLs remain as simple moved pages that point back to the main site.
+Earlier chooser/proposal artifacts are archived under `Archive/`. The three legacy design-draft URLs are excluded from the public build. Desktop-mail information and policy URLs remain published and noindex pending confirmation of external dependencies.
 
 ## Local Preview
 
@@ -43,7 +43,22 @@ The separate La Piazza restaurant-menu option is at `http://localhost:8094/resta
 npm test
 ```
 
-This read-only source check validates public local links and fragments, generated-page reproducibility, visible version/cache-bust consistency, JavaScript syntax, and TypeScript compilation. It does not verify a deployment; production remains a separate browser and live-URL gate.
+This read-only source check validates security headers and JSON-LD hashes, sitemap/noindex coverage, video posters and reduced-motion lifecycle behavior, public local links and fragments, generated-page reproducibility, visible version/cache-bust consistency, JavaScript syntax, and TypeScript compilation. It does not verify a deployment; production remains a separate browser and live-URL gate.
+
+To prepare and inspect the public output:
+
+```sh
+node scripts/generate-localized-pages.mjs
+node scripts/security-headers.mjs
+node scripts/generate-sitemap.mjs
+npm test
+npm run build:public
+python3 scripts/serve-public.py
+```
+
+The built-site server uses port 8094 and applies the global `_headers` policy. The simple source server above does not apply CSP. Follow the canonical versioning SOP before producing a new changed public build.
+
+The build names every permitted HTML page in `scripts/public-site.mjs`, generates `dist/sitemap.xml`, and emits a reduced `.wst/site.json`. The full tracked source monitor manifest stays unchanged. CI checks the public build with full Git history so sitemap modification dates can use the latest relevant commits. Local-only settings/browser checks are not evidence of a deployment.
 
 ## Files
 
@@ -56,7 +71,7 @@ This read-only source check validates public local links and fragments, generate
 - `assets/restaurant-demo/`: sample dish images and QR artwork used by the restaurant demo.
 - `assets/styles.css`: site styling.
 - `assets/i18n.js`: English, French, and Spanish site copy.
-- `assets/theme.js`: settings popover, language switching, day/night mode, glass controls, reveal effects, mobile sticky CTA, and the fixed version pill sourced from the same release marker as About.
+- `assets/theme.js`: settings popover, language switching, System/Day/Night modes, glass controls, reveal effects, mobile sticky CTA, and the fixed version pill sourced from the same release marker as About.
 - `apple-touch-icon.png`, `site.webmanifest`, `assets/icon-192.png`, `assets/icon-512.png`: mobile home-screen and browser install icons.
 - `assets/web-refresh-workspace.png`: generated shared hero image.
 - `assets/web-page-reassembly.mp4`: Standalone Remotion video asset that disassembles and rebuilds a page structure, including a visible copy-scrutiny and rewrite pass.
@@ -94,7 +109,7 @@ This read-only source check validates public local links and fragments, generate
 - The collector endpoint is `https://web-signals-collector.ec92009.workers.dev/v1/events`. Contact clicks have no delivery receipt and must not be reported as accepted conversions.
 - Public policy copy describes the aggregate measurement, sessionless processing, browser privacy signals and retention. The public `.wst/site.json` declaration is approved; live receipt verification is recorded separately in the WST registry/ticket.
 
-- Public pages are indexable and include canonical metadata for `https://web-by-elie.com/`.
+- Production content pages are indexable; restaurant routes and retained desktop-mail pages are noindex. Indexable pages include canonical metadata for `https://web-by-elie.com/`.
 - Home pages include Open Graph/Twitter metadata, JSON-LD structured data, and English/French/Spanish hreflang alternates.
 - The homepage includes a localized selected-work section for Assurances de Rueil, Golden Years Tax Strategy, and Photos By Elie, with a public Golden Years case-study link.
 - Google Search Console and Bing Webmaster Tools are verified, with the sitemap submitted and key URLs requested for indexing.

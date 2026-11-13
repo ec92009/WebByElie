@@ -177,7 +177,7 @@ ${ogAlternates}
   <header class="topbar demo-topbar dark-demo-topbar">
     <div class="shell topbar-stack">
       <div class="topbar-inner">
-        <a class="brand" href="./?v=${version}">
+        <a class="brand" href="./">
           <img class="brand-mark" src="../assets/web-by-elie-logo.svg" alt="Web By Elie logo" />
           <span>Web By Elie</span>
         </a>
@@ -213,7 +213,7 @@ ${ogAlternates}
         ${page.services
           .map(
             ([heading, paragraph], index) => `<article class="video-panel" data-service-panel>
-          <a class="panel-link" href="services/${serviceSlugs[index]}/?v=${version}" aria-labelledby="service-title-${index}" data-wst-cta="${serviceCtaIds[index]}">
+          <a class="panel-link" href="services/${serviceSlugs[index]}/" aria-labelledby="service-title-${index}" data-wst-cta="${serviceCtaIds[index]}">
           <div class="panel-content">
             <span>${String(index + 1).padStart(2, "0")}</span>
             <h2 id="service-title-${index}">${text(heading)}</h2>
@@ -385,7 +385,7 @@ const renderServiceDetail = (lang, index) => {
   const canonical = serviceUrl(lang, slug);
   const assetPrefix = locale.path ? "../../../" : "../../";
   const homePrefix = "../../";
-  const homeHref = `${homePrefix}?v=${version}`;
+  const homeHref = homePrefix;
   const jsonLd = JSON.stringify(
     {
       "@context": "https://schema.org",
@@ -410,7 +410,7 @@ const renderServiceDetail = (lang, index) => {
     .join("\n");
   const serviceNav = page.services
     .map(
-      ([name], serviceIndex) => `          <a class="${serviceIndex === index ? "is-current" : ""}"${serviceIndex === index ? ' aria-current="page"' : ""} href="${homePrefix}services/${serviceSlugs[serviceIndex]}/?v=${version}">${text(name)}</a>`
+      ([name], serviceIndex) => `          <a class="${serviceIndex === index ? "is-current" : ""}"${serviceIndex === index ? ' aria-current="page"' : ""} href="${homePrefix}services/${serviceSlugs[serviceIndex]}/">${text(name)}</a>`
     )
     .join("\n");
 

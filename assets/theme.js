@@ -4,13 +4,14 @@
   const settingsKey = "web-by-elie-settings";
   const legacyThemeKey = "web-by-elie-theme";
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const systemTheme = window.matchMedia("(prefers-color-scheme: dark)");
   const narrowServiceLayout = window.matchMedia("(max-width: 820px)");
   const metaThemeColor = document.querySelector('meta[name="theme-color"]');
   const translations = window.webByElieI18n || {};
   const supportedLanguages = ["en", "fr", "es"];
   const defaults = {
     language: "en",
-    theme: "day",
+    theme: "system",
     transparency: 86,
     translucency: 24,
   };
@@ -60,7 +61,7 @@
     const legacyTheme = safeStorage.get(legacyThemeKey);
     return {
       language: supportedLanguages.includes(parsed.language) ? parsed.language : pageLanguage(),
-      theme: parsed.theme === "night" || legacyTheme === "night" ? "night" : defaults.theme,
+      theme: ["system", "day", "night"].includes(parsed.theme) ? parsed.theme : legacyTheme === "night" ? "night" : defaults.theme,
       transparency: clamp(Number(parsed.transparency) || defaults.transparency, 68, 94),
       translucency: clamp(Number(parsed.translucency) || defaults.translucency, 8, 28),
     };
@@ -79,7 +80,7 @@
   }
 
   if (settingsRoot && !settingsRoot.querySelector("[data-settings-panel]")) {
-    const version = settingsRoot.dataset.siteVersion || "v317.0";
+    const version = settingsRoot.dataset.siteVersion || "v317.1";
     settingsRoot.insertAdjacentHTML(
       "beforeend",
       `<div class="settings-panel" id="site-settings-panel" role="dialog" aria-label="Site settings" data-settings-panel hidden>
@@ -102,6 +103,7 @@
         <div class="settings-field">
           <span data-settings-label="theme">Theme</span>
           <div class="settings-segmented" role="group" aria-label="Theme">
+            <button type="button" data-theme-choice="system">System</button>
             <button type="button" data-theme-choice="day">Day</button>
             <button type="button" data-theme-choice="night">Night</button>
           </div>
@@ -129,7 +131,7 @@
   const themeChoices = Array.from(document.querySelectorAll("[data-theme-choice]"));
 
   const getCopy = () => translations[state.language] || translations.en || {};
-  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v317.0";
+  const getSiteVersion = () => (settingsRoot && settingsRoot.dataset.siteVersion) || "v317.1";
   const setAllText = (selector, value) => {
     if (value === undefined) {
       return;
@@ -197,9 +199,10 @@
   };
 
   const applyTheme = () => {
-    root.dataset.theme = state.theme;
+    const theme = state.theme === "system" ? (systemTheme.matches ? "night" : "day") : state.theme;
+    root.dataset.theme = theme;
     if (metaThemeColor) {
-      metaThemeColor.setAttribute("content", state.theme === "night" ? "#111a20" : "#f7faf7");
+      metaThemeColor.setAttribute("content", theme === "night" ? "#111a20" : "#f7faf7");
     }
 
     themeChoices.forEach((choice) => {
@@ -246,6 +249,7 @@
     setText('[data-settings-label="theme"]', settings.theme);
     setAttribute(".settings-segmented", "aria-label", settings.theme);
     setText('[data-theme-choice="day"]', settings.day);
+    setText('[data-theme-choice="system"]', settings.system);
     setText('[data-theme-choice="night"]', settings.night);
     setText('[data-settings-label="transparency"]', settings.transparency);
     setText('[data-settings-label="translucency"]', settings.translucency);
@@ -427,11 +431,12 @@
 
   themeChoices.forEach((choice) => {
     choice.addEventListener("click", () => {
-      state = { ...state, theme: choice.dataset.themeChoice === "night" ? "night" : "day" };
+      state = { ...state, theme: choice.dataset.themeChoice };
       applyTheme();
       saveSettings();
     });
   });
+  systemTheme.addEventListener("change", applyTheme);
 
   if (transparencyRange) {
     transparencyRange.addEventListener("input", () => {

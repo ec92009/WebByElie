@@ -28,6 +28,7 @@ window.webByElieI18n = {
       spanish: "Spanish",
       theme: "Theme",
       day: "Day",
+      system: "System",
       night: "Night",
       transparency: "Transparency",
       translucency: "Translucency"
@@ -189,6 +190,7 @@ window.webByElieI18n = {
       spanish: "Espagnol",
       theme: "Thème",
       day: "Jour",
+      system: "Système",
       night: "Nuit",
       transparency: "Transparence",
       translucency: "Translucidité"
@@ -350,6 +352,7 @@ window.webByElieI18n = {
       spanish: "Español",
       theme: "Tema",
       day: "Día",
+      system: "Sistema",
       night: "Noche",
       transparency: "Transparencia",
       translucency: "Translucidez"

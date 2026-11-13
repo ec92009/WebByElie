@@ -13,6 +13,7 @@ import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { securityHeaders } from "./security-headers.mjs";
 import { publishedHtml } from "./public-site.mjs";
+import { sitemapXml } from "./generate-sitemap.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const version = readFileSync(join(root, "VERSION"), "utf8").trim();
@@ -33,6 +34,7 @@ if (!existsSync(headersPath)) {
 const publicHtml = publishedHtml();
 // Hreflang alternates are part of the existing sitemap URL set too.
 const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
+if (sitemap !== sitemapXml(root)) fail("sitemap.xml is stale; run node scripts/generate-sitemap.mjs");
 const sitemapUrls = new Set([
   ...[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]),
   ...[...sitemap.matchAll(/\bhref="([^"]+)"/g)].map((match) => match[1]),
@@ -84,6 +86,9 @@ for (const sourceFile of publicHtml) {
   const references = [...source.matchAll(/\b(?:href|src|poster)=["']([^"']+)["']/gi)].map(
     (match) => match[1],
   );
+  for (const [, link] of source.matchAll(/<a\b[^>]*\bhref="([^"]+)"/gi)) {
+    if (!/^(?:https?:|mailto:|tel:|\/\/)/i.test(link) && /[?&]v=/.test(link)) fail(`${sourceFile}: internal page link must not carry a version query: ${link}`);
+  }
 
   for (const rawReference of references) {
     if (/^(?:https?:|mailto:|tel:|data:|javascript:|\/\/)/i.test(rawReference)) continue;

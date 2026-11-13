@@ -2,6 +2,8 @@ import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs"
 import { resolve, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { publicDirectories, publicRootFiles, publicPages } from "./public-site.mjs";
+import { sitemapXml } from "./generate-sitemap.mjs";
+import { checkPublicBuild } from "./check-public-build.mjs";
 
 // Cloudflare publishes only this allowlisted static site, never the source tree.
 const root = fileURLToPath(new URL("../", import.meta.url));
@@ -9,8 +11,10 @@ const output = resolve(root, "dist");
 rmSync(output, { recursive: true, force: true });
 mkdirSync(output);
 for (const file of [...publicRootFiles, ...publicPages.filter((page) => !page.includes("/"))]) {
+  if (file === "sitemap.xml") continue;
   cpSync(join(root, file), join(output, file));
 }
+writeFileSync(join(output, "sitemap.xml"), sitemapXml(root));
 const pages = new Set(publicPages);
 for (const directory of publicDirectories) {
   cpSync(join(root, directory), join(output, directory), {
@@ -39,4 +43,5 @@ const publicManifest = {
   },
 };
 writeFileSync(join(output, ".wst/site.json"), JSON.stringify(publicManifest, null, 2) + "\n");
+checkPublicBuild(output, root);
 console.log("Public static output ready in dist (no source, credentials, or working notes).");

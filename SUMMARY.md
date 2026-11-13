@@ -1,6 +1,6 @@
 # Web By Elie Summary
 
-Last updated: 2026-09-04 15:49 CEST
+Last updated: 2026-11-13 22:58 CET
 
 ## Current State
 
@@ -8,10 +8,10 @@ Last updated: 2026-09-04 15:49 CEST
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
-- Public preview: `https://ec92009.github.io/WebByElie/?v=248.1`
+- Public preview: `https://ec92009.github.io/WebByElie/`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Current visible version: `v248.1`
+- Local candidate version: `v317.1` (unpublished; production version was not checked)
 - Selected look: `Studio Clean`
 - Active timelog: `TIMELOG.md`
 
@@ -25,7 +25,7 @@ Last updated: 2026-09-04 15:49 CEST
   - `Practical Advisor`
 - Promoted `Studio Clean` as the main site.
 - Archived the chooser and losing proposals under `Archive/`.
-- Left old proposal URLs as simple moved pages that route back to the main site.
+- Archived the three legacy moved/design pages in the November audit and excluded their URLs from the publish set.
 - Added a shared generated hero image showing a geeky desk setup with two monitors, compact desktop computer, keyboard, mouse, notebook, and coffee.
 - Added a gear settings panel through `assets/theme.js`, including day/night mode and display preferences.
 - Added public policy pages: Privacy, Terms, and Data Deletion.
@@ -78,7 +78,7 @@ The money-saving angle was added after discussing work with Magali: in addition 
 ## Version And Publishing Notes
 
 - `VERSION` is the source of truth for visible site version numbers.
-- Current version is `248.1`, displayed as `v248.1`.
+- Local candidate version is `317.1`, displayed as `v317.1`; publishing needs a separate instruction.
 - CSS and JS cache-bust query strings should stay in sync with visible versions.
 - Public-facing changes are committed and pushed to GitHub.
 - Production is deployed through Cloudflare Pages; GitHub Pages remains a preview/fallback URL.
@@ -92,6 +92,18 @@ The money-saving angle was added after discussing work with Magali: in addition 
 - `TIMELOG.md` was created on 2026-06-01 at 20:03 CEST.
 - Clock state is currently `running`.
 - Count only active user collaboration time, not Codex background implementation, deploy waits, or idle gaps.
+
+## November 13 Audit Remediation
+
+Accepted and implemented locally: CSP/security headers, an explicit page allowlist, reduced public WST metadata, generated no-JavaScript contact fallbacks, semantic service links and portfolio keyboard stops, video posters/reduced-motion guards, package/build/sitemap hygiene. System theme selection was restored to match the shared website defaults. The source WST manifest, consent model, MP4 files, Remotion/Three studios, and production configuration remain unchanged. Six local task commits are required; no push or deployment is authorized in this cycle.
+
+Deferred owner decisions:
+
+- Confirm whether the four desktop-mail information/policy URLs must stay live for external OAuth or policy dependencies. They remain published and noindex.
+- Obtain a legal review of the existing aggregate analytics consent model for FR/ES visitors. No consent behavior changed.
+- Consider shorter loops/WebM alternatives and source/media repository separation in a separate scope.
+
+The original audit and the verification/media receipts are under `Archive/2026-11-13-audit/`.
 
 ## Fresh Numbered Backlog
 
