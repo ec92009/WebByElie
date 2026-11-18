@@ -2,10 +2,10 @@
   "name": "web-by-elie",
   "pages_build_output_dir": "./dist",
   "compatibility_date": "2026-11-18",
-  "services": [
+  "r2_buckets": [
     {
-      "binding": "PROSPECT_PREVIEWS",
-      "service": "web-by-elie-prospect-previews"
+      "binding": "PROSPECT_MEDIA",
+      "bucket_name": "web-by-elie-tilbury2-previews"
     }
   ]
 }
