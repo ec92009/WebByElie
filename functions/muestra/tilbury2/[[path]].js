@@ -3,6 +3,7 @@ const pathPattern = /^\/muestra\/tilbury2\/(?:[a-f0-9]{24}\/(?:video\.mp4)?|esti
 const privateResponse = {
   "Cache-Control": "private, no-store",
   "X-Robots-Tag": "noindex, nofollow, noarchive",
+  "X-Watch-Routing": "service-binding",
 };
 
 export async function onRequest({ request, env }) {
@@ -24,7 +25,10 @@ export async function onRequest({ request, env }) {
       headers: range ? { Range: range } : {},
       redirect: "error",
     });
-    return await env.PROSPECT_PREVIEWS.fetch(upstreamRequest);
+    const response = await env.PROSPECT_PREVIEWS.fetch(upstreamRequest);
+    const headers = new Headers(response.headers);
+    for (const [key, value] of Object.entries(privateResponse)) headers.set(key, value);
+    return new Response(response.body, { status: response.status, headers });
   } catch {
     return new Response("No se pudo cargar el vídeo. Inténtalo de nuevo.", {
       status: 502, headers: privateResponse,
