@@ -5,7 +5,7 @@ const privateResponse = {
   "X-Robots-Tag": "noindex, nofollow, noarchive",
 };
 
-export async function onRequest({ request }) {
+export async function onRequest({ request, env }) {
   const url = new URL(request.url);
   if (url.hostname !== "web-by-elie.com" || !pathPattern.test(url.pathname)) {
     return new Response("No encontrado.", { status: 404, headers: privateResponse });
@@ -19,11 +19,12 @@ export async function onRequest({ request }) {
   const range = request.headers.get("Range");
   const upstream = new URL(url.pathname, upstreamOrigin);
   try {
-    return await fetch(upstream, {
+    const upstreamRequest = new Request(upstream, {
       method: request.method,
       headers: range ? { Range: range } : {},
       redirect: "error",
     });
+    return await env.PROSPECT_PREVIEWS.fetch(upstreamRequest);
   } catch {
     return new Response("No se pudo cargar el vídeo. Inténtalo de nuevo.", {
       status: 502, headers: privateResponse,
