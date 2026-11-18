@@ -1,0 +1,5 @@
+{
+  "version": 1,
+  "include": ["/muestra/tilbury2", "/muestra/tilbury2/*"],
+  "exclude": []
+}
