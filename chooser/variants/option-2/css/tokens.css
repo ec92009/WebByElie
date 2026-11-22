@@ -1,0 +1,278 @@
+/*
+ * Night Signal — Design Tokens, Fonts & View Transitions
+ *
+ * Self-hosted fonts (SIL Open Font License 1.1):
+ * - Space Grotesk: Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk)
+ * - JetBrains Mono: Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono)
+ * Licensed under the SIL Open Font License, Version 1.1 (https://scripts.sil.org/OFL).
+ */
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("../fonts/space-grotesk-latin.woff2") format("woff2");
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("../fonts/jetbrains-mono-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(root) {
+  animation: ns-vt-out 0.24s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+::view-transition-new(root) {
+  animation: ns-vt-in 0.32s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes ns-vt-out {
+  from {
+    opacity: 1;
+    filter: blur(0px);
+  }
+  to {
+    opacity: 0;
+    filter: blur(3px);
+  }
+}
+
+@keyframes ns-vt-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Core obsidian-navy palette */
+  --ns-bg: #07090f;
+  --ns-bg-elevated: #0b0f1b;
+  --ns-surface: #0d1220;
+  --ns-surface-glass: rgba(15, 22, 38, 0.72);
+  --ns-surface-strong: rgba(13, 18, 32, 0.92);
+  --ns-surface-hover: rgba(20, 30, 52, 0.86);
+
+  /* Crisp 1px hairlines */
+  --ns-line: rgba(255, 255, 255, 0.09);
+  --ns-line-strong: rgba(255, 255, 255, 0.18);
+  --ns-line-lime: rgba(198, 255, 61, 0.42);
+  --ns-line-cyan: rgba(94, 231, 255, 0.36);
+
+  /* Signal accents */
+  --ns-lime: #c6ff3d;
+  --ns-lime-dim: rgba(198, 255, 61, 0.14);
+  --ns-lime-glow: rgba(198, 255, 61, 0.28);
+  --ns-cyan: #5ee7ff;
+  --ns-cyan-dim: rgba(94, 231, 255, 0.13);
+  --ns-cyan-glow: rgba(94, 231, 255, 0.24);
+  --ns-violet: #8b5cf6;
+  --ns-violet-soft: #c4b5fd;
+  --ns-violet-dim: rgba(139, 92, 246, 0.14);
+  --ns-amber: #fbbf24;
+  --ns-amber-dim: rgba(251, 191, 36, 0.16);
+
+  /* Typography contrast (AA+ verified against #07090f & #0d1220) */
+  --ns-ink: #f3f6fc;
+  --ns-ink-2: #b4bfd6;
+  --ns-ink-3: #8998b8;
+  --ns-ink-on-lime: #07090f;
+
+  /* Families */
+  --ns-font-sans: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --ns-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Geometry */
+  --ns-max: 1220px;
+  --ns-nav-h: 66px;
+  --ns-radius-sm: 8px;
+  --ns-radius: 14px;
+  --ns-radius-lg: 20px;
+  --ns-radius-pill: 999px;
+
+  /* Motion */
+  --ns-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --ns-t-fast: 160ms;
+  --ns-t-med: 280ms;
+  --ns-t-slow: 520ms;
+
+  /* Runtime dynamic vars */
+  --scroll-progress: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--ns-bg);
+  color: var(--ns-ink);
+  font-family: var(--ns-font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--ns-bg);
+  background-image:
+    radial-gradient(ellipse 68% 42% at 50% -8%, rgba(94, 231, 255, 0.08), transparent 68%),
+    radial-gradient(ellipse 46% 36% at 86% 18%, rgba(139, 92, 246, 0.08), transparent 72%),
+    radial-gradient(ellipse 42% 32% at 12% 72%, rgba(198, 255, 61, 0.04), transparent 70%);
+  color: var(--ns-ink);
+  overflow-x: clip;
+  position: relative;
+}
+
+/* Subtle architectural coordinate grid overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.024) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.024) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, #000 35%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 30%, #000 35%, transparent 100%);
+}
+
+img,
+video,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ns-lime);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: calc(var(--chooser-h, 44px) + 8px);
+  left: 12px;
+  z-index: 9999;
+  padding: 10px 16px;
+  border-radius: var(--ns-radius-sm);
+  background: var(--ns-lime);
+  color: var(--ns-ink-on-lime);
+  font-family: var(--ns-font-mono);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  transform: translateY(-200%);
+  transition: transform var(--ns-t-fast) var(--ns-ease);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* Reveal system: visible by default when JS is absent or reduced motion is on */
+html.js .ns-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--ns-t-slow) var(--ns-ease),
+    transform var(--ns-t-slow) var(--ns-ease);
+}
+
+html.js .ns-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+
+  html.js .ns-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
