@@ -83,7 +83,7 @@ export function renderServicesIndex() {
             </div>
             <h2 class="section-heading" id="group-new-heading">Six new <em>activities.</em></h2>
           </div>
-          <p class="lede">Ongoing site care, speed &amp; WCAG 2.2 accessibility, local map listings, clean builder migrations, practical AI helpers, and QR phone menus for restaurants.</p>
+          <p class="lede">Ongoing site care, speed &amp; WCAG 2.2 accessibility, local map listings, clean builder migrations, practical AI helpers, and multilingual sites.</p>
         </div>
         <div class="catalog-list">
           ${newRows}

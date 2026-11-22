@@ -98,9 +98,20 @@
     }
   }
 
-  /* 5. Scroll reveal observer */
+  /* 5. Scroll reveal observer (with fast-scroll & hash-jump fallback) */
   var revealEls = document.querySelectorAll(".ns-reveal");
   if (revealEls.length) {
+    var sweepVisible = function () {
+      var cutoff = window.innerHeight * 0.98;
+      for (var k = 0; k < revealEls.length; k += 1) {
+        if (!revealEls[k].classList.contains("is-visible")) {
+          var box = revealEls[k].getBoundingClientRect();
+          if (box.top < cutoff) {
+            revealEls[k].classList.add("is-visible");
+          }
+        }
+      }
+    };
     if (reducedMotion || !("IntersectionObserver" in window)) {
       for (var r = 0; r < revealEls.length; r += 1) {
         revealEls[r].classList.add("is-visible");
@@ -115,16 +126,15 @@
             }
           }
         },
-        { rootMargin: "0px 0px -40px 0px", threshold: 0.06 }
+        { rootMargin: "0px 0px 40px 0px", threshold: 0.01 }
       );
+      sweepVisible();
       for (var k = 0; k < revealEls.length; k += 1) {
-        var box = revealEls[k].getBoundingClientRect();
-        if (box.top < window.innerHeight * 0.96) {
-          revealEls[k].classList.add("is-visible");
-        } else {
+        if (!revealEls[k].classList.contains("is-visible")) {
           revealObs.observe(revealEls[k]);
         }
       }
+      window.addEventListener("scroll", sweepVisible, { passive: true });
     }
   }
 

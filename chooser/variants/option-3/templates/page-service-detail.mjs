@@ -44,58 +44,6 @@ export function renderServiceDetailPage(service) {
       </div>`
     : "";
 
-  const pricingBlock = service.pricing
-    ? `<section class="section-tight" aria-labelledby="menu-pricing-heading">
-        <div class="container">
-          <div class="tile tile-sunflower reveal">
-            <div class="section-head">
-              <div class="section-head-copy">
-                <span class="sticker">Transparent venue pricing</span>
-                <h2 id="menu-pricing-heading">Phone menu pricing</h2>
-                <p>${esc(service.pricingNote || "")}</p>
-              </div>
-            </div>
-            <div class="bento-2">
-              ${service.pricing
-                .map(
-                  (p) => `<div class="tile">
-                    <span class="sticker sticker-mint">${esc(p.label)}</span>
-                    <h3>${esc(p.price)}</h3>
-                    <p>${esc(p.note)}</p>
-                  </div>`
-                )
-                .join("")}
-            </div>
-          </div>
-        </div>
-      </section>`
-    : "";
-
-  const demosBlock = service.demos
-    ? `<section class="section-tight" aria-labelledby="menu-demos-heading">
-        <div class="container">
-          <div class="section-head">
-            <div class="section-head-copy">
-              <span class="sticker sticker-coral">Try them on your phone</span>
-              <h2 id="menu-demos-heading">Four live restaurant menu demos</h2>
-              <p class="section-sub">Each demo shows the permanent QR flow, seasonal dish layout, and language switcher.</p>
-            </div>
-          </div>
-          <div class="bento-4">
-            ${service.demos
-              .map(
-                (demo, dIdx) => `<a class="tile ${["tile-sunflower", "tile-mint", "tile-lilac", "tile-coral"][dIdx % 4]} tile-interactive service-card" href="${repo}${demo.href}">
-                  <span class="sticker">${esc(demo.kind)}</span>
-                  <h3>${esc(demo.name)}</h3>
-                  <span class="btn btn-sm btn-white">Open demo →</span>
-                </a>`
-              )
-              .join("")}
-          </div>
-        </div>
-      </section>`
-    : "";
-
   const relatedHtml = related
     .map((rel) => {
       const rTheme = serviceTheme(rel.slug);
@@ -175,9 +123,6 @@ export function renderServiceDetailPage(service) {
     </div>
   </div>
 </section>
-
-${pricingBlock}
-${demosBlock}
 
 ${waveDivider("#ffc93c")}
 

@@ -259,34 +259,34 @@ const MOTIFS = {
     </svg>`,
   },
 
-  menu: {
-    caption: "Plate · Seasonal phone menu & QR",
-    svg: `<svg class="motif-svg" viewBox="0 0 380 280" role="img" aria-label="Ink engraving of a phone menu beside a permanent QR code and three language tabs">
-      <title>Phone menu and permanent QR engraving</title>
-      <!-- Phone card -->
-      <rect class="m-fill-paper m-ink m-draw" x="54" y="34" width="132" height="212" rx="14"/>
-      <line class="m-fine m-draw" x1="102" y1="48" x2="138" y2="48"/>
+  multilingual: {
+    caption: "Plate · Multilingual pages & hreflang",
+    svg: `<svg class="motif-svg" viewBox="0 0 380 280" role="img" aria-label="Ink engraving of a localized webpage with English, French, and Spanish tabs linked to clean hreflang routes">
+      <title>Multilingual localized pages engraving</title>
+      <!-- Localized page sheet -->
+      <rect class="m-fill-paper m-ink m-draw" x="50" y="34" width="142" height="212" rx="6"/>
+      <line class="m-fine m-draw" x1="70" y1="54" x2="172" y2="54"/>
       <!-- Language tabs -->
-      <text class="m-label" x="72" y="74">EN &middot; FR &middot; ES</text>
-      <line class="m-vermilion m-draw" x1="72" y1="84" x2="168" y2="84"/>
-      <!-- Menu lines -->
-      <line class="m-ink m-draw" x1="72" y1="108" x2="144" y2="108"/>
-      <line class="m-fine m-draw" x1="72" y1="120" x2="164" y2="120"/>
-      <line class="m-ink m-draw" x1="72" y1="148" x2="138" y2="148"/>
-      <line class="m-fine m-draw" x1="72" y1="160" x2="164" y2="160"/>
-      <line class="m-sage m-draw" x1="72" y1="188" x2="152" y2="188"/>
-      <line class="m-fine m-draw" x1="72" y1="200" x2="160" y2="200"/>
-      <!-- Permanent QR square -->
+      <text class="m-label" x="70" y="76">EN &middot; FR &middot; ES</text>
+      <line class="m-vermilion m-draw" x1="70" y1="86" x2="172" y2="86"/>
+      <!-- Content lines -->
+      <line class="m-ink m-draw" x1="70" y1="112" x2="148" y2="112"/>
+      <line class="m-fine m-draw" x1="70" y1="124" x2="168" y2="124"/>
+      <line class="m-ink m-draw" x1="70" y1="152" x2="142" y2="152"/>
+      <line class="m-fine m-draw" x1="70" y1="164" x2="168" y2="164"/>
+      <line class="m-sage m-draw" x1="70" y1="192" x2="154" y2="192"/>
+      <line class="m-fine m-draw" x1="70" y1="204" x2="164" y2="204"/>
+      <!-- Clean hreflang route cards -->
       <g class="m-float">
-        <rect class="m-fill-paper m-ink m-draw" x="220" y="68" width="108" height="108" rx="2"/>
-        <rect class="m-ink m-draw" x="234" y="82" width="24" height="24"/>
-        <rect class="m-fill-vermilion" x="241" y="89" width="10" height="10"/>
-        <rect class="m-ink m-draw" x="290" y="82" width="24" height="24"/>
-        <rect class="m-ink m-draw" x="234" y="138" width="24" height="24"/>
-        <path class="m-ink m-draw" d="M268 86 H280 M268 100 H282 M268 118 H308 M234 120 H256 M270 136 V160 M284 136 H312 M298 148 V162"/>
+        <rect class="m-fill-paper m-ink m-draw" x="226" y="66" width="106" height="32" rx="4"/>
+        <text class="m-label" x="242" y="87">/en/ &middot; primary</text>
+        <rect class="m-fill-paper m-ink m-draw" x="226" y="114" width="106" height="32" rx="4"/>
+        <text class="m-label" x="242" y="135">/fr/ &middot; synced</text>
+        <rect class="m-fill-paper m-ink m-draw" x="226" y="162" width="106" height="32" rx="4"/>
+        <text class="m-label" x="242" y="183">/es/ &middot; synced</text>
       </g>
-      <text class="m-label" x="224" y="202">One permanent QR</text>
-      <path class="m-vermilion m-draw" d="M186 122 H220"/>
+      <text class="m-label" x="228" y="218">hreflang &amp; sitemap</text>
+      <path class="m-vermilion m-draw" d="M192 130 H226 M209 82 V178 M209 82 H226 M209 178 H226"/>
     </svg>`,
   },
 };

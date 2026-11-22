@@ -1,7 +1,7 @@
 /**
  * Services index page (services/index.html) and the 10 service detail pages
- * (services/<slug>/index.html) with motif telemetry consoles, video bezels for core
- * services, and pricing + 4 restaurant demos on services/menus/.
+ * (services/<slug>/index.html) with motif telemetry consoles and video bezels
+ * for core services.
  */
 import {
   site,
@@ -26,7 +26,7 @@ const MOTIF_META = {
   map: { code: "CON_07 // LOCAL MAP ALIGNMENT", caption: "Google Maps, Apple Maps, and Bing Places synced to your site" },
   move: { code: "CON_08 // STATIC EDGE TRANSFER", caption: "URL redirects and ownership carried cleanly to static hosting" },
   helpers: { code: "CON_09 // GUARDRAILED HELPER", caption: "Practical inbox and FAQ workflows with cost cap and off switch" },
-  menu: { code: "CON_10 // QR PHONE MENU", caption: "Permanent QR address serving up to three languages" },
+  multilingual: { code: "CON_10 // MULTILINGUAL SYNC", caption: "Clean localized routes (EN / FR / ES) with hreflang signals" },
 };
 
 export function buildServicesIndexPage() {
@@ -44,7 +44,7 @@ export function buildServicesIndexPage() {
         <p class="ns-kicker"><span class="ns-kicker-dot" aria-hidden="true"></span>SERVICE MATRIX // 10 MODULES</p>
         <h1 class="ns-h1-sub" id="services-h1">Four core pillars, plus six new modules.</h1>
         <p class="ns-lede">
-          Start with a focused refresh, search pass, AI-readability review, or cost cleanup — or add ongoing care, speed &amp; accessibility, local listings, a platform move, small AI helpers, or restaurant phone menus.
+          Start with a focused refresh, search pass, AI-readability review, or cost cleanup — or add ongoing care, speed &amp; accessibility, local listings, a platform move, small AI helpers, or multilingual sites.
         </p>
       </div>
     </section>
@@ -117,65 +117,6 @@ export function buildServiceDetailPage(service) {
           <source src="${repo}${esc(service.video)}" type="video/mp4" />
         </video>
       </div>`
-    : "";
-
-  const pricingBlock = service.pricing
-    ? `
-      <section class="ns-section ns-section-bordered" aria-labelledby="menu-pricing-heading">
-        <div class="ns-wrap">
-          <div class="ns-section-head">
-            <div class="ns-section-head-copy">
-              <p class="ns-kicker"><span class="ns-kicker-dot" aria-hidden="true"></span>RESTAURANT PRICING</p>
-              <h2 class="ns-h2 ns-decode" id="menu-pricing-heading">Simple venue pricing.</h2>
-              ${service.pricingNote ? `<p class="ns-lede">${esc(service.pricingNote)}</p>` : ""}
-            </div>
-          </div>
-          <div class="ns-price-row">
-            ${service.pricing
-              .map(
-                (p) => `
-              <article class="ns-card ns-reveal">
-                <p class="ns-stat-label">${esc(p.label)}</p>
-                <p class="ns-price-val">${esc(p.price)}</p>
-                <p class="ns-body">${esc(p.note)}</p>
-              </article>`
-              )
-              .join("")}
-          </div>
-        </div>
-      </section>`
-    : "";
-
-  const demosBlock = service.demos
-    ? `
-      <section class="ns-section ns-section-bordered" aria-labelledby="menu-demos-heading">
-        <div class="ns-wrap">
-          <div class="ns-section-head">
-            <div class="ns-section-head-copy">
-              <p class="ns-kicker"><span class="ns-kicker-dot" aria-hidden="true"></span>PUBLIC DEMOS</p>
-              <h2 class="ns-h2 ns-decode" id="menu-demos-heading">Try four live restaurant menus.</h2>
-            </div>
-          </div>
-          <div class="ns-demo-grid">
-            ${service.demos
-              .map(
-                (d, i) => `
-              <article class="ns-card ns-node ns-reveal">
-                <div class="ns-node-top">
-                  <span class="ns-node-id"><span class="ns-node-dot" aria-hidden="true"></span>DEMO_0${i + 1}</span>
-                  <span class="ns-pill ns-pill-cyan">${esc(d.kind)}</span>
-                </div>
-                <h3 class="ns-h3">${esc(d.name)}</h3>
-                <a class="ns-card-link" href="${repo}${esc(d.href)}" target="_blank" rel="noopener noreferrer">
-                  <span>Open live demo</span>
-                  <span class="ns-arrow" aria-hidden="true">&rarr;</span>
-                </a>
-              </article>`
-              )
-              .join("")}
-          </div>
-        </div>
-      </section>`
     : "";
 
   const content = `
@@ -252,19 +193,12 @@ export function buildServiceDetailPage(service) {
               ${service.deliverables.map((d) => `<li><span>${esc(d)}</span></li>`).join("")}
             </ul>
             <div class="ns-hero-meta">
-              ${
-                service.pricing
-                  ? `<span>PRICING <strong>${esc(service.pricing[0].price)} launch / ${esc(service.pricing[1].price)}</strong></span>`
-                  : `<span>RATE <strong>${esc(site.rate)}</strong></span><span>START <strong>${esc(site.bundle)}</strong></span>`
-              }
+              <span>RATE <strong>${esc(site.rate)}</strong></span><span>START <strong>${esc(site.bundle)}</strong></span>
             </div>
           </article>
         </div>
       </div>
     </section>
-
-    ${pricingBlock}
-    ${demosBlock}
 
     <section class="ns-section ns-section-bordered" aria-labelledby="related-heading">
       <div class="ns-wrap">

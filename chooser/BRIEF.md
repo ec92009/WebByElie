@@ -33,7 +33,7 @@ assets. Run with `node chooser/variants/<id>/build.mjs` from the repo root.
 | --- | --- |
 | `index.html` | Home: hero, the 4 core services, the 6 new services, process, work, about, savings, budget, FAQ, contact |
 | `services/index.html` | All 10 services, core vs new clearly grouped |
-| `services/<slug>/index.html` | 10 detail pages (summary, bullets, deliverables, motif animation, related services, CTA). Core ones may use the existing mp4 video. `menus` shows pricing + the 4 demo links |
+| `services/<slug>/index.html` | 10 detail pages (summary, bullets, deliverables, motif animation, related services, CTA). Core ones may use the existing mp4 video |
 | `work/index.html` | 3 portfolio projects |
 | `work/golden-years/index.html` | Case study (steps, quote, desktop + mobile screenshots) |
 | `process/index.html` | Process steps, budget, savings spots, FAQ |
@@ -47,8 +47,8 @@ assets. Run with `node chooser/variants/<id>/build.mjs` from the repo root.
   `""` for home).
 - Offset any sticky/fixed header with `top: var(--chooser-h)`.
 - Use relative URLs only. Option-internal links via `toOptionRoot(path)`;
-  repo assets (videos, posters, work screenshots, logo, case-study images,
-  restaurant demos) via `toRepoRoot(path)` + the path from content.mjs.
+  repo assets (videos, posters, work screenshots, logo, case-study images)
+  via `toRepoRoot(path)` + the path from content.mjs.
 - Share one primary nav: Services, Work, Process, Free check, and an "Email
   Elie" CTA (`site.mailto`). Footer: version label "Refresh draft", links to
   the live Privacy / Terms / Data deletion (`toRepoRoot(path)+"privacy.html"` etc).

@@ -18,7 +18,7 @@ const SERVICE_THEME = {
   "local-presence": { tile: "tile-coral", sticker: "sticker-coral", btn: "btn-white" },
   "platform-move": { tile: "tile-cobalt", sticker: "sticker-cobalt", btn: "btn-sunflower" },
   "ai-helpers": { tile: "tile-lilac", sticker: "sticker-lilac", btn: "btn-white" },
-  menus: { tile: "tile-mint", sticker: "sticker-mint", btn: "btn-white" },
+  multilingual: { tile: "tile-mint", sticker: "sticker-mint", btn: "btn-white" },
 };
 
 export function serviceTheme(slug) {

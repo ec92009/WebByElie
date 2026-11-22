@@ -9,8 +9,7 @@
  * Honesty rules baked into this copy (keep them when editing):
  * - No ranking, traffic, lead, AI-answer placement, or savings is guaranteed.
  * - The only client result quoted is the Golden Years owner statement.
- * - Prices: $100/hour general work, 10-hour starting bundle; restaurant menu
- *   prices come from the existing /restaurants/ offer (EUR, excl. VAT).
+ * - Prices: $100/hour general work, 10-hour starting bundle.
  */
 
 export const site = {
@@ -200,33 +199,21 @@ export const newServices = [
     motif: "helpers",
   },
   {
-    slug: "menus",
+    slug: "multilingual",
     num: "10",
-    name: "Phone menus",
+    name: "Multilingual sites",
     isNew: true,
-    vertical: "Restaurants",
-    short: "A QR menu that updates with the season, in up to three languages.",
+    short: "Serve visitors in more than one language, with clean search signals.",
     summary:
-      "Turn a paper or PDF menu into a fast, readable phone page. One permanent QR code always points to the same address, even when dishes, prices, or hours change. Four public demos show the whole flow.",
+      "If your customers speak more than one language, bolted-on auto-translate widgets often hurt clarity and search visibility. We set up clean localized pages—such as English, French, and Spanish—with proper hreflang metadata, straightforward language switching, and a single maintainable structure so updates stay in sync.",
     bullets: [
-      "Permanent address and QR code for the venue",
-      "Up to three languages, with staff support text",
-      "Your photos, a private proof, and one consolidated correction round",
-      "Optional 3D-printed QR coasters and vinyl stickers",
+      "Clean language routes and straightforward switching",
+      "hreflang alternates plus localized titles, descriptions, and sitemaps",
+      "One maintainable content structure so edits stay consistent",
+      "Clear human-reviewed wording instead of awkward auto-translate overlays",
     ],
-    deliverables: ["Phone menu", "Permanent QR", "Monthly updates"],
-    pricing: [
-      { label: "Launch", price: "€295", note: "once per venue" },
-      { label: "Care", price: "€25/mo", note: "up to two updates a month" },
-    ],
-    pricingNote: "Prices exclude VAT.",
-    demos: [
-      { name: "Casa Lumbre", kind: "Mediterranean", href: "restaurant-demo/" },
-      { name: "La Piazza", kind: "Italian", href: "restaurant-demo-la-piazza/" },
-      { name: "Lima & Masala", kind: "Indian & Mexican", href: "restaurant-demo-lima-masala/" },
-      { name: "Velluto", kind: "Contemporary", href: "restaurant-demo-velluto/" },
-    ],
-    motif: "menu",
+    deliverables: ["Localized pages", "hreflang & sitemap", "Language switcher"],
+    motif: "multilingual",
   },
 ];
 
@@ -237,7 +224,7 @@ export const process = [
     num: "01",
     title: "Review what exists",
     text:
-      "A short intake interview, then a review of the current site: what already works, what to preserve, and where visitors get stuck. Analytics inform the review when available.",
+      "A short intake interview, then a review of the current site: what already works, what to preserve, and where visitors get stuck. If analytics are available, they inform the review; otherwise the first pass stays observational and practical.",
   },
   {
     num: "02",
@@ -266,7 +253,7 @@ export const savingsSpots = [
   { label: "Subscriptions", text: "Website apps, booking tools, email add-ons, analytics, image or AI tools nobody actively uses." },
   { label: "Overlap", text: "Two services doing the same job, legacy plugins kept out of habit, or a paid tier chosen years ago." },
   { label: "Renewals", text: "Domains, hosting, themes, plugins, and directories that renew automatically but no longer help." },
-  { label: "Ownership", text: "Unclear logins and scattered billing that hide what is essential and what can go." },
+  { label: "Ownership", text: "Unclear logins, scattered billing, and vendor accounts that hide what is essential and what can go. Savings are treated as opportunities to verify, not as guaranteed project payback." },
 ];
 
 export const work = [

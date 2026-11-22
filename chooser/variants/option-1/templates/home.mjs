@@ -240,7 +240,7 @@ export function renderHome() {
             <h2 class="section-heading" id="season-heading">Six new ways to keep a small site <em>capable.</em></h2>
           </div>
           <div>
-            <p class="lede">Beyond the original four pillars: steady monthly upkeep, faster accessible pages, accurate map pins, clean platform moves, small AI helpers, and seasonal restaurant menus.</p>
+            <p class="lede">Beyond the original four pillars: steady monthly upkeep, faster accessible pages, accurate map pins, clean platform moves, small AI helpers, and multilingual sites.</p>
             <a class="text-link" href="${root}services/">Browse the complete 10-service index <span class="btn-arrow" aria-hidden="true">&rarr;</span></a>
           </div>
         </div>

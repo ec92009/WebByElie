@@ -51,7 +51,7 @@ export function buildHomePage() {
           <div class="ns-terminal-body">
             <div class="ns-term-line">
               <span class="ns-term-prefix ns-term-prefix-query">query &gt;</span>
-              <span>"Need local heating service near North Harbor"</span>
+              <span>"Looking for a trusted local business near North Harbor"</span>
             </div>
             <div class="ns-term-line">
               <span class="ns-term-prefix">crawl &gt;</span>
@@ -59,11 +59,11 @@ export function buildHomePage() {
             </div>
             <div class="ns-term-line">
               <span class="ns-term-prefix ns-term-prefix-extract">extract</span>
-              <span><span class="ns-term-key">business:</span> Sample Local Service Co. (generic demo)</span>
+              <span><span class="ns-term-key">business:</span> Sample Independent Co. (generic demo)</span>
             </div>
             <div class="ns-term-line">
               <span class="ns-term-prefix ns-term-prefix-extract">extract</span>
-              <span><span class="ns-term-key">services:</span> Boiler repair, annual check, emergency callout</span>
+              <span><span class="ns-term-key">services:</span> Core service, ongoing support, direct consultation</span>
             </div>
             <div class="ns-term-line">
               <span class="ns-term-prefix ns-term-prefix-extract">extract</span>
@@ -71,7 +71,7 @@ export function buildHomePage() {
             </div>
             <div class="ns-term-line">
               <span class="ns-term-prefix ns-term-prefix-extract">extract</span>
-              <span><span class="ns-term-key">pricing_factors:</span> Diagnostic visit + written quote before work</span>
+              <span><span class="ns-term-key">pricing_factors:</span> Initial review + written scope before work</span>
             </div>
             <div class="ns-term-line">
               <span class="ns-term-prefix ns-term-prefix-extract">extract</span>
@@ -111,7 +111,7 @@ export function buildHomePage() {
             <p class="ns-kicker ns-kicker-violet"><span class="ns-kicker-dot" aria-hidden="true"></span>02 // NEW MODULES</p>
             <h2 class="ns-h2 ns-decode" id="new-heading">Six new activities around the site.</h2>
             <p class="ns-lede">
-              Practical extensions beyond the four pillars: ongoing care, speed &amp; accessibility, local map listings, platform moves, small AI helpers, and restaurant phone menus.
+              Practical extensions beyond the four pillars: ongoing care, speed &amp; accessibility, local map listings, platform moves, small AI helpers, and multilingual sites.
             </p>
           </div>
           <a class="ns-btn ns-btn-ghost ns-btn-sm" href="${root}services/#new-modules">Inspect modules &rarr;</a>

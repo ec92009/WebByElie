@@ -1,7 +1,7 @@
 /**
  * Service detail page template — rendered for each of the 10 services.
  * Includes bespoke animated SVG ink-engraving motif plate, optional core mp4 plate,
- * menus pricing + 4 demo links, deliverables, related services, and CTA.
+ * deliverables, related services, and CTA.
  */
 import {
   site,
@@ -56,41 +56,6 @@ export function renderServiceDetail(service) {
       </figure>`
     : "";
 
-  const pricingHtml = service.pricing
-    ? `<div data-reveal>
-        <h2 class="detail-subhead">Venue pricing</h2>
-        <div class="menu-pricing-grid">
-          ${service.pricing
-            .map(
-              (p) => `<div class="menu-price-card">
-                <span class="kicker">${esc(p.label)}</span>
-                <div class="menu-price-val">${esc(p.price)}</div>
-                <p class="ledger-text">${esc(p.note)}</p>
-              </div>`
-            )
-            .join("")}
-        </div>
-        ${service.pricingNote ? `<p class="margin-note">${esc(service.pricingNote)}</p>` : ""}
-      </div>`
-    : "";
-
-  const demosHtml = service.demos
-    ? `<div data-reveal>
-        <h2 class="detail-subhead">Four public restaurant demos</h2>
-        <p class="ledger-text">Open any live demo to see the permanent address, seasonal layout, and multilingual flow on a phone or desktop.</p>
-        <div class="demo-grid">
-          ${service.demos
-            .map(
-              (d) => `<a class="demo-card" href="${repo}${esc(d.href)}" target="_blank" rel="noopener noreferrer">
-                <strong>${esc(d.name)} &nearr;</strong>
-                <span>${esc(d.kind)} demo</span>
-              </a>`
-            )
-            .join("")}
-        </div>
-      </div>`
-    : "";
-
   // Pick 3 related services (wrap around catalog deterministically)
   const idx = allServices.findIndex((item) => item.slug === service.slug);
   const related = [1, 2, 3].map(
@@ -110,9 +75,7 @@ export function renderServiceDetail(service) {
     )
     .join("\n");
 
-  const billingNote = service.pricing
-    ? `${service.pricing.map((p) => `${p.label}: ${p.price} (${p.note})`).join(" · ")}. ${service.pricingNote || ""}`
-    : `Billed at the standard ${site.rate} rate, typically inside a ${site.bundle}.`;
+  const billingNote = `Billed at the standard ${site.rate} rate, typically inside a ${site.bundle}.`;
 
   return `
     <section class="page-head" aria-labelledby="service-title">
@@ -158,9 +121,6 @@ export function renderServiceDetail(service) {
               <h2 class="detail-subhead">What you walk away with</h2>
               <ul class="deliverables-strip">${deliverablesHtml}</ul>
             </div>
-
-            ${pricingHtml}
-            ${demosHtml}
 
             <div data-reveal>
               <p class="margin-note">${esc(billingNote)}</p>
