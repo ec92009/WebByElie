@@ -5,5 +5,10 @@
 node_modules/
 dist/
 private-print-assets/
+.private/
 .wst/*
 !.wst/site.json
+!.wst/alex.ward.json
+!.wst/elena.brooks.json
+!.wst/june.rowan.json
+!.wst/nora.vela.json
