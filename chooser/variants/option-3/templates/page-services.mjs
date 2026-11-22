@@ -74,7 +74,7 @@ ${waveDivider("#ff6b5b")}
       <div class="section-head-copy">
         <span class="sticker sticker-coral">Part 2 · New activities (05–10)</span>
         <h2 id="new-group-heading">Six fresh additions</h2>
-        <p class="section-sub">Draft proposals for ongoing care, speed &amp; accessibility, local map listings, platform moves, small AI helpers, and restaurant phone menus.</p>
+        <p class="section-sub">Draft proposals for ongoing care, speed &amp; accessibility, local map listings, platform moves, small AI helpers, and multilingual sites.</p>
       </div>
     </div>
     <div class="bento-3">

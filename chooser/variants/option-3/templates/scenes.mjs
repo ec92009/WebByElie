@@ -207,30 +207,30 @@ const SCENES = {
     <text x="386" y="57" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="13" fill="#1b1b1f">ON / OFF</text>
   </svg>`,
 
-  // 10. menu — QR coaster + multilingual phone menu card
-  menu: `<svg class="motif-svg" viewBox="0 0 480 260" role="img" aria-label="Phone menu showing three language pills beside a permanent QR coaster">
+  // 10. multilingual — localized pages + hreflang route stack
+  multilingual: `<svg class="motif-svg" viewBox="0 0 480 260" role="img" aria-label="Localized webpage with English, French, and Spanish tabs linked to clean hreflang routes">
     <rect width="480" height="260" fill="#dbf8ea"/>
-    <rect x="62" y="24" width="166" height="212" rx="28" fill="#ffffff" stroke="#1b1b1f" stroke-width="4"/>
-    <rect x="80" y="42" width="130" height="28" rx="14" fill="#ffc93c" stroke="#1b1b1f" stroke-width="2.8"/>
-    <text x="145" y="61" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="12" fill="#1b1b1f">EN · FR · ES</text>
+    <rect x="52" y="24" width="176" height="212" rx="24" fill="#ffffff" stroke="#1b1b1f" stroke-width="4"/>
+    <rect x="70" y="42" width="140" height="28" rx="14" fill="#ffc93c" stroke="#1b1b1f" stroke-width="2.8"/>
+    <text x="140" y="61" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="12" fill="#1b1b1f">EN · FR · ES</text>
     <g class="anim-pop">
-      <rect x="80" y="84" width="130" height="44" rx="12" fill="#fff8ec" stroke="#1b1b1f" stroke-width="2.5"/>
-      <rect x="92" y="96" width="70" height="9" rx="4" fill="#1b1b1f"/>
-      <rect x="92" y="112" width="46" height="8" rx="4" fill="#ff6b5b"/>
+      <rect x="70" y="84" width="140" height="44" rx="12" fill="#fff8ec" stroke="#1b1b1f" stroke-width="2.5"/>
+      <rect x="82" y="96" width="76" height="9" rx="4" fill="#1b1b1f"/>
+      <rect x="82" y="112" width="52" height="8" rx="4" fill="#ff6b5b"/>
     </g>
     <g class="anim-pop-d1">
-      <rect x="80" y="140" width="130" height="44" rx="12" fill="#fff8ec" stroke="#1b1b1f" stroke-width="2.5"/>
-      <rect x="92" y="152" width="84" height="9" rx="4" fill="#1b1b1f"/>
-      <rect x="92" y="168" width="54" height="8" rx="4" fill="#3ccf91"/>
+      <rect x="70" y="140" width="140" height="44" rx="12" fill="#fff8ec" stroke="#1b1b1f" stroke-width="2.5"/>
+      <rect x="82" y="152" width="88" height="9" rx="4" fill="#1b1b1f"/>
+      <rect x="82" y="168" width="58" height="8" rx="4" fill="#3ccf91"/>
     </g>
-    <rect x="278" y="54" width="144" height="144" rx="26" fill="#ffc93c" stroke="#1b1b1f" stroke-width="4"/>
-    <rect x="302" y="78" width="96" height="96" rx="12" fill="#ffffff" stroke="#1b1b1f" stroke-width="3"/>
-    <rect x="314" y="90" width="24" height="24" rx="4" fill="#1b1b1f"/>
-    <rect x="362" y="90" width="24" height="24" rx="4" fill="#1b1b1f"/>
-    <rect x="314" y="138" width="24" height="24" rx="4" fill="#1b1b1f"/>
-    <rect x="348" y="124" width="14" height="14" rx="2" fill="#2f5bff"/>
-    <rect x="368" y="144" width="18" height="18" rx="3" fill="#ff6b5b"/>
-    <text x="350" y="222" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="13" fill="#1b1b1f">PERMANENT QR</text>
+    <path d="M228 130 H272 M250 74 V186 M250 74 H272 M250 186 H272" fill="none" stroke="#1b1b1f" stroke-width="3.5" stroke-linecap="round"/>
+    <rect x="272" y="50" width="154" height="44" rx="16" fill="#ffc93c" stroke="#1b1b1f" stroke-width="3.5"/>
+    <text x="349" y="77" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="14" fill="#1b1b1f">/en/ · English</text>
+    <rect x="272" y="108" width="154" height="44" rx="16" fill="#ffffff" stroke="#1b1b1f" stroke-width="3.5"/>
+    <text x="349" y="135" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="14" fill="#1b1b1f">/fr/ · Français</text>
+    <rect x="272" y="166" width="154" height="44" rx="16" fill="#c4b5ff" stroke="#1b1b1f" stroke-width="3.5"/>
+    <text x="349" y="193" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="14" fill="#1b1b1f">/es/ · Español</text>
+    <text x="349" y="236" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="12" fill="#1b1b1f">HREFLANG + SITEMAP</text>
   </svg>`,
 };
 

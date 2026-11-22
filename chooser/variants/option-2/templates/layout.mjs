@@ -144,7 +144,7 @@ export function renderPage({ pagePath, title, description, content, extraScripts
             <li><a href="${esc(site.mailto)}">${esc(site.email)}</a></li>
             <li><a href="${esc(site.mailtoCheck)}">Request a free site check</a></li>
             <li><a href="${root}work/golden-years/">Golden Years case study</a></li>
-            <li><a href="${root}services/menus/">Phone menus for restaurants</a></li>
+            <li><a href="${root}services/multilingual/">Multilingual sites</a></li>
           </ul>
         </div>
       </div>

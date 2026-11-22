@@ -117,15 +117,15 @@ const MASCOTS = {
     <path d="M51 74 Q60 80 69 74" fill="none" stroke="#1b1b1f" stroke-width="3.2" stroke-linecap="round"/>
   </g>`,
 
-  // 10. Phone Menus — Little Menu Card Buddy
-  menus: `<g class="mascot-float">
-    <rect x="26" y="14" width="68" height="92" rx="18" fill="#ffffff" stroke="#1b1b1f" stroke-width="4"/>
-    <rect x="34" y="24" width="52" height="16" rx="8" fill="#ffc93c" stroke="#1b1b1f" stroke-width="2.8"/>
-    <circle cx="44" cy="32" r="3" fill="#1b1b1f"/>
-    <line x1="52" y1="32" x2="76" y2="32" stroke="#1b1b1f" stroke-width="3" stroke-linecap="round"/>
+  // 10. Multilingual sites — Little Language Globe Buddy
+  multilingual: `<g class="mascot-float">
+    <circle cx="60" cy="60" r="42" fill="#ffffff" stroke="#1b1b1f" stroke-width="4"/>
+    <ellipse cx="60" cy="60" rx="22" ry="42" fill="none" stroke="#3ccf91" stroke-width="3.2"/>
+    <line x1="18" y1="60" x2="102" y2="60" stroke="#3ccf91" stroke-width="3.2"/>
+    <rect x="34" y="20" width="52" height="16" rx="8" fill="#ffc93c" stroke="#1b1b1f" stroke-width="2.8"/>
+    <text x="60" y="32" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="9" fill="#1b1b1f">EN·FR·ES</text>
     ${eyePair(48, 72, 58, 5.8, 2.9)}
-    <path d="M50 71 Q60 79 70 71" fill="none" stroke="#1b1b1f" stroke-width="3.2" stroke-linecap="round"/>
-    <rect x="44" y="84" width="32" height="12" rx="6" fill="#3ccf91" stroke="#1b1b1f" stroke-width="2.6"/>
+    <path d="M50 72 Q60 80 70 72" fill="none" stroke="#1b1b1f" stroke-width="3.2" stroke-linecap="round"/>
   </g>`,
 };
 

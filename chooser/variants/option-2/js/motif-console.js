@@ -1,6 +1,6 @@
 /*
  * Night Signal — Bespoke Animated Telemetry Console per Service Motif
- * Motifs: reassemble, search, assistant, savings, care, speed, map, move, helpers, menu
+ * Motifs: reassemble, search, assistant, savings, care, speed, map, move, helpers, multilingual
  */
 (function () {
   "use strict";
@@ -411,41 +411,44 @@
       drawMono("COST CEILING + OFF SWITCH", w * 0.5, h * 0.74 + 17, VIOLET, 10, "center");
     },
 
-    menu: function (t) {
+    multilingual: function (t) {
       var px = w * 0.36;
-      var pw = w * 0.28;
+      var pw = w * 0.30;
       var py = h * 0.1;
       var ph = h * 0.8;
       var langs = ["EN", "FR", "ES"];
+      var routes = ["/en/", "/fr/", "/es/"];
+      var rows = ["HERO COPY", "SERVICES", "METADATA", "SITEMAP"];
       var activeLang = reducedMotion ? 0 : Math.floor(t * 0.7) % langs.length;
 
-      // QR module on left
-      var qx = w * 0.1;
-      var qy = h * 0.34;
-      roundRect(qx, qy, 82, 82, 10);
+      // hreflang route map on left
+      var rx = w * 0.08;
+      var ry = h * 0.24;
+      roundRect(rx, ry, 94, 128, 10);
       ctx.fillStyle = PANEL;
       ctx.fill();
       ctx.strokeStyle = LIME;
       ctx.stroke();
-      for (var r = 0; r < 5; r += 1) {
-        for (var c = 0; c < 5; c += 1) {
-          if ((r + c) % 2 === 0 || (r < 2 && c < 2)) {
-            ctx.fillStyle = r < 2 && c < 2 ? LIME : CYAN;
-            ctx.fillRect(qx + 13 + c * 11.5, qy + 13 + r * 11.5, 8.5, 8.5);
-          }
-        }
+      drawMono("HREFLANG", rx + 47, ry + 18, LIME, 9.5, "center");
+      for (var r = 0; r < routes.length; r += 1) {
+        var rry = ry + 36 + r * 28;
+        roundRect(rx + 12, rry, 70, 20, 5);
+        ctx.fillStyle = r === activeLang ? "rgba(198, 255, 61, 0.2)" : "rgba(255,255,255,0.04)";
+        ctx.fill();
+        ctx.strokeStyle = r === activeLang ? LIME : LINE;
+        ctx.stroke();
+        drawMono(routes[r], rx + 47, rry + 10, r === activeLang ? LIME : INK, 9.5, "center");
       }
-      drawMono("PERMANENT QR", qx + 41, qy + 98, LIME, 9.5, "center");
 
       // Connector line
       ctx.strokeStyle = "rgba(198, 255, 61, 0.45)";
       ctx.beginPath();
-      ctx.moveTo(qx + 82, qy + 41);
-      ctx.lineTo(px, qy + 41);
+      ctx.moveTo(rx + 94, ry + 64);
+      ctx.lineTo(px, ry + 64);
       ctx.stroke();
 
-      // Phone frame
-      roundRect(px, py, pw, ph, 18);
+      // Localized page frame
+      roundRect(px, py, pw, ph, 14);
       ctx.fillStyle = PANEL;
       ctx.fill();
       ctx.strokeStyle = CYAN;
@@ -461,20 +464,20 @@
         drawMono(langs[l], tx + (pw - 36) / 6, py + 27, l === activeLang ? "#07090f" : INK, 9.5, "center");
       }
 
-      // Menu rows
-      for (var m = 0; m < 4; m += 1) {
+      // Synced page blocks
+      for (var m = 0; m < rows.length; m += 1) {
         var my = py + 56 + m * ((ph - 82) / 4);
         roundRect(px + 14, my, pw - 28, 30, 6);
         ctx.fillStyle = "rgba(255, 255, 255, 0.04)";
         ctx.fill();
         ctx.strokeStyle = LINE;
         ctx.stroke();
-        drawMono("DISH 0" + (m + 1), px + 24, my + 15, INK, 9.5);
+        drawMono(rows[m], px + 24, my + 15, INK, 9.5);
         drawMono(langs[activeLang], px + pw - 24, my + 15, CYAN, 9, "right");
       }
 
-      drawMono("UP TO 3 LANGUAGES", w * 0.80, h * 0.46, INK, 10, "center");
-      drawMono("SEASONAL UPDATES", w * 0.80, h * 0.55, CYAN, 9.5, "center");
+      drawMono("CLEAN ROUTES", w * 0.82, h * 0.46, INK, 10, "center");
+      drawMono("SYNCED EDITS", w * 0.82, h * 0.55, CYAN, 9.5, "center");
     },
   };
 
