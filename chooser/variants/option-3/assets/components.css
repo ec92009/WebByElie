@@ -1,0 +1,1019 @@
+/* ==========================================================================
+   Web By Elie — Option 3 ("Toybox")
+   Bento tiles, stickers, showcase strip, retro TV, coin jar, scrapbook, quiz
+   ========================================================================== */
+
+/* Color-Block Tiles (WCAG AA contrast verified on every color) */
+.tile {
+  position: relative;
+  background: var(--surface);
+  color: var(--ink);
+  border: var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: transform 0.28s var(--spring), box-shadow 0.28s var(--spring);
+}
+
+.tile-interactive:hover {
+  transform: translate(-3px, -4px) rotate(-0.4deg);
+  box-shadow: 9px 10px 0 var(--ink);
+}
+
+.tile-interactive:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.tile-sunflower {
+  background: var(--sunflower);
+  color: var(--ink);
+}
+
+.tile-coral {
+  background: var(--coral);
+  color: var(--ink);
+}
+
+.tile-cobalt {
+  background: var(--cobalt);
+  color: #ffffff;
+}
+
+.tile-cobalt .muted,
+.tile-cobalt .card-text {
+  color: #fff8ec;
+}
+
+.tile-mint {
+  background: var(--mint);
+  color: var(--ink);
+}
+
+.tile-lilac {
+  background: var(--lilac);
+  color: var(--ink);
+}
+
+.tile-cream {
+  background: var(--soft-butter);
+  color: var(--ink);
+}
+
+a.tile {
+  text-decoration: none;
+}
+
+.tile-sunflower .hero-lede,
+.tile-mint .hero-lede,
+.tile-coral .hero-lede,
+.tile-lilac .hero-lede {
+  color: var(--ink);
+}
+
+.tile-cobalt .hero-lede {
+  color: #fff8ec;
+}
+
+/* Badges & Stickers */
+.sticker {
+  display: inline-flex;
+  align-self: flex-start;
+  justify-self: start;
+  width: fit-content;
+  max-width: 100%;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 13px;
+  border-radius: var(--radius-pill);
+  border: var(--border-sm);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  box-shadow: 2.5px 2.5px 0 var(--ink);
+}
+
+.sticker-sunflower { background: var(--sunflower); color: var(--ink); }
+.sticker-coral { background: var(--coral); color: var(--ink); }
+.sticker-cobalt { background: var(--cobalt); color: #ffffff; }
+.sticker-mint { background: var(--mint); color: var(--ink); }
+.sticker-lilac { background: var(--lilac); color: var(--ink); }
+
+.new-sticker {
+  position: absolute;
+  top: -14px;
+  right: 16px;
+  z-index: 4;
+  padding: 5px 12px;
+  border-radius: 12px;
+  border: var(--border-sm);
+  background: var(--sunflower);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: rotate(7deg);
+}
+
+.tile-sunflower .new-sticker {
+  background: var(--coral);
+}
+
+/* Peel-Corner Hover Effect on New Service Cards */
+.peel-card {
+  overflow: visible;
+}
+
+.peel-card::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 0 0;
+  border-color: transparent var(--bg) var(--bg) transparent;
+  border-top-left-radius: 12px;
+  transition: border-width 0.26s var(--spring);
+  pointer-events: none;
+}
+
+.peel-card:hover::after {
+  border-width: 0 0 26px 26px;
+  border-color: transparent var(--bg) var(--bg) var(--ink);
+}
+
+/* Hero Bento Grid */
+.hero-section {
+  padding: 32px 0 28px;
+}
+
+.hero-bento {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 22px;
+  align-items: stretch;
+}
+
+.hero-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 34px;
+  border-radius: var(--radius-lg);
+}
+
+.hero-lede {
+  font-size: clamp(1.08rem, 1.8vw, 1.28rem);
+  color: var(--ink-muted);
+  max-width: 58ch;
+  font-weight: 600;
+}
+
+.hero-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+.hero-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 8px;
+  border-top: 2.5px dashed rgba(27, 27, 31, 0.22);
+}
+
+.hero-side {
+  display: grid;
+  grid-template-rows: 1.25fr auto;
+  gap: 18px;
+}
+
+.hero-squad-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+}
+
+.mascot-squad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.mascot-squad .mascot-wrap {
+  background: var(--surface);
+  border: var(--border-sm);
+  border-radius: 18px;
+  padding: 8px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.28s var(--spring);
+}
+
+.mascot-squad .mascot-wrap:hover {
+  transform: translateY(-6px) rotate(-4deg);
+}
+
+.hero-mini-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.hero-mini-tile {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.mini-big {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* Washi Tape Scrolling Ticker */
+.washi-wrap {
+  padding: 18px 0;
+  overflow: hidden;
+}
+
+.washi-tape {
+  background: var(--ink);
+  color: var(--sunflower);
+  border-top: var(--border);
+  border-bottom: var(--border);
+  padding: 13px 0;
+  transform: rotate(-1deg) scale(1.02);
+  overflow: hidden;
+  display: flex;
+}
+
+.washi-track {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-right: 28px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.washi-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--coral);
+  border: 2px solid var(--bg);
+}
+
+.washi-dot-mint { background: var(--mint); }
+.washi-dot-lilac { background: var(--lilac); }
+.washi-dot-sun { background: var(--sunflower); }
+
+/* Interactive Flickable Showcase Strip */
+.strip-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.strip-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: var(--border);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: 3px 3px 0 var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s var(--spring), background-color 0.2s ease;
+}
+
+.strip-btn:hover {
+  background: var(--sunflower);
+  transform: translate(-1px, -2px);
+}
+
+.strip-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.showcase-strip {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 18px 4px 20px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink) transparent;
+  cursor: grab;
+  -webkit-overflow-scrolling: touch;
+}
+
+.showcase-strip.is-dragging {
+  cursor: grabbing;
+  scroll-snap-type: none;
+  user-select: none;
+}
+
+.strip-card {
+  flex: 0 0 288px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  text-decoration: none;
+  padding: 22px;
+}
+
+.strip-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.mascot-badge {
+  width: 72px;
+  height: 72px;
+  background: var(--surface);
+  border: var(--border-sm);
+  border-radius: 20px;
+  padding: 6px;
+  box-shadow: 3px 3px 0 var(--ink);
+  flex-shrink: 0;
+}
+
+.mascot-badge-lg {
+  width: 112px;
+  height: 112px;
+  border-radius: 26px;
+  padding: 8px;
+}
+
+/* Bento Service Grids */
+.bento-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.bento-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.bento-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.service-card-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.service-card-head > div:first-child {
+  display: grid;
+  gap: 10px;
+}
+
+.strip-card h3 {
+  margin-bottom: 6px;
+}
+
+.btn-sunflower {
+  background: var(--sunflower);
+  color: var(--ink);
+}
+
+.service-bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 8px;
+}
+
+.service-bullets li {
+  position: relative;
+  padding-left: 24px;
+  font-weight: 600;
+}
+
+.service-bullets li::before {
+  content: "★";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.9rem;
+}
+
+/* Savings Coin Jar Section */
+.savings-bento {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.coin-jar-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 14px;
+}
+
+.coin-jar-svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+/* Work Cards & Polaroid Scrapbook */
+.work-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.work-frame {
+  border: var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--bg);
+  aspect-ratio: 16 / 10;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.work-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.work-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+/* Scrapbook Case Study */
+.scrapbook-grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.polaroid {
+  position: relative;
+  background: var(--surface);
+  border: var(--border);
+  border-radius: 18px;
+  padding: 16px 16px 22px;
+  box-shadow: var(--shadow-lg);
+}
+
+.polaroid-desktop {
+  transform: rotate(-1.2deg);
+}
+
+.polaroid-mobile {
+  max-width: 310px;
+  margin: 0 auto;
+  transform: rotate(2deg);
+}
+
+.polaroid-tape {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 110px;
+  height: 28px;
+  background: rgba(255, 201, 60, 0.88);
+  border: 2.5px solid var(--ink);
+  border-radius: 6px;
+  box-shadow: 2px 2px 0 rgba(27, 27, 31, 0.25);
+}
+
+.polaroid-tape-mint {
+  background: rgba(60, 207, 145, 0.88);
+  transform: translateX(-50%) rotate(4deg);
+}
+
+.polaroid img {
+  width: 100%;
+  height: auto;
+  border: 2.5px solid var(--ink);
+  border-radius: 10px;
+}
+
+.polaroid-caption {
+  margin-top: 12px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.sticky-note {
+  position: relative;
+  padding: 26px 22px 22px;
+  border: var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 10px;
+}
+
+.sticky-note::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--coral);
+  border: 2.5px solid var(--ink);
+}
+
+.sticky-tilt-l { transform: rotate(-1.3deg); }
+.sticky-tilt-r { transform: rotate(1.2deg); }
+
+/* Chunky Comic Speech Bubble */
+.comic-bubble {
+  position: relative;
+  background: var(--surface);
+  border: 4px solid var(--ink);
+  border-radius: 30px;
+  padding: 32px;
+  box-shadow: var(--shadow-lg);
+}
+
+.comic-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -22px;
+  left: 56px;
+  width: 30px;
+  height: 30px;
+  background: var(--surface);
+  border-right: 4px solid var(--ink);
+  border-bottom: 4px solid var(--ink);
+  transform: rotate(45deg);
+}
+
+.comic-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.5vw, 1.85rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.comic-by {
+  margin-top: 16px;
+  font-weight: 800;
+  color: var(--ink-muted);
+}
+
+/* Retro TV Frame for Core Service Videos */
+.retro-tv {
+  background: var(--coral);
+  border: 4px solid var(--ink);
+  border-radius: 30px;
+  padding: 18px;
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  gap: 14px;
+}
+
+.retro-tv-screen {
+  background: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.retro-tv-screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.retro-tv-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 0 4px;
+}
+
+.retro-tv-dials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tv-knob {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--sunflower);
+  border: 2.5px solid var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.tv-knob-mint { background: var(--mint); }
+
+/* Motif Toybox Scene Frame */
+.motif-stage {
+  background: var(--surface);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 12px;
+}
+
+.motif-stage-solo {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.motif-svg {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 2.5px solid var(--ink);
+  background: var(--bg);
+}
+
+/* FAQ Accordion */
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: var(--border);
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 18px 22px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.08rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-plus {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2.5px solid var(--ink);
+  background: var(--sunflower);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 1.15rem;
+  line-height: 1;
+  transition: transform 0.25s var(--spring), background-color 0.2s ease;
+}
+
+.faq-item[open] .faq-plus {
+  transform: rotate(45deg);
+  background: var(--coral);
+}
+
+.faq-body {
+  padding: 0 22px 20px;
+  color: var(--ink-muted);
+  font-weight: 600;
+  border-top: 2px dashed rgba(27, 27, 31, 0.16);
+  padding-top: 14px;
+}
+
+/* Free Site Check — Game-Show Flashcard Quiz */
+.quiz-stage {
+  max-width: 780px;
+  margin: 0 auto;
+  display: grid;
+  gap: 22px;
+}
+
+.quiz-dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.quiz-dot {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: var(--border-sm);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.88rem;
+  box-shadow: 2px 2px 0 var(--ink);
+  cursor: pointer;
+  transition: transform 0.22s var(--spring), background-color 0.2s ease;
+}
+
+.quiz-dot.is-current {
+  background: var(--sunflower);
+  transform: scale(1.15);
+}
+
+.quiz-dot.is-yes {
+  background: var(--mint);
+}
+
+.quiz-dot.is-no {
+  background: var(--coral);
+}
+
+.quiz-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 18px;
+}
+
+/* Progressive enhancement: without .js all cards stay cleanly visible */
+html.js .quiz-stage.is-active .quiz-card {
+  display: none;
+}
+
+html.js .quiz-stage.is-active .quiz-card.is-current {
+  display: grid;
+  animation: tb-card-pop 0.38s var(--spring) both;
+}
+
+.quiz-card {
+  display: grid;
+  gap: 20px;
+  padding: 32px;
+  border-radius: var(--radius-lg);
+}
+
+.quiz-q {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2.05rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.quiz-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.quiz-choice {
+  flex: 1 1 150px;
+  padding: 16px 24px;
+  font-size: 1.15rem;
+}
+
+.quiz-choice.is-picked {
+  outline: 4px solid var(--ink);
+  outline-offset: 3px;
+}
+
+.quiz-nav-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.quiz-results {
+  display: grid;
+  gap: 24px;
+}
+
+html.js .quiz-results.is-hidden {
+  display: none;
+}
+
+.score-dial-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 26px;
+}
+
+.score-dial {
+  position: relative;
+  width: 152px;
+  height: 152px;
+  flex-shrink: 0;
+}
+
+.score-dial svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.score-ring-bg {
+  fill: var(--surface);
+  stroke: rgba(27, 27, 31, 0.14);
+  stroke-width: 14;
+}
+
+.score-ring-fg {
+  fill: none;
+  stroke: var(--mint);
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-dasharray: 377;
+  stroke-dashoffset: calc(377 - (377 * var(--score-ratio, 0)));
+  transition: stroke-dashoffset 0.9s var(--spring);
+}
+
+.score-num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 2.1rem;
+  line-height: 1;
+}
+
+.score-num small {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  margin-top: 4px;
+}
+
+.sticker-recs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.rec-sticker {
+  text-decoration: none;
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+}
+
+/* Confetti Canvas Overlay */
+.confetti-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 2147482000;
+}
+
+/* Ensure grid children never force horizontal overflow on narrow viewports */
+.hero-bento > *,
+.hero-side > *,
+.hero-mini-row > *,
+.bento-2 > *,
+.bento-3 > *,
+.bento-4 > *,
+.savings-bento > *,
+.scrapbook-grid > *,
+.footer-grid > * {
+  min-width: 0;
+}
+
+.washi-wrap {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Responsive Grids */
+@media (max-width: 980px) {
+  .hero-bento,
+  .savings-bento,
+  .scrapbook-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .bento-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .bento-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .bento-2,
+  .bento-3,
+  .bento-4,
+  .hero-mini-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .tile {
+    padding: 20px;
+  }
+  .hero-main {
+    padding: 22px;
+  }
+  .mascot-squad {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .strip-card {
+    flex: 0 0 256px;
+  }
+  .polaroid-desktop,
+  .polaroid-mobile,
+  .sticky-tilt-l,
+  .sticky-tilt-r {
+    transform: none;
+  }
+  .quiz-card {
+    padding: 20px;
+  }
+  .service-card-head {
+    flex-wrap: wrap;
+  }
+  .washi-tape {
+    transform: none;
+  }
+}

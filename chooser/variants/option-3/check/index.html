@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Free site check — Web By Elie</title>
+  <meta name="description" content="An interactive 8-question website self-check with tailored service suggestions." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="../../../chooser-nav.css" />
+  <link rel="icon" type="image/svg+xml" href="../../../../assets/web-by-elie-logo.svg" />
+  <link rel="stylesheet" href="../assets/toybox.css" />
+  <link rel="stylesheet" href="../assets/components.css" />
+  <link rel="stylesheet" href="../assets/animations.css" />
+  <script src="../assets/boot.js"></script>
+</head>
+<body data-proposal="option-3" data-page="check/">
+  <nav class="chooser-nav" aria-label="Design options"><a class="chooser-btn" data-option="original" href="../../../variants/original/" title="Current site (v317.1)">Original</a><a class="chooser-btn" data-option="option-1" href="../../../variants/option-1/" title="Paper & Ink">Option 1</a><a class="chooser-btn" data-option="option-2" href="../../../variants/option-2/" title="Night Signal">Option 2</a><a class="chooser-btn" data-option="option-3" href="../../../variants/option-3/" aria-current="page" title="Toybox">Option 3</a></nav>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-shell">
+        <a class="brand-link" href="../">
+          <span class="brand-mark">
+            <img src="../../../../assets/web-by-elie-logo.svg" alt="" width="34" height="34" />
+          </span>
+          <span>Web By Elie</span>
+        </a>
+
+        <nav aria-label="Primary">
+          <ul class="nav-links"><li><a href="../services/">Services</a></li><li><a href="../work/">Work</a></li><li><a href="../process/">Process</a></li><li><a href="../check/" aria-current="page">Free check</a></li></ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="btn btn-sm btn-coral js-confetti-cta" href="mailto:hello@web-by-elie.com?subject=Web%20By%20Elie%20intro">Email Elie</a>
+          <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav-drawer" aria-label="Open menu">☰</button>
+        </div>
+      </div>
+
+      <nav id="mobile-nav-drawer" class="nav-drawer" aria-label="Mobile menu">
+        <ul>
+          <li><a href="../services/"><span>Services</span><span aria-hidden="true">→</span></a></li><li><a href="../work/"><span>Work</span><span aria-hidden="true">→</span></a></li><li><a href="../process/"><span>Process</span><span aria-hidden="true">→</span></a></li><li><a href="../check/" aria-current="page"><span>Free check</span><span aria-hidden="true">→</span></a></li>
+          <li><a href="mailto:hello@web-by-elie.com?subject=Web%20By%20Elie%20intro" class="js-confetti-cta"><span>Email Elie</span><span aria-hidden="true">✉</span></a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="inchworm-track" aria-hidden="true">
+      <div class="inchworm-fill"></div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    
+<section class="hero-section">
+  <div class="container">
+    <div class="tile tile-sunflower">
+      <div class="section-head">
+        <div class="section-head-copy">
+          <span class="sticker sticker-coral">Interactive · 8 quick checks</span>
+          <h1>Free site check</h1>
+          <p class="hero-lede">Answer eight quick yes-or-no flashcards about your current website. Everything stays right in your browser — at the end you get a score, matching service stickers for any "no" answers, and a ready-to-send email link for Elie.</p>
+        </div>
+        <div class="mascot-badge mascot-badge-lg"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <path d="M78 78 L104 104" stroke="#1b1b1f" stroke-width="15" stroke-linecap="round"/>
+    <path d="M78 78 L104 104" stroke="#ffc93c" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="54" cy="54" r="38" fill="#2f5bff" stroke="#1b1b1f" stroke-width="4"/>
+    <circle cx="54" cy="54" r="28" fill="#dbf8ea" stroke="#1b1b1f" stroke-width="3.2"/>
+    <g class="mascot-eye">
+    <circle cx="43" cy="51" r="6" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="43" cy="51" r="3" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="65" cy="51" r="6" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="65" cy="51" r="3" fill="#1b1b1f"/>
+  </g>
+    <path d="M45 64 Q54 73 63 64" fill="none" stroke="#1b1b1f" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M35 36 Q42 30 50 32" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  </g></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="quiz-heading">
+  <div class="container">
+    <h2 id="quiz-heading" class="sr-only">Eight website check questions</h2>
+
+    <div id="toybox-quiz" class="quiz-stage" tabindex="-1">
+      <div class="quiz-dots" role="navigation" aria-label="Question progress">
+        <button class="quiz-dot" type="button" aria-label="Go to question 1">1</button><button class="quiz-dot" type="button" aria-label="Go to question 2">2</button><button class="quiz-dot" type="button" aria-label="Go to question 3">3</button><button class="quiz-dot" type="button" aria-label="Go to question 4">4</button><button class="quiz-dot" type="button" aria-label="Go to question 5">5</button><button class="quiz-dot" type="button" aria-label="Go to question 6">6</button><button class="quiz-dot" type="button" aria-label="Go to question 7">7</button><button class="quiz-dot" type="button" aria-label="Go to question 8">8</button>
+      </div>
+
+      <div class="quiz-nav-row">
+        <button id="quiz-prev" class="btn btn-sm btn-white" type="button">← Previous</button>
+        <p id="quiz-status" class="sticker" aria-live="polite">8-question self-check (keys: Y / N / ← / →)</p>
+      </div>
+
+      <ol class="quiz-list">
+        <li class="tile tile-sunflower quiz-card" data-service="refresh">
+        <div class="strip-card-top">
+          <span class="sticker">Question 1 of 8</span>
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <rect x="14" y="22" width="92" height="76" rx="18" fill="#ffffff" stroke="#1b1b1f" stroke-width="4"/>
+    <path d="M14 44 H106 V40 A18 18 0 0 0 88 22 H32 A18 18 0 0 0 14 40 Z" fill="#ffc93c" stroke="#1b1b1f" stroke-width="4"/>
+    <circle cx="29" cy="33" r="4" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="2"/>
+    <circle cx="43" cy="33" r="4" fill="#3ccf91" stroke="#1b1b1f" stroke-width="2"/>
+    <circle cx="57" cy="33" r="4" fill="#2f5bff" stroke="#1b1b1f" stroke-width="2"/>
+    <g class="mascot-eye">
+    <circle cx="45" cy="65" r="6.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="45" cy="65" r="3.2" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="75" cy="65" r="6.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="75" cy="65" r="3.2" fill="#1b1b1f"/>
+  </g>
+    <circle cx="33" cy="74" r="4.5" fill="#ff6b5b" opacity="0.45"/>
+    <circle cx="87" cy="74" r="4.5" fill="#ff6b5b" opacity="0.45"/>
+    <path d="M48 79 Q60 90 72 79" fill="none" stroke="#1b1b1f" stroke-width="3.6" stroke-linecap="round"/>
+    <path d="M98 14 L101 21 L108 24 L101 27 L98 34 L95 27 L88 24 L95 21 Z" fill="#ffc93c" stroke="#1b1b1f" stroke-width="2"/>
+  </g></svg></div>
+        </div>
+        <h2 class="quiz-q">Does your homepage say what you do and where, in one sentence?</h2>
+        <div class="quiz-actions">
+          <button class="btn btn-mint quiz-choice" type="button" data-answer="yes" aria-pressed="false">Yes ✓</button>
+          <button class="btn btn-white quiz-choice" type="button" data-answer="no" aria-pressed="false">No / Not sure ✗</button>
+        </div>
+        <p class="card-text">Related service: <a href="../services/refresh/"><strong>Refresh</strong></a> — A better look, without throwing away the work you already did.</p>
+      </li><li class="tile tile-cobalt quiz-card" data-service="seo">
+        <div class="strip-card-top">
+          <span class="sticker">Question 2 of 8</span>
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <path d="M78 78 L104 104" stroke="#1b1b1f" stroke-width="15" stroke-linecap="round"/>
+    <path d="M78 78 L104 104" stroke="#ffc93c" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="54" cy="54" r="38" fill="#2f5bff" stroke="#1b1b1f" stroke-width="4"/>
+    <circle cx="54" cy="54" r="28" fill="#dbf8ea" stroke="#1b1b1f" stroke-width="3.2"/>
+    <g class="mascot-eye">
+    <circle cx="43" cy="51" r="6" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="43" cy="51" r="3" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="65" cy="51" r="6" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="65" cy="51" r="3" fill="#1b1b1f"/>
+  </g>
+    <path d="M45 64 Q54 73 63 64" fill="none" stroke="#1b1b1f" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M35 36 Q42 30 50 32" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  </g></svg></div>
+        </div>
+        <h2 class="quiz-q">Does each page have its own title and description in Google results?</h2>
+        <div class="quiz-actions">
+          <button class="btn btn-mint quiz-choice" type="button" data-answer="yes" aria-pressed="false">Yes ✓</button>
+          <button class="btn btn-white quiz-choice" type="button" data-answer="no" aria-pressed="false">No / Not sure ✗</button>
+        </div>
+        <p class="card-text">Related service: <a href="../services/seo/"><strong>SEO</strong></a> — Precise, practical search basics that people and crawlers can read.</p>
+      </li><li class="tile tile-lilac quiz-card" data-service="ai-ready">
+        <div class="strip-card-top">
+          <span class="sticker">Question 3 of 8</span>
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <line x1="60" y1="26" x2="60" y2="14" stroke="#1b1b1f" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="60" cy="12" r="7" fill="#ffc93c" stroke="#1b1b1f" stroke-width="3"/>
+    <rect x="10" y="48" width="12" height="24" rx="6" fill="#3ccf91" stroke="#1b1b1f" stroke-width="3.5"/>
+    <rect x="98" y="48" width="12" height="24" rx="6" fill="#3ccf91" stroke="#1b1b1f" stroke-width="3.5"/>
+    <rect x="20" y="26" width="80" height="72" rx="22" fill="#c4b5ff" stroke="#1b1b1f" stroke-width="4"/>
+    <rect x="30" y="38" width="60" height="46" rx="14" fill="#ffffff" stroke="#1b1b1f" stroke-width="3.2"/>
+    <g class="mascot-eye">
+    <circle cx="47" cy="56" r="6.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="47" cy="56" r="3.1" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="73" cy="56" r="6.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="73" cy="56" r="3.1" fill="#1b1b1f"/>
+  </g>
+    <path d="M49 71 Q60 79 71 71" fill="none" stroke="#1b1b1f" stroke-width="3.4" stroke-linecap="round"/>
+  </g></svg></div>
+        </div>
+        <h2 class="quiz-q">Ask ChatGPT about your business. Does it get your services and area right?</h2>
+        <div class="quiz-actions">
+          <button class="btn btn-mint quiz-choice" type="button" data-answer="yes" aria-pressed="false">Yes ✓</button>
+          <button class="btn btn-white quiz-choice" type="button" data-answer="no" aria-pressed="false">No / Not sure ✗</button>
+        </div>
+        <p class="card-text">Related service: <a href="../services/ai-ready/"><strong>AI-ready</strong></a> — Make the facts easy for ChatGPT, Gemini, and Google AI results to get right.</p>
+      </li><li class="tile tile-coral quiz-card" data-service="cost-cleanup">
+        <div class="strip-card-top">
+          <span class="sticker">Question 4 of 8</span>
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <polygon points="24,48 28,16 52,34" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="96,48 92,16 68,34" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="60" cy="64" r="38" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="4"/>
+    <ellipse cx="60" cy="74" rx="22" ry="16" fill="#fff8ec"/>
+    <g class="mascot-eye">
+    <circle cx="45" cy="58" r="6.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="45" cy="58" r="3.2" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="75" cy="58" r="6.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="75" cy="58" r="3.2" fill="#1b1b1f"/>
+  </g>
+    <polygon points="56,67 64,67 60,72" fill="#1b1b1f"/>
+    <path d="M50 75 Q55 81 60 75 Q65 81 70 75" fill="none" stroke="#1b1b1f" stroke-width="3" stroke-linecap="round"/>
+    <line x1="14" y1="64" x2="29" y2="66" stroke="#1b1b1f" stroke-width="2.8" stroke-linecap="round"/>
+    <line x1="15" y1="74" x2="30" y2="73" stroke="#1b1b1f" stroke-width="2.8" stroke-linecap="round"/>
+    <line x1="91" y1="66" x2="106" y2="64" stroke="#1b1b1f" stroke-width="2.8" stroke-linecap="round"/>
+    <line x1="90" y1="73" x2="105" y2="74" stroke="#1b1b1f" stroke-width="2.8" stroke-linecap="round"/>
+    <circle cx="92" cy="92" r="14" fill="#ffc93c" stroke="#1b1b1f" stroke-width="3.5"/>
+    <text x="92" y="97" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="14" fill="#1b1b1f">$</text>
+  </g></svg></div>
+        </div>
+        <h2 class="quiz-q">Do you know every web subscription you pay for, and when each renews?</h2>
+        <div class="quiz-actions">
+          <button class="btn btn-mint quiz-choice" type="button" data-answer="yes" aria-pressed="false">Yes ✓</button>
+          <button class="btn btn-white quiz-choice" type="button" data-answer="no" aria-pressed="false">No / Not sure ✗</button>
+        </div>
+        <p class="card-text">Related service: <a href="../services/cost-cleanup/"><strong>Cost cleanup</strong></a> — Find the small web bills that add up quietly.</p>
+      </li><li class="tile tile-mint quiz-card" data-service="site-care">
+        <div class="strip-card-top">
+          <span class="sticker">Question 5 of 8</span>
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <path d="M60 100 C28 80 16 60 16 42 C16 26 28 16 42 16 C51 16 57 21 60 27 C63 21 69 16 78 16 C92 16 104 26 104 42 C104 60 92 80 60 100 Z" fill="#3ccf91" stroke="#1b1b1f" stroke-width="4" stroke-linejoin="round"/>
+    <g class="mascot-eye">
+    <circle cx="45" cy="49" r="6.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="45" cy="49" r="3" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="75" cy="49" r="6.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="75" cy="49" r="3" fill="#1b1b1f"/>
+  </g>
+    <path d="M49 64 Q60 74 71 64" fill="none" stroke="#1b1b1f" stroke-width="3.4" stroke-linecap="round"/>
+    <rect x="74" y="72" width="32" height="14" rx="7" transform="rotate(-35 90 79)" fill="#ffc93c" stroke="#1b1b1f" stroke-width="3"/>
+    <circle cx="79" cy="87" r="4" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.2"/>
+  </g></svg></div>
+        </div>
+        <h2 class="quiz-q">Has someone checked your site's updates and backups in the last three months?</h2>
+        <div class="quiz-actions">
+          <button class="btn btn-mint quiz-choice" type="button" data-answer="yes" aria-pressed="false">Yes ✓</button>
+          <button class="btn btn-white quiz-choice" type="button" data-answer="no" aria-pressed="false">No / Not sure ✗</button>
+        </div>
+        <p class="card-text">Related service: <a href="../services/site-care/"><strong>Site care</strong></a> — A calm monthly retainer for updates, fixes, and small edits.</p>
+      </li><li class="tile tile-sunflower quiz-card" data-service="speed-access">
+        <div class="strip-card-top">
+          <span class="sticker">Question 6 of 8</span>
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <path d="M26 78 L14 96 L36 88 Z" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M94 78 L106 96 L84 88 Z" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M60 12 C82 26 88 54 84 90 H36 C32 54 38 26 60 12 Z" fill="#ffc93c" stroke="#1b1b1f" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M48 90 L60 110 L72 90 Z" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="3.5" stroke-linejoin="round"/>
+    <circle cx="60" cy="54" r="20" fill="#ffffff" stroke="#1b1b1f" stroke-width="3.5"/>
+    <g class="mascot-eye">
+    <circle cx="52" cy="52" r="5.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="52" cy="52" r="2.6" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="68" cy="52" r="5.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="68" cy="52" r="2.6" fill="#1b1b1f"/>
+  </g>
+    <path d="M52 63 Q60 70 68 63" fill="none" stroke="#1b1b1f" stroke-width="3" stroke-linecap="round"/>
+  </g></svg></div>
+        </div>
+        <h2 class="quiz-q">Does your homepage load in under three seconds on a phone?</h2>
+        <div class="quiz-actions">
+          <button class="btn btn-mint quiz-choice" type="button" data-answer="yes" aria-pressed="false">Yes ✓</button>
+          <button class="btn btn-white quiz-choice" type="button" data-answer="no" aria-pressed="false">No / Not sure ✗</button>
+        </div>
+        <p class="card-text">Related service: <a href="../services/speed-access/"><strong>Speed &amp; accessibility</strong></a> — Faster pages, readable by everyone, including assistive technology.</p>
+      </li><li class="tile tile-coral quiz-card" data-service="local-presence">
+        <div class="strip-card-top">
+          <span class="sticker">Question 7 of 8</span>
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <ellipse cx="60" cy="106" rx="28" ry="8" fill="#3ccf91" stroke="#1b1b1f" stroke-width="3"/>
+    <path d="M60 102 C60 102 24 72 24 46 C24 25 40 12 60 12 C80 12 96 25 96 46 C96 72 60 102 60 102 Z" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="60" cy="46" r="23" fill="#ffffff" stroke="#1b1b1f" stroke-width="3.5"/>
+    <g class="mascot-eye">
+    <circle cx="51" cy="44" r="5.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="51" cy="44" r="2.7" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="69" cy="44" r="5.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="69" cy="44" r="2.7" fill="#1b1b1f"/>
+  </g>
+    <path d="M51 56 Q60 63 69 56" fill="none" stroke="#1b1b1f" stroke-width="3.2" stroke-linecap="round"/>
+  </g></svg></div>
+        </div>
+        <h2 class="quiz-q">Are your hours and address identical on Google Maps and your website?</h2>
+        <div class="quiz-actions">
+          <button class="btn btn-mint quiz-choice" type="button" data-answer="yes" aria-pressed="false">Yes ✓</button>
+          <button class="btn btn-white quiz-choice" type="button" data-answer="no" aria-pressed="false">No / Not sure ✗</button>
+        </div>
+        <p class="card-text">Related service: <a href="../services/local-presence/"><strong>Local presence</strong></a> — Show up correctly on Google Maps, Apple Maps, and local listings.</p>
+      </li><li class="tile tile-cobalt quiz-card" data-service="platform-move">
+        <div class="strip-card-top">
+          <span class="sticker">Question 8 of 8</span>
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <path class="mascot-wing-l" d="M28 54 C8 38 6 60 18 68 C8 74 16 84 28 74 Z" fill="#ffffff" stroke="#1b1b1f" stroke-width="3.5" stroke-linejoin="round"/>
+    <path class="mascot-wing-r" d="M92 54 C112 38 114 60 102 68 C112 74 104 84 92 74 Z" fill="#ffffff" stroke="#1b1b1f" stroke-width="3.5" stroke-linejoin="round"/>
+    <rect x="26" y="28" width="68" height="66" rx="14" fill="#ffc93c" stroke="#1b1b1f" stroke-width="4"/>
+    <rect x="52" y="28" width="16" height="18" fill="#2f5bff" stroke="#1b1b1f" stroke-width="3"/>
+    <g class="mascot-eye">
+    <circle cx="46" cy="62" r="6" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="46" cy="62" r="3" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="74" cy="62" r="6" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="74" cy="62" r="3" fill="#1b1b1f"/>
+  </g>
+    <path d="M50 76 Q60 85 70 76" fill="none" stroke="#1b1b1f" stroke-width="3.4" stroke-linecap="round"/>
+  </g></svg></div>
+        </div>
+        <h2 class="quiz-q">Do you own your site's code and domain, outside a monthly builder plan?</h2>
+        <div class="quiz-actions">
+          <button class="btn btn-mint quiz-choice" type="button" data-answer="yes" aria-pressed="false">Yes ✓</button>
+          <button class="btn btn-white quiz-choice" type="button" data-answer="no" aria-pressed="false">No / Not sure ✗</button>
+        </div>
+        <p class="card-text">Related service: <a href="../services/platform-move/"><strong>Platform move</strong></a> — Move off an expensive builder to fast, low-cost hosting you own.</p>
+      </li>
+      </ol>
+
+      <div id="quiz-results" class="tile quiz-results" aria-live="polite">
+        <div class="score-dial-wrap">
+          <div class="score-dial" aria-hidden="true">
+            <svg viewBox="0 0 140 140">
+              <circle class="score-ring-bg" cx="70" cy="70" r="60" />
+              <circle id="quiz-score-ring" class="score-ring-fg" cx="70" cy="70" r="60" />
+            </svg>
+            <div class="score-num">
+              <span id="quiz-score-text">— / 8</span>
+              <small>YES SCORE</small>
+            </div>
+          </div>
+
+          <div class="section-head-copy">
+            <span class="sticker sticker-mint">Your Toybox scorecard</span>
+            <h2>Here is what stood out</h2>
+            <p id="quiz-score-summary">Answer the 8 questions above, or email your website URL directly to Elie for a manual review.</p>
+            <div class="hero-cta-row">
+              <a id="quiz-mailto-cta" class="btn btn-coral js-confetti-cta" href="mailto:hello@web-by-elie.com?subject=Free%20site%20check&amp;body=My%20website%3A%20">Email Elie my site check ✉</a>
+              <button id="quiz-reset" class="btn btn-sm btn-white" type="button">Play again ↻</button>
+            </div>
+          </div>
+        </div>
+
+        <p id="quiz-rec-empty" hidden><strong>All 8 checked!</strong> Everything looks tidy on your end — still feel free to say hello anytime.</p>
+
+        <div class="sticker-recs">
+          <a class="tile tile-sunflower tile-interactive rec-sticker" data-rec-service="refresh" href="../services/refresh/">
+        <div class="strip-card-top">
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <rect x="14" y="22" width="92" height="76" rx="18" fill="#ffffff" stroke="#1b1b1f" stroke-width="4"/>
+    <path d="M14 44 H106 V40 A18 18 0 0 0 88 22 H32 A18 18 0 0 0 14 40 Z" fill="#ffc93c" stroke="#1b1b1f" stroke-width="4"/>
+    <circle cx="29" cy="33" r="4" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="2"/>
+    <circle cx="43" cy="33" r="4" fill="#3ccf91" stroke="#1b1b1f" stroke-width="2"/>
+    <circle cx="57" cy="33" r="4" fill="#2f5bff" stroke="#1b1b1f" stroke-width="2"/>
+    <g class="mascot-eye">
+    <circle cx="45" cy="65" r="6.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="45" cy="65" r="3.2" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="75" cy="65" r="6.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="75" cy="65" r="3.2" fill="#1b1b1f"/>
+  </g>
+    <circle cx="33" cy="74" r="4.5" fill="#ff6b5b" opacity="0.45"/>
+    <circle cx="87" cy="74" r="4.5" fill="#ff6b5b" opacity="0.45"/>
+    <path d="M48 79 Q60 90 72 79" fill="none" stroke="#1b1b1f" stroke-width="3.6" stroke-linecap="round"/>
+    <path d="M98 14 L101 21 L108 24 L101 27 L98 34 L95 27 L88 24 L95 21 Z" fill="#ffc93c" stroke="#1b1b1f" stroke-width="2"/>
+  </g></svg></div>
+          <span class="sticker">01</span>
+        </div>
+        <h3>Refresh</h3>
+        <p class="card-text">A better look, without throwing away the work you already did.</p>
+        <span class="sticker">See how it helps →</span>
+      </a><a class="tile tile-cobalt tile-interactive rec-sticker" data-rec-service="seo" href="../services/seo/">
+        <div class="strip-card-top">
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <path d="M78 78 L104 104" stroke="#1b1b1f" stroke-width="15" stroke-linecap="round"/>
+    <path d="M78 78 L104 104" stroke="#ffc93c" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="54" cy="54" r="38" fill="#2f5bff" stroke="#1b1b1f" stroke-width="4"/>
+    <circle cx="54" cy="54" r="28" fill="#dbf8ea" stroke="#1b1b1f" stroke-width="3.2"/>
+    <g class="mascot-eye">
+    <circle cx="43" cy="51" r="6" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="43" cy="51" r="3" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="65" cy="51" r="6" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="65" cy="51" r="3" fill="#1b1b1f"/>
+  </g>
+    <path d="M45 64 Q54 73 63 64" fill="none" stroke="#1b1b1f" stroke-width="3.4" stroke-linecap="round"/>
+    <path d="M35 36 Q42 30 50 32" fill="none" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round"/>
+  </g></svg></div>
+          <span class="sticker">02</span>
+        </div>
+        <h3>SEO</h3>
+        <p class="card-text">Precise, practical search basics that people and crawlers can read.</p>
+        <span class="sticker">See how it helps →</span>
+      </a><a class="tile tile-lilac tile-interactive rec-sticker" data-rec-service="ai-ready" href="../services/ai-ready/">
+        <div class="strip-card-top">
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <line x1="60" y1="26" x2="60" y2="14" stroke="#1b1b1f" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="60" cy="12" r="7" fill="#ffc93c" stroke="#1b1b1f" stroke-width="3"/>
+    <rect x="10" y="48" width="12" height="24" rx="6" fill="#3ccf91" stroke="#1b1b1f" stroke-width="3.5"/>
+    <rect x="98" y="48" width="12" height="24" rx="6" fill="#3ccf91" stroke="#1b1b1f" stroke-width="3.5"/>
+    <rect x="20" y="26" width="80" height="72" rx="22" fill="#c4b5ff" stroke="#1b1b1f" stroke-width="4"/>
+    <rect x="30" y="38" width="60" height="46" rx="14" fill="#ffffff" stroke="#1b1b1f" stroke-width="3.2"/>
+    <g class="mascot-eye">
+    <circle cx="47" cy="56" r="6.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="47" cy="56" r="3.1" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="73" cy="56" r="6.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="73" cy="56" r="3.1" fill="#1b1b1f"/>
+  </g>
+    <path d="M49 71 Q60 79 71 71" fill="none" stroke="#1b1b1f" stroke-width="3.4" stroke-linecap="round"/>
+  </g></svg></div>
+          <span class="sticker">03</span>
+        </div>
+        <h3>AI-ready</h3>
+        <p class="card-text">Make the facts easy for ChatGPT, Gemini, and Google AI results to get right.</p>
+        <span class="sticker">See how it helps →</span>
+      </a><a class="tile tile-coral tile-interactive rec-sticker" data-rec-service="cost-cleanup" href="../services/cost-cleanup/">
+        <div class="strip-card-top">
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <polygon points="24,48 28,16 52,34" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="4" stroke-linejoin="round"/>
+    <polygon points="96,48 92,16 68,34" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="60" cy="64" r="38" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="4"/>
+    <ellipse cx="60" cy="74" rx="22" ry="16" fill="#fff8ec"/>
+    <g class="mascot-eye">
+    <circle cx="45" cy="58" r="6.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="45" cy="58" r="3.2" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="75" cy="58" r="6.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="75" cy="58" r="3.2" fill="#1b1b1f"/>
+  </g>
+    <polygon points="56,67 64,67 60,72" fill="#1b1b1f"/>
+    <path d="M50 75 Q55 81 60 75 Q65 81 70 75" fill="none" stroke="#1b1b1f" stroke-width="3" stroke-linecap="round"/>
+    <line x1="14" y1="64" x2="29" y2="66" stroke="#1b1b1f" stroke-width="2.8" stroke-linecap="round"/>
+    <line x1="15" y1="74" x2="30" y2="73" stroke="#1b1b1f" stroke-width="2.8" stroke-linecap="round"/>
+    <line x1="91" y1="66" x2="106" y2="64" stroke="#1b1b1f" stroke-width="2.8" stroke-linecap="round"/>
+    <line x1="90" y1="73" x2="105" y2="74" stroke="#1b1b1f" stroke-width="2.8" stroke-linecap="round"/>
+    <circle cx="92" cy="92" r="14" fill="#ffc93c" stroke="#1b1b1f" stroke-width="3.5"/>
+    <text x="92" y="97" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="14" fill="#1b1b1f">$</text>
+  </g></svg></div>
+          <span class="sticker">04</span>
+        </div>
+        <h3>Cost cleanup</h3>
+        <p class="card-text">Find the small web bills that add up quietly.</p>
+        <span class="sticker">See how it helps →</span>
+      </a><a class="tile tile-mint tile-interactive rec-sticker" data-rec-service="site-care" href="../services/site-care/">
+        <div class="strip-card-top">
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <path d="M60 100 C28 80 16 60 16 42 C16 26 28 16 42 16 C51 16 57 21 60 27 C63 21 69 16 78 16 C92 16 104 26 104 42 C104 60 92 80 60 100 Z" fill="#3ccf91" stroke="#1b1b1f" stroke-width="4" stroke-linejoin="round"/>
+    <g class="mascot-eye">
+    <circle cx="45" cy="49" r="6.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="45" cy="49" r="3" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="75" cy="49" r="6.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="75" cy="49" r="3" fill="#1b1b1f"/>
+  </g>
+    <path d="M49 64 Q60 74 71 64" fill="none" stroke="#1b1b1f" stroke-width="3.4" stroke-linecap="round"/>
+    <rect x="74" y="72" width="32" height="14" rx="7" transform="rotate(-35 90 79)" fill="#ffc93c" stroke="#1b1b1f" stroke-width="3"/>
+    <circle cx="79" cy="87" r="4" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.2"/>
+  </g></svg></div>
+          <span class="sticker">05</span>
+        </div>
+        <h3>Site care</h3>
+        <p class="card-text">A calm monthly retainer for updates, fixes, and small edits.</p>
+        <span class="sticker">See how it helps →</span>
+      </a><a class="tile tile-sunflower tile-interactive rec-sticker" data-rec-service="speed-access" href="../services/speed-access/">
+        <div class="strip-card-top">
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <path d="M26 78 L14 96 L36 88 Z" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M94 78 L106 96 L84 88 Z" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="3.5" stroke-linejoin="round"/>
+    <path d="M60 12 C82 26 88 54 84 90 H36 C32 54 38 26 60 12 Z" fill="#ffc93c" stroke="#1b1b1f" stroke-width="4" stroke-linejoin="round"/>
+    <path d="M48 90 L60 110 L72 90 Z" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="3.5" stroke-linejoin="round"/>
+    <circle cx="60" cy="54" r="20" fill="#ffffff" stroke="#1b1b1f" stroke-width="3.5"/>
+    <g class="mascot-eye">
+    <circle cx="52" cy="52" r="5.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="52" cy="52" r="2.6" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="68" cy="52" r="5.2" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="68" cy="52" r="2.6" fill="#1b1b1f"/>
+  </g>
+    <path d="M52 63 Q60 70 68 63" fill="none" stroke="#1b1b1f" stroke-width="3" stroke-linecap="round"/>
+  </g></svg></div>
+          <span class="sticker">06</span>
+        </div>
+        <h3>Speed &amp; accessibility</h3>
+        <p class="card-text">Faster pages, readable by everyone, including assistive technology.</p>
+        <span class="sticker">See how it helps →</span>
+      </a><a class="tile tile-coral tile-interactive rec-sticker" data-rec-service="local-presence" href="../services/local-presence/">
+        <div class="strip-card-top">
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <ellipse cx="60" cy="106" rx="28" ry="8" fill="#3ccf91" stroke="#1b1b1f" stroke-width="3"/>
+    <path d="M60 102 C60 102 24 72 24 46 C24 25 40 12 60 12 C80 12 96 25 96 46 C96 72 60 102 60 102 Z" fill="#ff6b5b" stroke="#1b1b1f" stroke-width="4" stroke-linejoin="round"/>
+    <circle cx="60" cy="46" r="23" fill="#ffffff" stroke="#1b1b1f" stroke-width="3.5"/>
+    <g class="mascot-eye">
+    <circle cx="51" cy="44" r="5.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="51" cy="44" r="2.7" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="69" cy="44" r="5.5" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="69" cy="44" r="2.7" fill="#1b1b1f"/>
+  </g>
+    <path d="M51 56 Q60 63 69 56" fill="none" stroke="#1b1b1f" stroke-width="3.2" stroke-linecap="round"/>
+  </g></svg></div>
+          <span class="sticker">07</span>
+        </div>
+        <h3>Local presence</h3>
+        <p class="card-text">Show up correctly on Google Maps, Apple Maps, and local listings.</p>
+        <span class="sticker">See how it helps →</span>
+      </a><a class="tile tile-cobalt tile-interactive rec-sticker" data-rec-service="platform-move" href="../services/platform-move/">
+        <div class="strip-card-top">
+          <div class="mascot-badge"><svg class="mascot-svg " viewBox="0 0 120 120" aria-hidden="true" focusable="false"><g class="mascot-float">
+    <path class="mascot-wing-l" d="M28 54 C8 38 6 60 18 68 C8 74 16 84 28 74 Z" fill="#ffffff" stroke="#1b1b1f" stroke-width="3.5" stroke-linejoin="round"/>
+    <path class="mascot-wing-r" d="M92 54 C112 38 114 60 102 68 C112 74 104 84 92 74 Z" fill="#ffffff" stroke="#1b1b1f" stroke-width="3.5" stroke-linejoin="round"/>
+    <rect x="26" y="28" width="68" height="66" rx="14" fill="#ffc93c" stroke="#1b1b1f" stroke-width="4"/>
+    <rect x="52" y="28" width="16" height="18" fill="#2f5bff" stroke="#1b1b1f" stroke-width="3"/>
+    <g class="mascot-eye">
+    <circle cx="46" cy="62" r="6" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="46" cy="62" r="3" fill="#1b1b1f"/>
+  </g>
+  <g class="mascot-eye">
+    <circle cx="74" cy="62" r="6" fill="#ffffff" stroke="#1b1b1f" stroke-width="2.6"/>
+    <circle class="mascot-pupil" cx="74" cy="62" r="3" fill="#1b1b1f"/>
+  </g>
+    <path d="M50 76 Q60 85 70 76" fill="none" stroke="#1b1b1f" stroke-width="3.4" stroke-linecap="round"/>
+  </g></svg></div>
+          <span class="sticker">08</span>
+        </div>
+        <h3>Platform move</h3>
+        <p class="card-text">Move off an expensive builder to fast, low-cost hosting you own.</p>
+        <span class="sticker">See how it helps →</span>
+      </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-card">
+          <a class="brand-link" href="../">
+            <span class="brand-mark"><img src="../../../../assets/web-by-elie-logo.svg" alt="" width="34" height="34" /></span>
+            <span>Web By Elie</span>
+          </a>
+          <p>New look, better reach. Independent businesses that already have a website, or the web tools around one.</p>
+          <p><strong>$100/hour</strong> · 10-hour starting bundle</p>
+        </div>
+
+        <div class="footer-card">
+          <p class="footer-title">Explore</p>
+          <ul class="footer-list">
+            <li><a href="../">Home</a></li>
+            <li><a href="../services/">All 10 services</a></li>
+            <li><a href="../work/">Selected work</a></li>
+            <li><a href="../work/golden-years/">Golden Years case study</a></li>
+            <li><a href="../process/">Process &amp; budget</a></li>
+            <li><a href="../check/">Free site check</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-card">
+          <p class="footer-title">Get in touch</p>
+          <p>Questions about your site, search clarity, or web bills?</p>
+          <div>
+            <a class="btn btn-sm btn-cobalt js-confetti-cta" href="mailto:hello@web-by-elie.com?subject=Web%20By%20Elie%20intro">hello@web-by-elie.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>Web By Elie · Refresh draft</span>
+        <div class="footer-legal">
+          <a href="../../../../privacy.html">Privacy</a>
+          <a href="../../../../terms.html">Terms</a>
+          <a href="../../../../data-deletion.html">Data deletion</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../assets/toybox.js" defer></script>
+  <script src="../assets/check-quiz.js" defer></script>
+  <script src="../../../chooser-nav.js" defer></script>
+</body>
+</html>

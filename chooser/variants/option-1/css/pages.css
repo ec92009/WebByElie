@@ -1,0 +1,915 @@
+/* ==========================================================================
+   Paper & Ink — Inner Pages (Services, Detail, Motifs, Work, Case Study, Check)
+   ========================================================================== */
+
+.page-head {
+  padding-top: clamp(28px, 4vw, 56px);
+  padding-bottom: clamp(32px, 4.5vw, 56px);
+  border-bottom: 1px solid var(--rule-ink);
+}
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-muted);
+  margin-bottom: 20px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--vermilion-ink);
+}
+
+.page-head-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  gap: clamp(20px, 4vw, 56px);
+  align-items: end;
+}
+
+.page-title {
+  font-family: var(--font-serif);
+  font-variation-settings: "opsz" 144, "SOFT" 48;
+  font-weight: 430;
+  font-size: clamp(2.25rem, 5.8vw, 5.1rem);
+  line-height: 1;
+  letter-spacing: -0.032em;
+  margin: 0;
+  view-transition-name: page-hero-title;
+}
+
+.page-title em {
+  font-style: italic;
+  font-weight: 400;
+}
+
+.page-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 16px;
+  margin-bottom: 14px;
+}
+
+/* ==========================================================================
+   Services Index Catalog
+   ========================================================================== */
+
+.catalog-list {
+  border-top: 1px solid var(--rule-ink);
+}
+
+.catalog-row {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 0.95fr) minmax(0, 1.15fr) auto;
+  gap: 18px 28px;
+  align-items: baseline;
+  padding: clamp(22px, 3vw, 32px) 12px;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+  transition: background-color 0.22s var(--ease-press), padding-left 0.26s var(--ease-press);
+}
+
+.catalog-row:hover {
+  background: var(--paper-bright);
+  padding-left: 20px;
+}
+
+.catalog-num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.65rem;
+  color: var(--vermilion-ink);
+  line-height: 1;
+}
+
+.catalog-name {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 2.4vw, 2.1rem);
+  font-weight: 480;
+  line-height: 1.1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.catalog-short {
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.catalog-arrow {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink-muted);
+  transition: transform 0.24s var(--ease-press), color 0.2s ease;
+}
+
+.catalog-row:hover .catalog-arrow {
+  transform: translateX(5px);
+  color: var(--vermilion-ink);
+}
+
+/* ==========================================================================
+   Service Detail Page + Ink Engraving Motif Plate
+   ========================================================================== */
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(28px, 5vw, 68px);
+  align-items: start;
+}
+
+.detail-prose {
+  font-size: 1.1rem;
+  line-height: 1.68;
+  color: var(--ink-soft);
+  margin: 0 0 32px;
+}
+
+.detail-subhead {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  font-weight: 500;
+  margin: 0 0 16px;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule-ink);
+}
+
+.editorial-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+}
+
+.editorial-bullets li {
+  position: relative;
+  padding: 12px 0 12px 26px;
+  border-bottom: 1px solid var(--rule);
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+
+.editorial-bullets li::before {
+  content: "§";
+  position: absolute;
+  left: 0;
+  top: 12px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: var(--vermilion-ink);
+  font-weight: 600;
+}
+
+.deliverables-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0 0 32px;
+  padding: 0;
+  list-style: none;
+}
+
+.deliverables-strip li {
+  background: var(--paper-bright);
+  border: 1px solid var(--rule-strong);
+  padding: 14px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.deliverables-strip li span {
+  display: block;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-muted);
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+/* Menus pricing & demos */
+.menu-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.menu-price-card {
+  background: var(--paper-bright);
+  border: 1px solid var(--rule-ink);
+  padding: 20px;
+}
+
+.menu-price-val {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 500;
+  color: var(--vermilion-ink);
+  line-height: 1.05;
+  margin: 6px 0;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin: 18px 0 32px;
+}
+
+.demo-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 18px;
+  background: var(--paper-bright);
+  border: 1px solid var(--rule-strong);
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.22s var(--ease-press);
+}
+
+.demo-card:hover {
+  border-color: var(--vermilion-ink);
+  transform: translateY(-2px);
+}
+
+.demo-card strong {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  font-weight: 500;
+}
+
+.demo-card span {
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+/* Motif Engraving Plate */
+.plate-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.engraving-plate {
+  background: var(--paper-bright);
+  border: 1px solid var(--rule-ink);
+  padding: 16px;
+}
+
+.engraving-frame {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: clamp(16px, 2.5vw, 28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motif-svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  color: var(--ink);
+}
+
+.motif-svg .m-ink {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.motif-svg .m-fine {
+  fill: none;
+  stroke: rgba(20, 20, 20, 0.35);
+  stroke-width: 1.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.motif-svg .m-vermilion {
+  fill: none;
+  stroke: var(--vermilion);
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.motif-svg .m-sage {
+  fill: none;
+  stroke: var(--sage);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.motif-svg .m-fill-paper {
+  fill: var(--paper-bright);
+}
+
+.motif-svg .m-fill-soft {
+  fill: var(--paper-deep);
+}
+
+.motif-svg .m-fill-vermilion {
+  fill: var(--vermilion);
+}
+
+.motif-svg .m-fill-sage {
+  fill: var(--sage-tint);
+}
+
+.motif-svg .m-label {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  fill: var(--ink-muted);
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html.js .motif-svg .m-draw {
+    stroke-dasharray: 420;
+    stroke-dashoffset: 420;
+    transition: stroke-dashoffset 1.35s var(--ease-ink);
+    transition-delay: calc(var(--md, 0) * 110ms);
+  }
+
+  html.js .engraving-plate.is-visible .motif-svg .m-draw {
+    stroke-dashoffset: 0;
+  }
+
+  .motif-svg .m-float {
+    animation: motif-float 5.5s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .motif-svg .m-pulse {
+    animation: motif-pulse 3.2s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+
+  .motif-svg .m-spin {
+    animation: motif-spin 16s linear infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+}
+
+@keyframes motif-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes motif-pulse {
+  0%, 100% { opacity: 0.45; transform: scale(0.96); }
+  50% { opacity: 1; transform: scale(1.04); }
+}
+
+@keyframes motif-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Related services strip */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.related-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px;
+  background: var(--paper-bright);
+  border: 1px solid var(--rule-ink);
+  text-decoration: none;
+  transition: transform 0.24s var(--ease-press), border-color 0.2s ease;
+}
+
+.related-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--vermilion-ink);
+}
+
+.related-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 4px 0 0;
+}
+
+.related-card p {
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Case Study — Golden Years Magazine Feature
+   ========================================================================== */
+
+.feature-quote {
+  position: relative;
+  margin: clamp(36px, 5vw, 64px) 0;
+  padding: clamp(28px, 4vw, 52px) clamp(24px, 5vw, 64px);
+  background: var(--paper-bright);
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+}
+
+.feature-quote::before {
+  content: "“";
+  position: absolute;
+  top: 6px;
+  left: 18px;
+  font-family: var(--font-serif);
+  font-size: 5.5rem;
+  line-height: 1;
+  color: var(--vermilion);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.feature-quote blockquote {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(1.55rem, 3.1vw, 2.55rem);
+  line-height: 1.24;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  position: relative;
+}
+
+.feature-quote figcaption {
+  margin-top: 18px;
+  font-size: 0.84rem;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-muted);
+}
+
+.case-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: clamp(32px, 4.5vw, 56px) 0;
+}
+
+.case-step {
+  background: var(--paper-bright);
+  border: 1px solid var(--rule-ink);
+  padding: 26px;
+}
+
+.case-step h3 {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin: 12px 0 10px;
+}
+
+.case-step p {
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* CSS-crafted Desktop Browser & Phone Frames */
+.device-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(0, 0.72fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+  margin-top: 32px;
+}
+
+.frame-browser {
+  background: var(--paper-bright);
+  border: 1.5px solid var(--ink);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 8px 8px 0 rgba(20, 20, 20, 0.09);
+}
+
+.frame-browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--paper-deep);
+  border-bottom: 1px solid var(--rule-strong);
+}
+
+.frame-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid var(--rule-ink);
+}
+
+.frame-dot-accent {
+  background: var(--vermilion);
+  border-color: var(--vermilion);
+}
+
+.frame-url {
+  margin-left: 8px;
+  padding: 3px 10px;
+  background: var(--paper-bright);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  font-size: 0.74rem;
+  color: var(--ink-muted);
+  flex: 1;
+  max-width: 340px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.frame-browser img {
+  width: 100%;
+  height: auto;
+}
+
+.frame-phone {
+  background: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 28px;
+  padding: 12px 10px 14px;
+  max-width: 310px;
+  margin-inline: auto;
+  box-shadow: 8px 8px 0 rgba(20, 20, 20, 0.12);
+}
+
+.frame-phone-notch {
+  width: 68px;
+  height: 5px;
+  border-radius: 99px;
+  background: rgba(250, 247, 241, 0.25);
+  margin: 0 auto 10px;
+}
+
+.frame-phone-screen {
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--paper-bright);
+}
+
+.frame-phone-screen img {
+  width: 100%;
+  height: auto;
+}
+
+.frame-caption {
+  margin-top: 12px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--ink-muted);
+  text-align: center;
+}
+
+/* ==========================================================================
+   Free Site Check — Editorial Diagnostic & Prescription Slip
+   ========================================================================== */
+
+.check-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(28px, 4.5vw, 56px);
+  align-items: start;
+}
+
+.check-form-sheet {
+  background: var(--paper-bright);
+  border: 1px solid var(--rule-ink);
+  padding: clamp(22px, 3.2vw, 38px);
+}
+
+.check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.check-row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  gap: 14px 18px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.check-row:first-child {
+  border-top: 1px solid var(--rule-ink);
+}
+
+.check-qnum {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.35rem;
+  color: var(--ink-muted);
+}
+
+.check-qtext {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 0;
+}
+
+.check-qservice {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.check-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.stamp-btn {
+  min-width: 66px;
+  padding: 8px 14px;
+  background: var(--paper);
+  border: 1.5px solid var(--rule-strong);
+  border-radius: 2px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  cursor: pointer;
+  transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease, transform 0.18s var(--ease-press);
+}
+
+.stamp-btn:hover {
+  border-color: var(--ink);
+}
+
+.stamp-btn[aria-pressed="true"].stamp-yes {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: var(--paper-bright);
+  transform: rotate(-2deg) scale(1.03);
+}
+
+.stamp-btn[aria-pressed="true"].stamp-no {
+  background: var(--vermilion-fill);
+  border-color: var(--vermilion-fill);
+  color: var(--paper-bright);
+  transform: rotate(2deg) scale(1.03);
+}
+
+/* Prescription Slip */
+.rx-slip {
+  position: sticky;
+  top: calc(var(--sticky-top) + 18px);
+  background: var(--paper-bright);
+  border: 1.5px solid var(--ink);
+  padding: clamp(22px, 3vw, 32px);
+  box-shadow: 6px 6px 0 rgba(20, 20, 20, 0.08);
+}
+
+.rx-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 2px double var(--rule-ink);
+  margin-bottom: 20px;
+}
+
+.rx-symbol {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--vermilion-ink);
+  line-height: 1;
+}
+
+.rx-score-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.rx-score-num {
+  font-family: var(--font-serif);
+  font-size: 3.1rem;
+  font-weight: 450;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.rx-meter {
+  height: 6px;
+  background: var(--paper-well);
+  border: 1px solid var(--rule);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.rx-meter-fill {
+  height: 100%;
+  width: 100%;
+  background: var(--sage);
+  transform-origin: left;
+  transform: scaleX(var(--score-pct, 0));
+  transition: transform 0.45s var(--ease-press), background-color 0.3s ease;
+}
+
+.rx-status {
+  font-size: 0.94rem;
+  color: var(--ink-soft);
+  margin: 0 0 18px;
+}
+
+.rx-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 22px;
+  border-top: 1px dashed var(--rule-strong);
+}
+
+.rx-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--rule-strong);
+}
+
+.rx-item a {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.rx-item a:hover {
+  color: var(--vermilion-ink);
+}
+
+.rx-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.rx-reset {
+  background: transparent;
+  border: none;
+  padding: 6px 0;
+  font-size: 0.82rem;
+  text-decoration: underline;
+  color: var(--ink-muted);
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.rx-reset:hover {
+  color: var(--ink);
+}
+
+.detail-cta-row {
+  margin-top: 24px;
+}
+
+.work-index-subhead {
+  margin-bottom: clamp(26px, 3.5vw, 44px);
+}
+
+.case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.feature-quote-compact {
+  margin: 0;
+  padding: clamp(22px, 3vw, 34px) clamp(20px, 3vw, 36px);
+}
+
+.feature-quote-compact blockquote {
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+}
+
+.ledger-grid-flush {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
+.rx-slip-title {
+  margin: 6px 0 0;
+  font-size: 1.55rem;
+}
+
+@keyframes stamp-pop {
+  0% {
+    transform: scale(1.2) rotate(-6deg);
+  }
+  70% {
+    transform: scale(0.96) rotate(1deg);
+  }
+  100% {
+    transform: scale(1.03) rotate(-2deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .stamp-btn.just-stamped {
+    animation: stamp-pop 280ms var(--ease-press);
+  }
+}
+
+/* ==========================================================================
+   Responsive Breakpoints (Inner Pages)
+   ========================================================================== */
+
+@media (max-width: 1020px) {
+  .page-head-grid,
+  .detail-grid,
+  .device-showcase,
+  .check-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .rx-slip {
+    position: static;
+  }
+
+  .catalog-row {
+    grid-template-columns: 56px minmax(0, 1fr) auto;
+  }
+
+  .catalog-short {
+    grid-column: 2 / -1;
+  }
+
+  .case-steps,
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .deliverables-strip,
+  .menu-pricing-grid,
+  .demo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .check-row {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
+
+  .check-controls {
+    grid-column: 2 / -1;
+  }
+
+  .catalog-row {
+    grid-template-columns: 44px minmax(0, 1fr);
+    padding-inline: 0;
+  }
+
+  .catalog-arrow {
+    display: none;
+  }
+}
