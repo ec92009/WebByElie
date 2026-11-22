@@ -6,7 +6,7 @@
  * other relative URL (assets, policy pages, demos) is rewritten to point back
  * at the repo root. Run from the repo root: node chooser/build-original.mjs
  */
-import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, copyFileSync, mkdirSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { chooserHead, chooserBar, chooserScript, toOptionRoot, toRepoRoot } from "./content.mjs";
@@ -24,6 +24,13 @@ const PAGES = [
   ["case-studies/golden-years/index.html", "work/golden-years/"],
 ];
 
+/** Core v317.1 assets bundled inside variants/original/assets/ for branch-safe previews. */
+const BUNDLED_ASSETS = new Map([
+  ["/assets/styles.css", "assets/styles.css"],
+  ["/assets/theme.js", "assets/theme.js"],
+  ["/assets/i18n.js", "assets/i18n.js"],
+]);
+
 /** Root-absolute pathname -> page path, for links that stay in the variant. */
 const LOCAL = new Map([
   ["/", ""],
@@ -37,6 +44,11 @@ const LOCAL = new Map([
 
 const SKIP = /^(#|mailto:|tel:|data:|javascript:|\/\/)/i;
 const SELF_ORIGIN = "https://web-by-elie.com";
+
+mkdirSync(join(outRoot, "assets"), { recursive: true });
+for (const rel of BUNDLED_ASSETS.values()) {
+  copyFileSync(join(repo, rel), join(outRoot, rel));
+}
 
 /**
  * Rewrites one URL found in a copied page.
@@ -56,6 +68,9 @@ function rewrite(value, srcRel, page) {
     url = new URL(value, `http://local/${srcRel}`);
   }
   const tail = url.search + url.hash;
+  if (BUNDLED_ASSETS.has(url.pathname)) {
+    return toOptionRoot(page) + BUNDLED_ASSETS.get(url.pathname) + tail;
+  }
   if (LOCAL.has(url.pathname)) {
     const target = LOCAL.get(url.pathname);
     return (target === "" && toOptionRoot(page) === "./" ? "./" : toOptionRoot(page) + target) + tail;
@@ -65,6 +80,8 @@ function rewrite(value, srcRel, page) {
 
 for (const [srcRel, page] of PAGES) {
   let html = readFileSync(join(repo, srcRel), "utf8");
+  // Strip analytics beacon from chooser review pages.
+  html = html.replace(/\s*<script[^>]*wst-beacon\.js[^>]*><\/script>\s*/gi, "\n");
   // Only rewrite URLs on links, media, and resources; meta/og URLs stay as-is.
   html = html.replace(/\b(href|src|poster)="([^"]*)"/g, (match, attr, value, offset) => {
     const tagStart = html.lastIndexOf("<", offset);
