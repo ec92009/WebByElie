@@ -19,12 +19,13 @@ export function securityHeaders(root) {
     `script-src 'self' ${[...hashes].sort().join(" ")}`,
     "script-src-attr 'none'",
     "style-src 'self'",
+    "font-src 'self'",
     "img-src 'self'",
     "media-src 'self'",
-    "connect-src 'self' https://web-signals-collector.ec92009.workers.dev",
+    "connect-src 'self' https://web-signals-collector.ec92009.workers.dev https://photosbyelie-checkout-mock.ec92009.workers.dev",
     "object-src 'none'",
     "base-uri 'self'",
-    "form-action 'none'",
+    "form-action 'self'",
     "frame-ancestors 'none'",
   ].join("; ");
   const result = `/*

@@ -4,7 +4,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://web-by-elie.com/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/" />
@@ -12,7 +12,7 @@
   </url>
   <url>
     <loc>https://web-by-elie.com/fr/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/" />
@@ -20,15 +20,55 @@
   </url>
   <url>
     <loc>https://web-by-elie.com/es/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/" />
   </url>
   <url>
+    <loc>https://web-by-elie.com/services/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/services/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/services/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/" />
+  </url>
+  <url>
     <loc>https://web-by-elie.com/services/refresh/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/refresh/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/refresh/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/refresh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/refresh/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/services/refresh/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/refresh/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/refresh/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/refresh/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/refresh/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/services/refresh/</loc>
+    <lastmod>2026-11-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/refresh/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/refresh/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/refresh/" />
@@ -36,7 +76,23 @@
   </url>
   <url>
     <loc>https://web-by-elie.com/services/seo/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/seo/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/seo/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/seo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/seo/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/services/seo/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/seo/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/seo/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/seo/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/seo/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/services/seo/</loc>
+    <lastmod>2026-11-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/seo/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/seo/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/seo/" />
@@ -44,7 +100,23 @@
   </url>
   <url>
     <loc>https://web-by-elie.com/services/ai-ready/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/ai-ready/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/ai-ready/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/ai-ready/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/ai-ready/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/services/ai-ready/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/ai-ready/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/ai-ready/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/ai-ready/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/ai-ready/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/services/ai-ready/</loc>
+    <lastmod>2026-11-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/ai-ready/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/ai-ready/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/ai-ready/" />
@@ -52,26 +124,286 @@
   </url>
   <url>
     <loc>https://web-by-elie.com/services/cost-cleanup/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-22</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/cost-cleanup/" />
     <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/cost-cleanup/" />
     <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/cost-cleanup/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/cost-cleanup/" />
   </url>
   <url>
+    <loc>https://web-by-elie.com/fr/services/cost-cleanup/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/cost-cleanup/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/cost-cleanup/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/cost-cleanup/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/cost-cleanup/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/services/cost-cleanup/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/cost-cleanup/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/cost-cleanup/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/cost-cleanup/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/cost-cleanup/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/services/site-care/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/site-care/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/site-care/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/site-care/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/site-care/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/services/site-care/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/site-care/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/site-care/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/site-care/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/site-care/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/services/site-care/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/site-care/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/site-care/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/site-care/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/site-care/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/services/speed-access/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/speed-access/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/speed-access/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/speed-access/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/speed-access/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/services/speed-access/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/speed-access/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/speed-access/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/speed-access/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/speed-access/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/services/speed-access/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/speed-access/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/speed-access/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/speed-access/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/speed-access/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/services/local-presence/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/local-presence/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/local-presence/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/local-presence/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/local-presence/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/services/local-presence/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/local-presence/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/local-presence/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/local-presence/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/local-presence/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/services/local-presence/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/local-presence/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/local-presence/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/local-presence/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/local-presence/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/services/platform-move/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/platform-move/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/platform-move/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/platform-move/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/platform-move/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/services/platform-move/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/platform-move/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/platform-move/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/platform-move/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/platform-move/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/services/platform-move/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/platform-move/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/platform-move/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/platform-move/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/platform-move/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/services/ai-helpers/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/ai-helpers/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/ai-helpers/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/ai-helpers/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/ai-helpers/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/services/ai-helpers/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/ai-helpers/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/ai-helpers/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/ai-helpers/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/ai-helpers/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/services/ai-helpers/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/ai-helpers/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/ai-helpers/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/ai-helpers/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/ai-helpers/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/services/multilingual/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/multilingual/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/multilingual/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/multilingual/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/multilingual/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/services/multilingual/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/multilingual/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/multilingual/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/multilingual/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/multilingual/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/services/multilingual/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/services/multilingual/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/services/multilingual/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/services/multilingual/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/services/multilingual/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/work/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/work/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/work/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/work/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/work/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/work/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/work/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/work/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/work/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/work/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/work/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/work/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/work/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/work/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/work/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/process/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/process/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/process/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/process/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/process/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/process/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/process/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/process/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/process/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/process/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/process/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/process/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/process/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/process/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/process/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/check/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/check/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/check/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/check/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/check/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/fr/check/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/check/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/check/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/check/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/check/" />
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/es/check/</loc>
+    <lastmod>2026-11-22</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://web-by-elie.com/check/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://web-by-elie.com/fr/check/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://web-by-elie.com/es/check/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://web-by-elie.com/check/" />
+  </url>
+  <url>
     <loc>https://web-by-elie.com/case-studies/golden-years/</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-22</lastmod>
   </url>
   <url>
     <loc>https://web-by-elie.com/privacy</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-22</lastmod>
   </url>
   <url>
     <loc>https://web-by-elie.com/terms</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-22</lastmod>
   </url>
   <url>
     <loc>https://web-by-elie.com/data-deletion</loc>
-    <lastmod>2026-11-13</lastmod>
+    <lastmod>2026-11-22</lastmod>
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/alex.ward</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/june.rowan</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/nora.vela</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/elena.brooks</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/creators.privacy</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/creators.terms</loc>
+    <lastmod>2026-11-06</lastmod>
+  </url>
+  <url>
+    <loc>https://web-by-elie.com/creators.data-deletion</loc>
+    <lastmod>2026-11-06</lastmod>
   </url>
 </urlset>

@@ -13,9 +13,10 @@ for line in (root / "_headers").read_text().splitlines():
 
 class PublicHandler(SimpleHTTPRequestHandler):
     def do_GET(self):
-        # Match Pages' extensionless HTML routes (such as /privacy).
+        # Match Pages' extensionless HTML routes (such as /privacy and /alex.ward).
         clean = self.path.split("?", 1)[0]
-        if not Path(clean).suffix and (root / (clean.lstrip("/") + ".html")).is_file():
+        target = root / clean.lstrip("/")
+        if not target.is_file() and (root / (clean.lstrip("/") + ".html")).is_file():
             self.path = clean + ".html"
         super().do_GET()
 

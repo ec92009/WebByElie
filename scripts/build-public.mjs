@@ -1,4 +1,4 @@
-import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { resolve, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { publicDirectories, publicRootFiles, publicPages } from "./public-site.mjs";
@@ -35,13 +35,31 @@ const publicManifest = {
   monitorability: {
     contract_version: monitor.contract_version,
     route_scope: monitor.route_scope,
-    surfaces: monitor.surfaces.filter((surface) => surface.environment === "production").map(({ environment, url, version_url }) => ({ environment, url, version: readFileSync(join(root, "VERSION"), "utf8").trim(), version_url })),
+    surfaces: monitor.surfaces
+      .filter((surface) => surface.environment === "production")
+      .map(({ environment, url, version_url }) => ({
+        environment,
+        url,
+        version: readFileSync(join(root, "VERSION"), "utf8").trim(),
+        version_url,
+      })),
     cta_ids: monitor.cta_ids,
     privacy_profile: monitor.privacy_profile,
     collector_url: monitor.collector_url,
-    capabilities: Object.fromEntries(Object.entries(monitor.capabilities).map(([key, { state, freshness_hours }]) => [key, { state, freshness_hours }])),
+    capabilities: Object.fromEntries(
+      Object.entries(monitor.capabilities).map(([key, { state, freshness_hours }]) => [
+        key,
+        { state, freshness_hours },
+      ]),
+    ),
   },
 };
 writeFileSync(join(output, ".wst/site.json"), JSON.stringify(publicManifest, null, 2) + "\n");
+for (const creatorManifest of ["alex.ward.json", "elena.brooks.json", "june.rowan.json", "nora.vela.json"]) {
+  const sourcePath = join(root, ".wst", creatorManifest);
+  if (existsSync(sourcePath)) {
+    cpSync(sourcePath, join(output, ".wst", creatorManifest));
+  }
+}
 checkPublicBuild(output, root);
 console.log("Public static output ready in dist (no source, credentials, or working notes).");

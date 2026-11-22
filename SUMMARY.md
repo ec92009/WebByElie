@@ -1,18 +1,18 @@
 # Web By Elie Summary
 
-Last updated: 2026-11-13 22:58 CET
+Last updated: 2026-11-22 19:35 CET
 
 ## Current State
 
-- Repo: `/Users/ecohen/Dev/WebByElie`
+- Repo: `/Users/ecohen/MDev/WebByElie`
 - Branch: `main`
 - Production URL: `https://web-by-elie.com/`
 - Production host: Cloudflare Pages project `web-by-elie`
 - Public preview: `https://ec92009.github.io/WebByElie/`
 - Local preview: `http://localhost:8094/`
 - Contact email: `hello@web-by-elie.com`
-- Local candidate version: `v317.1` (unpublished; production version was not checked)
-- Selected look: `Studio Clean`
+- Production version: `v318.0`
+- Selected look: `Night Signal` (promoted from the Nov 2026 refresh chooser; 10 business-agnostic services across EN/FR/ES, interactive `/check/` scan, preserved Selected Work + Golden Years case study, creator shops, and R2 media routes)
 - Active timelog: `TIMELOG.md`
 
 ## What We Built

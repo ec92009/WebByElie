@@ -12,8 +12,9 @@ import { tmpdir } from "node:os";
 import { dirname, isAbsolute, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { securityHeaders } from "./security-headers.mjs";
-import { publishedHtml } from "./public-site.mjs";
+import { creatorPages, publishedHtml } from "./public-site.mjs";
 import { sitemapXml } from "./generate-sitemap.mjs";
+import { generatedPagesList } from "./generate-localized-pages.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const version = readFileSync(join(root, "VERSION"), "utf8").trim();
@@ -32,7 +33,7 @@ if (!existsSync(headersPath)) {
 }
 
 const publicHtml = publishedHtml();
-// Hreflang alternates are part of the existing sitemap URL set too.
+const creatorSet = new Set(creatorPages);
 const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
 if (sitemap !== sitemapXml(root)) fail("sitemap.xml is stale; run node scripts/generate-sitemap.mjs");
 const sitemapUrls = new Set([
@@ -75,7 +76,9 @@ for (const sourceFile of publicHtml) {
   const source = readFileSync(sourcePath, "utf8");
   const noindex = /<meta\b[^>]*name="robots"[^>]*content="[^"]*\bnoindex\b/i.test(source);
   const canonical = source.match(/<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"/i)?.[1];
-  if (!noindex && (!canonical || !sitemapUrls.has(canonical))) fail(`${sourceFile}: published page needs a sitemap URL or noindex`);
+  if (!noindex && (!canonical || !sitemapUrls.has(canonical))) {
+    fail(`${sourceFile}: published page needs a sitemap URL or noindex`);
+  }
   if (/<style\b|\sstyle\s*=|\son[a-z]+\s*=/i.test(source)) {
     fail(`${sourceFile}: inline style or event handler conflicts with CSP`);
   }
@@ -87,7 +90,9 @@ for (const sourceFile of publicHtml) {
     (match) => match[1],
   );
   for (const [, link] of source.matchAll(/<a\b[^>]*\bhref="([^"]+)"/gi)) {
-    if (!/^(?:https?:|mailto:|tel:|\/\/)/i.test(link) && /[?&]v=/.test(link)) fail(`${sourceFile}: internal page link must not carry a version query: ${link}`);
+    if (!/^(?:https?:|mailto:|tel:|\/\/)/i.test(link) && /[?&]v=/.test(link)) {
+      fail(`${sourceFile}: internal page link must not carry a version query: ${link}`);
+    }
   }
 
   for (const rawReference of references) {
@@ -118,16 +123,18 @@ for (const sourceFile of publicHtml) {
     }
   }
 
-  const versionPatterns = [
-    /\?v=([0-9]+(?:\.[0-9]+)*)/g,
-    /data-site-version=["']v([0-9]+(?:\.[0-9]+)*)["']/g,
-    /Web By Elie · v([0-9]+(?:\.[0-9]+)*)/g,
-    /Version v([0-9]+(?:\.[0-9]+)*)/g,
-  ];
-  for (const pattern of versionPatterns) {
-    for (const match of source.matchAll(pattern)) {
-      if (match[1] !== version) {
-        fail(`${sourceFile}: version ${match[1]} does not match VERSION ${version}`);
+  if (!creatorSet.has(sourceFile)) {
+    const versionPatterns = [
+      /\?v=([0-9]+(?:\.[0-9]+)*)/g,
+      /data-site-version=["']v([0-9]+(?:\.[0-9]+)*)["']/g,
+      /Web By Elie · v([0-9]+(?:\.[0-9]+)*)/g,
+      /Version v([0-9]+(?:\.[0-9]+)*)/g,
+    ];
+    for (const pattern of versionPatterns) {
+      for (const match of source.matchAll(pattern)) {
+        if (match[1] !== version) {
+          fail(`${sourceFile}: version ${match[1]} does not match VERSION ${version}`);
+        }
       }
     }
   }
@@ -140,24 +147,12 @@ for (const homepage of ["index.html", "fr/index.html", "es/index.html"]) {
   }
 }
 
-const generatedFiles = [
-  "index.html",
-  "fr/index.html",
-  "es/index.html",
-  ...["", "fr", "es"].flatMap((locale) =>
-    ["refresh", "seo", "ai-ready", "cost-cleanup"].map((service) =>
-      join(locale, "services", service, "index.html"),
-    ),
-  ),
-];
-
+const generatedFiles = generatedPagesList();
 const generationRoot = mkdtempSync(join(tmpdir(), "webbyelie-site-check-"));
 try {
-  mkdirSync(join(generationRoot, "assets"), { recursive: true });
   mkdirSync(join(generationRoot, "scripts"), { recursive: true });
   cpSync(join(root, "VERSION"), join(generationRoot, "VERSION"));
-  cpSync(join(root, "index.html"), join(generationRoot, "index.html"));
-  cpSync(join(root, "assets", "i18n.js"), join(generationRoot, "assets", "i18n.js"));
+  cpSync(join(root, "scripts", "ns"), join(generationRoot, "scripts", "ns"), { recursive: true });
   cpSync(
     join(root, "scripts", "generate-localized-pages.mjs"),
     join(generationRoot, "scripts", "generate-localized-pages.mjs"),

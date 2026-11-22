@@ -2,28 +2,29 @@
 
 Static public-facing site for Web By Elie, a small-business web presence offer.
 
-Local candidate version: `v317.1` (unpublished)
+Production version: `v318.0`
 
 Production URL: `https://web-by-elie.com/`
 
-Preview URL: `https://ec92009.github.io/WebByElie/` (deployed version not checked in this audit)
+Preview URL: `https://ec92009.github.io/WebByElie/`
 
 Contact email: `hello@web-by-elie.com`
 
 ## Offer
 
-The current offer has four lanes:
+The main site presents ten business-agnostic service modules organized into four core pillars plus six expanded modules:
 
-1. Refresh: preserve useful existing work, explore possible looks, and build toward a final sign-off site.
-2. Search Engine Optimization: visible and behind-the-scenes checklist work for titles, descriptions, headings, links, service wording, locations, and structure.
-3. AI-ready search: clear facts, services, locations, and answers for chat and AI-search systems.
-4. Cost cleanup: unused subscriptions, overlapping tools, paid tiers, renewals, and unclear account ownership.
+1. Website refresh (`/services/refresh/`): preserve useful existing work, explore clickable directions, and ship a refined site.
+2. Search Engine Optimization (`/services/seo/`): titles, descriptions, headings, links, service wording, locations, and page structure.
+3. AI-ready structure (`/services/ai-ready/`): clear facts, services, locations, and answers for search and AI assistants.
+4. Web spend cleanup (`/services/cost-cleanup/`): unused subscriptions, overlapping tools, paid tiers, renewals, and account ownership.
+5. Ongoing site care (`/services/site-care/`), Speed & accessibility cleanup (`/services/speed-access/`), Local & maps visibility (`/services/local-presence/`), Platform move & ownership (`/services/platform-move/`), Practical AI helpers (`/services/ai-helpers/`), and Multilingual sites (`/services/multilingual/`).
 
 ## Current Direction
 
-The selected public look is `Studio Clean`.
+The selected public look is `Night Signal` (promoted from the v318 refresh chooser).
 
-Earlier chooser/proposal artifacts are archived under `Archive/`. The three legacy design-draft URLs are excluded from the public build. Desktop-mail information and policy URLs remain published and noindex pending confirmation of external dependencies.
+All front-page-accessible pages are business-agnostic and generated deterministically in English, French, and Spanish via `scripts/generate-localized-pages.mjs` + `scripts/ns/`. Standalone vertical/campaign pages (`/restaurants/`, `/restaurant-demo*`) and creator digital-product shops remain published at their direct URLs and disconnected from the main front page. Earlier chooser/proposal artifacts are archived in Git history and `Archive/`. Desktop-mail information and policy URLs remain published and noindex pending confirmation of external dependencies.
 
 ## Local Preview
 
